@@ -1,0 +1,14 @@
+# Navigation menu structure
+main:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Team
+    url: /team/
+  - title: Projects
+    url: /projects/
+  - title: Log
+    url: /posts/
+  - title: Contact
+    url: /contact/

@@ -1,0 +1,35 @@
+{
+  "brand_name": "48knot",
+  "concept": "속도보다 방향, 정점보다 지속 가능한 항해",
+  "tagline": "Fast, but not reckless.",
+  "identity": {
+    "symbolism": [
+      "48 knots: 항해 가능한 최적 속도",
+      "50 knots: 위험 경계선, 넘지 않는 속도",
+      "작지만 떠 있는 배 (mini-barrel): 불완전하지만 충분한 시작",
+      "log/navy/sea: 관계, 팀, 자기 항로의 은유"
+    ],
+    "philosophy": [
+      "완벽보다는 지속을 선택한다",
+      "속도는 의도되어야 한다",
+      "팀은 유속을 공유하는 존재",
+      "멈추지 않되, 무작정 달리지 않는다"
+    ],
+    "archetype": "표류자이자 항해자. 실무형 리더이자 조용한 깃발 설계자"
+  },
+  "brand_voice": {
+    "tone": "시적이고 자기풍자적이며 철학적",
+    "style": "해양 은유 기반, Wes Anderson 톤, 미니멀하지만 상징적",
+    "core_words": ["drift", "float", "rig", "sail", "glide", "log", "gentle"]
+  },
+  "signature": {
+    "team_signature": {
+      "label": "TEAM 48 KNOT ⚓",
+      "slogan": "Fast, but not reckless.",
+      "hashtags": ["#48knot50k", "#maythevillainbewithoutu"]
+    },
+    "public_representative": "Boatswain of the Mini-Barrel",
+    "internal_identity": "Logborne",
+    "external_identity": "The Driftwood Gentleman"
+  }
+}

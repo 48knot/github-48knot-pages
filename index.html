@@ -1,0 +1,90 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <h1 class="heading-1 hero-title animate-float">
+      <span class="accent">48</span> knots
+    </h1>
+    <p class="hero-tagline">
+      {{ site.tagline }}
+    </p>
+    <p class="hero-description">
+      {{ site.data.brand.concept }}
+    </p>
+    
+    <div class="hero-actions">
+      <a href="#philosophy" class="btn-primary">우리의 철학</a>
+      <a href="/projects/" class="btn-secondary">프로젝트 보기</a>
+    </div>
+  </div>
+  
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Philosophy Section -->
+<section id="philosophy">
+  <div class="container">
+    <h2 class="heading-2 fade-in">우리가 믿는 것</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      {% for philosophy in site.data.brand.identity.philosophy %}
+      <div class="card philosophy-card fade-in" data-float>
+        <div class="icon">⚓</div>
+        <p>{{ philosophy }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Symbolism Section -->
+<section class="bg-gray">
+  <div class="container">
+    <h2 class="heading-2 fade-in">상징과 은유</h2>
+    
+    <div class="max-w-4xl mx-auto">
+      {% for symbol in site.data.brand.identity.symbolism %}
+      <div class="symbol-item fade-in">
+        <span class="icon">🚢</span>
+        <p>{{ symbol }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Core Words Section -->
+<section>
+  <div class="container">
+    <h2 class="heading-2 fade-in">Core Words</h2>
+    
+    <div class="core-words">
+      {% for word in site.data.brand.brand_voice.core_words %}
+      <span class="word-tag fade-in animate-drift">
+        {{ word }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="hero bg-gray">
+  <div class="container text-center relative z-10">
+    <h2 class="heading-2 fade-in">함께 항해하시겠습니까?</h2>
+    <p class="hero-description fade-in">{{ site.data.brand.identity.archetype }}</p>
+    
+    <div class="hero-actions fade-in">
+      <a href="/team/" class="btn-primary">팀 만나기</a>
+      <a href="/contact/" class="btn-secondary">연락하기</a>
+    </div>
+  </div>
+</section>

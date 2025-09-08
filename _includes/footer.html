@@ -1,0 +1,43 @@
+<footer>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+  
+  <div class="container footer-content">
+    <div class="footer-grid">
+      <div>
+        <h3>{{ site.team_name }}</h3>
+        <p class="footer-text">{{ site.tagline }}</p>
+        <p class="footer-text italic">{{ site.data.brand.concept }}</p>
+      </div>
+      
+      <div>
+        <h4>Philosophy</h4>
+        <ul class="philosophy-list">
+          {% for philosophy in site.data.brand.identity.philosophy %}
+          <li>{{ philosophy }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Connect</h4>
+        <div>
+          <p class="footer-text">{{ site.data.brand.signature.public_representative }}</p>
+          <div class="hashtags">
+            {% for tag in site.data.brand.signature.hashtags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 {{ site.team_name }}. All rights reserved.</p>
+      <p class="italic">{{ site.data.brand.identity.archetype }}</p>
+    </div>
+  </div>
+</footer>

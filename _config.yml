@@ -1,0 +1,63 @@
+# Jekyll configuration for 48knot team site
+title: 48knot
+tagline: Fast, but not reckless.
+description: 속도보다 방향, 정점보다 지속 가능한 항해
+url: https://48knot.github.io
+baseurl: ""
+
+# Team identity
+team_name: TEAM 48 KNOT ⚓
+public_representative: Boatswain of the Mini-Barrel
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+
+# Collections
+collections:
+  team:
+    output: true
+    permalink: /team/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team-member"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from build
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
