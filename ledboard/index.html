@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>모바일 전광판</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root { --cycle-distance: 100%; --duration-s: 12s; }
+
+    body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#000; color:#fff; height:100dvh; overflow:hidden; }
+    .app-container { position:relative; height:100dvh; width:100vw; }
+
+    /* 레이어 계층 */
+    .topbar { position:fixed; top:0; left:0; right:0; height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 12px; z-index:1000; background:linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); padding-top: env(safe-area-inset-top); }
+    .icon-btn { min-width:44px; min-height:44px; border:none; border-radius:10px; padding:8px 12px; cursor:pointer; background:rgba(255,255,255,.12); color:#fff; font-size:14px; }
+    .icon-btn.primary { background:#0a84ff; }
+
+    .preview { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#000; padding: calc(env(safe-area-inset-top) + 10px) 12px calc(env(safe-area-inset-bottom) + 10px) 12px; z-index:1; }
+
+    .hint { position:fixed; top:64px; left:50%; transform:translateX(-50%); z-index:1050; background:rgba(255,255,255,.12); color:#e5e7eb; padding:8px 12px; border-radius:999px; font-size:12px; backdrop-filter: blur(6px); opacity:0; pointer-events:none; transition:opacity .2s; }
+    .hint.show { opacity:1; }
+
+    .led-display { color:#00FF00; font-family:'Courier New',monospace; font-size:19.2vw; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:clip; line-height:1.2; text-shadow:0 0 12px currentColor; max-width:100%; text-align:center; }
+    .neon { text-shadow: 0 0 8px currentColor, 0 0 16px currentColor, 0 0 32px currentColor; filter: saturate(1.1); }
+
+    /* 연속 스크롤 전용 트랙 */
+    .marquee-track { display:flex; gap:0; will-change:transform; pointer-events:none; padding-left:0; }
+    .marquee-seg { display:inline-block; white-space:nowrap; }
+    .run { animation: marqueeTrack var(--duration-s) linear infinite; }
+    @keyframes marqueeTrack { from{ transform: translateX(0); } to{ transform: translateX(calc(-1 * var(--cycle-distance))); } }
+
+    /* 비-스크롤 모드에서 줄바꿈 허용되는 정적 컨테이너 */
+    .static-text { display:none; max-width:100%; white-space:normal; word-break:keep-all; overflow-wrap:anywhere; line-height:1.15; text-align:center; margin:0 auto; }
+    .static-text.show { display:block; }
+
+    .fullscreen-mode .led-display { font-size:14.4vw; width:100vw; text-align:left; }
+
+    .blink { animation: blink 1s infinite; }
+    @keyframes blink { 0%,50%{opacity:1;} 51%,100%{opacity:.3;} }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+
+    .backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:1200; }
+    .backdrop.open { opacity:1; pointer-events:auto; }
+
+    .editor-sheet { position:fixed; left:0; right:0; bottom:0; max-height:88vh; z-index:1300; background:#0f1012; border-top-left-radius:18px; border-top-right-radius:18px; box-shadow:0 -8px 24px rgba(0,0,0,.5); transform:translateY(100%); transition: transform .3s ease; padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); color:#e5e7eb; }
+    .editor-sheet.open { transform:translateY(0); }
+
+    .tabs { display:flex; gap:8px; margin:4px 0 12px; }
+    .tab-btn { flex:1; padding:10px 12px; border-radius:10px; border:1px solid #23262d; background:#121318; color:#c9d1d9; cursor:pointer; }
+    .tab-btn.active { background:#1a1d24; border-color:#3a3f4b; color:#fff; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .grid-1 { display:grid; grid-template-columns:1fr; gap:12px; }
+
+    .section { border:1px solid #23262d; border-radius:12px; padding:12px; background:#121318; }
+    .label { font-size:12px; color:#9aa3b2; margin-bottom:6px; display:block; }
+    .text-input { width:100%; min-height:84px; resize:vertical; font-size:16px; border-radius:10px; border:1px solid #2a2f3a; background:#0b0c10; color:#fff; padding:10px; }
+    .slider { width:100%; height:6px; border-radius:3px; background:#2a2f3a; outline:none; -webkit-appearance:none; }
+    .slider::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%; background:#0a84ff; }
+    .color-input { width:44px; height:44px; border:none; border-radius:8px; cursor:pointer; }
+    .select { width:100%; height:44px; border-radius:10px; border:1px solid #2a2f3a; background:#0b0c10; color:#fff; padding:0 8px; }
+    .note { font-size:12px; color:#9aa3b2; }
+
+    .preset-row { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px; border:1px solid #23262d; border-radius:10px; background:#0b0c10; }
+    .preset-actions { display:flex; gap:6px; }
+    .small-btn { padding:7px 10px; border-radius:8px; border:1px solid #333843; background:#161a22; color:#d1d5db; cursor:pointer; }
+    .small-btn.danger { background:#2a0f15; border-color:#5a1f29; color:#ffb4c0; }
+
+    .fs-edit-btn { position:fixed; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:1100; background:rgba(0,0,0,.35); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:10px 14px; font-size:14px; backdrop-filter: blur(6px); display:none; }
+    .fs-edit-btn.show { display:block; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="topbar">
+      <button class="icon-btn" id="fullscreenBtn" type="button">전체화면</button>
+      <div>
+        <button class="icon-btn" id="shareBtn" type="button">공유</button>
+        <button class="icon-btn primary" id="openEditorBtn" type="button">편집</button>
+      </div>
+    </div>
+
+    <div class="hint" id="landscapeHint">가로모드로 돌리면 스크롤됩니다</div>
+
+    <section class="preview fullscreen-mode" id="previewSection">
+      <div class="led-display" id="ledDisplay">
+        <div class="marquee-track" id="marqueeTrack" aria-hidden="true">
+          <span class="marquee-seg" id="seg1">여기에 텍스트를 입력하세요</span>
+          <span class="marquee-seg" id="seg2">여기에 텍스트를 입력하세요</span>
+        </div>
+        <div class="static-text" id="staticText">여기에 텍스트를 입력하세요</div>
+      </div>
+    </section>
+
+    <button class="fs-edit-btn" id="fsEditBtn" type="button">편집</button>
+
+    <div class="backdrop" id="backdrop"></div>
+    <aside class="editor-sheet" id="editorSheet" aria-hidden="true" role="dialog">
+      <div class="sheet-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+        <div style="font-weight:800;font-size:16px;">전광판 설정</div>
+        <div><button class="icon-btn" id="closeEditorBtn" type="button">닫기</button></div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="basic" type="button">기본</button>
+        <button class="tab-btn" data-tab="advanced" type="button">고급</button>
+        <button class="tab-btn" data-tab="presets" type="button">프리셋</button>
+      </div>
+
+      <section class="tab-panel active" id="tab-basic">
+        <div class="section">
+          <label class="label" for="textInput">텍스트 입력</label>
+          <textarea class="text-input" id="textInput">“SKKU94 버선🧦 곽시내 조성민 나는된다” </textarea>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">글자 크기</label>
+            <input type="range" class="slider" id="fontSizeSlider" min="20" max="240" value="80">
+          </div>
+          <div class="section">
+            <label class="label">자간</label>
+            <input type="range" class="slider" id="letterSpacingSlider" min="0" max="40" value="0">
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section" style="display:flex;align-items:center;gap:12px;">
+            <label class="label" style="margin:0;">글자색</label>
+            <input type="color" class="color-input" id="textColorInput" value="#00FF00">
+          </div>
+          <div class="section" style="display:flex;align-items:center;gap:12px;">
+            <label class="label" style="margin:0;">배경색</label>
+            <input type="color" class="color-input" id="bgColorInput" value="#000000">
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">폰트 패밀리</label>
+            <select class="select" id="fontFamilySelect">
+              <option value="monospace">고정폭(모노스페이스)</option>
+              <option value="system">시스템 산세리프</option>
+              <option value="rounded">라운드 산세리프</option>
+              <option value="seven">세븐세그 느낌</option>
+            </select>
+            <label class="note"><input type="checkbox" id="neonToggle"> 네온 광택 효과</label>
+          </div>
+          <div class="section">
+            <label class="label">애니메이션</label>
+            <select class="select" id="animationSelect">
+              <option value="scroll">좌로 스크롤(연속)</option>
+              <option value="blink">깜빡임</option>
+              <option value="pulse">펄스</option>
+              <option value="none">없음</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-advanced">
+        <div class="grid-2">
+          <div class="section">
+            <label class="label">스크롤 속도 (px/s)</label>
+            <input type="range" class="slider" id="speedSlider" min="40" max="300" step="1" value="120">
+            <div class="note"><span id="speedOut">120</span> px/s</div>
+          </div>
+          <div class="section">
+            <label class="label">시작 오프셋 (vw)</label>
+            <input type="range" class="slider" id="startOffsetSlider" min="0" max="100" step="1" value="10">
+            <div class="note"><span id="startOut">10</span> vw — 시작 지점</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">세로모드</label>
+            <label class="note"><input type="checkbox" id="forcePortrait"> 세로모드에서도 스크롤</label>
+          </div>
+          <div class="section">
+            <label class="label">안내 표시</label>
+            <div class="note">세로모드 + 텍스트가 화면보다 길고 + 강제 스크롤 OFF → 상단 힌트 표시</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-presets">
+        <div class="section">
+          <label class="label">프리셋 이름</label>
+          <div style="display:flex; gap:8px;">
+            <input id="presetName" class="text-input" style="min-height:44px;" placeholder="예: 네온_대형_빠른" />
+            <button class="small-btn" id="savePresetBtn" type="button">저장</button>
+          </div>
+        </div>
+        <div class="section" style="margin-top:12px;">
+          <label class="label">저장된 프리셋</label>
+          <div id="presetList" class="grid-1" style="max-height:40vh; overflow:auto;"></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <script>
+    document.querySelectorAll('button').forEach(b => { if (!b.getAttribute('type')) b.setAttribute('type','button'); });
+
+    const previewSection = document.getElementById('previewSection');
+    const ledDisplay = document.getElementById('ledDisplay');
+    const marqueeTrack = document.getElementById('marqueeTrack');
+    const seg1 = document.getElementById('seg1');
+    const seg2 = document.getElementById('seg2');
+    const staticText = document.getElementById('staticText');
+
+    const landscapeHint = document.getElementById('landscapeHint');
+    const fsEditBtn = document.getElementById('fsEditBtn');
+
+    const openEditorBtn = document.getElementById('openEditorBtn');
+    const closeEditorBtn = document.getElementById('closeEditorBtn');
+    const editorSheet = document.getElementById('editorSheet');
+    const backdrop = document.getElementById('backdrop');
+
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const shareBtn = document.getElementById('shareBtn');
+
+    const textInput = document.getElementById('textInput');
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const letterSpacingSlider = document.getElementById('letterSpacingSlider');
+    const textColorInput = document.getElementById('textColorInput');
+    const bgColorInput = document.getElementById('bgColorInput');
+    const animationSelect = document.getElementById('animationSelect');
+
+    const fontFamilySelect = document.getElementById('fontFamilySelect');
+    const neonToggle = document.getElementById('neonToggle');
+
+    const speedSlider = document.getElementById('speedSlider');
+    const startOffsetSlider = document.getElementById('startOffsetSlider');
+    const speedOut = document.getElementById('speedOut');
+    const startOut = document.getElementById('startOut');
+    const forcePortrait = document.getElementById('forcePortrait');
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = { basic: document.getElementById('tab-basic'), advanced: document.getElementById('tab-advanced'), presets: document.getElementById('tab-presets') };
+    tabButtons.forEach(btn => { btn.addEventListener('click', () => { tabButtons.forEach(b => b.classList.remove('active')); btn.classList.add('active'); Object.values(tabPanels).forEach(p => p.classList.remove('active')); tabPanels[btn.dataset.tab].classList.add('active'); }); });
+
+    const isFullscreen = () => !!document.fullscreenElement;
+    const isLandscape = () => { if (window.matchMedia) return window.matchMedia('(orientation: landscape)').matches; return (window.innerWidth||0)>(window.innerHeight||0); };
+
+    function openEditor(){ editorSheet.classList.add('open'); backdrop.classList.add('open'); editorSheet.setAttribute('aria-hidden','false'); }
+    function closeEditor(){ editorSheet.classList.remove('open'); backdrop.classList.remove('open'); editorSheet.setAttribute('aria-hidden','true'); }
+
+    openEditorBtn.addEventListener('click', openEditor);
+    closeEditorBtn.addEventListener('click', closeEditor);
+    backdrop.addEventListener('click', closeEditor);
+    fsEditBtn.addEventListener('click', async()=>{ if (isFullscreen()) { await document.exitFullscreen(); } openEditor(); });
+
+    function applyFontFamily(value){
+      switch(value){
+        case 'monospace': ledDisplay.style.fontFamily = "'Courier New', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"; break;
+        case 'system': ledDisplay.style.fontFamily = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif"; break;
+        case 'rounded': ledDisplay.style.fontFamily = "'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR', 'Segoe UI Rounded', 'SF Pro Rounded', sans-serif"; break;
+        case 'seven': ledDisplay.style.fontFamily = "'Seven Segment', 'DS-Digital', ui-monospace, Menlo, Consolas, monospace"; break;
+      }
+    }
+
+    function updateDisplay(){
+      const text = textInput.value || '여기에 텍스트를 입력하세요';
+      seg1.textContent = text; seg2.textContent = text; staticText.textContent = text;
+
+      const fs = fontSizeSlider.value + 'px';
+      ledDisplay.style.fontSize = fs;
+      ledDisplay.style.letterSpacing = letterSpacingSlider.value + 'px';
+      ledDisplay.style.color = textColorInput.value;
+      ledDisplay.style.textShadow = `0 0 10px ${textColorInput.value}`;
+      previewSection.style.backgroundColor = bgColorInput.value;
+
+      const neon = !!neonToggle.checked;
+      marqueeTrack.classList.toggle('neon', neon);
+      staticText.classList.toggle('neon', neon);
+      applyFontFamily(fontFamilySelect.value);
+
+      applyMode();
+      updateHint();
+    }
+
+    function updateHint(){
+      const vw = window.innerWidth; const needScroll = seg1.scrollWidth > vw;
+      if (!isFullscreen() && needScroll && !isLandscape() && !forcePortrait.checked) landscapeHint.classList.add('show');
+      else landscapeHint.classList.remove('show');
+    }
+
+    // 애니메이션 모드 전환
+    function applyMode(){
+      const mode = animationSelect.value; // 'scroll'|'blink'|'pulse'|'none'
+      marqueeTrack.classList.remove('run');
+      seg1.className = 'marquee-seg'; seg2.className = 'marquee-seg';
+      staticText.className = 'static-text';
+
+      if (mode === 'scroll'){
+        marqueeTrack.style.display = 'flex';
+        staticText.classList.remove('show');
+        applyScroll();
+      } else {
+        marqueeTrack.style.display = 'none';
+        staticText.classList.add('show');
+        if (mode === 'blink' || mode === 'pulse') staticText.classList.add(mode);
+      }
+    }
+
+    // 연속 스크롤(미리보기/전체화면 공통)
+    function applyScroll(){
+      const vw = window.innerWidth; const textW = seg1.scrollWidth;
+      const startOffsetVW = parseInt(startOffsetSlider.value,10) || 0;
+      const startPx = (startOffsetVW/100) * vw;
+
+      if (textW <= vw && !forcePortrait.checked) { marqueeTrack.style.paddingLeft = '0px'; return; }
+
+      // 사이클 거리: 한 세그먼트 길이
+      marqueeTrack.style.setProperty('--cycle-distance', textW + 'px');
+
+      // 속도/지속시간 설정 (단위 포함해 CSS 변수로 전달)
+      const speed = Math.max(40, Math.min(300, parseInt(speedSlider.value,10) || 120));
+      const duration = Math.max(2, Math.min(120, textW / speed));
+      marqueeTrack.style.setProperty('--duration-s', duration + 's');
+
+      // 시작 오프셋은 padding-left로 적용 (transform 애니와 충돌 방지)
+      marqueeTrack.style.paddingLeft = startPx + 'px';
+
+      // 애니메이션 재시작
+      marqueeTrack.classList.remove('run');
+      void marqueeTrack.offsetWidth; // reflow로 강제 리셋
+      marqueeTrack.classList.add('run');
+    }
+
+    async function toggleFullscreen(){
+      try{
+        if (!isFullscreen()){ await previewSection.requestFullscreen(); previewSection.classList.add('fullscreen-mode'); }
+        else { await document.exitFullscreen(); previewSection.classList.remove('fullscreen-mode'); }
+        fsEditBtn.classList.toggle('show', isFullscreen());
+      }catch(e){ console.error('전체화면 실패:', e); }
+    }
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    function collectConfig(){
+      return { text: textInput.value, fontSize: fontSizeSlider.value, letterSpacing: letterSpacingSlider.value, textColor: textColorInput.value, backgroundColor: bgColorInput.value, animation: animationSelect.value, fontFamily: fontFamilySelect.value, neon: !!neonToggle.checked, speed: speedSlider.value, startOffset: startOffsetSlider.value, forcePortrait: !!forcePortrait.checked };
+    }
+    function shareDisplay(){
+      const encoded = btoa(JSON.stringify(collectConfig()));
+      const shareUrl = `${window.location.origin}${window.location.pathname}?config=${encoded}`;
+      if (navigator.share) navigator.share({ title:'전광판', text:textInput.value, url:shareUrl });
+      else { navigator.clipboard.writeText(shareUrl); alert('공유 링크가 클립보드에 복사되었습니다!'); }
+    }
+    shareBtn.addEventListener('click', shareDisplay);
+
+    const PRESET_KEY = 'led-board-presets';
+    const loadPresets = () => { try { return JSON.parse(localStorage.getItem(PRESET_KEY)) || []; } catch(e){ return []; } };
+    const savePresets = list => localStorage.setItem(PRESET_KEY, JSON.stringify(list));
+    function renderPresetList(){
+      const list = loadPresets();
+      const wrap = document.getElementById('presetList');
+      wrap.innerHTML = '';
+      if (!list.length){ wrap.innerHTML = '<div class="note">저장된 프리셋이 없습니다.</div>'; return; }
+      list.forEach((item, idx)=>{
+        const row = document.createElement('div'); row.className = 'preset-row';
+        row.innerHTML = `
+          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%;">${item.name}</div>
+          <div class="preset-actions">
+            <button class="small-btn" data-act="apply" data-idx="${idx}" type="button">적용</button>
+            <button class="small-btn danger" data-act="del" data-idx="${idx}" type="button">삭제</button>
+            <button class="small-btn" data-act="share" data-idx="${idx}" type="button">공유</button>
+          </div>`;
+        wrap.appendChild(row);
+      });
+    }
+    document.getElementById('savePresetBtn').addEventListener('click', ()=>{
+      const name = (document.getElementById('presetName').value || '').trim();
+      if (!name){ alert('프리셋 이름을 입력해주세요.'); return; }
+      const list = loadPresets(); list.unshift({ name, cfg: collectConfig(), ts: Date.now() });
+      savePresets(list); renderPresetList(); document.getElementById('presetName').value = '';
+    });
+    document.getElementById('presetList').addEventListener('click', (e)=>{
+      const btn = e.target.closest('button'); if (!btn) return;
+      const list = loadPresets(); const item = list[parseInt(btn.dataset.idx,10)]; if (!item) return;
+      const act = btn.dataset.act;
+      if (act === 'apply') applyConfig(item.cfg);
+      else if (act === 'del') { if (confirm('이 프리셋을 삭제할까요?')){ list.splice(parseInt(btn.dataset.idx,10),1); savePresets(list); renderPresetList(); } }
+      else if (act === 'share'){
+        const encoded = btoa(JSON.stringify(item.cfg));
+        const shareUrl = `${window.location.origin}${window.location.pathname}?config=${encoded}`;
+        if (navigator.share) navigator.share({ title:'전광판 프리셋', text:item.name, url:shareUrl });
+        else { navigator.clipboard.writeText(shareUrl); alert('공유 링크가 복사되었습니다.'); }
+      }
+    });
+
+    function applyConfig(c){
+      textInput.value = c.text ?? textInput.value;
+      fontSizeSlider.value = c.fontSize ?? fontSizeSlider.value;
+      letterSpacingSlider.value = c.letterSpacing ?? letterSpacingSlider.value;
+      textColorInput.value = c.textColor ?? textColorInput.value;
+      bgColorInput.value = c.backgroundColor ?? bgColorInput.value;
+      animationSelect.value = c.animation ?? animationSelect.value;
+      fontFamilySelect.value = c.fontFamily ?? fontFamilySelect.value;
+      neonToggle.checked = !!c.neon;
+      speedSlider.value = c.speed ?? speedSlider.value;
+      startOffsetSlider.value = c.startOffset ?? startOffsetSlider.value;
+      forcePortrait.checked = !!c.forcePortrait;
+      if (speedOut) speedOut.textContent = speedSlider.value;
+      if (startOut) startOut.textContent = startOffsetSlider.value;
+      updateDisplay();
+    }
+
+    ;[textInput,fontSizeSlider,letterSpacingSlider,textColorInput,bgColorInput,animationSelect,fontFamilySelect,neonToggle].forEach(el=>{ el.addEventListener('input', updateDisplay); el.addEventListener('change', updateDisplay); });
+    speedSlider.addEventListener('input', e=>{ if (speedOut) speedOut.textContent = e.target.value; if (animationSelect.value==='scroll') applyScroll(); });
+    startOffsetSlider.addEventListener('input', e=>{ if (startOut) startOut.textContent = e.target.value; if (animationSelect.value==='scroll') applyScroll(); });
+    forcePortrait.addEventListener('change', ()=>{ updateHint(); if (animationSelect.value==='scroll') applyScroll(); });
+
+    document.addEventListener('fullscreenchange', ()=>{ if (isFullscreen()) { previewSection.classList.add('fullscreen-mode'); fsEditBtn.classList.add('show'); } else { previewSection.classList.remove('fullscreen-mode'); fsEditBtn.classList.remove('show'); } if (animationSelect.value==='scroll') applyScroll(); updateHint(); });
+    window.addEventListener('orientationchange', ()=>{ if (animationSelect.value==='scroll') applyScroll(); updateHint(); });
+    window.addEventListener('resize', ()=>{ if (animationSelect.value==='scroll') applyScroll(); updateHint(); });
+
+    (function init(){
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const cfg = urlParams.get('config');
+        if (cfg) applyConfig(JSON.parse(atob(cfg))); else updateDisplay();
+        renderPresetList();
+      } catch (e) {
+        console.error('초기화 오류:', e);
+        try { updateDisplay(); } catch(_) {}
+      }
+    })();
+  </script>
+</body>
+</html>
