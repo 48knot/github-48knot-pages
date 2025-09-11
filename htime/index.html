@@ -1,440 +1,242 @@
 <!DOCTYPE html>
 <html lang="ko" data-theme="classic">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>한글시계</title>
   <style>
-    :root {
-      --panel-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --text-color: #ffffff;
-      --char-bg: rgba(255, 255, 255, 0.10);
-      --char-border: rgba(255, 255, 255, 0.20);
-      --hour-bg: #ff6b6b;
-      --minute-bg: #4ecdc4;
+    :root{
+      --panel-bg: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      --text-color:#ffffff;
+
+      --char-bg: rgba(255,255,255,0.10);
+      --char-border: rgba(255,255,255,0.20);
+
+      --hour-bg:#ff6b6b;
+      --minute-bg:#4ecdc4;
+      --hour-fg:#ffffff;   /* 활성 시간 글자색 */
+      --minute-fg:#ffffff; /* 활성 분 글자색 */
+
       --unit-bg: transparent;
-      --unit-color: #e1e5ff;
-      --unit-border: rgba(225, 229, 255, 0.3);
-      --unit-shadow: 0 1px 0 rgba(0, 0, 0, .4);
-      --active-shadow: 0 4px 15px rgba(0, 0, 0, 0.22);
-      --focus-outline: rgba(255, 255, 255, 0.35);
-      --date-color: rgba(255, 255, 255, 0.9);
-      --select-bg: rgba(255, 255, 255, 0.15);
-      --select-hover-bg: rgba(255, 255, 255, 0.2);
+      --unit-color:#e1e5ff;
+      --unit-border: rgba(225,229,255,0.30);
+      --unit-shadow: 0 1px 0 rgba(0,0,0,.40);
+
+      --active-shadow: 0 4px 15px rgba(0,0,0,.22);
+      --focus-outline: rgba(255,255,255,.35);
+      --date-color: rgba(255,255,255,.90);
+      --select-bg: rgba(255,255,255,.15);
+      --select-hover-bg: rgba(255,255,255,.20);
     }
 
-    /* ===== 테마 정의 ===== */
-    [data-theme="classic"] {
-      --panel-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --text-color: #ffffff;
-      --char-bg: rgba(255, 255, 255, 0.10);
-      --char-border: rgba(255, 255, 255, 0.20);
-      --hour-bg: #ff6b6b;
-      --minute-bg: #4ecdc4;
-      --unit-bg: transparent;
-      --unit-color: #e1e5ff;
-      --unit-border: rgba(225, 229, 255, 0.3);
-      --unit-shadow: 0 1px 0 rgba(0, 0, 0, .4);
-      --date-color: rgba(255, 255, 255, 0.9);
-      --select-bg: rgba(255, 255, 255, 0.15);
-      --select-hover-bg: rgba(255, 255, 255, 0.2);
+    /* ===== 기존 테마 ===== */
+    [data-theme="classic"]{
+      --panel-bg: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      --text-color:#ffffff;
+      --char-bg: rgba(255,255,255,.10);
+      --char-border: rgba(255,255,255,.20);
+      --hour-bg:#ff6b6b; --minute-bg:#4ecdc4;
+      --unit-bg: transparent; --unit-color:#e1e5ff;
+      --unit-border: rgba(225,229,255,.30);
+      --unit-shadow: 0 1px 0 rgba(0,0,0,.40);
+      --date-color: rgba(255,255,255,.9);
+      --select-bg: rgba(255,255,255,.15);
+      --select-hover-bg: rgba(255,255,255,.20);
     }
-    
-    [data-theme="indigo"] {
-      --panel-bg: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
-      --text-color: #e8eaf6;
-      --char-bg: rgba(255, 255, 255, 0.08);
-      --char-border: rgba(255, 255, 255, 0.18);
-      --hour-bg: #7c4dff;
-      --minute-bg: #00bcd4;
-      --unit-bg: transparent;
-      --unit-color: #c5cae9;
-      --unit-border: rgba(197, 202, 233, 0.3);
-      --unit-shadow: 0 1px 0 rgba(0, 0, 0, .5);
-      --date-color: rgba(232, 234, 246, 0.9);
-      --select-bg: rgba(255, 255, 255, 0.12);
-      --select-hover-bg: rgba(255, 255, 255, 0.18);
+    [data-theme="indigo"]{
+      --panel-bg: linear-gradient(135deg,#3f51b5 0%,#1a237e 100%);
+      --text-color:#e8eaf6;
+      --char-bg: rgba(255,255,255,.08);
+      --char-border: rgba(255,255,255,.18);
+      --hour-bg:#7c4dff; --minute-bg:#00bcd4;
+      --unit-bg: transparent; --unit-color:#c5cae9;
+      --unit-border: rgba(197,202,233,.30);
+      --unit-shadow: 0 1px 0 rgba(0,0,0,.50);
+      --date-color: rgba(232,234,246,.9);
+      --select-bg: rgba(255,255,255,.12);
+      --select-hover-bg: rgba(255,255,255,.18);
     }
-    
-    [data-theme="amber"] {
-      --panel-bg: linear-gradient(135deg, #ffb300 0%, #ff6f00 100%);
-      --text-color: #1b1b1b;
-      --char-bg: rgba(255, 255, 255, 0.25);
-      --char-border: rgba(0, 0, 0, 0.15);
-      --hour-bg: #ff7043;
-      --minute-bg: #009688;
-      --unit-bg: transparent;
-      --unit-color: #4a2c00;
-      --unit-border: rgba(74, 44, 0, 0.25);
-      --unit-shadow: 0 1px 0 rgba(255, 255, 255, .4);
-      --focus-outline: rgba(0, 0, 0, 0.25);
-      --date-color: rgba(27, 27, 27, 0.9);
-      --select-bg: rgba(0, 0, 0, 0.1);
-      --select-hover-bg: rgba(0, 0, 0, 0.15);
+    [data-theme="amber"]{
+      --panel-bg: linear-gradient(135deg,#ffb300 0%,#ff6f00 100%);
+      --text-color:#1b1b1b;
+      --char-bg: rgba(255,255,255,.25);
+      --char-border: rgba(0,0,0,.15);
+      --hour-bg:#ff7043; --minute-bg:#009688;
+      --hour-fg:#ffffff; --minute-fg:#ffffff;
+      --unit-bg: transparent; --unit-color:#4a2c00;
+      --unit-border: rgba(74,44,0,.25);
+      --unit-shadow: 0 1px 0 rgba(255,255,255,.40);
+      --focus-outline: rgba(0,0,0,.25);
+      --date-color: rgba(27,27,27,.9);
+      --select-bg: rgba(0,0,0,.10);
+      --select-hover-bg: rgba(0,0,0,.15);
     }
-    
-    [data-theme="mono"] {
-      --panel-bg: #101114;
-      --text-color: #f2f2f2;
-      --char-bg: rgba(255, 255, 255, 0.06);
-      --char-border: rgba(255, 255, 255, 0.12);
-      --hour-bg: #ffffff;
-      --minute-bg: #9e9e9e;
-      --unit-bg: rgba(255, 255, 255, 0.08);
-      --unit-color: rgba(255, 255, 255, 0.9);
-      --unit-border: rgba(255, 255, 255, 0.25);
-      --unit-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-      --focus-outline: rgba(255, 255, 255, 0.25);
-      --date-color: rgba(242, 242, 242, 0.85);
-      --select-bg: rgba(255, 255, 255, 0.12);
-      --select-hover-bg: rgba(255, 255, 255, 0.18);
+    [data-theme="mono"]{
+      --panel-bg:#101114;
+      --text-color:#f2f2f2;
+      --char-bg: rgba(255,255,255,.06);
+      --char-border: rgba(255,255,255,.12);
+      --hour-bg:#ffffff; --minute-bg:#9e9e9e;
+      --hour-fg:#000000; --minute-fg:#ffffff;
+      --unit-bg: rgba(255,255,255,.12);
+      --unit-color: rgba(255,255,255,.90);
+      --unit-border: rgba(255,255,255,.25);
+      --unit-shadow: inset 0 1px 2px rgba(255,255,255,.10), 0 0 12px rgba(255,255,255,.08);
+      --focus-outline: rgba(255,255,255,.25);
+      --date-color: rgba(242,242,242,.85);
+      --select-bg: rgba(255,255,255,.12);
+      --select-hover-bg: rgba(255,255,255,.18);
     }
 
-    /* ===== 기본 스타일 ===== */
-    * {
-      box-sizing: border-box;
+    /* ===== 추가 테마: Flat / Neon ===== */
+    [data-theme="flat"]{
+      --panel-bg:#f7f8fb;
+      --text-color:#1b1b1b;
+      --char-bg: rgba(0,0,0,.06);
+      --char-border: rgba(0,0,0,.12);
+      --hour-bg:#2d3748; --minute-bg:#4a5568;
+      --hour-fg:#ffffff; --minute-fg:#ffffff;
+      --unit-bg: transparent; --unit-color:#222;
+      --unit-border: rgba(0,0,0,.20);
+      --unit-shadow: 0 1px 0 rgba(255,255,255,.60);
+      --focus-outline: rgba(0,0,0,.25);
+      --date-color: rgba(27,27,27,.85);
+      --select-bg: rgba(0,0,0,.06);
+      --select-hover-bg: rgba(0,0,0,.10);
+    }
+    [data-theme="neon"]{
+      --panel-bg: radial-gradient(1200px 700px at 20% -10%, #1b1b2f 0%, #161623 40%, #0f0c29 100%);
+      --text-color:#e4e9ff;
+      --char-bg: rgba(255,255,255,.06);
+      --char-border: rgba(255,255,255,.14);
+      --hour-bg:#ff2bd6; --minute-bg:#08f7fe;
+      --hour-fg:#ffffff; --minute-fg:#ffffff;
+      --unit-bg: rgba(255,255,255,.06);
+      --unit-color:#b8c7ff;
+      --unit-border: rgba(184,199,255,.28);
+      --unit-shadow: 0 0 14px rgba(184,199,255,.35);
+      --focus-outline: rgba(184,199,255,.35);
+      --date-color: rgba(228,233,255,.85);
+      --select-bg: rgba(184,199,255,.14);
+      --select-hover-bg: rgba(184,199,255,.22);
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
+    /* ===== 레이아웃 ===== */
+    *{ box-sizing:border-box; }
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic','맑은 고딕',sans-serif;
       background: transparent;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--text-color);
+      margin:0; padding:0; min-height:100vh;
+      display:flex; justify-content:center; align-items:center;
+      color:var(--text-color);
     }
 
-    /* ===== 애니메이션 정의 ===== */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    /* 애니메이션 */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+    @keyframes glow{0%,100%{box-shadow:var(--active-shadow)}50%{box-shadow:0 0 20px currentColor, var(--active-shadow)}}
+    @keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes glow {
-      0%, 100% {
-        box-shadow: var(--active-shadow);
-      }
-      50% {
-        box-shadow: 0 0 20px currentColor, var(--active-shadow);
-      }
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .clock-container {
+    .clock-container{
       background: var(--panel-bg);
-      border-radius: 20px;
-      padding: 28px 32px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-      transform: translateZ(0);
-      will-change: transform;
-      animation: fadeIn 0.6s ease-out;
+      border-radius:20px; padding:28px 32px;
+      border:1px solid rgba(0,0,0,.10);
+      box-shadow:0 8px 32px rgba(0,0,0,.18);
+      animation: fadeIn .6s ease-out;
     }
 
-    .clock-header {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-    }
+    .clock-header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px;}
+    .clock-title{font-size:1.6rem;font-weight:800;margin:0;letter-spacing:-.02em;}
+    .right-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 
-    .clock-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
+    .date-display{font-size:1.1rem;font-weight:600;color:var(--date-color);letter-spacing:.03em;margin-right:4px;opacity:.9;}
+    .date-text{padding:4px 8px;background:rgba(255,255,255,.08);border-radius:8px;display:inline-block;}
+    .digital-time{font-size:1.2rem;opacity:.85;margin:0;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
 
-    .right-controls {
-      display: flex;
-      gap: 12px;
-      align-items: center;
+    .theme-select{
+      appearance:none;border:1px solid rgba(0,0,0,.15);
+      background: var(--select-bg); color:var(--text-color);
+      padding:6px 10px;border-radius:10px;font-weight:600;cursor:pointer;
+      transition: background-color .2s ease, outline-color .2s ease, color .2s ease, border-color .2s ease;
+      position:relative;
     }
+    .theme-select:hover{background:var(--select-hover-bg);}
+    .theme-select:focus{outline:2px solid var(--focus-outline);outline-offset:2px;}
+    .theme-select option{background:#2a2a2a;color:#fff;padding:8px;}
+    [data-theme="mono"] .theme-select option{background:#1a1a1a;color:#f2f2f2;}
+    [data-theme="amber"] .theme-select option{background:#fff3e0;color:#4a2c00;}
+    [data-theme="flat"] .theme-select option{background:#f0f2f6;color:#1b1b1b;}
+    [data-theme="neon"] .theme-select option{background:#141422;color:#e4e9ff;}
 
-    /* ===== 날짜 표시 ===== */
-    .date-display {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--date-color);
-      letter-spacing: 0.03em;
-      margin-right: 4px;
-      opacity: 0.9;
+    .clock-display{display:flex;gap:44px;justify-content:center;align-items:flex-start;}
+    .grid{display:grid;gap:8px;font-size:2.2rem;font-weight:800;}
+    .hour-grid{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(3,1fr);}
+    .minute-grid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);}
+
+    .char{
+      width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+      border-radius:10px;user-select:none;background:var(--char-bg);border:1px solid var(--char-border);
+      transform: translateZ(0); backface-visibility:hidden; position:relative; overflow:hidden;
+      transition:
+        transform .3s cubic-bezier(.4,0,.2,1),
+        box-shadow .3s cubic-bezier(.4,0,.2,1),
+        background-color .3s cubic-bezier(.4,0,.2,1),
+        color .3s cubic-bezier(.4,0,.2,1),
+        border-color .3s cubic-bezier(.4,0,.2,1);
     }
+    .char:not(.active):not(.unit-si):not(.unit-bun):hover{background:rgba(255,255,255,.15);transform:scale(.95);}
 
-    .date-text {
-      padding: 4px 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
-      display: inline-block;
-    }
-
-    .digital-time {
-      font-size: 1.2rem;
-      opacity: .85;
-      margin: 0;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.02em;
-    }
-
-    /* ===== 테마 선택 드롭다운 스타일 개선 ===== */
-    .theme-select {
-      appearance: none;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      background: var(--select-bg);
-      color: var(--text-color);
-      padding: 6px 10px;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      position: relative;
-    }
-
-    .theme-select:hover {
-      background: var(--select-hover-bg);
-    }
-
-    .theme-select:focus {
-      outline: 2px solid var(--focus-outline);
-      outline-offset: 2px;
-    }
-
-    /* 모든 테마의 select 옵션 스타일 */
-    .theme-select option {
-      background: #2a2a2a;
-      color: #ffffff;
-      padding: 8px;
-    }
-
-    [data-theme="mono"] .theme-select option {
-      background: #1a1a1a;
-      color: #f2f2f2;
-    }
-
-    [data-theme="amber"] .theme-select option {
-      background: #fff3e0;
-      color: #4a2c00;
-    }
-
-    /* ===== 시계 표시 영역 ===== */
-    .clock-display {
-      display: flex;
-      gap: 44px;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .grid {
-      display: grid;
-      gap: 8px;
-      font-size: 2.2rem;
-      font-weight: 800;
-    }
-
-    .hour-grid {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-    }
-
-    .minute-grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-    }
-
-    /* ===== 문자 스타일 ===== */
-    .char {
-      width: 58px;
-      height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      user-select: none;
-      background: var(--char-bg);
-      border: 1px solid var(--char-border);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* 비활성 문자 호버 효과 */
-    .char:not(.active):not(.unit-si):not(.unit-bun):hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: scale(0.95);
-    }
-
-    /* 활성화 애니메이션 */
-    .char.active {
-      animation: pulse 0.5s ease-out;
-      transform: scale(1.05);
-      box-shadow: var(--active-shadow);
-    }
-
-    .char.active.hour {
-      background: var(--hour-bg);
-      color: #fff;
-      border-color: transparent;
-      animation: glow 5s ease-in-out infinite;
-    }
-
-    .char.active.minute {
-      background: var(--minute-bg);
-      color: #fff;
-      border-color: transparent;
-      animation: glow 5s ease-in-out infinite;
-      animation-delay: 2.5s;
-    }
-
-    /* 활성화 전환 효과 */
-    .char.transitioning {
-      animation: none;
-    }
-
-    .char.active::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    .char.active{animation:pulse .5s ease-out;transform:scale(1.05);box-shadow:var(--active-shadow);}
+    .char.active.hour{background:var(--hour-bg); color:var(--hour-fg); border-color:transparent; animation:glow 5s ease-in-out infinite;}
+    .char.active.minute{background:var(--minute-bg); color:var(--minute-fg); border-color:transparent; animation:glow 5s ease-in-out infinite; animation-delay:2.5s;}
+    .char.transitioning{animation:none;}
+    .char.active::before{
+      content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+      background: radial-gradient(circle, rgba(255,255,255,.30) 0%, transparent 70%);
       animation: rotate 6s linear infinite;
     }
 
-    /* ===== 유닛 스타일 개선 ===== */
-    .unit-si,
-    .unit-bun {
-      background: var(--unit-bg) !important;
-      color: var(--unit-color) !important;
-      border-color: var(--unit-border) !important;
-      box-shadow: var(--unit-shadow) !important;
-      font-weight: 900;
-      position: relative;
+    /* 유닛(시/분) */
+    .hour-grid  .char.unit-si,
+    .minute-grid .char.unit-bun{
+      background: var(--unit-bg);
+      color: var(--unit-color);
+      border-color: var(--unit-border);
+      box-shadow: var(--unit-shadow);
+      font-weight:900; position:relative;
+    }
+    .hour-grid  .char.unit-si.active.hour,
+    .minute-grid .char.unit-bun.active.minute{
+      animation: glow 5s ease-in-out infinite, pulse .5s ease-out;
+      box-shadow: var(--active-shadow);
+    }
+    .hour-grid  .char.unit-si.active.hour::before,
+    .minute-grid .char.unit-bun.active.minute::before{ display:block; }
+
+    /* 정각에는 분 유닛 애니메이션 끔 */
+    .minute-grid .char.unit-bun.unit-static,
+    .minute-grid .char.unit-bun.unit-static.active.minute{
+      animation:none;
+      box-shadow: var(--unit-shadow);
+    }
+    .minute-grid .char.unit-bun.unit-static::before{ display:none; }
+
+    @media (max-width:520px){
+      .clock-container{padding:20px;border-radius:16px;}
+      .clock-header{flex-wrap:wrap;gap:10px;}
+      .clock-title{font-size:1.4rem;width:100%;}
+      .right-controls{width:100%;justify-content:space-between;}
+      .date-display{font-size:1rem;}
+      .digital-time{font-size:1.1rem;}
+      .theme-select{padding:5px 8px;font-size:.9rem;}
+      .clock-display{gap:24px;}
+      .grid{font-size:1.8rem;gap:6px;}
+      .char{width:46px;height:46px;border-radius:8px;}
     }
 
-.unit-si.active.hour,
-.unit-bun.active.minute {
-  animation: glow 5s ease-in-out infinite, pulse .5s ease-out;
-  box-shadow: var(--active-shadow) !important;
-}
-
-/* 유닛에도 빛 번짐 효과 표시 */
-.unit-si.active.hour::before,
-.unit-bun.active.minute::before {
-  display: block !important;
-}
-
-    /* 모노 테마 특별 처리 */
-    [data-theme="mono"] .char.active.hour {
-      color: #000000 !important;
-    }
-
-    [data-theme="mono"] .char.active.minute {
-      color: #ffffff !important;
-    }
-
-    [data-theme="mono"] .unit-si,
-    [data-theme="mono"] .unit-bun {
-      background: rgba(255, 255, 255, 0.12) !important;
-      box-shadow: 
-        inset 0 1px 2px rgba(255, 255, 255, 0.1),
-        0 0 12px rgba(255, 255, 255, 0.08) !important;
-      font-weight: 900;
-    }
-
-    /* ===== 반응형 디자인 ===== */
-    @media (max-width: 520px) {
-      .clock-container {
-        padding: 20px;
-        border-radius: 16px;
-      }
-      
-      .clock-header {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      
-      .clock-title {
-        font-size: 1.4rem;
-        width: 100%;
-      }
-      
-      .right-controls {
-        width: 100%;
-        justify-content: space-between;
-      }
-      
-      .date-display {
-        font-size: 1rem;
-      }
-      
-      .digital-time {
-        font-size: 1.1rem;
-      }
-      
-      .theme-select {
-        padding: 5px 8px;
-        font-size: 0.9rem;
-      }
-      
-      .clock-display {
-        gap: 24px;
-      }
-      
-      .grid {
-        font-size: 1.8rem;
-        gap: 6px;
-      }
-      
-      .char {
-        width: 46px;
-        height: 46px;
-        border-radius: 8px;
-      }
-    }
-
-    /* ===== 애니메이션 성능 최적화 ===== */
-    @media (prefers-reduced-motion: reduce) {
-      .char,
-      .theme-select,
-      .clock-container,
-      .date-display {
-        animation: none !important;
-        transition: none !important;
-      }
-      
-      .char::before {
-        display: none;
-      }
+    @media (prefers-reduced-motion:reduce){
+      .char, .theme-select, .clock-container, .date-display{animation:none !important; transition:none !important;}
+      .char::before{display:none;}
     }
   </style>
 </head>
@@ -447,17 +249,21 @@
           <span class="date-text"></span>
         </div>
         <time class="digital-time" id="digitalTime" aria-live="polite"></time>
+
+        <!-- 테마 선택 -->
         <select id="themeSelect" class="theme-select" aria-label="컬러 테마 선택">
           <option value="classic">Classic</option>
           <option value="indigo">Indigo</option>
           <option value="amber">Amber</option>
           <option value="mono">Mono</option>
+          <option value="flat">Flat</option>
+          <option value="neon">Neon</option>
         </select>
       </div>
     </div>
 
     <div class="clock-display">
-      <!-- 시간 그리드 -->
+      <!-- 시간 -->
       <section class="time-section" aria-label="시간">
         <div class="grid hour-grid" id="hourGrid">
           <div class="char" data-hour="3">세</div>
@@ -478,7 +284,7 @@
         </div>
       </section>
 
-      <!-- 분 그리드 -->
+      <!-- 분 -->
       <section class="time-section" aria-label="분">
         <div class="grid minute-grid" id="minuteGrid">
           <div class="char" data-minute="20,25">이</div>
@@ -498,192 +304,166 @@
   <script>
     'use strict';
 
-    class HangeulClock {
-      constructor() {
+    class HangeulClock{
+      constructor(){
+        this.THEME_KEY = 'hangeulClockTheme';
+
         this.hourGrid = document.getElementById('hourGrid');
         this.minuteGrid = document.getElementById('minuteGrid');
         this.digitalTimeEl = document.getElementById('digitalTime');
         this.dateDisplay = document.getElementById('dateDisplay');
         this.themeSelect = document.getElementById('themeSelect');
-        
+
         this.hourChars = this.createCharMap(this.hourGrid);
         this.minuteChars = this.createCharMap(this.minuteGrid);
-        
+
+        this.siEl  = this.hourGrid.querySelector('.unit-si');
+        this.bunEl = this.minuteGrid.querySelector('.unit-bun');
+
+        this.allChars = document.querySelectorAll('.char');
+
         this.lastHour = -1;
         this.lastMinute = -1;
-        
+        this.timerId = null;
+
         this.init();
       }
 
-      createCharMap(grid) {
-        const chars = new Map();
-        grid.querySelectorAll('.char:not(.unit-si):not(.unit-bun)').forEach(el => {
-          const data = el.dataset.hour || el.dataset.minute;
-          if (data) {
-            data.split(',').forEach(num => {
-              if (!chars.has(num)) chars.set(num, []);
-              chars.get(num).push(el);
-            });
-          }
+      createCharMap(grid){
+        const map = new Map();
+        grid.querySelectorAll('.char:not(.unit-si):not(.unit-bun)').forEach(el=>{
+          const data = (el.dataset.hour || el.dataset.minute || '')
+            .split(',')
+            .map(s=>s.trim())
+            .filter(Boolean);
+          data.forEach(num=>{
+            if(!map.has(num)) map.set(num, []);
+            map.get(num).push(el);
+          });
         });
-        return chars;
+        return map;
       }
 
-      getKoreanWeekday(day) {
-        const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
-        return weekdays[day];
-      }
+      getKoreanWeekday(d){ return ['일','월','화','수','목','금','토'][d]; }
 
-      updateDate() {
+      updateDate(){
         const now = new Date();
-        const month = now.getMonth() + 1;
-        const date = now.getDate();
-        const weekday = this.getKoreanWeekday(now.getDay());
-        
-        const dateText = this.dateDisplay.querySelector('.date-text');
-        dateText.textContent = `${month}/${date} ${weekday}`;
+        const txt = `${now.getMonth()+1}/${now.getDate()} ${this.getKoreanWeekday(now.getDay())}`;
+        const el = this.dateDisplay.querySelector('.date-text');
+        if(el) el.textContent = txt;
       }
 
-      updateTime() {
+      activateUnitCells(){
+        if(this.siEl)  this.siEl.classList.add('active','hour');
+        if(this.bunEl) this.bunEl.classList.add('active','minute');
+      }
+
+      updateTime(){
         const now = new Date();
         const hours = now.getHours();
         const minutes = now.getMinutes();
         const seconds = now.getSeconds();
-        
-        // 12시간제 변환
-        let displayHour = hours % 12 || 12;
-        const roundedMinute = Math.floor(minutes / 5) * 5;
-        
-        // 시간이 변경되었을 때만 업데이트 (애니메이션 최적화)
-        if (this.lastHour !== displayHour) {
-          this.updateChars(this.hourChars, displayHour === 12 ? '0' : String(displayHour), 'hour');
+
+        // 12시간 키
+        const displayHour = hours % 12 || 12;
+        const hourKey = (displayHour === 12) ? '0' : String(displayHour);
+        const roundedMinute = Math.floor(minutes/5)*5;
+
+        if(this.lastHour !== displayHour){
+          this.updateChars(this.hourChars, hourKey, 'hour');
           this.lastHour = displayHour;
         }
-        
-        if (this.lastMinute !== roundedMinute) {
+        if(this.lastMinute !== roundedMinute){
           this.updateChars(this.minuteChars, String(roundedMinute), 'minute');
           this.lastMinute = roundedMinute;
         }
-        
-        // 디지털 시간 업데이트
-        this.digitalTimeEl.textContent = 
-          `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        
-        // 자정이 되면 날짜 업데이트
-        if (hours === 0 && minutes === 0 && seconds === 0) {
-          this.updateDate();
+
+        // 정각이면 분 유닛 애니메이션 OFF, 그 외 ON
+        if(this.bunEl){
+          const isTopOfHour = roundedMinute === 0;
+          this.bunEl.classList.toggle('unit-static', isTopOfHour);
         }
+
+        // 디지털 시각(항상 초 표시)
+        const hh = String(hours).padStart(2,'0');
+        const mm = String(minutes).padStart(2,'0');
+        const ss = String(seconds).padStart(2,'0');
+        this.digitalTimeEl.textContent = `${hh}:${mm}:${ss}`;
+        this.digitalTimeEl.setAttribute('datetime', now.toISOString());
+
+        // 자정에 날짜 갱신
+        if(hours===0 && minutes===0 && seconds===0) this.updateDate();
       }
 
-      updateChars(charMap, activeKey, className) {
-        // 모든 요소에서 transitioning 클래스 제거
-        charMap.forEach(chars => {
-          chars.forEach(char => {
-            char.classList.remove('transitioning');
-          });
-        });
-        
-        // 비활성화할 요소에 transitioning 클래스 추가
-        charMap.forEach((chars, key) => {
-          if (key !== activeKey) {
-            chars.forEach(char => {
-              if (char.classList.contains('active')) {
-                char.classList.add('transitioning');
-              }
-              char.classList.remove('active', className);
+      updateChars(map, activeKey, className){
+        // 비활성화
+        map.forEach((nodes, key)=>{
+          if(key !== activeKey){
+            nodes.forEach(n=>{
+              if(n.classList.contains('active')) n.classList.add('transitioning');
+              n.classList.remove('active', className);
             });
           }
         });
-        
-        // 활성 요소 활성화
-        const activeChars = charMap.get(activeKey);
-        if (activeChars) {
-          activeChars.forEach(char => {
-            if (!char.classList.contains('active')) {
-              char.classList.remove('transitioning');
-              char.classList.add('active', className);
+        // 활성화
+        const active = map.get(activeKey);
+        if(active){
+          active.forEach(n=>{
+            if(!n.classList.contains('active')){
+              n.classList.remove('transitioning');
+              n.classList.add('active', className);
             }
           });
         }
       }
 
-      applyTheme(theme) {
+      applyTheme(theme){
         document.documentElement.setAttribute('data-theme', theme);
-        try {
-          localStorage.setItem('hangeulClockTheme', theme);
-        } catch (e) {
-          console.warn('localStorage not available');
-        }
+        try{ localStorage.setItem(this.THEME_KEY, theme); }catch(_){}
+      }
+      loadSavedTheme(){
+        try{ return localStorage.getItem(this.THEME_KEY) || 'classic'; }catch(_){ return 'classic'; }
       }
 
-      loadSavedTheme() {
-        try {
-          const saved = localStorage.getItem('hangeulClockTheme');
-          return saved || 'classic';
-        } catch (e) {
-          return 'classic';
-        }
+      startTicker(){
+        const tick = ()=>{
+          this.updateTime();
+          const delay = 1000 - (Date.now() % 1000); // 다음 초 경계까지 정렬
+          this.timerId = setTimeout(tick, delay);
+        };
+        tick();
       }
+      stopTicker(){ if(this.timerId) clearTimeout(this.timerId); this.timerId = null; }
 
-      init() {
-        // 저장된 테마 적용
+      init(){
+        // 테마
         const theme = this.loadSavedTheme();
         this.themeSelect.value = theme;
         this.applyTheme(theme);
-        
-        // 테마 변경 이벤트
-        this.themeSelect.addEventListener('change', (e) => {
-          this.applyTheme(e.target.value);
-        });
-        
-        // 초기 날짜 표시
+        this.themeSelect.addEventListener('change', e=>this.applyTheme(e.target.value));
+
+        // 초기 렌더
         this.updateDate();
-        
-        // 시간 업데이트 시작
-        this.updateTime();
-        this.interval = setInterval(() => this.updateTime(), 1000);
-        
-        // 매일 자정에 날짜 업데이트를 위한 체크
-        this.dateInterval = setInterval(() => {
-          const now = new Date();
-          if (now.getHours() === 0 && now.getMinutes() === 0) {
-            this.updateDate();
+        this.activateUnitCells();
+        this.startTicker();
+
+        // 페이지 가시성: 타이머/애니메이션 제어
+        document.addEventListener('visibilitychange', ()=>{
+          if(document.hidden){
+            this.stopTicker();
+            this.allChars.forEach(el=>{ el.style.animationPlayState = 'paused'; });
+          }else{
+            this.allChars.forEach(el=>{ el.style.animationPlayState = 'running'; });
+            this.startTicker();
           }
-        }, 60000); // 1분마다 체크
+        });
       }
 
-      destroy() {
-        if (this.interval) {
-          clearInterval(this.interval);
-        }
-        if (this.dateInterval) {
-          clearInterval(this.dateInterval);
-        }
-      }
+      destroy(){ this.stopTicker(); }
     }
 
-    // 시계 초기화
     const clock = new HangeulClock();
-
-    // 페이지 언로드 시 정리
-    window.addEventListener('beforeunload', () => {
-      clock.destroy();
-    });
-
-    // 페이지 가시성 변경 시 애니메이션 제어
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        // 페이지가 숨겨지면 애니메이션 일시정지
-        document.querySelectorAll('.char').forEach(el => {
-          el.style.animationPlayState = 'paused';
-        });
-      } else {
-        // 페이지가 다시 보이면 애니메이션 재개
-        document.querySelectorAll('.char').forEach(el => {
-          el.style.animationPlayState = 'running';
-        });
-      }
-    });
+    window.addEventListener('beforeunload', ()=>clock.destroy());
   </script>
 </body>
 </html>
