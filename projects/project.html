@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>48knot 프로젝트</title>
+  <meta name="description" content="48knot에서 진행 중인 사이드 프로젝트 소개 페이지" />
+  <meta property="og:title" content="48knot 프로젝트" />
+  <meta property="og:description" content="한글시계 · 띄아바(모바일 전광판) · 내일 만날까(제작중)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --surface: #101720;
+      --text: #e6edf3;
+      --muted: #99a3af;
+      --primary: #4f46e5;
+      --primary-2: #7c3aed;
+      --accent: #10b981;
+      --border: rgba(255,255,255,0.08);
+      --card-hover: rgba(79,70,229,0.1);
+    }
+    [data-theme="light"] {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #0b1220;
+      --muted: #5b6470;
+      --primary: #4338ca;
+      --primary-2: #6d28d9;
+      --accent: #059669;
+      --border: rgba(0,0,0,0.08);
+      --card-hover: rgba(67,56,202,0.08);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(79,70,229,0.25), transparent 60%),
+                  radial-gradient(900px 500px at -10% 20%, rgba(16,185,129,0.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 10px 30px rgba(79,70,229,0.35), inset 0 0 24px rgba(255,255,255,0.08);
+    }
+    h1 { font-size: clamp(22px, 3vw, 32px); margin: 0; letter-spacing: 0.2px; }
+    .subtitle { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+    /* Theme toggle */
+    .toggle {
+      --size: 38px; width: var(--size); height: var(--size);
+      display:grid; place-items:center; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--surface); cursor:pointer; transition: transform .15s ease, background .2s ease;
+    }
+    .toggle:active { transform: scale(0.96); }
+    .toggle svg { width: 20px; height: 20px; }
+
+    /* Grid */
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 28px; }
+    @media (max-width: 960px) { .grid { grid-template-columns: repeat(6, 1fr); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Card */
+    .card {
+      grid-column: span 4; position:relative; display:flex; flex-direction:column; gap:10px;
+      padding: 18px; border: 1px solid var(--border); border-radius: 16px; text-decoration:none;
+      color: inherit; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)), var(--surface);
+      transition: border-color .2s ease, transform .12s ease, box-shadow .2s ease, background .2s ease;
+      outline: none;
+    }
+    .card:hover { border-color: rgba(79,70,229,0.35); box-shadow: 0 12px 28px rgba(0,0,0,0.25), inset 0 0 0 9999px var(--card-hover); transform: translateY(-2px); }
+    .card:focus-visible { box-shadow: 0 0 0 3px rgba(79,70,229,0.45); }
+    .card.disabled { pointer-events:none; opacity: 0.7; }
+
+    .eyebrow { display:flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.3px; color: var(--muted); }
+    .status { padding: 2px 8px; border-radius: 999px; background: rgba(16,185,129,0.18); border: 1px solid rgba(16,185,129,0.35); color: #34d399; font-weight: 600; }
+    .status.wip { background: rgba(245,158,11,0.18); border-color: rgba(245,158,11,0.35); color: #fbbf24; }
+
+    .title { font-size: 18px; font-weight: 700; letter-spacing:.2px; }
+    .desc { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 6px 0 10px; }
+
+    .footer { display:flex; align-items:center; justify-content:space-between; margin-top:auto; }
+    .chip { font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; }
+    .open { display:inline-flex; align-items:center; gap:6px; font-size: 13px; color: var(--primary); }
+    .open svg { width: 16px; height: 16px; }
+
+    /* Footer */
+    footer { margin: 36px 0 8px; color: var(--muted); font-size: 12px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand" aria-label="사이트 타이틀">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>48knot 프로젝트</h1>
+          <p class="subtitle">실험적이고 실용적인 프로젝트 모음</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="toggle" aria-label="테마 전환">
+        <!-- sun/moon icon swaps via JS -->
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l1.41-1.41M16.24 7.05l1.41-1.41"/>
+        </svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="grid" role="list">
+      <!-- 1. 한글시계 -->
+      <a class="card" role="listitem" href="https://github.48knot.com/htime/" target="_blank" rel="noopener noreferrer" aria-label="한글시계 새 창 열기">
+        <div class="eyebrow">
+          <span class="chip">웹앱</span>
+          <span class="status">Live</span>
+        </div>
+        <div class="title">한글시계</div>
+        <p class="desc">한글시계는 시간을 ‘한·글’ 글자와 은은한 애니메이션으로 보여주는 워드클락 서비스입니다..</p>
+        <div class="footer">
+          <span class="chip">https://github.48knot.com/htime/</span>
+          <span class="open" aria-hidden="true">바로가기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 2. 띄아바(모바일 전광판) -->
+      <a class="card" role="listitem" href="https://github.48knot.com/ledboard/" target="_blank" rel="noopener noreferrer" aria-label="띄아바 모바일 전광판 새 창 열기">
+        <div class="eyebrow">
+          <span class="chip">모바일 전광판</span>
+          <span class="status">Live</span>
+        </div>
+        <div class="title">띄아바</div>
+        <p class="desc">입력한 문구를 눈에 띄는 전광판 스타일로 보여주는 모바일 웹 서비스</p>
+        <div class="footer">
+          <span class="chip">https://github.48knot.com/ledboard/</span>
+          <span class="open" aria-hidden="true">바로가기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 3. 내일 만날까 (제작중) -->
+      <div class="card disabled" role="listitem" aria-label="내일 만날까 제작 중">
+        <div class="eyebrow">
+          <span class="chip">프로토타입</span>
+          <span class="status wip">제작중</span>
+        </div>
+        <div class="title">내일 만날까</div>
+        <p class="desc">가볍게 약속을 잡고 조율하는 소셜 스케줄러. 곧 공개됩니다.</p>
+        <div class="footer">
+          <span class="chip">링크 준비 중</span>
+          <span class="open" aria-hidden="true">Soon
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="year"></span> 48knot · All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Persisted theme toggle
+    (function() {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const sun = document.getElementById('iconSun');
+      const moon = document.getElementById('iconMoon');
+      const saved = localStorage.getItem('theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved) root.setAttribute('data-theme', saved);
+      else root.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+      const syncIcon = () => {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        sun.style.display = isLight ? 'none' : 'block';
+        moon.style.display = isLight ? 'block' : 'none';
+      };
+      syncIcon();
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        syncIcon();
+      });
+    })();
+
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
