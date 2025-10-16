@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>모래시계 — 모바일(클린) + 대각선 착지 / 모래 더미(콘) 채움</title>
+  <style>
+    :root{
+      --cell: 22px;           /* 칸 크기 (모바일 기본) */
+      --gap: 5px;             /* 칸 간격 */
+      --pad: 14px;            /* 다이아 패딩 */
+      --space: 48px;          /* 상·하 마름모 간격 */
+      --primary:#f59e0b;      /* 모래 색 */
+      --muted:#e5e7eb;        /* 비활성 칸 */
+      --border:#cbd5e1;       /* 라인 */
+      --bar-bg:#ffffffee;     /* 컨트롤 바 */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Noto Sans KR',sans-serif;background:#f8fafc;color:#0f172a}
+
+    .wrap{max-width:680px;margin:0 auto;padding:16px 16px 96px}
+    header h1{font-size:18px;margin:8px 0 4px;font-weight:800}
+    header .sub{color:#475569;font-size:13px;margin-bottom:10px}
+
+    /* 하단 고정 컨트롤 바 (모바일 우선) */
+    .controls{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bar-bg);backdrop-filter:blur(6px);border-top:1px solid var(--border)}
+    .controls .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+    .controls .grow{flex:1}
+    .controls .status{margin-left:auto;color:#475569;font-size:12px;white-space:nowrap}
+
+    .btn{appearance:none;cursor:pointer;border-radius:10px;border:1px solid var(--border);background:#fff;padding:10px 12px;font-size:14px;line-height:1;font-weight:600;min-height:44px}
+    .btn.primary{background:#059669;color:#fff;border-color:#059669}
+    .btn.warn{background:#d97706;color:#fff;border-color:#d97706}
+    .btn.segment{min-width:56px}
+    .chk{display:flex;align-items:center;gap:6px;font-size:12px;color:#334155}
+
+    .hourglass{display:flex;flex-direction:column;align-items:center;gap:var(--space);padding-top:10px}
+
+    /* 다이아(그리드) */
+    .diamond{position:relative;z-index:1;display:grid;grid-template-columns:repeat(8,var(--cell));grid-template-rows:repeat(8,var(--cell));gap:var(--gap);padding:var(--pad);border:1px solid var(--border);border-radius:14px;background:#fff;transform:rotate(45deg)}
+
+    .cell{width:var(--cell);height:var(--cell);border-radius:4px;background:var(--muted);transition:background .18s}
+    .cell.active{background:var(--primary)}
+    .cell.center{background:#fff;border:1px dashed var(--border)}
+
+    /* 중앙 숫자(수평) */
+    .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transform:rotate(-45deg)}
+    .overlay > div{width:calc(var(--cell)*3);height:calc(var(--cell)*3);display:flex;align-items:center;justify-content:center;background:#ffffffcc;border:1px solid #cbd5e180;border-radius:10px}
+    .overlay span{font-size:22px;font-weight:800;color:#0f172a}
+
+    /* 중앙 낙하 점 */
+    @keyframes fallCenter{from{transform:translate(0,0);opacity:.95}to{transform:translate(0,var(--dY));opacity:0}}
+    .lane{position:relative;height:0;display:flex;justify-content:center;z-index:9;pointer-events:none}
+    .dot{position:absolute;top:0;width:9px;height:9px;border-radius:999px;background:var(--primary);animation:fallCenter .5s ease-in forwards}
+
+    /* 하단 타일 베이스(애니메이션은 동적 keyframes) */
+    .tile{position:absolute;top:0;left:50%;width:var(--cell);height:var(--cell);margin-left:calc(var(--cell)/-2);border-radius:4px;background:var(--primary);will-change: transform;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+
+    @media (min-width:480px){
+      :root{--cell:24px;--gap:6px;--pad:16px}
+      header h1{font-size:20px}
+    }
+    @media (min-width:768px){
+      :root{--cell:28px;--gap:6px;--pad:20px}
+      .wrap{padding-bottom:108px}
+      .overlay span{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>모래시계 — 모바일 클린 버전</h1>
+    </header>
+
+    <main class="hourglass">
+      <div class="diamond" id="top"></div>
+      <div class="lane" id="lane"></div>
+      <div class="diamond" id="bottom"></div>
+    </main>
+  </div>
+
+  <!-- 하단 고정 컨트롤 바 -->
+  <div class="controls">
+    <div class="row">
+      <button class="btn segment" data-m="1">1분</button>
+      <button class="btn segment" data-m="2">2분</button>
+      <button class="btn segment" data-m="3">3분</button>
+      <button class="btn segment" data-m="4">4분</button>
+      <button class="btn segment" data-m="5">5분</button>
+    </div>
+    <div class="grow"></div>
+    <div class="row">
+      <label class="chk"><input type="checkbox" id="vibrateChk" checked> 진동</label>
+      <label class="chk"><input type="checkbox" id="soundChk" checked> 사운드</label>
+      <button id="start" class="btn primary">시작</button>
+      <button id="pause" class="btn warn">정지</button>
+      <button id="reset" class="btn">리셋</button>
+    </div>
+    <div class="status" id="status">진행: 0 / 60 · 남은: 60</div>
+  </div>
+
+  <script>
+    const N = 8;
+    const CENTER = new Set([27,28,35,36]); // 중앙 2×2(미사용)
+    const idx = (r,c)=> r*N + c;
+
+    // 상단 배출: anti-diagonal 흐름(요청 유지)
+    function buildTopOrder(){
+      const order=[];
+      for(let s=0;s<=2*(N-1);s++){
+        const rMin=Math.max(0,s-(N-1));
+        const rMax=Math.min(N-1,s);
+        for(let r=rMax;r>=rMin;r--){
+          const c=s-r; const k=idx(r,c);
+          if(!CENTER.has(k)) order.push(k);
+        }
+      }
+      return order; // 60
+    }
+
+    // 하단 채움: 목 바로 아래(다이아 꼭짓점 = (0,0))에서 시작해 원뿔 더미처럼 확장
+    // 기준: 맨해튼 거리 d=r+c 오름차순, 그 다음은 열 중앙(3.5)과의 거리 |c-3.5| 오름, 그 다음 r 오름
+    // (이전 정렬 로직은 제거) — 실제 화면 좌표 기반으로 하단 채움 순서를 계산해
+    // 목(위쪽 꼭짓점)에서부터 아래로, 같은 높이에서는 중앙(X) 가까운 칸 우선
+    function buildBottomOrderByGeometry(){
+      const cells=[...botEl.querySelectorAll('.cell')]
+        .filter(el=>!CENTER.has(+el.dataset.idx));
+      const box=botEl.getBoundingClientRect();
+      const midX=box.left + box.width/2;
+      const list=cells.map(el=>{
+        const r=el.getBoundingClientRect();
+        const cx=r.left + r.width/2;
+        const cy=r.top + r.height/2;
+        return {k:+el.dataset.idx, cx, cy, dx:Math.abs(cx-midX)};
+      });
+      // 화면 하단(바닥)에 가까운 것부터 → 중앙에 가까운 X → 왼쪽부터
+      list.sort((A,B)=> (B.cy-A.cy) || (A.dx-B.dx) || (A.cx-B.cx));
+      return list.map(o=>o.k);
+    }
+
+    const TOP_ORDER = buildTopOrder();
+    let BOTTOM_ORDER = []; // 지오메트리 기반으로 런타임에 계산
+
+    let minutes=1, tick=0, timer=null;
+
+    const topEl=document.getElementById('top');
+    const botEl=document.getElementById('bottom');
+    const laneEl=document.getElementById('lane');
+    const statusEl=document.getElementById('status');
+    const vibrateChk=document.getElementById('vibrateChk');
+    const soundChk=document.getElementById('soundChk');
+
+    // 단순 사운드/진동
+    let audioCtx=null;
+    function beep(duration=80, freq=1000){
+      if(!soundChk.checked) return;
+      try{
+        if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+        const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+        o.type='sine'; o.frequency.value=freq;
+        g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime+0.01);
+        g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+duration/1000);
+        o.connect(g).connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+duration/1000+0.02);
+      }catch(e){}
+    }
+    function vibrate(ms=18){ if(!vibrateChk.checked) return; if(navigator.vibrate) navigator.vibrate(ms); }
+
+    function buildDiamond(el){
+      el.innerHTML='';
+      for(let i=0;i<N*N;i++){
+        const d=document.createElement('div');
+        d.className='cell'+(CENTER.has(i)?' center':'');
+        d.dataset.idx=i; el.appendChild(d);
+      }
+      const overlay=document.createElement('div');
+      overlay.className='overlay';
+      overlay.innerHTML='<div><span id="ovNum">1</span></div>';
+      el.appendChild(overlay);
+    }
+    buildDiamond(topEl); buildDiamond(botEl);
+    // 레이아웃이 결정된 뒤 실제 좌표로 하단 채움 순서 계산
+    requestAnimationFrame(()=>{ BOTTOM_ORDER = buildBottomOrderByGeometry(); });
+
+    function setOverlayNumber(m){ const s=topEl.querySelector('#ovNum'); if(s) s.textContent = m>0? String(m):''; }
+
+    function paintTop(progress){
+      const remain=new Set(TOP_ORDER.slice(progress));
+      topEl.querySelectorAll('.cell').forEach(cell=>{
+        const k=+cell.dataset.idx; if(CENTER.has(k)) return;
+        cell.classList.toggle('active', remain.has(k));
+      });
+    }
+    function paintBottom(progress){
+      const filled=new Set(BOTTOM_ORDER.slice(0,progress));
+      botEl.querySelectorAll('.cell').forEach(cell=>{
+        const k=+cell.dataset.idx; if(CENTER.has(k)) return;
+        cell.classList.toggle('active', filled.has(k));
+      });
+    }
+
+    function updateStatus(){
+      const total=Math.max(1,minutes)*60;
+      statusEl.textContent=`진행: ${tick} / ${total} · 남은: ${Math.max(total-tick,0)}`;
+    }
+
+    // 중앙 낙하 점
+    function spawnDropCenter(){
+      const rectTop=topEl.getBoundingClientRect();
+      const rectLane=laneEl.getBoundingClientRect();
+      const dY=(rectTop.height + (rectLane.bottom - rectTop.bottom) + 18);
+      laneEl.style.setProperty('--dY', dY+'px');
+      const dot=document.createElement('div'); dot.className='dot';
+      laneEl.appendChild(dot); setTimeout(()=>dot.remove(), 600);
+    }
+
+    // 하단: 목표 칸으로 이동(마지막 구간 45° 대각선 착지)
+    function spawnBottomTile(progress){
+      const kFill = BOTTOM_ORDER[progress];
+      const target = botEl.querySelector(`.cell[data-idx="${kFill}"]`);
+      if(!target) return;
+      const laneRect = laneEl.getBoundingClientRect();
+      const trg = target.getBoundingClientRect();
+      const tx = (trg.left + trg.width/2) - (laneRect.left + laneRect.width/2);
+      const ty = (trg.top + trg.height/2) - laneRect.top;
+
+      const sx = Math.sign(tx)||1, sy=Math.sign(ty)||1;
+      const diag = Math.min(Math.abs(tx), Math.abs(ty));
+      const px = tx - sx*diag;
+      const py = ty - sy*diag;
+
+      const tile=document.createElement('div'); tile.className='tile';
+      const animName = `fallKF_${Date.now()}_${Math.floor(Math.random()*9999)}`;
+      const styleEl=document.createElement('style');
+      styleEl.textContent = `@keyframes ${animName}{`+
+        `0%{transform:translate(0,0);opacity:.95}`+
+        `60%{transform:translate(${px}px,${py}px);opacity:.95}`+
+        `100%{transform:translate(${tx}px,${ty}px);opacity:1}`+
+      `}`;
+      document.head.appendChild(styleEl);
+      tile.style.animation = `${animName} .55s cubic-bezier(.2,.6,.2,1) forwards`;
+      laneEl.appendChild(tile);
+
+      target.classList.remove('active');
+      tile.addEventListener('animationend', ()=>{ target.classList.add('active'); tile.remove(); styleEl.remove(); });
+    }
+
+    function start(){
+      const total=Math.max(1,minutes)*60; if(tick>=total) return;
+      if(timer) clearInterval(timer);
+      timer=setInterval(()=>{
+        const totalNow=Math.max(1,minutes)*60; if(tick+1>totalNow){ pause(); return; }
+        const progress=(tick%60);
+        const cycle=Math.floor(tick/60);
+        const remaining=Math.max(0, minutes-cycle);
+
+        paintTop(progress+1);
+        setOverlayNumber( (progress+1)>=60 ? Math.max(0, remaining-1) : remaining );
+        spawnDropCenter();
+        spawnBottomTile(progress);
+        paintBottom(progress);
+
+        tick += 1; updateStatus();
+        if(soundChk.checked) beep(70, 900);
+        if(vibrateChk.checked) vibrate(16);
+      }, 1000);
+    }
+
+    function pause(){ if(timer) clearInterval(timer); timer=null; }
+    function reset(){ pause(); tick=0; paintTop(0); paintBottom(0); setOverlayNumber(minutes); updateStatus(); }
+
+    // 초기화
+    paintTop(0); paintBottom(0); setOverlayNumber(minutes); updateStatus();
+
+    // 이벤트
+    document.querySelectorAll('.btn.segment').forEach(b=>{ b.addEventListener('click',()=>{ minutes=+b.dataset.m; reset(); }); });
+    document.getElementById('start').addEventListener('click', start);
+    document.getElementById('pause').addEventListener('click', pause);
+    document.getElementById('reset').addEventListener('click', reset);
+  </script>
+</body>
+</html>
