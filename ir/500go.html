@@ -3,385 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>500원 GO 서비스 소개서</title>
-    <!-- Tailwind CSS CDN -->
+    <title>500원 GO 서비스 인포그래픽</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter 폰트 (Tailwind 기본) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <style>
-        /* 기본 폰트 설정 */
+        :root {
+            --color-primary: #0041C2;
+            --color-secondary: #0056D9;
+            --color-accent: #006FFF;
+            --color-light: #388FFF;
+            --color-lightest: #70ABFF;
+            --color-text: #1f2937;
+            --color-text-light: #4b5563;
+            --color-bg: #f9fafb;
+            --color-page-bg: #111827; 
+        }
         body {
             font-family: 'Inter', 'Pretendard', sans-serif;
-            overscroll-behavior: none; /* 스크롤 바운스 효과 제거 */
+            background-color: var(--color-page-bg);
+            color: var(--color-text);
         }
-        
-        /* 슬라이드 기본 스타일 */
-        .slide {
+        .chart-container {
+            position: relative;
             width: 100%;
-            height: 100vh; /* 전체 화면 높이 */
-            display: none; /* 기본적으로 숨김 */
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem; /* 32px */
-            text-align: center;
-            position: absolute; /* 겹치도록 설정 */
-            top: 0;
-            left: 0;
-            transition: opacity 0.3s ease-in-out;
-            opacity: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 40vh;
         }
-
-        /* 활성 슬라이드 */
-        .slide.active {
-            display: flex;
-            opacity: 1;
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #9ca3af; 
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2.5rem; 
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            border-width: 4px;
+            border-color: white;
             z-index: 10;
         }
-
-        /* 페이지 번호 */
-        .slide-number {
+        .timeline-line {
             position: absolute;
-            bottom: 2rem; /* 32px */
-            right: 2rem; /* 32px */
-            font-size: 1rem; /* 16px */
-            color: #9ca3af; /* gray-400 */
-            z-index: 30;
+            left: 0.6875rem;
+            top: 0.25rem;
+            bottom: -2rem;
+            width: 2px;
+            background-color: #e5e7eb;
         }
-
-        /* 네비게이션 버튼 */
-        .nav-btn {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-            border: none;
-            border-radius: 9999px; /* full */
-            width: 3rem; /* 48px */
-            height: 3rem; /* 48px */
-            font-size: 1.5rem; /* 24px */
-            cursor: pointer;
-            transition: background-color 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .nav-btn:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .nav-btn:disabled {
-            opacity: 0.2;
-            cursor: not-allowed;
-        }
-        #prev-btn {
-            left: 1rem; /* 16px */
-        }
-        #next-btn {
-            right: 1rem; /* 16px */
-        }
-
-        /* 컨텐츠 영역 스타일 */
-        .content-box {
-            width: 100%;
-            max-width: 64rem; /* 1024px */
+        .timeline-item:last-child .timeline-line {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 overflow-hidden">
+<body class="antialiased">
 
-    <!-- 슬라이드 1: 표지 -->
-    <section class="slide active bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
-        <div class="content-box">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">500원 GO (오백원 고)</h1>
-            <p class="text-2xl md:text-4xl font-light">
+    <main class="max-w-5xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 pt-8">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">500원 GO</h1>
+            <p class="text-2xl md:text-4xl font-light" style="color: var(--color-lightest);">
                 "심심할 땐 500원, 만날 땐 확실하게!"
             </p>
-            <p class="text-xl md:text-2xl mt-4 opacity-80">
-                AI가 보장하는 즉각적인 만남과 확실한 참석률
+            <p class="text-xl md:text-2xl mt-4 text-gray-300">
+                AI가 보장하는 즉각적인 발견과 확실한 참석률
             </p>
-        </div>
-        <div class="slide-number">1 / 8</div>
-    </section>
+        </header>
 
-    <!-- 슬라이드 4: 서비스 1 (Discovery) -->
-    <section class="slide bg-white">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">"심심하면 500원!"</h2>
-            <p class="text-2xl md:text-3xl text-gray-600 mb-10">강력한 트래픽 엔진 (Front-end)</p>
-            
-            <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-left md:text-center">
-                <p class="text-xl md:text-2xl text-blue-600 font-semibold mb-6">"지금 당장 뭐하지?" 버튼 하나로 즉시 참여 가능한 주변 이벤트를 추천합니다.</p>
-                
-                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-700 mb-2">주요 컨텐츠 (B2B/Public)</h4>
-                        <ul class="list-none space-y-1 text-gray-600">
-                            <li>✓ 기업 팝업 스토어</li>
-                            <li>✓ 지자체 축제 및 행사</li>
-                            <li>✓ 거리 공연 (버스킹)</li>
-                            <li>✓ 유료 전시회</li>
-                        </ul>
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">서비스 아키텍처</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">500원 GO는 두 개의 핵심 서비스가 하나의 AI 엔진으로 연결된 유기체입니다.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4" style="border-color: var(--color-light);">
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--color-secondary);">Service 1: Discovery (발견)</h3>
+                    <p class="text-lg mb-2">"심심하면 500원!"</p>
+                    <p class="text-gray-600 mb-4">B2B/Public 이벤트를 AI가 즉시 추천</p>
+                    <span class="inline-block bg-blue-200 text-blue-800 px-3 py-1 rounded-full font-medium">역할: 트래픽 자석 (User Acquisition)</span>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-lg shadow-md border-l-4" style="border-color: var(--color-primary);">
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--color-primary);">Service 2: Meetup (만남)</h3>
+                    <p class="text-lg mb-2">"만날 땐 확실하게!"</p>
+                    <p class="text-gray-600 mb-4">'500원 보증금' 기반 C2C 즉석 모임</p>
+                    <span class="inline-block bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full font-medium">역할: 신뢰도 공장 (User Lock-in)</span>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <div class="flow-arrow mb-2">↓ ↑</div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Core Engine: AI & 신뢰도 시스템</h3>
+                    <p class="text-gray-600 mb-4">두 서비스의 데이터를 학습하여 추천과 매칭을 고도화</p>
+                    <span class="inline-block bg-gray-300 text-gray-800 px-3 py-1 rounded-full font-medium">역할: 선순환 엔진 (Reinforcement)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">Service 1: Discovery (즉각적인 발견)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 mb-6">"심심하면 500원!" 버튼 하나로, AI가 현재 위치와 관심사 기반의 B2B/Public 이벤트를 즉시 추천합니다. 이는 신규 유저를 확보하는 강력한 트래픽 자석 역할을 합니다.</p>
+                    <ul class="list-none space-y-2">
+                        <li class="flex items-start"><span class="mr-2 text-xl" style="color: var(--color-accent);">■</span> <strong class="w-24">팝업 스토어:</strong> 성수, 홍대 팝업 정보</li>
+                        <li class="flex items-start"><span class="mr-2 text-xl" style="color: var(--color-accent);">■</span> <strong class="w-24">축제/행사:</strong> 지자체 축제, 대학가 페스티벌</li>
+                        <li class="flex items-start"><span class="mr-2 text-xl" style="color: var(--color-accent);">■</span> <strong class="w-24">공연/전시:</strong> 거리 버스킹, 소규모 전시</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">주요 타겟 유저 구성 (예시)</h3>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="discoveryChart"></canvas>
                     </div>
-                    <div class="border-t md:border-t-0 md:border-l border-gray-200 mt-4 md:mt-0 pt-4 md:pt-0 md:pl-8">
-                        <h4 class="text-lg font-semibold text-gray-700 mb-2">핵심 타겟</h4>
-                        <ul class="list-none space-y-1 text-gray-600">
-                            <li>✓ 일정이 비는 **외국인 관광객**</li>
-                            <li>✓ 공강 시간이 생긴 **대학생**</li>
-                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">Service 2: Meetup (보장된 참석)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">"500원 GO"의 노쇼 방지 효과 (목표)</h3>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="meetupChart"></canvas>
                     </div>
                 </div>
-                
-                <p class="mt-8 text-xl font-bold text-blue-800 bg-blue-100 p-4 rounded-md">역할: 대규모 초기 유저를 확보하는 '트래픽 자석'</p>
-            </div>
-        </div>
-        <div class="slide-number">2 / 8</div>
-    </section>
-
-    <!-- 슬라이드 5: 서비스 2 (Meetup) -->
-    <section class="slide bg-white">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">"만날 땐 확실하게!"</h2>
-            <p class="text-2xl md:text-3xl text-gray-600 mb-10">신뢰 기반 리텐션 엔진 (Back-end)</p>
-
-            <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-left">
-                <p class="text-xl md:text-2xl text-indigo-600 font-semibold mb-6 text-center">"500원 참석 보증금" 시스템으로 C2C(개인 간) 만남의 노쇼를 해결합니다.</p>
-                
-                <h4 class="text-lg font-semibold text-gray-700 mb-2">작동 방식</h4>
-                <ol class="list-decimal list-inside space-y-2 text-gray-700 text-lg">
-                    <li><b>참여:</b> "1시간 뒤 치맥할 사람?" 모임 참여 시 <span class="font-bold text-indigo-700">500원 예치</span></li>
-                    <li><b>참석:</b> 현장 체크인(QR/GPS) 시 <span class="font-bold text-green-600">100% 즉시 환급</span></li>
-                    <li><b>노쇼:</b> 불참 시 <span class="font-bold text-red-600">500원 차감</span> (플랫폼 수수료 또는 호스트 보상)</li>
-                </ol>
-
-                <h4 class="text-lg font-semibold text-gray-700 mt-6 mb-2">AI 매칭</h4>
-                <p class="text-gray-700 text-lg">AI가 '노쇼율 0%'의 신뢰도 높은 유저를 우선적으로 매칭</p>
-                
-                <p class="mt-8 text-xl font-bold text-indigo-800 bg-indigo-100 p-4 rounded-md text-center">역할: 유저를 묶어두는(Lock-in) '신뢰도 공장'</p>
-            </div>
-        </div>
-        <div class="slide-number">3 / 8</div>
-    </section>
-
-    <!-- 슬라이드 6: 핵심 연관관계 -->
-    <section class="slide bg-gray-50">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Discovery가 Meetup을, Meetup이 Discovery를 강화합니다.</h2>
-            <p class="text-xl md:text-2xl text-gray-600 mb-12">B2B 트래픽이 C2C 신뢰도를 만들고, C2C 신뢰도가 AI 추천 품질을 높이는 선순환 구조</p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
-                <!-- 1. 확보 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center w-full md:w-1/4">
-                    <span class="text-2xl font-bold text-blue-600">1. Discovery로 유저 확보</span>
-                    <p class="mt-2 text-gray-600">B2B 이벤트 추천 (관광객, 대학생)</p>
-                </div>
-                <div class="text-4xl text-blue-400 mx-4">→</div>
-                
-                <!-- 2. 전환 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center w-full md:w-1/4">
-                    <span class="text-2xl font-bold text-indigo-600">2. Meetup으로 전환</span>
-                    <p class="mt-2 text-gray-600">C2C 즉석 모임 제안</p>
-                </div>
-                <div class="text-4xl text-indigo-400 mx-4">→</div>
-
-                <!-- 3. 축적 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center w-full md:w-1/4">
-                    <span class="text-2xl font-bold text-green-600">3. 신뢰 데이터 축적</span>
-                    <p class="mt-2 text-gray-600">체크인/노쇼 데이터로 '신뢰 점수' 생성</p>
+                <div>
+                    <p class="text-lg text-gray-600 mb-6">"만날 땐 확실하게!" C2C 즉석 모임은 '500원 참석 보증금' 시스템으로 노쇼를 원천 차단합니다. 이는 유저를 서비스에 묶어두는(Lock-in) 핵심 신뢰 장치입니다.</p>
+                    <ul class="list-none space-y-3">
+                        <li class="p-4 bg-gray-50 rounded-lg">
+                            <strong class="text-indigo-600">참여:</strong> "1시간 뒤 치맥?" 모임 참여 시 500원 예치
+                        </li>
+                        <li class="p-4 bg-gray-50 rounded-lg">
+                            <strong class="text-green-600">참석:</strong> 현장 체크인(GPS/QR) 시 100% 즉시 환급
+                        </li>
+                        <li class="p-4 bg-gray-50 rounded-lg">
+                            <strong class="text-red-600">노쇼:</strong> 불참(No-Show) 시 500원 차감
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <!-- 순환 화살표 -->
-            <div class="w-full max-w-2xl mx-auto mt-8">
-                <div class="text-4xl text-green-400 text-center mb-2">↓</div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-green-500">
-                    <span class="text-2xl font-bold text-green-700">4. AI 추천 고도화 (선순환)</span>
-                    <p class="mt-2 text-gray-600">
-                        '신뢰 점수'를 AI가 학습하여 B2B(Discovery) 추천과 C2C(Meetup) 매칭의 정확도를 동시에 극대화
-                    </p>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">서비스 관계 ①: "닭과 달걀" 문제의 해결</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">C2C 모임은 초기에 유저가 없어 실패합니다. 500원 GO는 B2B 이벤트 추천으로 이 문제를 해결합니다.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center w-full md:w-2/5">
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--color-secondary);">1. Discovery가 유저 확보 (B2B)</h3>
+                    <p class="text-gray-600">"심심하면 500원" 기능으로 C2C에 관심 없는 일반 유저(관광객, 대학생)도 쉽게 유입시킵니다. (트래픽 자석)</p>
                 </div>
-                <div class="text-4xl text-blue-400 text-left -mt-4 ml-4">↑</div>
+                <div class="flow-arrow">➡️</div>
+                <div class="bg-indigo-50 p-6 rounded-lg shadow-md text-center w-full md:w-2/5">
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--color-primary);">2. Meetup으로 유저 전환 (C2C)</h3>
+                    <p class="text-gray-600">확보된 유저풀에게 "500원 보증" C2C 즉석 모임을 제안합니다. (활성화된 광장에서 모임 시작)</p>
+                </div>
             </div>
-        </div>
-        <div class="slide-number">6 / 10</div>
-    </section>
+        </section>
 
-    <!-- 슬라이드 7: 왜 500원인가? -->
-    <section class="slide bg-white">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">왜 "500원"인가? (The Key)</h2>
-            <p class="text-xl md:text-2xl text-gray-600 mb-12">"500원"은 단순한 돈이 아닌, 행동 유도와 신뢰 측정을 위한 핵심 장치입니다.</p>
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">서비스 관계 ②: "선순환 루프"의 완성</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">서비스의 핵심 자산인 '신뢰도'는 C2C 모임에서 축적되어 다시 B2B 추천 품질을 높입니다.</p>
+            <div class="w-full max-w-2xl mx-auto">
+                <div class="flex flex-col space-y-4">
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md border-l-4" style="border-color: var(--color-primary);">
+                        <h3 class="text-xl font-semibold" style="color: var(--color-primary);">1. Meetup (C2C)이 데이터 생산</h3>
+                        <p class="text-gray-600">'500원 보증금' 기반 모임에서 '참석(Check-in)'과 '노쇼(No-Show)'라는 명확한 데이터를 생성합니다.</p>
+                    </div>
+                    <div class="self-center flow-arrow">⬇️</div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md border-l-4 border-gray-400">
+                        <h3 class="text-xl font-semibold text-gray-700">2. AI 엔진이 데이터 학습</h3>
+                        <p class="text-gray-600">AI가 이 데이터를 학습하여 유저별 "신뢰도 점수"를 생성합니다.</p>
+                    </div>
+                    <div class="self-center flow-arrow">⬇️</div>
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4" style="border-color: var(--color-light);">
+                        <h3 class="text-xl font-semibold" style="color: var(--color-secondary);">3. Discovery (B2B) 추천 고도화</h3>
+                        <p class="text-gray-600">AI가 '신뢰도 점수'를 Discovery 추천에 활용합니다. (예: "신뢰도 높은 유저에게 인기 있는 팝업" 상위 노출)</p>
+                    </div>
+                    <div class="self-center flow-arrow">⬇️</div>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold text-green-700">4. 더 많은 우량 유저 유입</h3>
+                        <p class="text-gray-600">추천 품질이 높아져 더 많은 유저가 유입되고, 이들이 다시 C2C Meetup에 참여하며 루프가 완성됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">핵심 엔진: AI 신뢰도 시스템</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">500원 GO의 AI는 '참석률'을 예측하고 '신뢰도'를 측정합니다.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <!-- 1. 후크 -->
-                <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">1. 발견의 후크 (Hook)</h3>
-                    <p class="text-lg text-gray-700">"심심하면 500원!"이라는 강력한 슬로건으로 유저의 호기심을 자극하고 즉각적인 행동을 유도합니다. (마케팅 키워드)</p>
-                </div>
-                <!-- 2. 보증 -->
-                <div class="bg-indigo-50 p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-semibold text-indigo-800 mb-3">2. 참석의 보증 (Deposit)</h3>
-                    <p class="text-lg text-gray-700">잃어도 부담 없지만(Low-risk), 약속을 지키게 만드는(High-commitment) 최소한의 심리적 장치입니다. (노쇼 방지 시스템)</p>
-                </div>
-                <!-- 3. 척도 -->
-                <div class="bg-green-50 p-6 rounded-lg shadow-md border-l-4 border-green-500">
-                    <h3 class="text-2xl font-semibold text-green-800 mb-3">3. 신뢰의 척도 (Metric)</h3>
-                    <p class="text-lg text-gray-700">500원을 건 약속을 지킨 횟수는 유저의 '신뢰 점수'를 측정하는 핵심 지표가 됩니다. (AI 학습 데이터)</p>
-                </div>
-            </div>
-        </div>
-        <div class="slide-number">7 / 10</div>
-    </section>
-
-    <!-- 슬라이드 8: 비즈니스 모델 -->
-    <section class="slide bg-gray-50">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-12">3-Way 수익 모델: B2B, C2C, 그리고 Niche</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <!-- 1. Discovery -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">1. Discovery (B2B 광고/중개)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
-                        <li>"심심하면 500원" 추천 목록 <b>상위 노출 광고</b> (팝업, 축제)</li>
-                        <li>유료 이벤트 티켓 판매 <b>중개 수수료</b> (CPS)</li>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Input (수집)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li><b>Meetup (C2C):</b> 참석/노쇼 이력, 상호 평가</li>
+                        <li><b>Discovery (B2B):</b> 이벤트 클릭률(CTR), 방문 인증, 후기</li>
                     </ul>
                 </div>
-                <!-- 2. Attendance -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-indigo-600 mb-3">2. Attendance (C2C 수수료/구독)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
-                        <li>"500원 보증금" <b>노쇼 차감 수수료</b></li>
-                        <li>모임 주최자 대상 <b>Pro/Boost 기능</b> (신뢰 유저에게 우선 노출)</li>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Processing (학습/측정)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>유저별 "신뢰도 점수" (0~100점) 산출</li>
+                        <li>B2B 이벤트별 "핫스팟 점수" 산출</li>
                     </ul>
                 </div>
-                <!-- 3. Niche -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-green-600 mb-3">3. Niche (관광객 특화 상품)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
-                        <li>외국인 관광객 대상 <b>'K-로컬 체험' 유료 중개</b></li>
-                        <li class="text-base text-gray-500 ml-4">(ex. "한국인 대학생과 한강 치맥 파티", "로컬 맛집 즉석 번개")</li>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Output (적용)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li><b>Meetup:</b> "신뢰도 높은 유저" 우선 매칭</li>
+                        <li><b>Discovery:</b> "신뢰도 높은 이벤트" 우선 추천</li>
+                        <li><b>BM:</b> "신뢰도" 기반 유료 기능(Boost)</li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="slide-number">8 / 10</div>
-    </section>
+        </section>
 
-    <!-- 슬라이드 9: 확장 전략 -->
-    <section class="slide bg-white">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-12">4단계 확장 전략 (로드맵)</h2>
-            
-            <div class="relative pl-8 border-l-4 border-gray-200">
-                <!-- 단계 1 -->
-                <div class="mb-8 relative">
-                    <div class="absolute -left-10 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">Phase 1 (Foundation): Discovery MVP</h3>
-                    <p class="text-lg text-gray-700">B2B/Public 이벤트 추천 (관광객/대학생 타겟, 초기 트래픽 확보)</p>
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--color-primary);">비즈니스 모델 및 확장 전략</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">3-Way 수익 모델</h3>
+                    <ul class="list-none space-y-3">
+                        <li class="bg-blue-50 p-4 rounded-lg">
+                            <strong style="color: var(--color-secondary);">1. Discovery (B2B) 수익:</strong> 추천 상위 노출 광고, 티켓 중개 수수료 (CPS)
+                        </li>
+                        <li class="bg-indigo-50 p-4 rounded-lg">
+                            <strong style="color: var(--color-primary);">2. Meetup (C2C) 수익:</strong> 노쇼 차감 수수료, 유료 Boost 기능
+                        </li>
+                        <li class="bg-green-50 p-4 rounded-lg">
+                            <strong class="text-green-700">3. Niche (관광객) 수익:</strong> 'K-로컬 체험' 유료 중개
+                        </li>
+                    </ul>
                 </div>
-                <!-- 단계 2 -->
-                <div class="mb-8 relative">
-                    <div class="absolute -left-10 w-6 h-6 bg-indigo-500 rounded-full border-4 border-white"></div>
-                    <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Phase 2 (Data): Meetup 도입</h3>
-                    <p class="text-lg text-gray-700">'500원 보증금' *없이* '노쇼 데이터' 수집에 집중</p>
-                </div>
-                <!-- 단계 3 -->
-                <div class="mb-8 relative">
-                    <div class="absolute -left-10 w-6 h-6 bg-green-500 rounded-full border-4 border-white"></div>
-                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Phase 3 (Monetization): AI 엔진 활성화</h3>
-                    <p class="text-lg text-gray-700">'500원 보증금' 적용 및 B2B 광고 수익화 시작</p>
-                </div>
-                <!-- 단계 4 -->
-                <div class="relative">
-                    <div class="absolute -left-10 w-6 h-6 bg-gray-700 rounded-full border-4 border-white"></div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Phase 4 (Scaling): 생태계 완성</h3>
-                    <p class="text-lg text-gray-700">C2C 유료 기능(Boost) 도입 및 관광객 특화 상품(Niche) 출시</p>
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">4단계 서비스 확장 전략</h3>
+                    <div class="relative">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background-color: var(--color-light);"></div>
+                            <h4 class="text-lg font-semibold" style="color: var(--color-light);">Phase 1: Discovery (트래픽 확보)</h4>
+                            <p class="text-gray-600">B2B/Public 이벤트 추천 MVP 런칭.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background-color: var(--color-accent);"></div>
+                            <h4 class="text-lg font-semibold" style="color: var(--color-accent);">Phase 2: Meetup (데이터 축적)</h4>
+                            <p class="text-gray-600">C2C 모임 도입 및 '500원 보증금' 적용, '신뢰도' 시스템 구축.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background-color: var(--color-secondary);"></div>
+                            <h4 class="text-lg font-semibold" style="color: var(--color-secondary);">Phase 3: AI Engine (수익화)</h4>
+                            <p class="text-gray-600">'신뢰도' 기반 AI 추천 활성화 및 B2B/C2C 수익화 시작.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background-color: var(--color-primary);"></div>
+                            <h4 class="text-lg font-semibold" style="color: var(--color-primary);">Phase 4: Scaling (생태계 완성)</h4>
+                            <p class="text-gray-600">관광객 특화 상품(Niche) 출시 및 AI 자동화 확장.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="slide-number">9 / 10</div>
-    </section>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">예상 수익 비중 변화 (Phase별)</h3>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </section>
 
-    <!-- 슬라이드 10: 비전 -->
-    <section class="slide bg-gradient-to-br from-gray-700 to-gray-900 text-white">
-        <div class="content-box">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                우리는 만남을 중개하지 않고,<br>
-                <span class="text-yellow-300">'확실한 참석률'을 팝니다.</span>
+        <footer class="text-center py-12">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                Discovery로 유저를 모으고,<br>
+                Meetup으로 신뢰를 쌓고,<br>
+                AI로 모든 만남을 강화합니다.
             </h2>
-            <p class="text-xl md:text-2xl italic opacity-80 mb-10">(We don't sell meetups. We sell *attendance*.)</p>
-            
-            <div class="bg-black bg-opacity-20 p-8 rounded-lg">
-                <h3 class="text-2xl font-semibold text-white mb-4">[우리의 비전]</h3>
-                <p class="text-xl md:text-2xl text-gray-200">
-                    AI 기반 '신뢰도 데이터'를 통해 모든 오프라인 활동의 '노쇼(No-Show)' 문제를 해결하는 아시아 최고의 즉각적인 만남 플랫폼
-                </p>
-            </div>
-            
-            <p class="text-2xl md:text-3xl font-bold mt-12 text-yellow-300">
-                심심할 땐 500원, 만날 땐 확실하게! 500원 GO.
+            <p class="text-2xl md:text-3xl font-light mb-10" style="color: var(--color-lightest);">
+                "우리는 만남을 중개하지 않고, <span class="font-semibold text-white">'확실한 참석률'</span>을 팝니다."
             </p>
-        </div>
-        <div class="slide-number">10 / 10</div>
-    </section>
+            <p class="text-3xl md:text-4xl font-bold text-white">
+                500원 GO
+            </p>
+        </footer>
 
-
-    <!-- 네비게이션 버튼 -->
-    <button id="prev-btn" class="nav-btn" onclick="changeSlide(-1)">
-        &#10094;
-    </button>
-    <button id="next-btn" class="nav-btn" onclick="changeSlide(1)">
-        &#10095;
-    </button>
+    </main>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-
-        function showSlide(n) {
-            // 인덱스 범위 처리
-            if (n >= totalSlides) {
-                currentSlide = totalSlides - 1;
-            } else if (n < 0) {
-                currentSlide = 0;
-            } else {
-                currentSlide = n;
-            }
-
-            // 모든 슬라이드 숨기기
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const brilliantBlues = {
+                primary: 'rgba(0, 65, 194, 0.9)',
+                secondary: 'rgba(0, 86, 217, 0.9)',
+                accent: 'rgba(0, 111, 255, 0.9)',
+                light: 'rgba(56, 143, 255, 0.9)',
+                lightest: 'rgba(112, 171, 255, 0.9)'
+            };
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
                 } else {
-                    slide.classList.remove('active');
+                    return label;
+                }
+            };
+            
+            const wrapLabel = (label, maxWidth = 16) => {
+                if (typeof label !== 'string' || label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const processLabels = (labels) => labels.map(label => wrapLabel(label));
+
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#4b5563'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#4b5563' },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: { color: '#4b5563' },
+                        grid: { color: '#e5e7eb' }
+                    }
+                }
+            };
+
+            const discoveryChartCtx = document.getElementById('discoveryChart').getContext('2d');
+            const discoveryLabels = ['외국인 관광객', '대학생', '기타 로컬 유저'];
+            new Chart(discoveryChartCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: processLabels(discoveryLabels),
+                    datasets: [{
+                        label: '주요 타겟 유저',
+                        data: [40, 35, 25],
+                        backgroundColor: [
+                            brilliantBlues.accent,
+                            brilliantBlues.light,
+                            brilliantBlues.lightest
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#4b5563'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
                 }
             });
 
-            // 버튼 활성/비활성
-            prevBtn.disabled = (currentSlide === 0);
-            nextBtn.disabled = (currentSlide === totalSlides - 1);
-        }
+            const meetupChartCtx = document.getElementById('meetupChart').getContext('2d');
+            const meetupLabels = ['기존 모임 평균 노쇼율', '500원 GO 목표 노쇼율'];
+            new Chart(meetupChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: processLabels(meetupLabels),
+                    datasets: [{
+                        label: '노쇼율 (%)',
+                        data: [45, 5],
+                        backgroundColor: [
+                            '#ef4444', 
+                            brilliantBlues.primary
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    ...defaultChartOptions,
+                    plugins: {
+                        ...defaultChartOptions.plugins,
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#4b5563', font: { size: 14 } },
+                            grid: { display: false }
+                        },
+                        y: {
+                            ticks: { color: '#4b5563' },
+                            grid: { color: '#e5e7eb' },
+                            max: 50
+                        }
+                    }
+                }
+            });
+            
+            const revenueChartCtx = document.getElementById('revenueChart').getContext('2d');
+            const revenueLabels = ['Phase 2 (데이터 축적)', 'Phase 3 (수익화)', 'Phase 4 (생태계 완성)'];
+            new Chart(revenueChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: processLabels(revenueLabels),
+                    datasets: [
+                        {
+                            label: 'B2B (Discovery)',
+                            data: [10, 40, 50],
+                            backgroundColor: brilliantBlues.accent
+                        },
+                        {
+                            label: 'C2C (Meetup)',
+                            data: [5, 30, 30],
+                            backgroundColor: brilliantBlues.secondary
+                        },
+                        {
+                            label: 'Niche (관광객)',
+                            data: [0, 5, 20],
+                            backgroundColor: brilliantBlues.lightest
+                        }
+                    ]
+                },
+                options: {
+                    ...defaultChartOptions,
+                    scales: {
+                        x: { 
+                            stacked: true,
+                            ticks: { color: '#4b5563' },
+                            grid: { display: false }
+                        },
+                        y: { 
+                            stacked: true,
+                            ticks: { color: '#4b5563' },
+                            grid: { color: '#e5e7eb' }
+                        }
+                    },
+                    plugins: {
+                        ...defaultChartOptions.plugins,
+                        legend: { 
+                            position: 'bottom',
+                            labels: { color: '#4b5563' }
+                        }
+                    }
+                }
+            });
 
-        function changeSlide(n) {
-            showSlide(currentSlide + n);
-        }
-
-        // 키보드 화살표로 네비게이션
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                changeSlide(1);
-            } else if (e.key === 'ArrowLeft') {
-                changeSlide(-1);
-            }
         });
-
-        // 초기 슬라이드 표시
-        showSlide(currentSlide);
     </script>
 </body>
 </html>
