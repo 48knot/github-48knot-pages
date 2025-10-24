@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>심심하면 500원 — 서비스 소개서 (10p 웹슬라이드)</title>
+  <style>
+    :root{
+      --bg:#0b1220; --fg:#e7ecf5; --muted:#a9b4c6; --accent:#6aa6ff; --accent2:#7bf1d7; --card:#121a2b; --border:#1f2a44;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(106,166,255,.25), rgba(0,0,0,0)),
+                      radial-gradient(1000px 500px at -10% 110%, rgba(123,241,215,.15), rgba(0,0,0,0)),
+                      var(--bg);
+      color:var(--fg); font-family: "Segoe UI", Roboto, AppleSDGothicNeo, "Noto Sans KR", Pretendard, system-ui, -apple-system, sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .deck{position:relative; width:min(1200px, 96vw); height:min(680px, 90vh); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid var(--border); border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,.35); overflow:hidden}
+    header.topbar{position:absolute; inset:0 0 auto 0; height:64px; display:flex; align-items:center; gap:12px; padding:0 20px; border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(18,26,43,.9), rgba(18,26,43,.6)); backdrop-filter: blur(6px)}
+    header .logo{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    header .logo .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 0 10px var(--accent)}
+    header .sep{flex:1}
+    header .help{font-size:12px; color:var(--muted)}
+
+    .slides{position:absolute; inset:64px 0 72px 0; overflow:hidden}
+    .slide{position:absolute; inset:0; padding:42px 56px; display:flex; flex-direction:column; gap:22px; opacity:0; transform:translateX(6%);
+      transition: all .5s ease; overflow:auto}
+    .slide.active{opacity:1; transform:translateX(0)}
+
+    h1{margin:0; font-size:36px; line-height:1.2}
+    h2{margin:0; font-size:28px; line-height:1.25}
+    p{margin:0; font-size:18px; color:var(--fg)}
+    .muted{color:var(--muted)}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:12px}
+    .card{background:rgba(255,255,255,.02); border:1px solid var(--border); border-radius:14px; padding:16px}
+    .grid{display:grid; gap:14px}
+    .grid.cols-2{grid-template-columns:1fr 1fr}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+    ul{margin:0; padding-left:18px}
+    li{margin:6px 0}
+
+    .footer{position:absolute; inset:auto 0 0 0; height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; border-top:1px solid var(--border); background:linear-gradient(0deg, rgba(18,26,43,.9), rgba(18,26,43,.6));}
+    .controls{display:flex; align-items:center; gap:10px}
+    .btn{appearance:none; border:1px solid var(--border); background:rgba(255,255,255,.02); color:var(--fg); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600}
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .progress{display:flex; align-items:center; gap:6px}
+    .dot{width:9px; height:9px; border-radius:50%; background:#24314f; border:1px solid var(--border); opacity:.6}
+    .dot.active{background:linear-gradient(135deg, var(--accent), var(--accent2)); opacity:1; box-shadow:0 0 0 3px rgba(106,166,255,.2)}
+
+    .kicker{font-size:14px; color:var(--accent); font-weight:700; letter-spacing:.5px; text-transform:uppercase}
+    .hero{font-size:44px; line-height:1.15; font-weight:800}
+    .lead{font-size:20px; color:var(--muted)}
+
+    .tbl{width:100%; border-collapse:separate; border-spacing:0 8px}
+    .tbl th, .tbl td{padding:12px 14px; text-align:left}
+    .tbl thead th{font-size:12px; color:var(--muted); font-weight:600}
+    .row{background:rgba(255,255,255,.02); border:1px solid var(--border)}
+    .row:first-child{border-top-left-radius:10px; border-top-right-radius:10px}
+    .row:last-child{border-bottom-left-radius:10px; border-bottom-right-radius:10px}
+
+    @media (max-width: 860px){
+      .deck{height:88vh}
+      h1{font-size:28px}
+      .hero{font-size:34px}
+      .grid.cols-2, .grid.cols-3{grid-template-columns:1fr}
+      .slides{inset:56px 0 88px 0}
+      header.topbar{height:56px}
+      .footer{height:88px; flex-wrap:wrap; gap:8px; padding:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" role="application" aria-label="심심하면 500원 — 서비스 소개서">
+    <header class="topbar">
+      <div class="logo"><span class="dot" aria-hidden="true"></span><span>심심하면 500원</span></div>
+      <div class="sep"></div>
+      <div class="help muted">← / → 또는 하단 버튼으로 이동</div>
+    </header>
+
+    <main class="slides" id="slides">
+      <!-- 1. 서비스 정의 -->
+      <section class="slide active" data-title="서비스 정의">
+        <div class="tag">슬라이드 1 / 10</div>
+        <div class="hero">참여율로 만족을 만드는 플랫폼,<br/> <span style="background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;">심심하면 500원</span></div>
+        <p class="lead">QR 한 번으로 지금 가능한 오프라인 활동을 발견하고, 참여율과 신뢰 데이터를 통해 삶의 만족도를 높이는 새로운 참여 플랫폼.</p>
+        <div class="card">
+          <p class="muted">핵심 문장 — <b>매칭은 수단</b>, <b>만족이 결과</b>. BM은 <b>참여율</b>.</p>
+        </div>
+      </section>
+
+      <!-- 2. 문제 정의 -->
+      <section class="slide" data-title="문제 정의">
+        <div class="tag">슬라이드 2 / 10</div>
+        <h1>오프라인의 두 가지 구조적 한계</h1>
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>즉시성 부족</h2>
+            <ul>
+              <li>“지금 당장 할 일”을 찾기 어려움</li>
+              <li>정보 나열형 UX로 실시간 해결이 어려움</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>신뢰성 부족</h2>
+            <ul>
+              <li>노쇼율 높고, 피드백이 불투명</li>
+              <li>주최자는 운영 피로, 낮은 재참여율</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted">대부분의 플랫폼은 즉시 발견과 실제 참여를 동시에 충족시키지 못합니다.</p>
+      </section>
+
+      <!-- 3. 서비스 비전 -->
+      <section class="slide" data-title="서비스 비전">
+        <div class="tag">슬라이드 3 / 10</div>
+        <h1>서비스 비전 — 매칭이 아니라 참여 경험</h1>
+        <ul>
+          <li><b>우리는 참여율을 판다</b> — 데이터로 축적되는 참여 경험의 가치.</li>
+          <li>결과는 <b>매칭</b>이 아니라 <b>삶의 만족도 향상</b>.</li>
+        </ul>
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>이 플랫폼과 함께라면</h2>
+            <ul>
+              <li>좋은 모임에 참여할 수 있음</li>
+              <li>모임을 많이 진행해 유명해질 수 있음</li>
+              <li>다른 사람들에게 신뢰받는 사람으로 성장</li>
+              <li>심심하면 언제든 할 게 있음</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>핵심 지표</h2>
+            <ul>
+              <li><b>참여율</b> · <b>재참여율</b> · <b>만족도</b></li>
+            </ul>
+            <p class="muted">클릭/조회수가 아니라, 실제 참여의 총합.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 핵심 구조 -->
+      <section class="slide" data-title="핵심 구조">
+        <div class="tag">슬라이드 4 / 10</div>
+        <h1>핵심 구조</h1>
+        <table class="tbl">
+          <thead>
+            <tr><th>단계</th><th>기능</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row"><td>1. 발견 (Discovery)</td><td>QR → 500원 버튼</td><td>즉시 참여 가능한 모임 추천</td></tr>
+            <tr class="row"><td>2. 가입 (Engagement)</td><td>관심사·위치 등록</td><td>맞춤형 추천 제공</td></tr>
+            <tr class="row"><td>3. 참여 (Participation)</td><td>모임 참여/생성</td><td>출석·후기·만족도 데이터화</td></tr>
+            <tr class="row"><td>4. 신뢰 (Reputation)</td><td>AI 신뢰 점수</td><td>참석률·후기 기반 평가</td></tr>
+            <tr class="row"><td>5. 성장 (Influence)</td><td>인플루언서 루프</td><td>신뢰 높은 유저의 리더십 강화</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 5. 사용자 가치 -->
+      <section class="slide" data-title="사용자 가치">
+        <div class="tag">슬라이드 5 / 10</div>
+        <h1>사용자 가치 — 만족을 드립니다</h1>
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>참여자</h2>
+            <ul>
+              <li>지금 가능한, 나에게 맞는 좋은 모임</li>
+              <li>재미와 만족이 검증된 활동</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>주최자</h2>
+            <ul>
+              <li>간편한 오프라인 운영 툴(체크인/후기)</li>
+              <li>참여율 데이터로 신뢰와 영향력 축적</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted">매칭은 과정, 만족이 결과. 참여가 쌓이면 삶이 달라집니다.</p>
+      </section>
+
+      <!-- 6. 데이터 루프 -->
+      <section class="slide" data-title="데이터 루프">
+        <div class="tag">슬라이드 6 / 10</div>
+        <h1>신뢰와 참여의 데이터 루프</h1>
+        <ul>
+          <li><b>참여 → 평가 → 신뢰 → 추천 → 재참여</b>의 선순환</li>
+          <li>AI는 ‘누가 인기 있나’가 아니라 <b>‘누가 함께할 때 만족도가 높나’</b>를 학습</li>
+          <li>상위 유저는 리더로 승격, 모임은 상위 노출</li>
+        </ul>
+        <div class="card"><p class="muted">참여 데이터가 신뢰를 만들고, 신뢰가 다시 참여를 만듭니다.</p></div>
+      </section>
+
+      <!-- 7. 브랜드 구조 -->
+      <section class="slide" data-title="브랜드 구조">
+        <div class="tag">슬라이드 7 / 10</div>
+        <h1>브랜드 구조 — “심심하면 500원 → 내일 만날까”</h1>
+        <div class="grid cols-3">
+          <div class="card">
+            <h2>심심하면 500원</h2>
+            <p class="muted">유입/발견</p>
+            <ul>
+              <li>QR/버튼 기반 즉시 추천</li>
+              <li>맞춤 추천은 가입 유도</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>내일 만날까</h2>
+            <p class="muted">운영/신뢰</p>
+            <ul>
+              <li>기존 커뮤니티의 오프라인 운영 툴</li>
+              <li>출석/후기/만족도 관리</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>통합 데이터베이스</h2>
+            <p class="muted">성장/분석</p>
+            <ul>
+              <li>참여율·후기·신뢰도 축적</li>
+              <li>추천과 인플루언서 선별</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. 경쟁 차별점 -->
+      <section class="slide" data-title="경쟁 차별점">
+        <div class="tag">슬라이드 8 / 10</div>
+        <h1>경쟁 대비 차별점</h1>
+        <table class="tbl">
+          <thead>
+            <tr><th>항목</th><th>기존 플랫폼</th><th>심심하면 500원</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row"><td>중심 가치</td><td>정보/모임 탐색</td><td><b>참여 경험과 만족</b></td></tr>
+            <tr class="row"><td>핵심 지표</td><td>가입자 수</td><td><b>참여율·재참여율</b></td></tr>
+            <tr class="row"><td>신뢰 구조</td><td>후기</td><td><b>참여율 + 후기 + 신뢰 점수</b></td></tr>
+            <tr class="row"><td>유입 방식</td><td>앱 다운로드</td><td><b>QR/버튼 기반 즉시성</b></td></tr>
+            <tr class="row"><td>브랜드 톤</td><td>정보형</td><td><b>유머 + 신뢰형</b> (참여율을 판다)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 9. 수익 구조 -->
+      <section class="slide" data-title="수익 구조">
+        <div class="tag">슬라이드 9 / 10</div>
+        <h1>수익 구조 — 참여율의 경제</h1>
+        <div class="grid cols-3">
+          <div class="card"><h2>보증금 수익</h2><p class="muted">불참 차감액의 일부</p></div>
+          <div class="card"><h2>추천 노출 유료화</h2><p class="muted">인기 모임·리더 상위 노출</p></div>
+          <div class="card"><h2>참여율 광고/제휴</h2><p class="muted">신뢰 높은 유저/모임 타깃</p></div>
+          <div class="card"><h2>데이터 인사이트</h2><p class="muted">B2B 대상 참여율 분석</p></div>
+          <div class="card"><h2>브랜드 협업</h2><p class="muted">신뢰 리더 중심 캠페인</p></div>
+        </div>
+        <p class="muted">클릭이 아닌 <b>참여</b>, 트래픽이 아닌 <b>만족</b>으로 수익을 만듭니다.</p>
+      </section>
+
+      <!-- 10. 비전 -->
+      <section class="slide" data-title="비전">
+        <div class="tag">슬라이드 10 / 10</div>
+        <h1>비전 — 참여가 신뢰가 되고, 신뢰가 만족이 되는 세상</h1>
+        <ul>
+          <li>참여율 중심의 새로운 평판 시스템</li>
+          <li>신뢰와 즐거움이 공존하는 오프라인 생태계</li>
+          <li>참여가 쌓이면, 사람은 만족을 얻고 플랫폼은 신뢰를 얻는다</li>
+        </ul>
+        <div class="card"><p><b>심심하면 500원 — 참여율로 세상을 연결한다.</b></p></div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="슬라이드 내비게이션">
+      <div class="controls">
+        <button class="btn" id="prev" aria-label="이전 슬라이드">← 이전</button>
+        <button class="btn" id="next" aria-label="다음 슬라이드">다음 →</button>
+      </div>
+      <div class="progress" id="progress" aria-label="진행 점"> </div>
+      <div class="controls">
+        <button class="btn" id="fit" aria-label="화면에 맞춰 보기">화면맞춤</button>
+        <button class="btn" id="reset" aria-label="원래대로">원래대로</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const progress = document.getElementById('progress');
+      let idx = 0;
+
+      function renderDots(){
+        progress.innerHTML = '';
+        slides.forEach((_, i)=>{
+          const d = document.createElement('button');
+          d.className = 'dot' + (i===idx ? ' active' : '');
+          d.setAttribute('aria-label', (i+1) + '번째 슬라이드로 이동');
+          d.addEventListener('click', ()=>go(i));
+          progress.appendChild(d);
+        });
+      }
+
+      function go(n){
+        idx = Math.max(0, Math.min(slides.length-1, n));
+        slides.forEach((s,i)=>{
+          s.classList.toggle('active', i===idx);
+          s.setAttribute('aria-hidden', i!==idx);
+        });
+        renderDots();
+        history.replaceState(null,'', `#${idx+1}`);
+      }
+
+      function next(){ go(idx+1); }
+      function prev(){ go(idx-1); }
+
+      document.getElementById('next').addEventListener('click', next);
+      document.getElementById('prev').addEventListener('click', prev);
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowRight') next();
+        if(e.key==='ArrowLeft') prev();
+      });
+
+      // Fit to screen: toggles body padding and deck size subtly
+      const deck = document.querySelector('.deck');
+      const fitBtn = document.getElementById('fit');
+      const resetBtn = document.getElementById('reset');
+      let fitted = false;
+      fitBtn.addEventListener('click', ()=>{
+        fitted = !fitted;
+        deck.style.width = fitted ? '98vw' : '';
+        deck.style.height = fitted ? '94vh' : '';
+      });
+      resetBtn.addEventListener('click', ()=>{
+        fitted = false; deck.style.width=''; deck.style.height='';
+      });
+
+      // Deep link support: #1..#10
+      const fromHash = parseInt(location.hash.replace('#',''),10);
+      if(!isNaN(fromHash)) idx = Math.min(Math.max(fromHash-1,0), slides.length-1);
+      go(idx);
+    })();
+  </script>
+</body>
+</html>
