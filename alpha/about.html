@@ -3,39 +3,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Alpha Consulting</title>
+<link href="assets/css/theme.css" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Noto+Sans+KR:wght@400;500&amp;family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-noto-sans-kr { font-family: 'Noto Sans KR', sans-serif; }
-    </style>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#D4AF37",
-              "background-light": "#FFFFFF",
-              "background-dark": "#1a1a1a", 
-              "warm-ivory": "#FAF3E0",
-              "royal-navy": "#000080",
-              "charcoal-gray": "#36454F",
-              "muted-gold": "#D4AF37"
-            },
-            fontFamily: {
-              "display": ["Work Sans", "Noto Sans", "sans-serif"],
-              "playfair": ["Playfair Display", "serif"],
-              "noto-sans-kr": ["Noto Sans KR", "sans-serif"],
-            },
-            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
@@ -47,18 +21,11 @@
 <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Alpha Consulting</h2>
 </div>
 <div class="hidden md:flex flex-1 justify-end items-center gap-6">
-<nav class="flex items-center gap-6">
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Home</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Why Alpha</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Services</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Alpha’s Choice</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">About</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Contact</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Our Story</a>
+<nav class="flex items-center gap-6" data-nav="primary" data-nav-link-class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" data-nav-active-class="text-primary">
 </nav>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-muted-gold text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<a class="flex min-w-[84px] max-w-[480px] items-center justify-center rounded-lg h-10 px-4 bg-muted-gold text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
 <span class="truncate">Schedule Consultation</span>
-</button>
+</a>
 </div>
 <div class="md:hidden">
 <button class="text-white">
@@ -66,7 +33,7 @@
 </button>
 </div>
 </header>
-<main class="flex-grow">
+<main class="flex-grow pb-40">
 <section class="bg-warm-ivory dark:bg-charcoal-gray/20">
 <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -76,9 +43,9 @@
 <div class="flex flex-col justify-center">
 <h1 class="font-playfair text-4xl font-bold text-royal-navy dark:text-warm-ivory sm:text-5xl">Growth over Acceptance, Suitability over Rankings.</h1>
 <p class="mt-4 font-noto-sans-kr text-lg text-charcoal-gray dark:text-warm-ivory/80">총체적이고 개인화된 접근을 통해 학생들에게 완벽한 교육 환경을 찾아드립니다.</p>
-<button class="mt-8 flex w-fit min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-royal-navy text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<a class="mt-8 inline-flex w-fit min-w-[84px] items-center justify-center rounded-lg h-12 px-5 bg-royal-navy text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="service.html">
 <span class="truncate">Learn More About Our Approach</span>
-</button>
+</a>
 </div>
 </div>
 </div>
@@ -185,17 +152,17 @@
 <div>
 <p class="font-medium text-white">Services</p>
 <ul class="mt-4 space-y-2 text-sm">
-<li><a class="text-white/80 transition hover:opacity-75" href="#">학교 매칭</a></li>
-<li><a class="text-white/80 transition hover:opacity-75" href="#">지원서 지원</a></li>
-<li><a class="text-white/80 transition hover:opacity-75" href="#">인터뷰 준비</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="service.html#services-overview">학교 매칭</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="service.html#our-approach">지원서 지원</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="contact.html#consultation">인터뷰 준비</a></li>
 </ul>
 </div>
 <div>
 <p class="font-medium text-white">Company</p>
 <ul class="mt-4 space-y-2 text-sm">
-<li><a class="text-white/80 transition hover:opacity-75" href="#">About</a></li>
-<li><a class="text-white/80 transition hover:opacity-75" href="#">후기</a></li>
-<li><a class="text-white/80 transition hover:opacity-75" href="#">문의하기</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="about.html">About</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="index.html#testimonials">후기</a></li>
+<li><a class="text-white/80 transition hover:opacity-75" href="contact.html">문의하기</a></li>
 </ul>
 </div>
 </div>
@@ -205,14 +172,21 @@
 </div>
 </div>
 </footer>
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy p-4 shadow-[0_-2px_5px_rgba(0,0,0,0.1)]">
-<div class="mx-auto max-w-5xl flex items-center justify-between">
+<div aria-label="상담 행동 배너" class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy/95 backdrop-blur-md p-4 shadow-[0_-2px_5px_rgba(0,0,0,0.15)]" data-cta-banner role="region" aria-live="polite">
+<div class="mx-auto max-w-5xl flex flex-col gap-3 sm:flex-row sm:items-center">
 <p class="font-playfair text-lg font-bold text-white hidden sm:block">완벽한 학교를 찾을 준비가 되셨나요?</p>
-<button class="flex w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-muted-gold text-royal-navy text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<div class="flex w-full flex-col gap-3 sm:flex-row sm:w-auto sm:flex-1">
+<a class="w-full sm:w-auto inline-flex min-w-[84px] items-center justify-center rounded-lg h-12 px-5 bg-muted-gold text-royal-navy text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
 <span class="truncate">무료 상담 예약하기</span>
+</a>
+</div>
+<button aria-label="배너 닫기" class="self-end sm:self-center sm:ml-auto inline-flex items-center justify-center rounded-full border border-white/40 p-2 text-white transition-colors duration-200 hover:bg-white/10" data-cta-dismiss type="button">
+<span class="material-symbols-outlined text-xl leading-none">close</span>
 </button>
 </div>
 </div>
 </div>
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/cta-banner.js"></script>
 
 </body></html>
