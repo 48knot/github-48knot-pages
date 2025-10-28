@@ -4,13 +4,43 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha Consulting - Services</title>
-<script src="assets/js/tailwindcss.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<script src="assets/js/tailwind.config.js"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#d6961f",
+            "background-light": "#fbfaf8",
+            "background-dark": "#1b160e",
+            "royal-navy": "#0d2b58",
+            "warm-ivory": "#f6f2e8",
+            "gold": "#d6961f",
+          },
+          fontFamily: {
+            "display": ["'Work Sans'", "sans-serif"],
+            "serif": ["'Playfair Display'", "serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-[#1b160e] dark:text-[#fbfaf8]">
 <div class="relative flex min-h-screen w-full flex-col">
@@ -28,10 +58,10 @@
 </div>
 <div class="hidden flex-1 items-center justify-end gap-8 lg:flex">
 <div class="flex items-center gap-9">
-<a class="text-sm font-medium leading-normal" href="index.html">Home</a>
-<a class="text-sm font-medium leading-normal" href="about.html">About</a>
-<a class="text-gold text-sm font-bold leading-normal" href="service.html">Services</a>
-<a class="text-sm font-medium leading-normal" href="contact.html">Contact</a>
+<a class="text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-gold text-sm font-bold leading-normal" href="#">Services</a>
+<a class="text-sm font-medium leading-normal" href="#">Contact</a>
 </div>
 <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gold text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
 <span class="truncate">Schedule a Consultation</span>

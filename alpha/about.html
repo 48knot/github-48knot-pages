@@ -3,13 +3,39 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Alpha Consulting</title>
-<script src="assets/js/tailwindcss.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Noto+Sans+KR:wght@400;500&amp;family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<script src="assets/js/tailwind.config.js"></script>
+<style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-noto-sans-kr { font-family: 'Noto Sans KR', sans-serif; }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#D4AF37",
+              "background-light": "#FFFFFF",
+              "background-dark": "#1a1a1a", 
+              "warm-ivory": "#FAF3E0",
+              "royal-navy": "#000080",
+              "charcoal-gray": "#36454F",
+              "muted-gold": "#D4AF37"
+            },
+            fontFamily: {
+              "display": ["Work Sans", "Noto Sans", "sans-serif"],
+              "playfair": ["Playfair Display", "serif"],
+              "noto-sans-kr": ["Noto Sans KR", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
@@ -22,12 +48,12 @@
 </div>
 <div class="hidden md:flex flex-1 justify-end items-center gap-6">
 <nav class="flex items-center gap-6">
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="index.html">Home</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Home</a>
 <a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Why Alpha</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="service.html">Services</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="choice.html">Alpha’s Choice</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="about.html">About</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="contact.html">Contact</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Services</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Alpha’s Choice</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">About</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Contact</a>
 <a class="text-white text-sm font-medium leading-normal hover:text-white/80 transition-colors" href="#">Our Story</a>
 </nav>
 <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-muted-gold text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
@@ -45,7 +71,7 @@
 <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
 <div class="relative h-64 overflow-hidden rounded-lg lg:order-last lg:h-full">
-<div class="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Professional headshot of Alpha Consulting's founder" style='background-image: url("assets/images/founder-headshot.webp");'></div>
+<div class="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Professional headshot of Alpha Consulting's founder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1Z0ysoHMbgDDG0ygRoDxLx_l1cjkOuJ1Xu4b29dF17CCQLRJCPVRpjOSGNRxEDKt0lC3gZc9JjXHVLrtNSBZ0EAojdiSdYT6mG2FrtQuR6ecQ3Z4WD3ZipHdWwHowIZBpH42mLebe11Jaq2Qo752xLzmAPBdLrS07FZ355OzyZhCN4TygqjCVKurGi9KuVGWNaFwy_f4C0wh9xAyRp2dxdCquBzNikLXAj3oj9L08vnP4LC7ZrJPiumaGGfj7R7bjDbfqj-q9sHc");'></div>
 </div>
 <div class="flex flex-col justify-center">
 <h1 class="font-playfair text-4xl font-bold text-royal-navy dark:text-warm-ivory sm:text-5xl">Growth over Acceptance, Suitability over Rankings.</h1>
@@ -61,7 +87,7 @@
 <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 <div class="flex flex-col md:flex-row items-start gap-8">
 <div class="w-full md:w-1/3 flex-shrink-0">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg min-h-32" data-alt="Founder of Alpha Consulting in a professional setting" style='background-image: url("assets/images/founder-professional.webp");'></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg min-h-32" data-alt="Founder of Alpha Consulting in a professional setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBf05iheW2_b6KdfqkInGurLRTEyGY1U_HuBIw0eSEj1EnnF2VXyjiAwYZGIkywQ2q7nE2n2C0sWi-HEI1F0gk-coHiGOvRfRpgKq9jEEIm1IWQvU-H3nGSMjhhNlsM6j1Nf3L7MYdGMYVYOhBUgJWjB2PCGd31YLC3AohJ2vmf_akbCLAZFAn5jfihFOFC2iBN14kUb8tzzarSeAMnNIN-komevsvBaqqf0lGn77MggCgQe-4lQ6rBO0vwI6coVMeJjeQEXxaNOOc");'></div>
 </div>
 <div class="flex flex-col">
 <h2 class="font-playfair text-3xl font-bold text-royal-navy dark:text-warm-ivory sm:text-4xl">Meet Our Founder</h2>
@@ -134,11 +160,11 @@
 <h2 class="font-playfair text-3xl font-bold text-royal-navy dark:text-warm-ivory sm:text-4xl text-center">Our Achievements &amp; Partnerships</h2>
 <p class="mt-4 max-w-3xl mx-auto text-center font-noto-sans-kr text-charcoal-gray dark:text-warm-ivory/80">우리는 유수의 교육 기관 및 단체와 협력하여 학생들에게 독보적인 기회를 제공하는 것을 자랑스럽게 생각합니다.</p>
 <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner One Logo" src="assets/images/partner-1.webp"/></div>
-<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Two Logo" src="assets/images/partner-2.webp"/></div>
-<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Three Logo" src="assets/images/partner-3.webp"/></div>
-<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Four Logo" src="assets/images/partner-4.webp"/></div>
-<div class="flex justify-center items-center col-span-2 md:col-span-4 lg:col-span-1"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Five Logo" src="assets/images/partner-5.webp"/></div>
+<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner One Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFw9ihfXLFS4HNTBZFSH-FacXLZxpV32Jv4x0-fH7tcDv9TfKxR6J48DyG9qYcpV17mbMpAPeFppk94Qwsdfx0cyoCUqiM7NpNXCSyGSNcYVWdOsHXtV_RiIB5T3LqYqua6nrge2S-DTvMWQiVJGNMU3giB7BbF0sxqoZ5EAPfO2YYv4BnCmpxKZtqEFzxQvHnN_77e9OGabEgzX-BZOk0sHUbABZwcXz9JSzWZL3ANkHz0fONURuZ541rm_58qnU9duWGVwYQVQ"/></div>
+<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Two Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdWo17Z7FmvaOw-wzxDnWIEB9pHrGRG2S9o1LHkrbX3HIAWVn6R2KfWmKa3JiK8mcqZNXbkU9TiJ9Iziumw55oaGgQ631CRo87f7KDIvFiJKzHzzeRLWwaTfo79EYHgEjWhQvki-Sjlq2JVzDgbWovCmWf-RRBWNxmx4vaoodteQHEpqZjQtqjkLo5Brue8cQ-bJVyN57gsKWh-PwOIv95RxoeOpB0a8oDa6HSyOiji4UjV6nycGHr71l0OFdF-ed0Hgn1NpkD2c"/></div>
+<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Three Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5TP2DN5wKaTKTSwcVTJQ5mn1mlhXpFI7H8LMI_6lHMg8G2a6NLZX054P0Y1ZcCOsB5w0lB6H5kzQnxq4qZjE31EOgpoi05uRo-fGjnPh5BO6VJbIYlCmdSHMf0bncsDufpmPYzXRzGXGNfR3ZDleVirxvRBOn3nwTr4iX914m0ycPb4zfB6Y29iMif-dFp0zOYlAJFfj-R_ck-Aze6HhnM8Pk6kfhrHiIV0a2JoBCxtRd2l9CenGLTMwW2QwtpN0t8eiefJQfVw"/></div>
+<div class="flex justify-center items-center"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Four Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8PpstVpCnTUd_yHSVIw2X588w0uK6p_5eTXXYUXx2SJ7UgfWQa3xaSNDDguCaGLBU3NDiruCMceXuHsTgGuAqCdPL7bNA8dsFUYPpGLPpPai3y3NKZrhnQP91iKHdGu1GVW_iVnYq-MrOSF1OKS_ynoYn2U58uorTNO7FNlA8zXgq4dLlHl3QErkmI0KLlcj0Y3c5vnqGa-RJ4SELItYAMDYbrGydd4D29jNPKgxVpn78LTFFXkHQF-VGQpCby42nZSoypZ0XzpU"/></div>
+<div class="flex justify-center items-center col-span-2 md:col-span-4 lg:col-span-1"><img class="h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="Partner Five Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB90fGPyxSDXIkIi7teYPZ0knECrKWWBiyTgFugvR4f4EsLupSilgMCgwCHRZ8thH8HSLZW5xqnMjST6aiHEhg6EKMdEI6QeMq2gcx-V0Ish4fCxFp4ql3sXTFZE4n6deKyAIGueXR-4BvvROlxr7crckwoacTPKDNsAl3qzYBKlevGRA2QsZviQvdoC9AcRng4VyuAG--zkDk3aMFau2GNwsztJ6IJEdUlUzrWUkxs_iX2Lyz0MPKlmKwLagSXcsej6kibv1wGh5Q"/></div>
 </div>
 </div>
 </section>

@@ -3,13 +3,69 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha Consulting - Contact Us</title>
-<script src="assets/js/tailwindcss.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<script src="assets/js/tailwind.config.js"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000080", // Royal Navy
+            "accent": "#D4AF37", // Old Gold
+            "background-light": "#FFFFFF",
+            "background-dark": "#1a1a2e",
+            "text-light": "#1f2937",
+            "text-dark": "#e0e0e0",
+            "text-accent": "#D4AF37",
+          },
+          fontFamily: {
+            "display": ["Playfair Display", "serif"],
+            "body": ["Noto Sans KR", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>.floating-label-group {
+      position: relative;
+    }
+    .floating-label-group .floating-label {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      transition: all 0.2s ease-in-out;
+      pointer-events: none;
+      color: #6b7280;}
+    .floating-label-group .form-input:focus ~ .floating-label,
+    .floating-label-group .form-input:not(:placeholder-shown) ~ .floating-label {
+      top: 0.5rem;
+      transform: translateY(0);
+      font-size: 0.75rem;color: #000080;}
+    .form-input {
+      border: 1px solid #d1d5db;border-radius: 0.5rem;
+      padding: 1.5rem 1rem 0.5rem 1rem;
+      transition: border-color 0.2s ease-in-out;
+      width: 100%;
+      background-color: #f9fafb;}
+    .form-input:focus {
+      outline: none;
+      border-color: #D4AF37;box-shadow: 0 0 0 1px #D4AF37;
+    }
+    .required-asterisk {
+      color: #D4AF37;
+    }
+  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
@@ -25,12 +81,12 @@
 </div>
 <nav class="flex flex-1 justify-end gap-8">
 <div class="flex items-center gap-8">
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="index.html">Home</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Home</a>
 <a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Why Alpha</a>
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="service.html">Services</a>
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="choice.html">Alpha’s Choice</a>
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="about.html">About</a>
-<a class="text-white text-sm font-bold leading-normal" href="contact.html">Contact</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Alpha’s Choice</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-white text-sm font-bold leading-normal" href="#">Contact</a>
 <a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Our Story</a>
 </div>
 </nav>
@@ -81,7 +137,7 @@
 </div>
 <div class="flex flex-col">
 <h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">Our Location</h2>
-<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-lg object-cover overflow-hidden border border-gray-200 dark:border-gray-700" data-alt="Map showing office location in New York City" data-location="New York, USA" style='background-image: url("assets/images/map.webp");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-lg object-cover overflow-hidden border border-gray-200 dark:border-gray-700" data-alt="Map showing office location in New York City" data-location="New York, USA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZEOaXfKjl2NfrzdhXUtASLhLU4LIaraUwHZMJC276P7W0ufzE6wA8G6l5dpjdNTCHYfSqcmWByupZlbOKicbGBCHHULwvmxTrc5KByz_AzhoxonrEFdq_Hvs50_MP_VCzOpE23zKTg-6e5QVGhYqTCPh-Hehm5Cux2NOhwFI9Upm3FHpN-1UdykaOOjmPHyha2rTEYFkf-cYB6v2TqoO8IZhULt9FCsLXDELFR9W4BsBcAKg3r-PpfLZO7uIabi_7WUn3TnOJwVI");'></div>
 </div>
 </div>
 <div class="flex flex-col">

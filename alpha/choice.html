@@ -3,13 +3,45 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha's Choice - Alpha Consulting</title>
-<script src="assets/js/tailwindcss.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<script src="assets/js/tailwind.config.js"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#d6961f",
+            "background-light": "#FFFFFF",
+            "background-dark": "#121212",
+            "royal-navy": "#000080",
+            "gold": "#FFD700",
+            "text-light": "#1f2937",
+            "text-dark": "#f3f4f6",
+            "text-muted-light": "#6b7280",
+            "text-muted-dark": "#9ca3af",
+          },
+          fontFamily: {
+            "display": ["Playfair Display", "serif"],
+            "body": ["Noto Sans KR", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      padding-bottom: 80px;}
+  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
@@ -28,12 +60,12 @@
 </div>
 <div class="hidden md:flex flex-1 justify-end items-center gap-6">
 <nav class="flex items-center gap-6">
-<a class="text-sm font-medium hover:text-gold transition-colors" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Home</a>
 <a class="text-sm font-medium hover:text-gold transition-colors" href="#">Why Alpha</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="service.html">Services</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Services</a>
 <a class="text-sm font-bold text-gold underline underline-offset-4" href="#">Alpha’s Choice</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="about.html">About</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="contact.html">Contact</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#">About</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Contact</a>
 <a class="text-sm font-medium hover:text-gold transition-colors" href="#">Our Story</a>
 </nav>
 <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-gold text-royal-navy text-sm font-bold tracking-wide hover:bg-gold/90 transition-colors">
@@ -59,7 +91,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
-<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Campus view of Eaglebrook School with green lawns and brick buildings" style='background-image: url("assets/images/eaglebrook-school.webp");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Campus view of Eaglebrook School with green lawns and brick buildings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCACg8PvsTsS19F8LDyQTo_o16tvXmfFE1baxFOAzN7-736f--u6UEO6oydm1AQ-CuAWQMZz8zBxtffZNm7OTqpX_KcfT7RLJVsXb0t-InOFqonHFZPh75KbiilRV-oy7Mbd0j4d4DcnA8Y3p4lqyDDQT98IVGse0dqVqGZg1KuEslvoup0_L40V829A3dnTKxlr1jnVI1uwn-c3AefpZeonNxpYW1ugL0ORkubeIJx8yyCePPHeCxSfNQwm1L_Ee8iYpda9bYPd2I");'></div>
 <div class="flex flex-col gap-4 p-6">
 <h3 class="font-display text-2xl font-bold text-text-light dark:text-text-dark">Eaglebrook School</h3>
 <p class="text-text-muted-light dark:text-text-muted-dark text-base leading-relaxed">6학년부터 9학년까지의 남학생들을 위한 주니어 보딩 및 데이 스쿨로, 지적 호기심과 개인적 성장을 촉진합니다.</p>
@@ -75,7 +107,7 @@
 </div>
 <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
-<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Fay School library with students studying at tables" style='background-image: url("assets/images/fay-school.webp");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Fay School library with students studying at tables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDecfyDm9rk7g8nCLGSAzq9nolj-84m1wxOq9dHSgSMlPz9wwvtnJLSEgWX278PhE3-ST2Q6S8HKZ6GqNPugrEAvRrQbL0xtZiZs54VLAAab9HYmfcEF2EVKSoUnH8u3Aq-cMqHH4yPzf5QUwRG0t5_nPlQWgca2G7mEI1XFbMv5DP1PZPaJL6AE9QEjFiOzkalMEE2F9UqGn3cpDvKFFssBmlz8InoVhdds6qMwm0eZPhGcmlSari-Bd1OCj03NU1N8M-8WD5M72g");'></div>
 <div class="flex flex-col gap-4 p-6">
 <h3 class="font-display text-2xl font-bold text-text-light dark:text-text-dark">Fay School</h3>
 <p class="text-text-muted-light dark:text-text-muted-dark text-base leading-relaxed">유치원부터 9학년까지의 학생들을 위한 독립적인 남녀공학 보딩 및 데이 스쿨로, 평생 학습에 대한 사랑을 장려합니다.</p>
@@ -96,7 +128,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
-<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Gothic architecture of Choate Rosemary Hall campus" style='background-image: url("assets/images/choate-rosemary-hall.webp");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Gothic architecture of Choate Rosemary Hall campus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaqKRikanRqrX-nljCzJc4hr1iIarPa1BluNklBd2SRhQpf_YsiVv3PB__Gihx3HDXraEK3k1HBgliGVOh7-tnBtL8O6isUujMNpDHfAMtbyPyLRd4-E3d4WwEgLE6YIaIAb4v4W_qMRNsoMDDbbNDG3w_JzTfHc-0J01claSHYkoeVS4TthP0bHB4V4d1AZ5WMW9lzQXpbtuN9IwKKwtj3QjghVgW82swyagGy01mL4f3dl0cmfPzRydCIXznrUXKZqfSB6I-DqY");'></div>
 <div class="flex flex-col gap-4 p-6">
 <h3 class="font-display text-2xl font-bold text-text-light dark:text-text-dark">Choate Rosemary Hall</h3>
 <p class="text-text-muted-light dark:text-text-muted-dark text-base leading-relaxed">엄격한 학업, 시그니처 프로그램, 혁신에 대한 헌신으로 유명한 명문 남녀공학 보딩 스쿨입니다.</p>
@@ -112,7 +144,7 @@
 </div>
 <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
-<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="A historic chapel on the Groton School campus" style='background-image: url("assets/images/groton-school.webp");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="A historic chapel on the Groton School campus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqNy9ebL-zp--tbovspFx1qy6j42Sm1JNVWJ4TpDMn8QNQ69MK7o8ts-9HWfGAO2L4XYbdlPY0JXvDu7eWyxnGZgVh00fb8lSPzBK-mz31QZwd8Y4ei8YEANYBQfLwi5JVhecMrEPA1yKLrWunazlFt47oRhojOmk4stoPt94dtrlTDyfP7MGNX-7BYOdb-_rdC9pylXFy7ZxRNhDxmfZhvZ8m49Px8tK4cmCfZ-HVCzqJ_Xg3XRhw0P75THYRYdP8lG1YplCN6-Y");'></div>
 <div class="flex flex-col gap-4 p-6">
 <h3 class="font-display text-2xl font-bold text-text-light dark:text-text-dark">Groton School</h3>
 <p class="text-text-muted-light dark:text-text-muted-dark text-base leading-relaxed">가장 선별적인 남녀공학 보딩 스쿨 중 하나로, 학문적 우수성과 함께 인성, 리더십, 봉사를 강조합니다.</p>
