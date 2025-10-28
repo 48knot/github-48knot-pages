@@ -57,7 +57,7 @@
   </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
-<div class="relative w-full flex-col">
+<div class="relative w-full flex flex-col">
 <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-10 py-3 transition-all duration-300 h-[72px]">
 <div class="flex items-center gap-4 text-white">
 <div class="size-6 text-primary">
@@ -68,18 +68,18 @@
 <h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
 </div>
 <div class="flex flex-1 justify-end gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Home</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Why Alpha</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Services</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Alpha’s Choice</a>
+<div class="hidden md:flex items-center gap-9">
 <a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Schools</a>
 <a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Contact</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Our Story</a>
-</nav>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
+<span class="truncate">Schedule Consultation</span>
+</button>
 </div>
 </header>
-<main class="pb-24">
+<main>
 <section class="bg-cloud-mist dark:bg-gray-800 py-24 md:py-32">
 <div class="max-w-4xl mx-auto px-6">
 <div class="bg-white dark:bg-royal-navy shadow-lg rounded-lg p-10 md:p-16 text-center">
@@ -87,7 +87,7 @@
             자녀의 첫 유학, 10년 후를 내다보는 장기 로드맵
           </h1>
 <h2 class="mt-4 font-body text-lg md:text-xl font-normal leading-normal text-gray-600 dark:text-gray-300">
-            합격보다 성장, 순위보다 적합성.
+            아무나 보낼 수 있는 곳에는 보내지 않습니다.
           </h2>
 </div>
 </div>
@@ -99,7 +99,11 @@
             Our Story
           </h2>
 <p class="font-body text-base font-normal leading-relaxed text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            알파 컨설팅은 모든 학생의 교육 여정이 고유하며, 단 하나의 지원 주기 너머를 바라보는 맞춤형 전략이 필요하다는 단순한 믿음에서 시작되었습니다. 저희의 설립 철학과 사명은 합격보다 성장, 순위보다 적합성에 중점을 둡니다.
+알파 컨설팅은 <b>‘성장’과 ‘적합성’</b>을 더 중요하게 생각합니다.
+우리의 시작은 모든 학생의 교육 여정은 각자 다르며, 단 한 번의 입시를 넘어서는 맞춤형 전략이 필요하다는 믿음에서 시작되었습니다 <br><br>
+
+focusing on growth over acceptance and suitability over rankings.
+We started with a simple belief — every student’s educational journey is unique and deserves a bespoke strategy that looks beyond a single application cycle.
           </p>
 </div>
 </div>
@@ -111,24 +115,25 @@
             Why Alpha?
           </h2>
 <p class="font-body text-base font-normal leading-normal text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
-            저희는 자녀의 장기적인 성공과 웰빙을 우선시하는 차별화된 컨설팅 접근 방식을 믿습니다.
+알파 컨설팅은 자녀의 지속적인 성장과 행복을 가장 중요하게 생각하는, 새로운 형태의 컨설팅을 제공합니다.<br>
+We believe in a new approach to consulting — one that values your child’s continuous growth and well-being above all else.
           </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
 <span class="material-symbols-outlined mx-auto text-4xl text-primary">calendar_month</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">10년 후를 보는 로드맵</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">단순한 학교 지원 계획이 아닌, 10년 후를 내다보는 장기적인 로드맵을 구축합니다.</p>
+<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">장기적 관점<br> Long-Term Focus</h3>
+<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">단순한 입시 계획이 아닌, 10년에 걸친 성장 로드맵을 설계합니다.<br>We build a 10-year roadmap, not just a school application plan.</p>
 </div>
 <div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
 <span class="material-symbols-outlined mx-auto text-4xl text-primary">person_search</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">개인별 맞춤 매칭</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">자녀의 고유한 재능과 성격에 완벽하게 맞는 학교를 찾아드립니다.</p>
+<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">맞춤 매칭<br>Personalized Matching</h3>
+<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">학생 개개인의 재능과 성격에 완벽히 어울리는 학교를 찾아드립니다.<br>Our process ensures a perfect fit for your child's unique talents and personality.</p>
 </div>
 <div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
 <span class="material-symbols-outlined mx-auto text-4xl text-primary">groups</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">독보적인 전문가 네트워크</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">교육자 및 입학 사정관으로 구성된 저희의 독보적인 네트워크를 활용하세요.</p>
+<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">전문가 네트워크<br>Expert Network</h3>
+<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">교육자 및 입학 사정관으로 구성된 저희의 독보적인 네트워크를 활용하세요.<br>Gain access to our unparalleled network of educators and admission officers.</p>
 </div>
 </div>
 </div>
@@ -140,19 +145,54 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">종합 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">초기 평가부터 최종 학교 선택 및 지원서 제출까지 전 과정을 안내합니다.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">더 알아보기 →</a>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 주니어 보딩 컨설팅</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">8~14세 학생을 위한 조기 유학 전략과 맞춤형 보딩 입학 설계</p>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white"> U.S. Junior Boarding</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow"> Early U.S. boarding admission planning for ages 8–14, focused on personalized school matching and long-term academic growth.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
 </div>
 <div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">인터뷰 준비</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">입학 인터뷰에서 자신감을 갖고 뛰어난 성과를 낼 수 있도록 전문적인 코칭을 제공합니다.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">더 알아보기 →</a>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 시니어 보딩 스쿨 컨설팅</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">대학 진학을 목표로 한 고등 보딩 입시 및 커리큘럼 관리</p>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.S. Senior Boarding School Consulting</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Specialized coaching to build confidence and excel in admission interviews.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
 </div>
 <div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">에세이 및 지원서 검토</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">매력적인 자기소개서와 지원서를 작성할 수 있도록 전문가의 검토와 피드백을 제공합니다.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">더 알아보기 →</a>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 대학 컨설팅</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">전공 탐색부터 에세이, 추천서까지 Top 대학 입학을 위한 종합 전략</p>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.S. University Consulting</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">영국 전통 명문 보딩스쿨 컨설팅</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">역사와 전통을 갖춘 명문 보딩학교 진학 준비</p>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.K. Heritage Boarding School Consulting</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">영국 대학진학 중심 보딩 컨설팅</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">A-Level·IB 기반의 대학진학형 보딩학교 입시 관리</p>
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.K. University Pathway Boarding Consulting</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Consulting focused on A-Level and IB programs for university-bound U.K. boarding schools</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Boarding Support Program</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Academic & Talent Camps</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
+<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Short-Term Study Abroad Program</h3>
+<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
+<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
 </div>
 </div>
 </div>
