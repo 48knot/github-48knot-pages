@@ -3,45 +3,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha's Choice - Alpha Consulting</title>
+<link href="assets/css/theme.css" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#d6961f",
-            "background-light": "#FFFFFF",
-            "background-dark": "#121212",
-            "royal-navy": "#000080",
-            "gold": "#FFD700",
-            "text-light": "#1f2937",
-            "text-dark": "#f3f4f6",
-            "text-muted-light": "#6b7280",
-            "text-muted-dark": "#9ca3af",
-          },
-          fontFamily: {
-            "display": ["Playfair Display", "serif"],
-            "body": ["Noto Sans KR", "sans-serif"],
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<style>
-    body {
-      padding-bottom: 80px;}
-  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
@@ -59,23 +27,16 @@
 <h2 class="text-xl font-bold font-display">Alpha Consulting</h2>
 </div>
 <div class="hidden md:flex flex-1 justify-end items-center gap-6">
-<nav class="flex items-center gap-6">
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Home</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Why Alpha</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Services</a>
-<a class="text-sm font-bold text-gold underline underline-offset-4" href="#">Alpha’s Choice</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">About</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Contact</a>
-<a class="text-sm font-medium hover:text-gold transition-colors" href="#">Our Story</a>
+<nav class="flex items-center gap-6" data-nav="primary" data-nav-link-class="text-sm font-medium hover:text-gold transition-colors" data-nav-active-class="text-gold font-bold underline underline-offset-4">
 </nav>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-gold text-royal-navy text-sm font-bold tracking-wide hover:bg-gold/90 transition-colors">
+<a class="flex min-w-[84px] items-center justify-center rounded-md h-10 px-4 bg-gold text-royal-navy text-sm font-bold tracking-wide transition-colors hover:bg-gold/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
 <span>상담 예약하기</span>
-</button>
+</a>
 </div>
 </div>
 </div>
 </header>
-<main class="flex-1">
+<main class="flex-1 pb-40">
 <div class="px-4 sm:px-6 lg:px-8 py-10 md:py-16">
 <div class="max-w-7xl mx-auto flex flex-col gap-12">
 <div class="flex flex-wrap justify-between gap-6 p-4">
@@ -100,7 +61,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">6-9학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">체육</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.eaglebrook.org/" rel="noopener noreferrer" target="_blank">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -116,7 +77,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">PK-9학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">글로벌 커뮤니티</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.fayschool.org/" rel="noopener noreferrer" target="_blank">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -137,7 +98,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">9-12학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">STEM 중심</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.choate.edu/" rel="noopener noreferrer" target="_blank">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -153,7 +114,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">8-12학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">인문학</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.groton.org/" rel="noopener noreferrer" target="_blank">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -164,16 +125,23 @@
 </div>
 </main>
 </div>
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy/95 backdrop-blur-sm text-white shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.1)]">
+<div aria-label="상담 행동 배너" class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy/95 backdrop-blur-md text-white shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.15)]" data-cta-banner role="region" aria-live="polite">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-20">
+<div class="flex flex-col gap-3 sm:flex-row sm:items-center h-auto sm:h-20">
 <p class="text-lg font-medium hidden sm:block">자녀에게 꼭 맞는 학교를 찾을 준비가 되셨나요?</p>
-<button class="w-full sm:w-auto flex items-center justify-center rounded-md h-12 px-6 bg-gold text-royal-navy text-base font-bold tracking-wide hover:bg-gold/90 transition-colors shadow-lg">
+<div class="flex w-full flex-col gap-3 sm:flex-row sm:w-auto sm:flex-1">
+<a class="w-full sm:w-auto inline-flex items-center justify-center rounded-md h-12 px-6 bg-gold text-royal-navy text-base font-bold tracking-wide transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
             상담 예약하기
-          </button>
+          </a>
+</div>
+<button aria-label="배너 닫기" class="self-end sm:self-center sm:ml-auto inline-flex items-center justify-center rounded-full border border-white/40 p-2 text-white transition-colors duration-200 hover:bg-white/10" data-cta-dismiss type="button">
+<span class="material-symbols-outlined text-xl leading-none">close</span>
+</button>
 </div>
 </div>
 </div>
 </div>
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/cta-banner.js"></script>
 
 </body></html>

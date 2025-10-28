@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light dark;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-noto-sans-kr {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card-hover-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #D4AF37;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-hover-border:hover::before,
+.card-hover-border:focus-within::before {
+  transform: translateY(0);
+}
+
+[data-cta-banner].is-hidden {
+  display: none;
+}
+
+[data-cta-dismiss] {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+[data-cta-dismiss]:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
