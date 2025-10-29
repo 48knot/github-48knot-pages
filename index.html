@@ -1,312 +1,89 @@
 ---
-layout: null
-title: Alpha Consulting
+layout: default
+title: Home
 ---
-<!DOCTYPE html>
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Alpha Consulting</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    .font-display { font-family: 'Playfair Display', serif; }
-    .font-body { font-family: 'Noto Sans KR', sans-serif; }
-    .card-hover-border { position: relative; overflow: hidden; }
-    .card-hover-border::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background-color: #D4AF37;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-in-out;
-    }
-    .card-hover-border:hover::before {
-      transform: translateY(0);
-    }
-  </style>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#D4AF37",
-            "royal-navy": "#0A192F",
-            "cloud-mist": "#F0F4F8",
-            "warm-ivory": "#FAF3E0",
-            "soft-sand": "#E8DCC4",
-            "background-light": "#FFFFFF",
-            "background-dark": "#0A192F",
-          },
-          fontFamily: {
-            "display": ["Playfair Display", "serif"],
-            "body": ["Noto Sans KR", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "12px",
-            "xl": "1rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
-<div class="relative flex w-full flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-10 py-3 transition-all duration-300 h-[72px]">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6 text-primary">
-<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
+
+<!-- Hero Section -->
+<section class="hero">
+<div class="container hero-content">
+<h1 class="heading-1 hero-title animate-float">
+<span class="accent">48</span> knots
+</h1>
+<p class="hero-tagline">
+{{ site.tagline }}
+</p>
+<p class="hero-description">
+{{ site.data.brand.concept }}
+</p>
+
+<div class="hero-actions">
+<a href="#philosophy" class="btn-primary">우리의 철학</a>
+      <a href="/projects/project.html" class="btn-secondary">프로젝트 보기</a>
+</div>
+</div>
+
+<div class="wave-divider">
+<svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
 </svg>
 </div>
-<h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<div class="hidden md:flex items-center gap-9">
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">About</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Services</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Schools</a>
-<a class="text-white hover:text-primary text-sm font-medium leading-normal" href="#">Contact</a>
-</div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-royal-navy text-sm font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
-<span class="truncate">Schedule Consultation</span>
-</button>
-</div>
-</header>
-<main class="flex flex-col">
-<section class="bg-cloud-mist dark:bg-gray-800 py-24 md:py-32">
-<div class="max-w-4xl mx-auto px-6">
-<div class="bg-white dark:bg-royal-navy shadow-lg rounded-lg p-10 md:p-16 text-center">
-<h1 class="font-display text-4xl md:text-6xl font-black leading-tight tracking-tight text-royal-navy dark:text-white">
-            자녀의 첫 유학, 10년 후를 내다보는 장기 로드맵
-          </h1>
-<h2 class="mt-4 font-body text-lg md:text-xl font-normal leading-normal text-gray-600 dark:text-gray-300">
-            아무나 보낼 수 있는 곳에는 보내지 않습니다.
-          </h2>
-</div>
-</div>
 </section>
-<section class="bg-warm-ivory dark:bg-[#2c2518] py-20">
-<div class="max-w-4xl mx-auto px-6">
-<div class="flex flex-col gap-4 text-center">
-<h2 class="font-display text-4xl font-bold leading-tight tracking-[-0.015em] text-royal-navy dark:text-white">
-            Our Story
-          </h2>
-<p class="font-body text-base font-normal leading-relaxed text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-알파 컨설팅은 <b>‘성장’과 ‘적합성’</b>을 더 중요하게 생각합니다.
-우리의 시작은 모든 학생의 교육 여정은 각자 다르며, 단 한 번의 입시를 넘어서는 맞춤형 전략이 필요하다는 믿음에서 시작되었습니다 <br><br>
 
-focusing on growth over acceptance and suitability over rankings.
-We started with a simple belief — every student’s educational journey is unique and deserves a bespoke strategy that looks beyond a single application cycle.
-          </p>
+<!-- Philosophy Section -->
+<section id="philosophy">
+<div class="container">
+<h2 class="heading-2 fade-in">우리가 믿는 것</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+{% for philosophy in site.data.brand.identity.philosophy %}
+<div class="card philosophy-card fade-in" data-float>
+<div class="icon">⚓</div>
+<p>{{ philosophy }}</p>
+</div>
+{% endfor %}
 </div>
 </div>
 </section>
-<section class="bg-white dark:bg-royal-navy py-20">
-<div class="max-w-5xl mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-display text-4xl font-bold leading-tight tracking-[-0.015em] text-royal-navy dark:text-white">
-            Why Alpha?
-          </h2>
-<p class="font-body text-base font-normal leading-normal text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
-알파 컨설팅은 자녀의 지속적인 성장과 행복을 가장 중요하게 생각하는, 새로운 형태의 컨설팅을 제공합니다.<br>
-We believe in a new approach to consulting — one that values your child’s continuous growth and well-being above all else.
-          </p>
+
+<!-- Symbolism Section -->
+<section class="bg-gray">
+<div class="container">
+<h2 class="heading-2 fade-in">상징과 은유</h2>
+
+<div class="max-w-4xl mx-auto">
+{% for symbol in site.data.brand.identity.symbolism %}
+<div class="symbol-item fade-in">
+<span class="icon">🚢</span>
+<p>{{ symbol }}</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
-<span class="material-symbols-outlined mx-auto text-4xl text-primary">calendar_month</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">장기적 관점<br> Long-Term Focus</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">단순한 입시 계획이 아닌, 10년에 걸친 성장 로드맵을 설계합니다.<br>We build a 10-year roadmap, not just a school application plan.</p>
-</div>
-<div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
-<span class="material-symbols-outlined mx-auto text-4xl text-primary">person_search</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">맞춤 매칭<br>Personalized Matching</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">학생 개개인의 재능과 성격에 완벽히 어울리는 학교를 찾아드립니다.<br>Our process ensures a perfect fit for your child's unique talents and personality.</p>
-</div>
-<div class="flex flex-col gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center shadow-sm card-hover-border">
-<span class="material-symbols-outlined mx-auto text-4xl text-primary">groups</span>
-<h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white">전문가 네트워크<br>Expert Network</h3>
-<p class="font-body text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">교육자 및 입학 사정관으로 구성된 저희의 독보적인 네트워크를 활용하세요.<br>Gain access to our unparalleled network of educators and admission officers.</p>
-</div>
+{% endfor %}
 </div>
 </div>
 </section>
-<section class="bg-cloud-mist dark:bg-gray-800 py-20">
-<div class="max-w-5xl mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-display text-4xl font-bold leading-tight text-royal-navy dark:text-white">Services</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 주니어 보딩 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">8~14세 학생을 위한 조기 유학 전략과 맞춤형 보딩 입학 설계</p>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white"> U.S. Junior Boarding</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow"> Early U.S. boarding admission planning for ages 8–14, focused on personalized school matching and long-term academic growth.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 시니어 보딩 스쿨 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">대학 진학을 목표로 한 고등 보딩 입시 및 커리큘럼 관리</p>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.S. Senior Boarding School Consulting</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Specialized coaching to build confidence and excel in admission interviews.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">미국 대학 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">전공 탐색부터 에세이, 추천서까지 Top 대학 입학을 위한 종합 전략</p>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.S. University Consulting</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">영국 전통 명문 보딩스쿨 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">역사와 전통을 갖춘 명문 보딩학교 진학 준비</p>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.K. Heritage Boarding School Consulting</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">영국 대학진학 중심 보딩 컨설팅</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">A-Level·IB 기반의 대학진학형 보딩학교 입시 관리</p>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">U.K. University Pathway Boarding Consulting</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Consulting focused on A-Level and IB programs for university-bound U.K. boarding schools</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Boarding Support Program</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Academic & Talent Camps</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-royal-navy p-6 shadow-lg card-hover-border">
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Short-Term Study Abroad Program</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-300 flex-grow">Expert review and feedback to craft compelling personal statements and applications.</p>
-<a class="font-body text-primary font-bold mt-2" href="#">Learn More →</a>
-</div>
+
+<!-- Core Words Section -->
+<section>
+<div class="container">
+<h2 class="heading-2 fade-in">Core Words</h2>
+
+<div class="core-words">
+{% for word in site.data.brand.brand_voice.core_words %}
+<span class="word-tag fade-in animate-drift">
+{{ word }}
+</span>
+{% endfor %}
 </div>
 </div>
 </section>
-<section class="bg-white dark:bg-royal-navy py-20">
-<div class="max-w-5xl mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-display text-4xl font-bold leading-tight text-royal-navy dark:text-white">Alpha's Choice</h2>
-<p class="font-body text-base font-normal text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">알파 컨설팅이 자부심을 갖고 파트너십을 맺고 있는 엄선된 엘리트 보딩 스쿨입니다.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-gray-800 p-6 shadow-lg card-hover-border">
-<img alt="Phillips Exeter Academy campus" class="w-full h-48 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZe8ELoZMrjWbNzCxZSOrQxcOUycxpwfqtD-3FU2rEpNI_0smGOEA-SLbTaINDoBTKLOkxUmd9I1E22VrM6E__tL4GfwWmfqIRTMS8C4iWoJ3eKBY0VDTf6KokFVhUj8SxCTw-67CnE2MgoFki21kN640Sgi6HpLP2NWgmsaZ7SEsPJEvIVX7_54_VTrvFRG1F3XHIGUqZs4HM6zxCTJyZzWyMdk74T5jp3cswjHpPVaWMMnMEOBYZw8wJgAALT4XOa_INozEcgME"/>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Phillips Exeter Academy</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 flex-grow">학생 중심의 '하크니스 테이블' 토론식 수업 방식으로 유명하며, 비판적 사고와 협업 능력을 강조합니다.</p>
-<div class="flex flex-wrap gap-2 mt-2">
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">STEM</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">토론식 수업</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">리더십</span>
-</div>
-<a class="font-body text-primary font-bold mt-4" href="#">더 알아보기 →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-gray-800 p-6 shadow-lg card-hover-border">
-<img alt="Phillips Academy Andover campus" class="w-full h-48 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATt0JYXi1NyUZ-uwZrB91mT6rSCTMJ1e-NqVYPC7XQGKzq4dhK5DvFVoBPoKtsMvHwg3Xm-3KO6C3QxFnHwIyiZe370qCTXCGbheFBtOKReJG6f_-BPwjTjrkglr6QCWZV4r7brtI6ib8UEJQj9ecMTjFv2sIJD2EbHNRxCrFzOdfwRlwds-nkp6cU0LDE16k3GRMhZjD8afvYEv-KLMRaWEoZEemoL0_ID6gGj1QokO6TKDvQoJik1Q4ASCpiy7k4EyGIQHGgO6s"/>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Phillips Academy Andover</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 flex-grow">'학문적 우수성과 선한 인성'을 교육 철학으로 삼아, 학생들이 지식뿐만 아니라 사회적 책임감을 갖춘 리더로 성장하도록 돕습니다.</p>
-<div class="flex flex-wrap gap-2 mt-2">
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">인문학</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">사회적 책임</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">다양성</span>
-</div>
-<a class="font-body text-primary font-bold mt-4" href="#">더 알아보기 →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-gray-800 p-6 shadow-lg card-hover-border">
-<img alt="Eton College campus" class="w-full h-48 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFpKQk8q-WlxpqgqtH4rYVwQMmGKq9Ug-ab3MspoIs8RAaD3x9RHfskh-l3H1xkPTqmIGjrcVPQlp_reVSScFw30lhk8PdHX87P1VyhhjkQ43lg5cwy-FSirZwT8t_L3qMWeXkutfsVZ4uI8JoOs7qJqYiMtuaG-lWqS-xBjw1dgrf9sGH3LgXRh9GaW0yJ_mGmYXT3G2IgwsmVswaQG1h3-A2w6Mk9UJP2vr7FZLXHfPlGsGH7prd07mKgKaqa5NLP3pZl7pgJ6E"/>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Eton College</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 flex-grow">영국의 전통과 역사를 자랑하는 명문으로, 학문적 성취와 함께 스포츠 및 예술 활동을 통한 전인 교육을 중시합니다.</p>
-<div class="flex flex-wrap gap-2 mt-2">
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">전통</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">전인 교육</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">스포츠</span>
-</div>
-<a class="font-body text-primary font-bold mt-4" href="#">더 알아보기 →</a>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-white dark:bg-gray-800 p-6 shadow-lg card-hover-border">
-<img alt="Harrow School campus" class="w-full h-48 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB71va5J6_4OAiIj9dCNoppeA90UFxDdjD2qcUa0i2Ou9Ia3vLqnw3w0nHyyz7Tw5uW3jqPMC23Oy_IvdrqoIU_0XP9eDOboQjEDrEm_5BLxH8u_Ez3yEgKqaB-lWgLYU5y3XEqsjTVwZZ1sNFvQbXWqLF_wy-hwjLZWGDj5bLYEsMFp98miusP7iOW-ttVnhWYgGpu0uNx7xFPQRSZgZ4GDNsRDLYRl7QAOCGu6caDzj6DbV0efvB1dbp44nxQ1dTIvyFkDv30Wgg"/>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white">Harrow School</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 flex-grow">강력한 공동체 의식과 리더십 교육으로 잘 알려져 있으며, 학생들이 용기, 명예, 겸손, 동료애의 가치를 배우도록 합니다.</p>
-<div class="flex flex-wrap gap-2 mt-2">
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">리더십</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">공동체</span>
-<span class="inline-block bg-primary/20 text-primary-darker rounded-full px-3 py-1 text-xs font-semibold">인성 교육</span>
-</div>
-<a class="font-body text-primary font-bold mt-4" href="#">더 알아보기 →</a>
+
+<!-- Call to Action -->
+<section class="hero bg-gray">
+<div class="container text-center relative z-10">
+<h2 class="heading-2 fade-in">함께 항해하시겠습니까?</h2>
+<p class="hero-description fade-in">{{ site.data.brand.identity.archetype }}</p>
+
+<div class="hero-actions fade-in">
+<a href="/team/" class="btn-primary">팀 만나기</a>
+<a href="/contact/" class="btn-secondary">연락하기</a>
 </div>
 </div>
-</div>
-</section>
-<section class="bg-soft-sand dark:bg-[#3d382d] py-20">
-<div class="max-w-5xl mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-display text-4xl font-bold leading-tight text-royal-navy dark:text-white">What Our Clients Say</h2>
-<p class="font-body text-base font-normal text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mt-4">
-            저희와 함께 이 여정을 시작하여 놀라운 결과를 성취한 가족들의 이야기를 들어보세요.
-          </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="flex flex-col gap-6 rounded-lg bg-white dark:bg-royal-navy p-8 shadow-lg">
-<p class="font-display text-xl font-bold italic leading-relaxed text-royal-navy dark:text-gray-200">Alpha Consulting의 장기적 접근 방식은 완전히 새로운 전환점이었습니다. 단순히 명문 학교에 합격하는 것을 넘어, 아들이 인생의 방향과 열정을 발견하게 해주었어요.”</p>
-<div class="flex items-center gap-4 mt-auto">
-<img alt="Photo of The Park Family" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBz2vXAGxsP2kG5247r98DGAOKa0zJpN15Jz6FVavq466IxM5_NQDz3xuLEPPN4iAzfH_Yvh4ZAP-nqZhfmkC3rRSicB8XFSwya3z3o_dxg9Mdz7IV0QYxIGpPW_XM34FZVIMKA19vQp98ivj7agry_A_gEYGgB2giMALtfj-0m6yqokQVEXwKBxApCaGtrnoOsVyA1vlGHs-mcJB-woBmRxr-bEdTKUk2cH4_FkHXFpwazO0Ru-ZXzdFAN6WT1kpcPMSZsTyPPFI"/>
-<div>
-<p class="font-body text-base font-bold text-royal-navy dark:text-white">박O준 학부모님</p>
-<p class="font-body text-sm text-gray-500 dark:text-gray-400">Eton College 재학생</p>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-6 rounded-lg bg-white dark:bg-royal-navy p-8 shadow-lg">
-<p class="font-display text-xl font-bold italic leading-relaxed text-royal-navy dark:text-gray-200">“맞춤 매칭이 정말 놀라웠어요.
-우리 딸의 성격에 꼭 맞는 학교를 찾아주셔서 단순한 성적 이상의 결과를 얻었어요. 정말 만족합니다.”</p>
-<div class="flex items-center gap-4 mt-auto">
-<img alt="Photo of The Kim Family" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCHNFf9c8gsywHA6CrUIYdVNAHtk8W0eMUJVwRWb20xcwh7hNH9w--XinZf9OqzQJkqLYW8Alnx6E24biKRkh6ctYxt5fADCz7nencE6tUpFRdmA5tsyB6XPu4HGTexJL-NZMNKEaei6FVGlG5z_vdQGj4BWj1MIGSBivdOvDJUyy-sxwxlQx-bRabhz6Fm9SRcnTdQ15TjihvA6WfDdQgcnjhGFpPevQ4PGmNe0fs_WKOaC4MaoauZ36pfDlT-nyhK9X7_oeciC4"/>
-<div>
-<p class="font-body text-base font-bold text-royal-navy dark:text-white">김O서 학부모님</p>
-<p class="font-body text-sm text-gray-500 dark:text-gray-400">Phillips Exeter Academy 재학생</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="bg-royal-navy dark:bg-black py-20">
-<div class="max-w-4xl mx-auto px-6 text-center">
-<h2 class="font-display text-4xl font-bold leading-tight text-white">자녀의 미래를 위한 여정을 지금 시작하세요</h2>
-<p class="font-body text-lg text-gray-300 mt-4 max-w-2xl mx-auto">10년의 로드맵으로 자녀의 미래를 함께 설계합니다. 오늘 상담을 예약하세요.</p>
-<button class="mt-8 flex-shrink-0 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-royal-navy text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg inline-flex">
-<span class="truncate">상담 시작하기</span>
-</button>
-</div>
-</section>
-</main>
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 dark:bg-royal-navy/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-700">
-<div class="max-w-5xl mx-auto flex justify-center items-center gap-4">
-<button class="w-full md:w-auto flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-royal-navy text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md">
-<span class="truncate">상담 예약하기</span>
-</button>
-<button class="w-full md:w-auto flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-transparent border-2 border-royal-navy text-royal-navy dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-royal-navy text-base font-bold leading-normal tracking-[0.015em] transition-colors duration-200 hover:bg-royal-navy hover:text-white">
-<span class="truncate">학교 리스트 보기</span>
-</button>
-</div>
-</div>
-</div>
-</body></html>
