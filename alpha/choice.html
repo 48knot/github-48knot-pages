@@ -3,20 +3,86 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha's Choice - Alpha Consulting</title>
-<link href="assets/css/theme.css" rel="stylesheet"/>
-<script src="assets/js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#D4AF37',
+            darker: '#B48A25'
+          },
+          accent: '#D4AF37',
+          gold: '#D4AF37',
+          'royal-navy': '#0a192f',
+          'background-light': '#FFFFFF',
+          'background-dark': '#0f1419',
+          'text-light': '#1F2937',
+          'text-dark': '#F3F4F6',
+          'text-muted-light': '#6B7280',
+          'text-muted-dark': '#9CA3AF'
+        },
+        fontFamily: {
+          display: ['Noto Serif KR', 'serif'],
+          body: ['Noto Sans KR', 'sans-serif']
+        },
+        borderRadius: {
+          DEFAULT: '0.25rem',
+          lg: '0.5rem',
+          xl: '0.75rem'
+        }
+      }
+    }
+  }
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+    :root {
+      --font-display: 'Noto Serif KR';
+      --font-body: 'Noto Sans KR';
+      --color-primary: #D4AF37;
+      --color-primary-rgb: 212 175 55;
+      --color-primary-darker: #B48A25;
+      --color-primary-darker-rgb: 180 138 37;
+      --color-accent: #D4AF37;
+      --color-accent-rgb: 212 175 55;
+      --color-gold: #D4AF37;
+      --color-gold-rgb: 212 175 55;
+      --color-royal-navy: #0a192f;
+      --color-royal-navy-rgb: 10 25 47;
+      --color-background-light: #FFFFFF;
+      --color-background-light-rgb: 255 255 255;
+      --color-background-dark: #0f1419;
+      --color-background-dark-rgb: 15 20 25;
+      --color-text-light: #1F2937;
+      --color-text-light-rgb: 31 41 55;
+      --color-text-dark: #F3F4F6;
+      --color-text-dark-rgb: 243 244 246;
+      --color-text-muted-light: #6B7280;
+      --color-text-muted-light-rgb: 107 114 128;
+      --color-text-muted-dark: #9CA3AF;
+      --color-text-muted-dark-rgb: 156 163 175;
+      --radius-default: 0.25rem;
+      --radius-lg: 0.5rem;
+      --radius-xl: 0.75rem;
+    }
+    body {
+      padding-bottom: 80px;
+    }
+  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
 <div class="layout-container flex h-full grow flex-col">
-<header class="w-full bg-royal-navy/95 backdrop-blur-sm sticky top-0 z-50 text-white shadow-lg">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-20">
+<header class="w-full h-20 bg-royal-navy/95 backdrop-blur-sm sticky top-0 z-50 text-white shadow-lg flex items-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-10 w-full">
+<div class="flex items-center justify-between h-full">
 <div class="flex items-center gap-4">
 <div class="size-6 text-gold">
 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -27,16 +93,33 @@
 <h2 class="text-xl font-bold font-display">Alpha Consulting</h2>
 </div>
 <div class="hidden md:flex flex-1 justify-end items-center gap-6">
-<nav class="flex items-center gap-6" data-nav="primary" data-nav-link-class="text-sm font-medium hover:text-gold transition-colors" data-nav-active-class="text-gold font-bold underline underline-offset-4">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-gold transition-colors" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="index.html#why-alpha">Why Alpha</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="service.html">Services</a>
+<a class="text-sm font-bold text-gold underline underline-offset-4" href="choice.html">Alpha's Choice</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="contact.html">Contact</a>
 </nav>
-<a class="flex min-w-[84px] items-center justify-center rounded-md h-10 px-4 bg-gold text-royal-navy text-sm font-bold tracking-wide transition-colors hover:bg-gold/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
+<a href="contact.html" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-gold text-royal-navy text-sm font-bold tracking-wide hover:bg-gold/90 transition-colors">
 <span>상담 예약하기</span>
 </a>
 </div>
+<button id="mobile-menu-btn" class="md:hidden text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </div>
 </header>
-<main class="flex-1 pb-40">
+<div class="mobile-nav md:hidden" id="mobile-nav">
+<a href="index.html">Home</a>
+<a href="index.html#why-alpha">Why Alpha</a>
+<a href="service.html">Services</a>
+<a href="choice.html" class="active">Alpha's Choice</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+<main class="flex-1">
 <div class="px-4 sm:px-6 lg:px-8 py-10 md:py-16">
 <div class="max-w-7xl mx-auto flex flex-col gap-12">
 <div class="flex flex-wrap justify-between gap-6 p-4">
@@ -50,7 +133,7 @@
 <section class="flex flex-col gap-8">
 <h2 class="font-display text-3xl font-bold tracking-tight text-text-light dark:text-text-dark px-4">주니어 보딩 스쿨</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
+<div class="card-enhanced relative overflow-hidden group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
 <div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Campus view of Eaglebrook School with green lawns and brick buildings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCACg8PvsTsS19F8LDyQTo_o16tvXmfFE1baxFOAzN7-736f--u6UEO6oydm1AQ-CuAWQMZz8zBxtffZNm7OTqpX_KcfT7RLJVsXb0t-InOFqonHFZPh75KbiilRV-oy7Mbd0j4d4DcnA8Y3p4lqyDDQT98IVGse0dqVqGZg1KuEslvoup0_L40V829A3dnTKxlr1jnVI1uwn-c3AefpZeonNxpYW1ugL0ORkubeIJx8yyCePPHeCxSfNQwm1L_Ee8iYpda9bYPd2I");'></div>
 <div class="flex flex-col gap-4 p-6">
@@ -61,12 +144,12 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">6-9학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">체육</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.eaglebrook.org/" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 </div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
+<div class="card-enhanced relative overflow-hidden group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
 <div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Fay School library with students studying at tables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDecfyDm9rk7g8nCLGSAzq9nolj-84m1wxOq9dHSgSMlPz9wwvtnJLSEgWX278PhE3-ST2Q6S8HKZ6GqNPugrEAvRrQbL0xtZiZs54VLAAab9HYmfcEF2EVKSoUnH8u3Aq-cMqHH4yPzf5QUwRG0t5_nPlQWgca2G7mEI1XFbMv5DP1PZPaJL6AE9QEjFiOzkalMEE2F9UqGn3cpDvKFFssBmlz8InoVhdds6qMwm0eZPhGcmlSari-Bd1OCj03NU1N8M-8WD5M72g");'></div>
 <div class="flex flex-col gap-4 p-6">
@@ -77,7 +160,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">PK-9학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">글로벌 커뮤니티</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.fayschool.org/" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -87,7 +170,7 @@
 <section class="flex flex-col gap-8">
 <h2 class="font-display text-3xl font-bold tracking-tight text-text-light dark:text-text-dark px-4">보딩 스쿨</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
+<div class="card-enhanced relative overflow-hidden group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
 <div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Gothic architecture of Choate Rosemary Hall campus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaqKRikanRqrX-nljCzJc4hr1iIarPa1BluNklBd2SRhQpf_YsiVv3PB__Gihx3HDXraEK3k1HBgliGVOh7-tnBtL8O6isUujMNpDHfAMtbyPyLRd4-E3d4WwEgLE6YIaIAb4v4W_qMRNsoMDDbbNDG3w_JzTfHc-0J01claSHYkoeVS4TthP0bHB4V4d1AZ5WMW9lzQXpbtuN9IwKKwtj3QjghVgW82swyagGy01mL4f3dl0cmfPzRydCIXznrUXKZqfSB6I-DqY");'></div>
 <div class="flex flex-col gap-4 p-6">
@@ -98,12 +181,12 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">9-12학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">STEM 중심</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.choate.edu/" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 </div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
+<div class="card-enhanced relative overflow-hidden group relative flex flex-col overflow-hidden rounded-xl bg-background-light dark:bg-gray-800 shadow-lg transition-all hover:shadow-2xl">
 <div class="absolute top-0 left-0 h-full w-1 bg-transparent transition-colors group-hover:bg-gold"></div>
 <div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="A historic chapel on the Groton School campus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqNy9ebL-zp--tbovspFx1qy6j42Sm1JNVWJ4TpDMn8QNQ69MK7o8ts-9HWfGAO2L4XYbdlPY0JXvDu7eWyxnGZgVh00fb8lSPzBK-mz31QZwd8Y4ei8YEANYBQfLwi5JVhecMrEPA1yKLrWunazlFt47oRhojOmk4stoPt94dtrlTDyfP7MGNX-7BYOdb-_rdC9pylXFy7ZxRNhDxmfZhvZ8m49Px8tK4cmCfZ-HVCzqJ_Xg3XRhw0P75THYRYdP8lG1YplCN6-Y");'></div>
 <div class="flex flex-col gap-4 p-6">
@@ -114,7 +197,7 @@
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">8-12학년</span>
 <span class="text-xs font-semibold py-1 px-3 bg-royal-navy/10 dark:bg-royal-navy/30 text-royal-navy dark:text-blue-200 rounded-full">인문학</span>
 </div>
-<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="https://www.groton.org/" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 mt-4 font-bold text-gold hover:underline" href="#">
                       더 알아보기 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -125,23 +208,16 @@
 </div>
 </main>
 </div>
-<div aria-label="상담 행동 배너" class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy/95 backdrop-blur-md text-white shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.15)]" data-cta-banner role="region" aria-live="polite">
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-royal-navy/95 backdrop-blur-sm text-white shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.1)]">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col gap-3 sm:flex-row sm:items-center h-auto sm:h-20">
+<div class="flex items-center justify-between h-20">
 <p class="text-lg font-medium hidden sm:block">자녀에게 꼭 맞는 학교를 찾을 준비가 되셨나요?</p>
-<div class="flex w-full flex-col gap-3 sm:flex-row sm:w-auto sm:flex-1">
-<a class="w-full sm:w-auto inline-flex items-center justify-center rounded-md h-12 px-6 bg-gold text-royal-navy text-base font-bold tracking-wide transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="contact.html#consultation">
+<a href="contact.html" class="btn-primary w-full sm:w-auto flex items-center justify-center rounded-md h-12 px-6 bg-gold text-royal-navy text-base font-bold tracking-wide hover:bg-gold/90 transition-colors shadow-lg">
             상담 예약하기
           </a>
 </div>
-<button aria-label="배너 닫기" class="self-end sm:self-center sm:ml-auto inline-flex items-center justify-center rounded-full border border-white/40 p-2 text-white transition-colors duration-200 hover:bg-white/10" data-cta-dismiss type="button">
-<span class="material-symbols-outlined text-xl leading-none">close</span>
-</button>
 </div>
 </div>
 </div>
-</div>
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/cta-banner.js"></script>
-
+<script src="common-script.js"></script>
 </body></html>

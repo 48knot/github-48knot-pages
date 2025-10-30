@@ -3,47 +3,74 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alpha Consulting - Contact Us</title>
-<link href="assets/css/theme.css" rel="stylesheet"/>
-<script src="assets/js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#D4AF37',
+            darker: '#B48A25'
+          },
+          accent: '#D4AF37',
+          'royal-navy': '#0a192f',
+          'background-light': '#FFFFFF',
+          'background-dark': '#0f1419',
+          'text-light': '#1F2937',
+          'text-dark': '#E0E0E0',
+          'text-muted-light': '#6B7280'
+        },
+        fontFamily: {
+          display: ['Noto Serif KR', 'serif'],
+          body: ['Noto Sans KR', 'sans-serif']
+        },
+        borderRadius: {
+          DEFAULT: '0.25rem',
+          lg: '0.5rem',
+          xl: '0.75rem'
+        }
+      }
+    }
+  }
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>.floating-label-group {
-      position: relative;
-    }
-    .floating-label-group .floating-label {
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-      transition: all 0.2s ease-in-out;
-      pointer-events: none;
-      color: #6b7280;}
-    .floating-label-group .form-input:focus ~ .floating-label,
-    .floating-label-group .form-input:not(:placeholder-shown) ~ .floating-label {
-      top: 0.5rem;
-      transform: translateY(0);
-      font-size: 0.75rem;color: #000080;}
-    .form-input {
-      border: 1px solid #d1d5db;border-radius: 0.5rem;
-      padding: 1.5rem 1rem 0.5rem 1rem;
-      transition: border-color 0.2s ease-in-out;
-      width: 100%;
-      background-color: #f9fafb;}
-    .form-input:focus {
-      outline: none;
-      border-color: #D4AF37;box-shadow: 0 0 0 1px #D4AF37;
-    }
-    .required-asterisk {
-      color: #D4AF37;
+<link href="styles.css" rel="stylesheet"/>
+<style>
+    :root {
+      --font-display: 'Noto Serif KR';
+      --font-body: 'Noto Sans KR';
+      --color-primary: #D4AF37;
+      --color-primary-rgb: 212 175 55;
+      --color-primary-darker: #B48A25;
+      --color-primary-darker-rgb: 180 138 37;
+      --color-accent: #D4AF37;
+      --color-accent-rgb: 212 175 55;
+      --color-royal-navy: #0a192f;
+      --color-royal-navy-rgb: 10 25 47;
+      --color-background-light: #FFFFFF;
+      --color-background-light-rgb: 255 255 255;
+      --color-background-dark: #0f1419;
+      --color-background-dark-rgb: 15 20 25;
+      --color-text-light: #1F2937;
+      --color-text-light-rgb: 31 41 55;
+      --color-text-dark: #E0E0E0;
+      --color-text-dark-rgb: 224 224 224;
+      --color-text-muted-light: #6B7280;
+      --color-text-muted-light-rgb: 107 114 128;
+      --radius-default: 0.25rem;
+      --radius-lg: 0.5rem;
+      --radius-xl: 0.75rem;
     }
   </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-deep-navy px-10 py-4 shadow-md">
+<header class="sticky top-0 z-50 h-20 flex items-center justify-between whitespace-nowrap bg-royal-navy px-4 sm:px-10 shadow-md">
 <div class="flex items-center gap-4 text-white">
 <div class="size-6">
 <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -53,48 +80,65 @@
 </div>
 <h2 class="font-display text-xl font-bold leading-tight tracking-[-0.015em] text-white">Alpha Consulting</h2>
 </div>
-<nav class="flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-8" data-nav="primary" data-nav-link-class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" data-nav-active-class="text-white font-bold">
+<nav class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-8">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="index.html">Home</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="index.html#why-alpha">Why Alpha</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="service.html">Services</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="choice.html">Alpha's Choice</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="about.html">About</a>
+<a class="text-white text-sm font-bold leading-normal" href="contact.html">Contact</a>
 </div>
 </nav>
+<button id="mobile-menu-btn" class="md:hidden text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </header>
-<main class="flex-grow pb-40">
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" id="consultation">
+<div class="mobile-nav md:hidden" id="mobile-nav">
+<a href="index.html">Home</a>
+<a href="index.html#why-alpha">Why Alpha</a>
+<a href="service.html">Services</a>
+<a href="choice.html">Alpha's Choice</a>
+<a href="about.html">About</a>
+<a href="contact.html" class="active">Contact</a>
+</div>
+<main class="flex-grow">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
 <div class="flex flex-col gap-6">
 <div class="flex min-w-72 flex-col gap-3 text-center">
-<h1 class="font-display text-5xl font-black leading-tight tracking-tight text-deep-navy dark:text-white">Schedule a Consultation</h1>
-<p class="text-gray-500 dark:text-gray-200 text-lg font-normal leading-normal">
+<h1 class="font-display text-5xl font-black leading-tight tracking-tight text-primary dark:text-white">Schedule a Consultation</h1>
+<p class="text-gray-500 dark:text-gray-400 text-lg font-normal leading-normal">
               아래 양식을 작성하여 유료 상담을 예약하시거나, 하단의 버튼을 통해 10분 무료 전화 상담을 이용하실 수 있습니다.
             </p>
 </div>
 <div class="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-2">
 <div class="flex flex-col gap-12">
 <div class="flex flex-col">
-<h2 class="font-display text-2xl font-bold leading-tight text-deep-navy dark:text-white mb-4">Paid Consultation Details</h2>
+<h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">Paid Consultation Details</h2>
 <div class="divide-y divide-gray-200 dark:divide-gray-700 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
-<p class="text-gray-500 dark:text-gray-200 text-sm font-medium">상담 비용</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">상담 비용</p>
 <p class="text-text-light dark:text-text-dark text-sm font-semibold">250달러</p>
 </div>
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
-<p class="text-gray-500 dark:text-gray-200 text-sm font-medium">상담 시간</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">상담 시간</p>
 <p class="text-text-light dark:text-text-dark text-sm font-semibold">60분</p>
 </div>
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
-<p class="text-gray-500 dark:text-gray-200 text-sm font-medium">취소 규정</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">취소 규정</p>
 <p class="text-text-light dark:text-text-dark text-sm font-normal">전액 환불을 원하시면 최소 24시간 전에 취소하셔야 합니다.</p>
 </div>
 </div>
 </div>
 <div class="flex flex-col">
-<h2 class="font-display text-2xl font-bold leading-tight text-deep-navy dark:text-white mb-4">Contact Information</h2>
+<h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">Contact Information</h2>
 <div class="flex flex-col space-y-4 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-deep-navy dark:text-accent">call</span>
-<a class="text-text-light dark:text-text-dark hover:text-deep-navy dark:hover:text-accent" href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
+<span class="material-symbols-outlined text-primary dark:text-accent">call</span>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-accent" href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
 </div>
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-deep-navy dark:text-accent">mail</span>
+<span class="material-symbols-outlined text-primary dark:text-accent">mail</span>
 <span class="text-text-light dark:text-text-dark">contact@alphaconsulting.com</span>
 <button class="ml-auto text-gray-400 hover:text-accent" onclick="navigator.clipboard.writeText('contact@alphaconsulting.com')" title="클립보드에 복사">
 <span class="material-symbols-outlined text-lg">content_copy</span>
@@ -103,14 +147,14 @@
 </div>
 </div>
 <div class="flex flex-col">
-<h2 class="font-display text-2xl font-bold leading-tight text-deep-navy dark:text-white mb-4">Our Location</h2>
+<h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">Our Location</h2>
 <div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-lg object-cover overflow-hidden border border-gray-200 dark:border-gray-700" data-alt="Map showing office location in New York City" data-location="New York, USA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZEOaXfKjl2NfrzdhXUtASLhLU4LIaraUwHZMJC276P7W0ufzE6wA8G6l5dpjdNTCHYfSqcmWByupZlbOKicbGBCHHULwvmxTrc5KByz_AzhoxonrEFdq_Hvs50_MP_VCzOpE23zKTg-6e5QVGhYqTCPh-Hehm5Cux2NOhwFI9Upm3FHpN-1UdykaOOjmPHyha2rTEYFkf-cYB6v2TqoO8IZhULt9FCsLXDELFR9W4BsBcAKg3r-PpfLZO7uIabi_7WUn3TnOJwVI");'></div>
 </div>
 </div>
 <div class="flex flex-col">
 <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-lg">
-<h2 class="font-display text-2xl font-bold text-center text-deep-navy dark:text-white mb-2">Book Your Consultation</h2>
-<p class="text-center text-sm text-gray-500 dark:text-gray-200 mb-6">3단계 중 1단계</p>
+<h2 class="font-display text-2xl font-bold text-center text-primary dark:text-white mb-2">Book Your Consultation</h2>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">3단계 중 1단계</p>
 <form class="space-y-6">
 <fieldset>
 <legend class="text-lg font-semibold text-text-light dark:text-text-dark mb-4 border-b border-gray-200 dark:border-gray-600 pb-2 w-full">기본 정보</legend>
@@ -159,7 +203,7 @@
 </div>
 </div>
 </fieldset>
-<button class="w-full flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-deep-navy text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" type="submit">
+<button class="w-full flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" type="submit">
 <span class="truncate">상담 요청 제출</span>
 </button>
 </form>
@@ -169,17 +213,14 @@
 </div>
 </div>
 </main>
-<div aria-label="상담 행동 배너" class="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-gray-900/85 backdrop-blur-md p-4 border-t border-gray-200 dark:border-gray-700 shadow-[0_-2px_12px_rgba(0,0,0,0.08)]" data-cta-banner role="region" aria-live="polite">
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-<a class="flex min-w-[84px] w-full max-w-md items-center justify-center rounded-lg h-14 px-6 bg-accent text-deep-navy text-lg font-bold leading-normal tracking-wider transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-contrast" href="tel:+1-555-123-4567">
+<div class="h-24"></div>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-700 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+<button class="btn-secondary flex min-w-[84px] w-full max-w-md cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-accent text-royal-navy text-lg font-bold leading-normal tracking-wider hover:opacity-90 transition-opacity">
 <span class="truncate">무료 10분 전화상담</span>
-</a>
-<button aria-label="배너 닫기" class="self-end sm:self-center sm:ml-auto inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 p-2 text-deep-navy dark:text-text-dark transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-cta-dismiss type="button">
-<span class="material-symbols-outlined text-xl leading-none">close</span>
 </button>
 </div>
 </div>
 </div>
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/cta-banner.js"></script>
+<script src="common-script.js"></script>
 </body></html>
