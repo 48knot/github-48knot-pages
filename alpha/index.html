@@ -25,8 +25,8 @@
           'muted-gold': '#D4AF37'
         },
         fontFamily: {
-          display: ['Noto Serif KR', 'serif'],
-          body: ['Noto Sans KR', 'sans-serif']
+          display: ['Pretendard', 'Inter', '-apple-system', 'sans-serif'],
+          body: ['Pretendard', 'Inter', '-apple-system', 'sans-serif']
         },
         borderRadius: {
           DEFAULT: '0.25rem',
@@ -39,13 +39,14 @@
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Noto+Serif+KR:wght@700;900&amp;family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <style>
     :root {
-      --font-display: 'Noto Serif KR';
-      --font-body: 'Noto Sans KR';
+      --font-display: 'Pretendard';
+      --font-body: 'Pretendard';
       --color-primary: #D4AF37;
       --color-primary-rgb: 212 175 55;
       --color-primary-darker: #B48A25;
@@ -160,6 +161,13 @@
 </div>
 <main class="pb-24">
 <section class="relative bg-gradient-to-br from-[#0a192f] via-[#0d1f3a] to-[#112240] dark:from-[#050a14] dark:via-[#0a192f] dark:to-[#0d1f3a] py-24 md:py-40 overflow-hidden">
+<!-- 비디오 배경 -->
+<div class="absolute inset-0 w-full h-full overflow-hidden">
+<video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-50">
+<source src="image/B_school.mp4" type="video/mp4">
+</video>
+<div class="absolute inset-0 bg-gradient-to-br from-[#0a192f]/50 via-[#0d1f3a]/60 to-[#112240]/50"></div>
+</div>
 <!-- 향상된 배경 장식 요소 -->
 <div class="absolute inset-0 overflow-hidden">
 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-full blur-3xl opacity-20 animate-pulse"></div>
@@ -553,7 +561,7 @@
 </section>
 <section class="relative bg-gradient-to-b from-soft-sand via-[#F5EBD8] to-warm-ivory dark:from-[#3d382d] dark:via-[#2d2620] dark:to-[#1a1510] py-24 overflow-hidden">
 <!-- 배경 장식 -->
-<div class="absolute inset-0 opacity-20">
+<div class="absolute inset-0 opacity-50">
 <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary/30 rounded-full blur-3xl"></div>
 <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
 </div>
