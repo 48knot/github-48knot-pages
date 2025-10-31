@@ -106,23 +106,23 @@
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
 <div class="flex flex-col gap-6">
 <div class="flex min-w-72 flex-col gap-3 text-center">
-<h1 class="font-display text-5xl font-black leading-tight tracking-tight text-primary dark:text-white">Schedule a Consultation</h1>
+<h1 class="font-display text-5xl font-black leading-tight tracking-tight text-primary dark:text-white">상담 신청</h1>
 <p class="text-gray-500 dark:text-gray-400 text-lg font-normal leading-normal">
-              아래 양식을 작성하여 유료 상담을 예약하시거나, 하단의 버튼을 통해 10분 무료 전화 상담을 이용하실 수 있습니다.
+              전문적인 입시 컨설팅을 위한 유료 상담 서비스입니다. 네이버 예약을 통해 상담을 신청하실 수 있습니다.
             </p>
 </div>
-<div class="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-2">
+<div class="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-start">
 <div class="flex flex-col gap-12">
 <div class="flex flex-col">
-<h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">Paid Consultation Details</h2>
+<h2 class="font-display text-2xl font-bold leading-tight text-primary dark:text-white mb-4">상담 안내</h2>
 <div class="divide-y divide-gray-200 dark:divide-gray-700 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
 <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">상담 비용</p>
-<p class="text-text-light dark:text-text-dark text-sm font-semibold">250달러</p>
+<p class="text-text-light dark:text-text-dark text-sm font-semibold">30,000원</p>
 </div>
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">상담 시간</p>
-<p class="text-text-light dark:text-text-dark text-sm font-semibold">60분</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">예약 방법</p>
+<p class="text-text-light dark:text-text-dark text-sm font-normal">네이버 예약 시스템을 통해 상담을 신청하실 수 있습니다.</p>
 </div>
 <div class="grid grid-cols-[30%_1fr] gap-x-4 py-4">
 <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">취소 규정</p>
@@ -152,75 +152,20 @@
 </div>
 </div>
 <div class="flex flex-col">
-<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-lg">
-<h2 class="font-display text-2xl font-bold text-center text-primary dark:text-white mb-2">Book Your Consultation</h2>
-<p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">3단계 중 1단계</p>
-<form class="space-y-6">
-<fieldset>
-<legend class="text-lg font-semibold text-text-light dark:text-text-dark mb-4 border-b border-gray-200 dark:border-gray-600 pb-2 w-full">기본 정보</legend>
-<div class="space-y-6">
-<div class="floating-label-group">
-<input class="form-input" id="parent-name" name="parent-name" placeholder=" " required="" type="text"/>
-<label class="floating-label" for="parent-name">학부모님 성함 <span class="required-asterisk">*</span></label>
-</div>
-<div class="floating-label-group">
-<input class="form-input" id="email" name="email" placeholder=" " required="" type="email"/>
-<label class="floating-label" for="email">이메일 주소 <span class="required-asterisk">*</span></label>
-</div>
-<div class="floating-label-group">
-<input class="form-input" id="phone" name="phone" placeholder=" " type="tel"/>
-<label class="floating-label" for="phone">전화번호</label>
-</div>
-</div>
-</fieldset>
-<fieldset>
-<legend class="text-lg font-semibold text-text-light dark:text-text-dark mb-4 border-b border-gray-200 dark:border-gray-600 pb-2 w-full">학생 정보</legend>
-<div class="space-y-6">
-<div class="floating-label-group">
-<input class="form-input" id="student-name" name="student-name" placeholder=" " required="" type="text"/>
-<label class="floating-label" for="student-name">학생 이름 <span class="required-asterisk">*</span></label>
-</div>
-<div class="floating-label-group">
-<input class="form-input" id="grade" name="grade" placeholder=" " required="" type="text"/>
-<label class="floating-label" for="grade">현재 학년 <span class="required-asterisk">*</span></label>
-</div>
-<div class="floating-label-group">
-<input class="form-input" id="school-interest" name="school-interest" placeholder=" " type="text"/>
-<label class="floating-label" for="school-interest">관심 학교</label>
-</div>
-</div>
-</fieldset>
-<fieldset>
-<legend class="text-lg font-semibold text-text-light dark:text-text-dark mb-4 border-b border-gray-200 dark:border-gray-600 pb-2 w-full">상담 정보</legend>
-<div class="space-y-6">
-<div class="floating-label-group">
-<input class="form-input" id="preferred-date" name="preferred-date" placeholder=" " type="date"/>
-<label class="floating-label" for="preferred-date">상담 희망 날짜</label>
-</div>
-<div class="floating-label-group">
-<textarea class="form-input" id="topics" name="topics" placeholder=" " rows="4"></textarea>
-<label class="floating-label" for="topics">상담 희망 내용</label>
-</div>
-</div>
-</fieldset>
-<button class="w-full flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" type="submit">
-<span class="truncate">상담 요청 제출</span>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-lg text-center">
+<h2 class="font-display text-2xl font-bold text-primary dark:text-white mb-4">상담 예약하기</h2>
+<p class="text-gray-500 dark:text-gray-400 mb-8">
+네이버 예약 시스템을 통해 편리하게 상담을 신청하실 수 있습니다. 상담 비용은 30,000원입니다.
+</p>
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-lg font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" onclick="window.open('https://booking.naver.com', '_blank')">
+<span class="truncate">네이버 예약으로 상담 신청</span>
 </button>
-</form>
 </div>
 </div>
 </div>
 </div>
 </div>
 </main>
-<div class="h-24"></div>
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-700 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-<button class="btn-secondary flex min-w-[84px] w-full max-w-md cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-accent text-royal-navy text-lg font-bold leading-normal tracking-wider hover:opacity-90 transition-opacity">
-<span class="truncate">무료 10분 전화상담</span>
-</button>
-</div>
-</div>
 </div>
 <script src="common-script.js"></script>
 </body></html>
