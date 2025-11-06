@@ -25,9 +25,9 @@
           'muted-gold': '#D4AF37'
         },
         fontFamily: {
-          display: ['Spoqa Han Sans Neo', 'Inter', '-apple-system', 'sans-serif'],
-          body: ['Spoqa Han Sans Neo', 'Inter', '-apple-system', 'sans-serif'],
-          serif: ['Spoqa Han Sans Neo', 'Inter', '-apple-system', 'sans-serif']
+          display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+          body: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+          serif: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
         },
         borderRadius: {
           DEFAULT: '0.25rem',
@@ -40,14 +40,13 @@
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/css/SpoqaHanSansNeo.css" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <style>
     :root {
-      --font-display: 'Spoqa Han Sans Neo';
-      --font-body: 'Spoqa Han Sans Neo';
+      --font-display: 'IBM Plex Sans KR';
+      --font-body: 'IBM Plex Sans KR';
       --color-primary: #D4AF37;
       --color-primary-rgb: 212 175 55;
       --color-primary-darker: #B48A25;
@@ -164,134 +163,159 @@
 <section class="relative bg-[#0a192f] min-h-screen flex items-center overflow-hidden">
 <!-- 비디오 배경 -->
 <div class="absolute inset-0 w-full h-full">
-<video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
+<video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40">
 <source src="image/B_school.mp4" type="video/mp4">
 </video>
-<div class="absolute inset-0 bg-gradient-to-b from-[#0a192f]/40 via-[#0a192f]/60 to-[#0a192f]/90"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-[#0a192f]/60 via-[#0a192f]/80 to-[#0a192f]"></div>
 </div>
 
-<div class="relative max-w-7xl mx-auto px-8 lg:px-16 py-32">
-<div class="max-w-4xl">
-<!-- 상단 레이블 -->
-<div class="mb-12">
-<span class="text-primary text-sm font-body font-semibold tracking-[0.2em] uppercase">Premium Educational Consulting</span>
+<div class="relative max-w-[1400px] mx-auto px-6 lg:px-20 py-24 lg:py-32">
+<div class="grid lg:grid-cols-12 gap-16 items-end">
+<!-- 왼쪽: 메인 타이틀 -->
+<div class="lg:col-span-7">
+<div class="mb-8">
+<div class="inline-block border-l-2 border-white/30 pl-4">
+<span class="text-white/50 text-xs font-body font-medium tracking-[0.3em] uppercase">Since 2010</span>
+</div>
 </div>
 
-<!-- 메인 타이틀 - 매거진 스타일 -->
-<h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-12">
-<span class="block text-white">꼭 맞는 학교,</span>
-<span class="block text-primary italic">지속적인 성장</span>
+<!-- 매거진 커버 스타일 타이틀 -->
+<h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 text-white">
+꼭 맞는<br/>학교
 </h1>
 
-<!-- 서브 타이틀 -->
-<p class="text-xl md:text-2xl font-light text-white/80 max-w-2xl mb-16 leading-relaxed">
-10년 뒤에도 빛나는 선택
+<div class="max-w-md space-y-6 ml-1">
+<p class="text-2xl md:text-3xl font-display font-light text-white/90 leading-tight">
+지속적인 성장
 </p>
+<p class="text-base md:text-lg font-body text-white/60 leading-relaxed border-l-2 border-white/20 pl-6">
+10년 뒤에도 빛나는 선택을 위한<br/>프리미엄 교육 컨설팅
+</p>
+</div>
+</div>
 
-<!-- 통계 정보 - 미니멀하게 -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 pt-12 border-t border-white/10">
-<div>
-<div class="text-5xl md:text-6xl font-display font-medium text-primary mb-2">500+</div>
-<div class="text-sm text-white/60 font-body">맞춤형 성장 로드맵</div>
+<!-- 오른쪽: 통계 - 세로 배치 -->
+<div class="lg:col-span-5 space-y-10 lg:space-y-12">
+<div class="flex items-baseline gap-4 border-b border-white/10 pb-6">
+<div class="text-7xl font-display font-light text-white tracking-tight">500</div>
+<div class="text-white/50 text-sm font-body uppercase tracking-wider pb-2">Projects</div>
 </div>
-<div>
-<div class="text-5xl md:text-6xl font-display font-medium text-primary mb-2">95%</div>
-<div class="text-sm text-white/60 font-body">목표 학교 매칭률</div>
+<div class="flex items-baseline gap-4 border-b border-white/10 pb-6">
+<div class="text-7xl font-display font-light text-white tracking-tight">95<span class="text-4xl">%</span></div>
+<div class="text-white/50 text-sm font-body uppercase tracking-wider pb-2">Success Rate</div>
 </div>
-<div>
-<div class="text-5xl md:text-6xl font-display font-medium text-primary mb-2">50+</div>
-<div class="text-sm text-white/60 font-body">파트너 학교</div>
-</div>
-<div>
-<div class="text-5xl md:text-6xl font-display font-medium text-primary mb-2">15년</div>
-<div class="text-sm text-white/60 font-body">전문 경력</div>
+<div class="flex items-baseline gap-4 border-b border-white/10 pb-6">
+<div class="text-7xl font-display font-light text-white tracking-tight">15</div>
+<div class="text-white/50 text-sm font-body uppercase tracking-wider pb-2">Years</div>
 </div>
 </div>
+</div>
+
+<!-- 하단: CTA -->
+<div class="mt-20 lg:mt-24">
+<a href="contact.html" class="group inline-flex items-center gap-3 text-white hover:text-primary transition-colors duration-300">
+<span class="text-sm font-body tracking-[0.2em] uppercase">상담 시작하기</span>
+<span class="material-symbols-outlined text-xl transition-transform duration-300 group-hover:translate-x-2">arrow_forward</span>
+</a>
 </div>
 </div>
 </section>
-<section class="relative bg-white dark:bg-royal-navy py-32">
-<div class="max-w-7xl mx-auto px-8 lg:px-16">
-<div class="grid md:grid-cols-2 gap-16 items-center">
-<!-- 왼쪽: 텍스트 -->
-<div class="space-y-8">
-<span class="text-primary text-sm font-body font-semibold tracking-[0.2em] uppercase">Our Story</span>
-<h2 class="font-display text-5xl md:text-6xl font-medium leading-tight text-royal-navy dark:text-white">
-알파 컨설팅의 시작
+<section class="relative bg-white dark:bg-royal-navy py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="grid lg:grid-cols-5 gap-12 lg:gap-20">
+<!-- 왼쪽: 레이블 + 타이틀 (2/5) -->
+<div class="lg:col-span-2">
+<div class="sticky top-32">
+<div class="mb-12">
+<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase">Our Philosophy</span>
+</div>
+<h2 class="font-display text-5xl lg:text-6xl font-bold leading-[1.05] text-royal-navy dark:text-white">
+알파<br/>컨설팅의<br/>시작
 </h2>
-<p class="font-body text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-알파 컨설팅은 <em class="text-primary not-italic">'성장'</em>과 <em class="text-primary not-italic">'적합성'</em>을 더 중요하게 생각합니다. 우리의 시작은 모든 학생의 교육 여정은 각자 다르며, 단 한 번의 입시를 넘어서는 맞춤형 전략이 필요하다는 믿음에서 시작되었습니다.
+</div>
+</div>
+
+<!-- 오른쪽: 본문 + 통계 (3/5) -->
+<div class="lg:col-span-3 space-y-16">
+<!-- 본문 -->
+<div class="prose prose-lg max-w-none">
+<p class="font-body text-xl md:text-2xl leading-relaxed text-royal-navy/80 dark:text-white/80 font-light">
+알파 컨설팅은 <strong class="font-semibold text-royal-navy dark:text-white">성장</strong>과 <strong class="font-semibold text-royal-navy dark:text-white">적합성</strong>을 더 중요하게 생각합니다.
+</p>
+<p class="font-body text-lg leading-relaxed text-royal-navy/60 dark:text-white/60 mt-8">
+우리의 시작은 모든 학생의 교육 여정은 각자 다르며, 단 한 번의 입시를 넘어서는 맞춤형 전략이 필요하다는 믿음에서 시작되었습니다.
 </p>
 </div>
-<!-- 오른쪽: 통계 -->
-<div class="space-y-8">
-<div class="border-l-2 border-primary pl-8">
-<div class="text-6xl font-display font-medium text-primary mb-2">100%</div>
-<div class="text-gray-600 dark:text-gray-400">맞춤형 전략</div>
+
+<!-- 통계 -->
+<div class="grid grid-cols-2 gap-8 pt-12 border-t border-royal-navy/10 dark:border-white/10">
+<div>
+<div class="text-5xl font-display font-light text-royal-navy dark:text-white mb-3 tracking-tight">100%</div>
+<div class="text-sm text-royal-navy/50 dark:text-white/50 uppercase tracking-wider">맞춤형 전략</div>
 </div>
-<div class="border-l-2 border-royal-navy dark:border-white/20 pl-8">
-<div class="text-6xl font-display font-medium text-royal-navy dark:text-white mb-2">장기적</div>
-<div class="text-gray-600 dark:text-gray-400">성장 중심</div>
+<div>
+<div class="text-5xl font-display font-light text-royal-navy dark:text-white mb-3 tracking-tight">장기적</div>
+<div class="text-sm text-royal-navy/50 dark:text-white/50 uppercase tracking-wider">성장 중심</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="why-alpha" class="relative bg-warm-ivory dark:bg-[#1a1510] py-32">
-<div class="max-w-7xl mx-auto px-8 lg:px-16">
+<section id="why-alpha" class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
 <!-- 헤더 -->
-<div class="mb-20">
-<span class="text-primary text-sm font-body font-semibold tracking-[0.2em] uppercase">Why Alpha</span>
-<h2 class="font-display text-5xl md:text-6xl font-medium leading-tight text-royal-navy dark:text-white mt-6 mb-6">
-왜 알파 컨설팅인가?
+<div class="mb-24 lg:mb-32">
+<div class="mb-6">
+<span class="text-royal-navy/30 dark:text-white/30 text-xs font-body font-medium tracking-[0.3em] uppercase">Why Choose Us</span>
+</div>
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-royal-navy dark:text-white max-w-3xl">
+왜 알파<br/>컨설팅인가?
 </h2>
-<p class="font-body text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
-자녀의 지속적인 성장과 행복을 가장 중요하게 생각하는, 새로운 형태의 컨설팅을 제공합니다.
-</p>
 </div>
 
-<!-- 3가지 이유 - 매거진 스타일 -->
-<div class="space-y-16">
+<!-- 3가지 이유 - 세련된 매거진 스타일 -->
+<div class="space-y-0">
 <!-- 01 -->
-<div class="grid md:grid-cols-12 gap-8 items-start border-t border-royal-navy/10 dark:border-white/10 pt-8">
+<div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start border-t border-royal-navy/10 dark:border-white/10 py-16 md:py-20 group hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-500 md:px-8 -mx-6 md:mx-0 px-6">
 <div class="md:col-span-2">
-<span class="text-7xl font-display font-light text-primary/20">01</span>
+<span class="text-6xl md:text-8xl font-display font-light text-royal-navy/10 dark:text-white/10 tracking-tighter">01</span>
 </div>
-<div class="md:col-span-10 space-y-4">
-<h3 class="font-display text-3xl md:text-4xl font-medium text-royal-navy dark:text-white">
-10년 후를 보는 로드맵
+<div class="md:col-span-10 space-y-6">
+<h3 class="font-display text-4xl md:text-5xl font-semibold text-royal-navy dark:text-white leading-tight">
+10년 후를<br class="md:hidden"/> 보는 로드맵
 </h3>
-<p class="font-body text-lg text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+<p class="font-body text-lg md:text-xl text-royal-navy/70 dark:text-white/70 max-w-2xl leading-relaxed">
 단순한 입시 계획이 아닌, 10년에 걸친 성장 로드맵을 설계합니다. 학생의 현재와 미래를 함께 고민합니다.
 </p>
 </div>
 </div>
 
 <!-- 02 -->
-<div class="grid md:grid-cols-12 gap-8 items-start border-t border-royal-navy/10 dark:border-white/10 pt-8">
+<div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start border-t border-royal-navy/10 dark:border-white/10 py-16 md:py-20 group hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-500 md:px-8 -mx-6 md:mx-0 px-6">
 <div class="md:col-span-2">
-<span class="text-7xl font-display font-light text-primary/20">02</span>
+<span class="text-6xl md:text-8xl font-display font-light text-royal-navy/10 dark:text-white/10 tracking-tighter">02</span>
 </div>
-<div class="md:col-span-10 space-y-4">
-<h3 class="font-display text-3xl md:text-4xl font-medium text-royal-navy dark:text-white">
-개인별 맞춤 매칭
+<div class="md:col-span-10 space-y-6">
+<h3 class="font-display text-4xl md:text-5xl font-semibold text-royal-navy dark:text-white leading-tight">
+개인별<br class="md:hidden"/> 맞춤 매칭
 </h3>
-<p class="font-body text-lg text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+<p class="font-body text-lg md:text-xl text-royal-navy/70 dark:text-white/70 max-w-2xl leading-relaxed">
 학생 개개인의 재능과 성격에 완벽히 어울리는 학교를 찾아드립니다. 모두에게 맞는 학교는 없습니다.
 </p>
 </div>
 </div>
 
 <!-- 03 -->
-<div class="grid md:grid-cols-12 gap-8 items-start border-t border-royal-navy/10 dark:border-white/10 pt-8">
+<div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start border-t border-royal-navy/10 dark:border-white/10 py-16 md:py-20 group hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-500 md:px-8 -mx-6 md:mx-0 px-6">
 <div class="md:col-span-2">
-<span class="text-7xl font-display font-light text-primary/20">03</span>
+<span class="text-6xl md:text-8xl font-display font-light text-royal-navy/10 dark:text-white/10 tracking-tighter">03</span>
 </div>
-<div class="md:col-span-10 space-y-4">
-<h3 class="font-display text-3xl md:text-4xl font-medium text-royal-navy dark:text-white">
-독보적인 전문가 네트워크
+<div class="md:col-span-10 space-y-6">
+<h3 class="font-display text-4xl md:text-5xl font-semibold text-royal-navy dark:text-white leading-tight">
+독보적인<br class="md:hidden"/> 전문가 네트워크
 </h3>
-<p class="font-body text-lg text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+<p class="font-body text-lg md:text-xl text-royal-navy/70 dark:text-white/70 max-w-2xl leading-relaxed">
 교육자 및 입학 사정관으로 구성된 저희의 독보적인 네트워크를 활용하세요. 15년간 쌓아온 신뢰의 관계입니다.
 </p>
 </div>
@@ -299,382 +323,384 @@
 </div>
 </div>
 </section>
-<section class="relative bg-white dark:bg-royal-navy py-32">
-<div class="max-w-7xl mx-auto px-8 lg:px-16">
-<div class="mb-20">
-<span class="text-primary text-sm font-body font-semibold tracking-[0.2em] uppercase">Our Services</span>
-<h2 class="font-display text-5xl md:text-6xl font-medium leading-tight text-royal-navy dark:text-white mt-6 mb-6">
-전문 컨설팅 서비스
+<section class="relative bg-white dark:bg-royal-navy py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="grid lg:grid-cols-5 gap-12 lg:gap-20 mb-20">
+<div class="lg:col-span-2">
+<div class="sticky top-32">
+<div class="mb-6">
+<span class="text-royal-navy/30 dark:text-white/30 text-xs font-body font-medium tracking-[0.3em] uppercase">Our Services</span>
+</div>
+<h2 class="font-display text-5xl lg:text-6xl font-bold leading-[1.05] text-royal-navy dark:text-white">
+전문<br/>컨설팅<br/>서비스
 </h2>
-<p class="font-body text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
-각 단계별 맞춤형 전략으로 성공적인 유학을 실현합니다
+</div>
+</div>
+<div class="lg:col-span-3">
+<p class="font-body text-xl md:text-2xl text-royal-navy/70 dark:text-white/70 leading-relaxed">
+각 단계별 맞춤형 전략으로<br/>성공적인 유학을 실현합니다
 </p>
 </div>
-<div class="grid md:grid-cols-2 gap-x-20 gap-y-8">
-<!-- Column 1 -->
-<div class="space-y-8">
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+</div>
+
+<!-- 서비스 리스트 - 미니멀 스타일 -->
+<div class="space-y-0">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">01</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 미국 주니어 보딩 컨설팅
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 8~14세 학생을 위한 조기 유학 전략과 맞춤형 보딩 입학 설계
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">02</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 미국 시니어 보딩 스쿨 컨설팅
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 대학 진학을 목표로 한 고등 보딩 입시 및 커리큘럼 관리
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">03</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 미국 대학 컨설팅
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 전공 탐색부터 에세이, 추천서까지 Top 대학 입학을 위한 종합 전략
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">04</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 영국 전통 명문 보딩스쿨 컨설팅
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 역사와 전통을 갖춘 명문 보딩학교 진학 준비
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
+</div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
 </a>
-</div>
-</div>
 
-<!-- Column 2 -->
-<div class="space-y-8">
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">05</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 영국 대학진학 중심 보딩 컨설팅
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 A-Level·IB 기반의 대학진학형 보딩학교 입시 관리
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">06</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 Boarding Support Program
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 재학 중 학업 및 생활 관리, 진로 상담까지 종합 서포트
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">07</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 Academic & Talent Camps
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 명문 대학 캠프 및 특기 개발 프로그램 연계
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
-</a>
 </div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
+</a>
 
-<div class="space-y-3 border-b border-gray-200 dark:border-gray-700 pb-6">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">
+<a href="service.html" class="group grid md:grid-cols-12 gap-6 items-baseline border-t border-royal-navy/10 dark:border-white/10 py-8 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300 md:px-8 -mx-6 md:mx-0 px-6 border-b">
+<div class="md:col-span-1 text-royal-navy/30 dark:text-white/30 text-sm font-body">08</div>
+<div class="md:col-span-7">
+<h3 class="font-display text-2xl md:text-3xl font-semibold text-royal-navy dark:text-white mb-2 group-hover:text-royal-navy/70 dark:group-hover:text-white/70 transition-colors">
 Short-Term Study Abroad
 </h3>
-<p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+<p class="font-body text-base text-royal-navy/60 dark:text-white/60">
 단기 해외 어학연수 및 문화 체험 프로그램
 </p>
-<a href="service.html" class="inline-flex items-center text-primary font-medium hover:underline">
-상세보기 →
+</div>
+<div class="md:col-span-4 flex justify-end items-center">
+<span class="material-symbols-outlined text-royal-navy/30 dark:text-white/30 group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</div>
 </a>
-</div>
-</div>
 </div>
 </div>
 </section>
-<section class="relative bg-warm-ivory dark:bg-[#1a1510] py-32">
-<div class="max-w-7xl mx-auto px-8 lg:px-16">
-<div class="mb-20">
-<span class="text-primary text-sm font-body font-semibold tracking-[0.2em] uppercase">Alpha's Choice</span>
-<h2 class="font-display text-5xl md:text-6xl font-bold leading-tight text-royal-navy dark:text-white mt-6 mb-6">
-엄선된 파트너 학교
+<section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="mb-20 lg:mb-32">
+<div class="mb-6">
+<span class="text-royal-navy/30 dark:text-white/30 text-xs font-body font-medium tracking-[0.3em] uppercase">Partner Schools</span>
+</div>
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-royal-navy dark:text-white max-w-3xl mb-8">
+엄선된<br/>파트너 학교
 </h2>
-<p class="font-body text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
+<p class="font-body text-xl text-royal-navy/60 dark:text-white/60 max-w-2xl">
 알파 컨설팅이 자부심을 갖고 파트너십을 맺고 있는 엘리트 보딩 스쿨입니다.
 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="group flex flex-col overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-<div class="relative h-80 overflow-hidden">
-<img alt="Phillips Exeter Academy campus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZe8ELoZMrjWbNzCxZSOrQxcOUycxpwfqtD-3FU2rEpNI_0smGOEA-SLbTaINDoBTKLOkxUmd9I1E22VrM6E__tL4GfwWmfqIRTMS8C4iWoJ3eKBY0VDTf6KokFVhUj8SxCTw-67CnE2MgoFki21kN640Sgi6HpLP2NWgmsaZ7SEsPJEvIVX7_54_VTrvFRG1F3XHIGUqZs4HM6zxCTJyZzWyMdk74T5jp3cswjHpPVaWMMnMEOBYZw8wJgAALT4XOa_INozEcgME"/>
-<div class="absolute top-4 right-4 px-3 py-1.5 bg-primary text-royal-navy text-xs font-bold rounded-full">미국</div>
+
+<!-- 학교 그리드 - 비대칭 레이아웃 -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+<!-- 큰 카드 1 - 2열 차지 -->
+<a href="choice.html" class="group lg:col-span-2 relative overflow-hidden bg-white dark:bg-royal-navy/50 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/30 dark:hover:border-white/30 transition-all duration-500">
+<div class="relative h-[400px] lg:h-[500px] overflow-hidden">
+<img alt="Phillips Exeter Academy campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZe8ELoZMrjWbNzCxZSOrQxcOUycxpwfqtD-3FU2rEpNI_0smGOEA-SLbTaINDoBTKLOkxUmd9I1E22VrM6E__tL4GfwWmfqIRTMS8C4iWoJ3eKBY0VDTf6KokFVhUj8SxCTw-67CnE2MgoFki21kN640Sgi6HpLP2NWgmsaZ7SEsPJEvIVX7_54_VTrvFRG1F3XHIGUqZs4HM6zxCTJyZzWyMdk74T5jp3cswjHpPVaWMMnMEOBYZw8wJgAALT4XOa_INozEcgME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="text-white/50 text-xs font-body tracking-[0.2em] uppercase">United States</span>
 </div>
-<div class="px-7 pb-7 flex flex-col gap-4">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">Phillips Exeter Academy</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">학생 중심의 '하크니스 테이블' 토론식 수업 방식으로 유명하며, 비판적 사고와 협업 능력을 강조합니다.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">STEM</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">토론식 수업</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">리더십</span>
 </div>
-<a class="group/link inline-flex items-center gap-2 font-body text-primary font-bold mt-2" href="#">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-lg transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+<div class="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+<h3 class="font-display text-3xl lg:text-4xl font-bold text-white mb-3">Phillips Exeter Academy</h3>
+<p class="font-body text-base text-white/80 leading-relaxed mb-6">학생 중심의 하크니스 테이블 토론식 수업으로 비판적 사고와 협업 능력을 강조합니다.</p>
+<div class="inline-flex items-center gap-2 text-white/60 group-hover:gap-3 transition-all duration-300">
+<span class="text-sm font-body tracking-wider">더 알아보기</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+</a>
+
+<!-- 작은 카드 1 -->
+<a href="choice.html" class="group relative overflow-hidden bg-white dark:bg-royal-navy/50 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/30 dark:hover:border-white/30 transition-all duration-500">
+<div class="relative h-[400px] lg:h-[500px] overflow-hidden">
+<img alt="Phillips Academy Andover campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATt0JYXi1NyUZ-uwZrB91mT6rSCTMJ1e-NqVYPC7XQGKzq4dhK5DvFVoBPoKtsMvHwg3Xm-3KO6C3QxFnHwIyiZe370qCTXCGbheFBtOKReJG6f_-BPwjTjrkglr6QCWZV4r7brtI6ib8UEJQj9ecMTjFv2sIJD2EbHNRxCrFzOdfwRlwds-nkp6cU0LDE16k3GRMhZjD8afvYEv-KLMRaWEoZEemoL0_ID6gGj1QokO6TKDvQoJik1Q4ASCpiy7k4EyGIQHGgO6s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="text-white/50 text-xs font-body tracking-[0.2em] uppercase">United States</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+<h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Phillips Academy Andover</h3>
+<p class="font-body text-sm text-white/80 leading-relaxed mb-4">학문적 우수성과 선한 인성을 강조하는 교육 철학</p>
+<div class="inline-flex items-center gap-2 text-white/60 group-hover:gap-3 transition-all duration-300">
+<span class="text-xs font-body tracking-wider">더 알아보기</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</div>
+</div>
+</a>
+
+<!-- 작은 카드 2 -->
+<a href="choice.html" class="group relative overflow-hidden bg-white dark:bg-royal-navy/50 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/30 dark:hover:border-white/30 transition-all duration-500">
+<div class="relative h-[400px] overflow-hidden">
+<img alt="Eton College campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFpKQk8q-WlxpqgqtH4rYVwQMmGKq9Ug-ab3MspoIs8RAaD3x9RHfskh-l3H1xkPTqmIGjrcVPQlp_reVSScFw30lhk8PdHX87P1VyhhjkQ43lg5cwy-FSirZwT8t_L3qMWeXkutfsVZ4uI8JoOs7qJqYiMtuaG-lWqS-xBjw1dgrf9sGH3LgXRh9GaW0yJ_mGmYXT3G2IgwsmVswaQG1h3-A2w6Mk9UJP2vr7FZLXHfPlGsGH7prd07mKgKaqa5NLP3pZl7pgJ6E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="text-white/50 text-xs font-body tracking-[0.2em] uppercase">United Kingdom</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+<h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Eton College</h3>
+<p class="font-body text-sm text-white/80 leading-relaxed mb-4">전통과 역사를 자랑하는 영국 명문 보딩스쿨</p>
+<div class="inline-flex items-center gap-2 text-white/60 group-hover:gap-3 transition-all duration-300">
+<span class="text-xs font-body tracking-wider">더 알아보기</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</div>
+</div>
+</a>
+
+<!-- 큰 카드 2 - 2열 차지 -->
+<a href="choice.html" class="group lg:col-span-2 relative overflow-hidden bg-white dark:bg-royal-navy/50 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/30 dark:hover:border-white/30 transition-all duration-500">
+<div class="relative h-[400px] overflow-hidden">
+<img alt="Harrow School campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB71va5J6_4OAiIj9dCNoppeA90UFxDdjD2qcUa0i2Ou9Ia3vLqnw3w0nHyyz7Tw5uW3jqPMC23Oy_IvdrqoIU_0XP9eDOboQjEDrEm_5BLxH8u_Ez3yEgKqaB-lWgLYU5y3XEqsjTVwZZ1sNFvQbXWqLF_wy-hwjLZWGDj5bLYEsMFp98miusP7iOW-ttVnhWYgGpu0uNx7xFPQRSZgZ4GDNsRDLYRl7QAOCGu6caDzj6DbV0efvB1dbp44nxQ1dTIvyFkDv30Wgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="text-white/50 text-xs font-body tracking-[0.2em] uppercase">United Kingdom</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+<h3 class="font-display text-3xl lg:text-4xl font-bold text-white mb-3">Harrow School</h3>
+<p class="font-body text-base text-white/80 leading-relaxed mb-6">강력한 공동체 의식과 리더십 교육으로 용기, 명예, 겸손, 동료애의 가치를 배우도록 합니다.</p>
+<div class="inline-flex items-center gap-2 text-white/60 group-hover:gap-3 transition-all duration-300">
+<span class="text-sm font-body tracking-wider">더 알아보기</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="group flex flex-col gap-5 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-<div class="relative h-64 overflow-hidden">
-<img alt="Phillips Academy Andover campus" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATt0JYXi1NyUZ-uwZrB91mT6rSCTMJ1e-NqVYPC7XQGKzq4dhK5DvFVoBPoKtsMvHwg3Xm-3KO6C3QxFnHwIyiZe370qCTXCGbheFBtOKReJG6f_-BPwjTjrkglr6QCWZV4r7brtI6ib8UEJQj9ecMTjFv2sIJD2EbHNRxCrFzOdfwRlwds-nkp6cU0LDE16k3GRMhZjD8afvYEv-KLMRaWEoZEemoL0_ID6gGj1QokO6TKDvQoJik1Q4ASCpiy7k4EyGIQHGgO6s"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-<div class="absolute top-4 right-4 px-3 py-1.5 bg-primary text-royal-navy text-xs font-bold rounded-full">미국</div>
-</div>
-<div class="px-7 pb-7 flex flex-col gap-4">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">Phillips Academy Andover</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">'학문적 우수성과 선한 인성'을 교육 철학으로 삼아, 학생들이 지식뿐만 아니라 사회적 책임감을 갖춘 리더로 성장하도록 돕습니다.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">인문학</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">사회적 책임</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">다양성</span>
-</div>
-<a class="group/link inline-flex items-center gap-2 font-body text-primary font-bold mt-2" href="#">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-lg transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+
+<!-- 전체 학교 보기 -->
+<div class="mt-16 text-center">
+<a href="choice.html" class="inline-flex items-center gap-3 text-royal-navy dark:text-white hover:gap-4 transition-all duration-300">
+<span class="text-sm font-body tracking-[0.2em] uppercase">전체 파트너 학교 보기</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
 </a>
-</div>
-</div>
-<div class="group flex flex-col gap-5 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-<div class="relative h-64 overflow-hidden">
-<img alt="Eton College campus" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFpKQk8q-WlxpqgqtH4rYVwQMmGKq9Ug-ab3MspoIs8RAaD3x9RHfskh-l3H1xkPTqmIGjrcVPQlp_reVSScFw30lhk8PdHX87P1VyhhjkQ43lg5cwy-FSirZwT8t_L3qMWeXkutfsVZ4uI8JoOs7qJqYiMtuaG-lWqS-xBjw1dgrf9sGH3LgXRh9GaW0yJ_mGmYXT3G2IgwsmVswaQG1h3-A2w6Mk9UJP2vr7FZLXHfPlGsGH7prd07mKgKaqa5NLP3pZl7pgJ6E"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-<div class="absolute top-4 right-4 px-3 py-1.5 bg-primary text-royal-navy text-xs font-bold rounded-full">영국</div>
-</div>
-<div class="px-7 pb-7 flex flex-col gap-4">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">Eton College</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">영국의 전통과 역사를 자랑하는 명문으로, 학문적 성취와 함께 스포츠 및 예술 활동을 통한 전인 교육을 중시합니다.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">전통</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">전인 교육</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">스포츠</span>
-</div>
-<a class="group/link inline-flex items-center gap-2 font-body text-primary font-bold mt-2" href="#">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-lg transition-transform group-hover/link:translate-x-1">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="group flex flex-col gap-5 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-<div class="relative h-64 overflow-hidden">
-<img alt="Harrow School campus" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB71va5J6_4OAiIj9dCNoppeA90UFxDdjD2qcUa0i2Ou9Ia3vLqnw3w0nHyyz7Tw5uW3jqPMC23Oy_IvdrqoIU_0XP9eDOboQjEDrEm_5BLxH8u_Ez3yEgKqaB-lWgLYU5y3XEqsjTVwZZ1sNFvQbXWqLF_wy-hwjLZWGDj5bLYEsMFp98miusP7iOW-ttVnhWYgGpu0uNx7xFPQRSZgZ4GDNsRDLYRl7QAOCGu6caDzj6DbV0efvB1dbp44nxQ1dTIvyFkDv30Wgg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-<div class="absolute top-4 right-4 px-3 py-1.5 bg-primary text-royal-navy text-xs font-bold rounded-full">영국</div>
-</div>
-<div class="px-7 pb-7 flex flex-col gap-4">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white">Harrow School</h3>
-<p class="font-body text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">강력한 공동체 의식과 리더십 교육으로 잘 알려져 있으며, 학생들이 용기, 명예, 겸손, 동료애의 가치를 배우도록 합니다.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">리더십</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">공동체</span>
-<span class="inline-block bg-gradient-to-r from-primary/20 to-primary/10 text-primary-darker dark:text-primary rounded-lg px-3 py-1.5 text-xs font-bold border border-primary/20">인성 교육</span>
-</div>
-<a class="group/link inline-flex items-center gap-2 font-body text-primary font-bold mt-2" href="#">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-lg transition-transform group-hover/link:translate-x-1">arrow_forward</span>
-</a>
-</div>
-</div>
 </div>
 </div>
 </section>
-<section class="relative bg-warm-ivory dark:bg-[#1a1510] py-32 overflow-hidden">
+<section class="relative bg-white dark:bg-royal-navy py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="mb-20 lg:mb-32">
+<div class="mb-6">
+<span class="text-royal-navy/30 dark:text-white/30 text-xs font-body font-medium tracking-[0.3em] uppercase">Client Stories</span>
+</div>
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-royal-navy dark:text-white max-w-3xl">
+고객님들의<br/>생생한 후기
+</h2>
+</div>
 
-<div class="relative max-w-6xl mx-auto px-6">
-<div class="text-center mb-16">
-<div class="inline-flex items-center justify-center gap-2 mx-auto mb-4">
-<div class="h-px w-12 bg-gradient-to-r from-transparent to-primary"></div>
-<span class="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-<div class="h-px w-12 bg-gradient-to-l from-transparent to-primary"></div>
-</div>
-<h2 class="font-display text-4xl md:text-5xl font-bold leading-tight text-royal-navy dark:text-white mb-5">고객님들의 생생한 후기</h2>
-<p class="font-body text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            저희와 함께 이 여정을 시작하여 놀라운 결과를 성취한 가족들의 이야기를 들어보세요.
-          </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="flex flex-col gap-6 bg-white dark:bg-royal-navy p-10 border border-gray-200 dark:border-gray-700">
-<div>
-<p class="font-body text-xl leading-relaxed text-royal-navy dark:text-gray-200 italic">
-"Alpha Consulting의 장기적 접근 방식은 완전히 새로운 전환점이었습니다. 단순히 명문 학교에 합격하는 것을 넘어, 아들이 인생의 방향과 열정을 발견하게 해주었어요."</p>
-</div>
-<div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 relative">
-<div class="relative">
-<img alt="Photo of The Park Family" class="w-16 h-16 rounded-full object-cover ring-4 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBz2vXAGxsP2kG5247r98DGAOKa0zJpN15Jz6FVavq466IxM5_NQDz3xuLEPPN4iAzfH_Yvh4ZAP-nqZhfmkC3rRSicB8XFSwya3z3o_dxg9Mdz7IV0QYxIGpPW_XM34FZVIMKA19vQp98ivj7agry_A_gEYGgB2giMALtfj-0m6yqokQVEXwKBxApCaGtrnoOsVyA1vlGHs-mcJB-woBmRxr-bEdTKUk2cH4_FkHXFpwazO0Ru-ZXzdFAN6WT1kpcPMSZsTyPPFI"/>
-<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-white dark:border-royal-navy"></div>
-</div>
-<div>
-<p class="font-body text-lg font-bold text-royal-navy dark:text-white">박O준 학부모님</p>
-<p class="font-body text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
-<span class="material-symbols-outlined text-base text-primary">school</span>
-Eton College 재학생
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<!-- Testimonial 1 -->
+<div class="flex flex-col gap-8 p-10 lg:p-12 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10">
+<div class="flex-grow">
+<p class="font-display text-2xl lg:text-3xl leading-relaxed text-royal-navy dark:text-white font-light">
+"장기적 접근 방식은 완전히 새로운 전환점이었습니다. 아들이 인생의 방향과 열정을 발견하게 해주었어요."
 </p>
 </div>
-</div>
-</div>
-<div class="flex flex-col gap-6 bg-white dark:bg-royal-navy p-10 border border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-5 pt-8 border-t border-royal-navy/10 dark:border-white/10">
+<img alt="Photo of The Park Family" class="w-14 h-14 rounded-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBz2vXAGxsP2kG5247r98DGAOKa0zJpN15Jz6FVavq466IxM5_NQDz3xuLEPPN4iAzfH_Yvh4ZAP-nqZhfmkC3rRSicB8XFSwya3z3o_dxg9Mdz7IV0QYxIGpPW_XM34FZVIMKA19vQp98ivj7agry_A_gEYGgB2giMALtfj-0m6yqokQVEXwKBxApCaGtrnoOsVyA1vlGHs-mcJB-woBmRxr-bEdTKUk2cH4_FkHXFpwazO0Ru-ZXzdFAN6WT1kpcPMSZsTyPPFI"/>
 <div>
-<p class="font-body text-xl leading-relaxed text-royal-navy dark:text-gray-200 italic">
-"맞춤 매칭이 정말 놀라웠어요. 우리 딸의 성격에 꼭 맞는 학교를 찾아주셔서 단순한 성적 이상의 결과를 얻었어요. 정말 만족합니다."
+<p class="font-body text-base font-semibold text-royal-navy dark:text-white">박O준 학부모님</p>
+<p class="font-body text-sm text-royal-navy/50 dark:text-white/50">Eton College 재학생</p>
+</div>
+</div>
+</div>
+
+<!-- Testimonial 2 -->
+<div class="flex flex-col gap-8 p-10 lg:p-12 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10">
+<div class="flex-grow">
+<p class="font-display text-2xl lg:text-3xl leading-relaxed text-royal-navy dark:text-white font-light">
+"맞춤 매칭이 정말 놀라웠어요. 우리 딸의 성격에 꼭 맞는 학교를 찾아주셔서 만족합니다."
 </p>
 </div>
-<div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 relative">
-<div class="relative">
-<img alt="Photo of The Kim Family" class="w-16 h-16 rounded-full object-cover ring-4 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCHNFf9c8gsywHA6CrUIYdVNAHtk8W0eMUJVwRWb20xcwh7hNH9w--XinZf9OqzQJkqLYW8Alnx6E24biKRkh6ctYxt5fADCz7nencE6tUpFRdmA5tsyB6XPu4HGTexJL-NZMNKEaei6FVGlG5z_vdQGj4BWj1MIGSBivdOvDJUyy-sxwxlQx-bRabhz6Fm9SRcnTdQ15TjihvA6WfDdQgcnjhGFpPevQ4PGmNe0fs_WKOaC4MaoauZ36pfDlT-nyhK9X7_oeciC4"/>
-<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-white dark:border-royal-navy"></div>
-</div>
+<div class="flex items-center gap-5 pt-8 border-t border-royal-navy/10 dark:border-white/10">
+<img alt="Photo of The Kim Family" class="w-14 h-14 rounded-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCHNFf9c8gsywHA6CrUIYdVNAHtk8W0eMUJVwRWb20xcwh7hNH9w--XinZf9OqzQJkqLYW8Alnx6E24biKRkh6ctYxt5fADCz7nencE6tUpFRdmA5tsyB6XPu4HGTexJL-NZMNKEaei6FVGlG5z_vdQGj4BWj1MIGSBivdOvDJUyy-sxwxlQx-bRabhz6Fm9SRcnTdQ15TjihvA6WfDdQgcnjhGFpPevQ4PGmNe0fs_WKOaC4MaoauZ36pfDlT-nyhK9X7_oeciC4"/>
 <div>
-<p class="font-body text-lg font-bold text-royal-navy dark:text-white">김O서 학부모님</p>
-<p class="font-body text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
-<span class="material-symbols-outlined text-base text-primary">school</span>
-Phillips Exeter Academy 재학생
-</p>
+<p class="font-body text-base font-semibold text-royal-navy dark:text-white">김O서 학부모님</p>
+<p class="font-body text-sm text-royal-navy/50 dark:text-white/50">Phillips Exeter Academy 재학생</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="relative bg-white dark:bg-royal-navy py-24 overflow-hidden">
-<!-- 배경 패턴 -->
-<div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
-<div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 0); background-size: 40px 40px;"></div>
+<section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="mb-20 lg:mb-32">
+<div class="mb-6">
+<span class="text-royal-navy/30 dark:text-white/30 text-xs font-body font-medium tracking-[0.3em] uppercase">Latest Insights</span>
 </div>
-
-<div class="relative max-w-6xl mx-auto px-6">
-<div class="text-center mb-16">
-<div class="inline-flex items-center justify-center gap-2 mx-auto mb-4">
-<div class="h-px w-12 bg-gradient-to-r from-transparent to-primary"></div>
-<span class="text-primary font-semibold text-sm uppercase tracking-wider">Latest News</span>
-<div class="h-px w-12 bg-gradient-to-l from-transparent to-primary"></div>
-</div>
-<h2 class="font-display text-4xl md:text-5xl font-bold leading-tight text-royal-navy dark:text-white mb-5">
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-royal-navy dark:text-white max-w-3xl mb-8">
 새소식
 </h2>
-<p class="font-body text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+<p class="font-body text-xl text-royal-navy/60 dark:text-white/60 max-w-2xl">
 알파 컨설팅의 최신 소식과 교육 정보를 확인하세요.
 </p>
 </div>
 
 <!-- RSS Feed Container -->
-<div id="blog-feed" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div id="blog-feed" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 <!-- Loading state -->
 <div class="col-span-full flex justify-center items-center py-12">
 <div class="flex flex-col items-center gap-4">
-<div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-<p class="text-gray-500 dark:text-gray-400">새소식을 불러오는 중...</p>
+<div class="w-12 h-12 border-2 border-royal-navy/20 dark:border-white/20 border-t-royal-navy dark:border-t-white rounded-full animate-spin"></div>
+<p class="text-royal-navy/50 dark:text-white/50 text-sm">새소식을 불러오는 중...</p>
 </div>
 </div>
 </div>
 
 <!-- View More Button -->
-<div class="flex justify-center mt-12">
-<a href="https://blog.naver.com/hestiacompany" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary via-[#e8c875] to-primary bg-[length:200%_100%] hover:bg-right text-royal-navy font-bold text-lg rounded-xl transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-xl">
-<span class="relative z-10">블로그 더보기</span>
-<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300 relative z-10">arrow_forward</span>
+<div class="flex justify-center mt-16">
+<a href="https://blog.naver.com/hestiacompany" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-royal-navy dark:text-white hover:gap-4 transition-all duration-300">
+<span class="text-sm font-body tracking-[0.2em] uppercase">블로그 더보기</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
 </a>
 </div>
 </div>
 </section>
-<section class="relative bg-gradient-to-br from-[#0a192f] via-royal-navy to-[#112240] dark:from-black dark:via-[#050a14] dark:to-[#0a192f] py-28 overflow-hidden">
-<!-- 향상된 배경 장식 -->
-<div class="absolute inset-0">
-<div class="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-<div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-primary/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-<div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-</div>
-
-<div class="relative max-w-5xl mx-auto px-6 text-center">
-<div class="inline-flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md rounded-full border border-white/20 shadow-lg mb-8">
-<span class="relative flex h-3 w-3">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-</span>
-<span class="text-white/90 text-sm font-semibold tracking-wide">지금 시작하세요</span>
-</div>
-
-<h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white mb-6">
-자녀의 미래를 위한<br/>
-<span class="bg-gradient-to-r from-primary via-[#e8c875] to-primary bg-clip-text text-transparent">여정을 지금 시작하세요</span>
+<section class="relative bg-royal-navy dark:bg-black py-32 lg:py-48">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] text-white mb-12">
+자녀의 미래를 위한<br/>여정을 시작하세요
 </h2>
-<p class="font-body text-xl md:text-2xl text-white/80 mt-6 max-w-3xl mx-auto leading-relaxed">
-10년의 로드맵으로 자녀의 미래를 함께 설계합니다.<br/>
-<span class="text-primary font-semibold">오늘 상담을 예약하세요.</span>
+<p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-16">
+10년의 로드맵으로 자녀의 미래를 함께 설계합니다
 </p>
 
-<div class="flex flex-col sm:flex-row items-center justify-center gap-5 mt-12">
-<a href="contact.html" class="group relative inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-primary via-[#e8c875] to-primary bg-[length:200%_100%] hover:bg-right text-royal-navy font-black text-xl rounded-2xl transition-all duration-500 hover:scale-110 shadow-2xl shadow-primary/40 hover:shadow-primary/60">
-<span class="relative z-10">무료 상담 신청</span>
-<span class="material-symbols-outlined text-2xl transition-transform group-hover:translate-x-2 duration-300 relative z-10">arrow_forward</span>
-<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-darker to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<a href="contact.html" class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
+<span>상담 신청</span>
+<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
 </a>
-<a href="tel:+82-10-0000-0000" class="inline-flex items-center gap-3 px-10 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-lg rounded-2xl border-2 border-white/40 transition-all duration-300 hover:border-white/60 hover:scale-105 shadow-xl">
-<span class="material-symbols-outlined text-xl">call</span>
-<span>전화 상담</span>
-</a>
+
 </div>
 
-<!-- 추가 정보 -->
-<div class="mt-16 pt-12 border-t border-white/20">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white/80">
-<div class="flex flex-col items-center gap-3">
-<span class="material-symbols-outlined text-4xl text-primary">task_alt</span>
-<p class="text-sm font-semibold">100% 맞춤형 컨설팅</p>
+<!-- 통계 -->
+<div class="grid grid-cols-3 gap-8 mt-24 pt-16 border-t border-white/10">
+<div>
+<div class="text-4xl font-display font-light text-white mb-2">100%</div>
+<div class="text-sm text-white/40 uppercase tracking-wider">맞춤형 전략</div>
 </div>
-<div class="flex flex-col items-center gap-3">
-<span class="material-symbols-outlined text-4xl text-primary">shield</span>
-<p class="text-sm font-semibold">15년 검증된 노하우</p>
+<div>
+<div class="text-4xl font-display font-light text-white mb-2">15년</div>
+<div class="text-sm text-white/40 uppercase tracking-wider">검증된 노하우</div>
 </div>
-<div class="flex flex-col items-center gap-3">
-<span class="material-symbols-outlined text-4xl text-primary">trending_up</span>
-<p class="text-sm font-semibold">95% 목표 달성률</p>
+<div>
+<div class="text-4xl font-display font-light text-white mb-2">95%</div>
+<div class="text-sm text-white/40 uppercase tracking-wider">성공률</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 </main>
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/98 dark:bg-royal-navy/98 backdrop-blur-xl p-4 md:p-5 border-t-2 border-primary/30 shadow-2xl">
-<div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5">
-<a href="contact.html" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-[#e8c875] text-royal-navy font-bold text-base rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center">
-<span class="relative z-10">상담 예약하기</span>
-<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1 relative z-10">arrow_forward</span>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
+<div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="hidden sm:block">
+<p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+<a href="contact.html" class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
+<span>상담 예약</span>
+<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
 </a>
-<a href="choice.html" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-royal-navy dark:text-white font-bold text-base rounded-xl transition-all duration-300 hover:scale-105 shadow-md w-full sm:w-auto justify-center">
-<span class="material-symbols-outlined text-lg">school</span>
-<span>학교 리스트 보기</span>
+<a href="choice.html" class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-base">school</span>
+<span>학교 보기</span>
 </a>
+</div>
 </div>
 </div>
 </div>
@@ -728,24 +754,19 @@ async function loadBlogFeed() {
       }) : '';
 
       return `
-        <article class="group relative flex flex-col gap-5 rounded-2xl border-2 border-gray-100 dark:border-gray-700 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-8 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all duration-500"></div>
-
+        <article class="group relative flex flex-col gap-6 p-8 bg-white dark:bg-royal-navy/50 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/30 dark:hover:border-white/30 transition-all duration-500">
           <div class="relative">
-            <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
-              <span class="material-symbols-outlined text-primary text-base">calendar_today</span>
+            <div class="flex items-center gap-2 text-xs text-royal-navy/40 dark:text-white/40 mb-4 uppercase tracking-wider">
               <time datetime="${pubDate}">${date}</time>
             </div>
-            <h3 class="font-display text-xl font-bold leading-tight text-royal-navy dark:text-white mb-3 line-clamp-2">${title}</h3>
-            <p class="font-body text-base leading-relaxed text-gray-600 dark:text-gray-400 line-clamp-3">${summary}</p>
+            <h3 class="font-display text-xl md:text-2xl font-semibold leading-tight text-royal-navy dark:text-white mb-3 line-clamp-2">${title}</h3>
+            <p class="font-body text-base leading-relaxed text-royal-navy/60 dark:text-white/60 line-clamp-3">${summary}</p>
           </div>
 
-          <a href="${link}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all duration-300">
-            <span>자세히 보기</span>
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          <a href="${link}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-royal-navy dark:text-white text-sm group-hover:gap-3 transition-all duration-300">
+            <span class="font-medium tracking-wider uppercase">자세히 보기</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
           </a>
-
-          <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-[#e8c875] to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
         </article>
       `;
     }).join('');
@@ -755,9 +776,9 @@ async function loadBlogFeed() {
     feedContainer.innerHTML = `
       <div class="col-span-full text-center py-12">
         <div class="flex flex-col items-center gap-4">
-          <span class="material-symbols-outlined text-5xl text-gray-400">error</span>
-          <p class="text-gray-500 dark:text-gray-400">새소식을 불러오는데 실패했습니다.</p>
-          <a href="https://blog.naver.com/hestiacompany" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">블로그 직접 방문하기 →</a>
+          <span class="material-symbols-outlined text-5xl text-royal-navy/20 dark:text-white/20">error</span>
+          <p class="text-royal-navy/50 dark:text-white/50">새소식을 불러오는데 실패했습니다.</p>
+          <a href="https://blog.naver.com/hestiacompany" target="_blank" rel="noopener noreferrer" class="text-royal-navy dark:text-white hover:underline">블로그 직접 방문하기 →</a>
         </div>
       </div>
     `;
