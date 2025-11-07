@@ -1093,9 +1093,13 @@ function getSchoolId() {
 
 // Render school details
 function renderSchool(schoolId) {
+  console.log('School ID:', schoolId);
+  console.log('Available schools:', Object.keys(schoolData));
   const school = schoolData[schoolId];
+  console.log('Found school:', school);
 
   if (!school) {
+    console.error('School not found:', schoolId);
     document.getElementById('school-content').classList.add('hidden');
     document.getElementById('no-school').classList.remove('hidden');
     return;
