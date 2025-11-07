@@ -180,7 +180,7 @@ const schoolData = {
   'exeter': {
     name: 'Phillips Exeter Academy',
     nameKo: '필립스 엑시터 아카데미',
-    image: 'image/exeter.edu.png',
+    image: 'image/thehill.svg',
     website: 'https://exeter.edu/',
     type: 'Senior Boarding',
     overview: {
@@ -401,7 +401,7 @@ const schoolData = {
   'hun': {
     name: 'The Hun School of Princeton',
     nameKo: '헌 스쿨 오브 프린스턴',
-    image: 'image/hunschool.org.jpg', // Placeholder 이미지 경로
+    image: 'image/hunschool.svg',
     website: 'https://www.hunschool.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -454,7 +454,7 @@ const schoolData = {
   'hill': {
     name: 'The Hill School',
     nameKo: '힐 스쿨',
-    image: 'image/thehill.org.jpg', // Placeholder 이미지 경로
+    image: 'image/thehill.svg',
     website: 'https://www.thehill.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -512,7 +512,7 @@ const schoolData = {
   'gunn': {
     name: 'The Frederick Gunn School',
     nameKo: '프레더릭 건 스쿨',
-    image: 'image/frederickgunn.org.jpg', // Placeholder 이미지 경로
+    image: 'image/frederickgunn.svg',
     website: 'https://www.frederickgunn.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -572,7 +572,7 @@ const schoolData = {
   'nmh': {
     name: 'Northfield Mount Hermon',
     nameKo: '노스필드 마운트 허몬',
-    image: 'image/nmh.org.jpg', // Placeholder 이미지 경로
+    image: 'image/nmh.png',
     website: 'https://www.nmh.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -718,7 +718,7 @@ const schoolData = {
   'blair': {
     name: 'Blair Academy',
     nameKo: '블레어 아카데미',
-    image: 'image/blair.edu.jpg', // Placeholder 이미지 경로
+    image: 'image/blair.jpg',
     website: 'https://www.blair.edu/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -795,7 +795,7 @@ const schoolData = {
   'stmarks': {
     name: "St. Mark's School",
     nameKo: '세인트 마크 스쿨',
-    image: 'image/stmarksschool.org.jpg', // Placeholder 이미지 경로
+    image: 'image/stmarksschool.png',
     website: 'https://www.stmarksschool.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -933,7 +933,7 @@ const schoolData = {
   'groton': {
     name: 'Groton School',
     nameKo: '그로튼 스쿨',
-    image: 'image/groton.org.jpg', // Placeholder 이미지 경로
+    image: 'image/groton.svg',
     website: 'https://groton.org/', // 실제 웹사이트 주소로 가정
     type: 'Senior Boarding',
     overview: {
@@ -1050,8 +1050,8 @@ function renderSchool(schoolId) {
               <span class="material-symbols-outlined">open_in_new</span>
             </a>
           </div>
-          <div class="relative h-96 lg:h-[500px] overflow-hidden rounded-lg">
-            <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('${school.image}');"></div>
+          <div class="relative h-96 lg:h-[500px] w-full max-w-md overflow-hidden rounded-lg">
+            <div class="w-full h-full bg-center bg-no-repeat bg-contain" style="background-image: url('${school.image}');"></div>
           </div>
         </div>
       </div>
