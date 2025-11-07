@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>School Details - Alpha Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#D4AF37',
+            darker: '#B48A25'
+          },
+          accent: '#D4AF37',
+          'royal-navy': '#0a192f',
+          'background-light': '#FFFFFF',
+          'background-dark': '#0f1419'
+        },
+        fontFamily: {
+          display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+          body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
+<div class="relative w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-4 sm:px-10 py-3 transition-all duration-300 h-20">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html">Home</a>
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html#why-alpha">Why Alpha</a>
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="service.html">Services</a>
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="choice.html">Alpha's Choice</a>
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="about.html">About</a>
+<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="contact.html">Contact</a>
+</nav>
+<button id="mobile-menu-btn" class="md:hidden text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="mobile-nav md:hidden" id="mobile-nav">
+<a href="index.html">Home</a>
+<a href="index.html#why-alpha">Why Alpha</a>
+<a href="service.html">Services</a>
+<a href="choice.html">Alpha's Choice</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<main class="pb-24">
+<!-- School Detail Content -->
+<div id="school-content">
+<!-- Content will be dynamically inserted here -->
+</div>
+
+<!-- Fallback: No School Selected -->
+<div id="no-school" class="hidden">
+<section class="relative bg-royal-navy py-32">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20 text-center">
+<h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">학교를 선택해주세요</h1>
+<p class="text-lg text-white/60 mb-12">Alpha's Choice 페이지에서 학교를 선택하세요.</p>
+<a href="choice.html" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-royal-navy font-bold hover:bg-white/90 transition-all">
+<span>학교 목록 보기</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+<!-- Company Info -->
+<div class="lg:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-8">
+<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
+</svg>
+</div>
+<h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
+</div>
+<p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
+합격보다 성장, 순위보다 적합성.<br/>
+학생들에게 완벽한 교육 환경을 찾아드립니다.
+</p>
+</div>
+
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
+<nav class="flex flex-col gap-3">
+<a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
+<a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
+<a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
+<a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
+<a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
+</nav>
+</div>
+
+<!-- Contact Info -->
+<div>
+<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
+<div class="flex flex-col gap-4 text-sm">
+<div>
+<p class="text-white/40 mb-1">대표</p>
+<p class="text-white/80">정수향</p>
+</div>
+<div>
+<p class="text-white/40 mb-1">이메일</p>
+<a href="mailto:king@hetiaschool.com" class="text-white/80 hover:text-white transition-colors">king@hetiaschool.com</a>
+</div>
+<div>
+<p class="text-white/40 mb-1">주소</p>
+<p class="text-white/80">서울시 강남구 역삼동</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="pt-8 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
+<div class="flex gap-6">
+<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
+<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
+<div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="hidden sm:block">
+<p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+<a href="contact.html" class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
+<span>상담 예약</span>
+<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a href="choice.html" class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span>학교 목록</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src="common-script.js"></script>
+<script>
+// School data
+const schoolData = {
+  'exeter': {
+    name: 'Phillips Exeter Academy',
+    nameKo: '필립스 엑시터 아카데미',
+    image: 'image/choice.png',
+    website: 'https://exeter.edu/',
+    type: 'Senior Boarding',
+    overview: {
+      students: '1,078명',
+      ratio: '6:1',
+      boarding: '기숙/통학',
+      grades: '9-12학년, PG'
+    },
+    description: '1781년 설립된 명문 기숙 학교로, \'Harkness\'라는 학생 주도형 토론식 수업 방식으로 유명합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 9학년부터 12학년, 그리고 대학원(PG) 과정을 포함하여 총 1,078명의 학생이 재학 중입니다. 이는 분석 대상 16개 학교 중 가장 큰 규모입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 총 학생 수가 약 1,100명의 "기숙 및 통학 학생"으로 구성되어 있다고 언급되나, 기숙 학생과 통학 학생의 정확한 비율은 제공된 자료에서 확인할 수 없습니다.</p>
+        <p><strong>학생-교사 비율:</strong> 6:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램',
+        content: `<div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-lg mb-2">Harkness Method (하크니스 메소드)</h4>
+            <p>엑시터 교육 철학의 핵심으로, 교사가 주도하는 강의식이 아닌 학생들이 주도하는 토론 기반의 협력적 학습 모델입니다. 큰 타원형 테이블에 둘러앉아 모든 학생이 토론에 참여합니다.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg mb-2">심화 학술 과정</h4>
+            <p>엑시터는 AP(Advanced Placement) 과정을 제공하지 않습니다. 그 이유는 학교의 정규 과정 중 절반 이상이 "AP 커리큘럼을 훨씬 뛰어넘는" 대학 과정의 속도와 수준으로 진행되기 때문입니다.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg mb-2">연구 기반 수업 (Research-Based Classes)</h4>
+            <p>스탠포드 대학, 펜실베니아 대학(University of Pennsylvania)의 연구실과 파트너십을 맺고 있습니다. 이를 통해 학생들은 STEM, 사회 과학, 인문학 분야에서 학부 수준의 연구를 미리 준비할 수 있습니다.</p>
+          </div>
+        </div>`
+      },
+      matriculation: {
+        title: '대학 진학 분석',
+        content: `<p class="mb-4">2023-2025년 3년간 10명 이상의 학생이 진학(Matriculation)한 대학 목록:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ul class="space-y-2">
+            <li>• Boston College</li>
+            <li>• Bowdoin College</li>
+            <li>• Brown University</li>
+            <li>• University of Chicago</li>
+            <li>• Columbia University</li>
+            <li>• Cornell University</li>
+            <li>• Dartmouth College</li>
+            <li>• George Washington University</li>
+          </ul>
+          <ul class="space-y-2">
+            <li>• Georgetown University</li>
+            <li>• Harvard University</li>
+            <li>• MIT</li>
+            <li>• NYU</li>
+            <li>• Northeastern University</li>
+            <li>• University of Pennsylvania</li>
+            <li>• Princeton University</li>
+            <li>• Tufts University</li>
+          </ul>
+        </div>
+        <p class="mt-4 text-sm text-royal-navy/60 dark:text-white/60">이 외에도 Amherst College, Stanford University, U.S. Naval Academy, University of Virginia, Wesleyan University, Williams College, Yale University 등 다수의 명문 대학에 10명 미만의 학생들이 진학했습니다.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램',
+        content: `<p>엑시터는 22개의 다양한 인터콜라스틱 스포츠(학교 대항 스포츠)에서 총 62개의 팀(Varsity, JV 등)을 운영하고 있습니다.</p>`
+      }
+    }
+  },
+  'choate': {
+    name: 'Choate Rosemary Hall',
+    nameKo: '초트 로즈메리 홀',
+    image: 'image/choate.edu.jpg',
+    website: 'https://www.choate.edu/',
+    type: 'Senior Boarding',
+    overview: {
+      students: '861명',
+      ratio: '7:1',
+      boarding: '75.7%',
+      grades: '9-12학년'
+    },
+    description: '코네티컷에 위치한 9-12학년 기숙 학교로, 혁신적인 교과 과정과 학생의 잠재력 개발을 중시합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 2023년 9월 기준, 총 861명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 총 861명 중 기숙 학생 652명(75.7%), 통학 학생 209명(24.3%)으로 구성됩니다.</p>
+        <p><strong>학생-교사 비율:</strong> 7:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램',
+        content: `<p class="mb-4">초트는 특정 관심사를 심도 있게 탐구할 수 있는 8개의 명확한 시그니처 프로그램을 제공합니다:</p>
+        <ul class="space-y-2">
+          <li>• Advanced Robotics Concentration (고급 로봇 공학 집중 과정)</li>
+          <li>• Arabic & Middle Eastern Studies (아랍어 및 중동 연구)</li>
+          <li>• Arts Concentration (예술 집중 과정)</li>
+          <li>• Capstone Program (캡스톤 프로그램)</li>
+          <li>• Environmental Immersion Program (환경 몰입 프로그램)</li>
+          <li>• Global Engagement Program (글로벌 참여 프로그램)</li>
+          <li>• John F. Kennedy '35 Program in Government and Public Service (존 F. 케네디 '35 행정 및 공공 서비스 프로그램)</li>
+          <li>• Science Research Program (과학 연구 프로그램)</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석',
+        content: `<p class="mb-4">2019-2023년 5년간 10명 이상의 졸업생이 등록(Matriculation)한 대학:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <h4 class="font-semibold mb-2">주요 진학 대학 (30명 이상)</h4>
+            <ul class="space-y-1 text-sm">
+              <li>• New York University (54명)</li>
+              <li>• University of Chicago (46명)</li>
+              <li>• Yale University (41명)</li>
+              <li>• Columbia University (40명)</li>
+              <li>• Georgetown University (31명)</li>
+              <li>• Cornell University (30명)</li>
+              <li>• Northeastern University (30명)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">주요 진학 대학 (20-29명)</h4>
+            <ul class="space-y-1 text-sm">
+              <li>• Brown University (26명)</li>
+              <li>• University of Pennsylvania (25명)</li>
+              <li>• University of St Andrews (24명)</li>
+              <li>• Boston College (23명)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-royal-navy/60 dark:text-white/60">이 외에도 Stanford, Princeton, MIT, Northwestern, Duke 등 다수의 명문 대학에 안정적으로 진학하고 있습니다.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램',
+        content: `<p>80개 이상의 교내 팀(interscholastic teams)과 20개 이상의 교내 활동(intramural options)을 제공하며, NEPSAC(New England Preparatory School Athletic Council) 및 Founders League의 회원 학교입니다.</p>`
+      }
+    }
+  },
+  'deerfield': {
+    name: 'Deerfield Academy',
+    nameKo: '디어필드 아카데미',
+    image: 'image/deerfield.edu.jpg', // Placeholder 이미지 경로
+    website: 'https://deerfield.edu/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '649명',
+      ratio: '4.4:1',
+      boarding: '89.1%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '매사추세츠에 위치한 9-12학년 기숙 학교로, 깊이 있는 학술 프로그램과 공동체 의식을 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 2024-2025학년도 기준, 총 649명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 총 649명 중 기숙 학생 578명(89.1%), 통학 학생 71명(10.9%)입니다. 이는 기숙 학생이 압도적으로 우세한 커뮤니티임을 시사합니다.</p>
+        <p><strong>학생-교사 비율:</strong> 약 4.4:1 (150명의 교직원, 649명의 학생 기준 추정)</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">디어필드는 '시그니처 프로그램'이라는 공식적인 목록 대신, 독특한 학술 및 공동체 프로그램을 강조합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Senior Meditation (시니어 명상):</strong> 디어필드 영어 커리큘럼의 정점으로, 12학년 학생들이 디어필드에서의 경험과 개인적인 성장에 대해 깊이 성찰하는 긴 글을 작성하며, 우수작은 전교생 앞에서 발표됩니다.</li>
+          <li><strong>Intergenerational Programs (세대 간 프로그램):</strong> 학생들이 지역 요양 시설을 방문하여 공예, 카드 게임, 대화 등을 통해 노인들과 관계를 구축하는 공동체 프로그램입니다.</li>
+          <li><strong>Center for Service and Global Citizenship (CSGC):</strong> 커뮤니티 서비스 및 글로벌 여행 프로그램을 관장하는 기관입니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">디어필드의 학교 프로필은 대학 진학 빈도를 별표(*)로 표기합니다. 2019-2023년 목록을 종합하면 다음과 같은 경향을 보입니다.</p>
+        <div class="space-y-3">
+          <div>
+            <h4 class="font-semibold mb-2">최다 진학 (***)</h4>
+            <ul class="space-y-1 text-sm list-disc pl-5">
+              <li>Yale University</li>
+              <li>University of Virginia</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">다수 진학 (**)</h4>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+              <li>Brown University</li>
+              <li>University of Chicago</li>
+              <li>Columbia University</li>
+              <li>Cornell University</li>
+              <li>Dartmouth College</li>
+              <li>Duke University</li>
+              <li>Georgetown University</li>
+              <li>Harvard University</li>
+              <li>University of Pennsylvania</li>
+              <li>Princeton University</li>
+              <li>Stanford University</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">기타 주요 진학 (*)</h4>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+              <li>Amherst College</li>
+              <li>Boston College</li>
+              <li>Bowdoin College</li>
+              <li>Colby College</li>
+              <li>Hamilton College</li>
+              <li>Middlebury College</li>
+              <li>New York University</li>
+              <li>Northwestern University</li>
+              <li>University of Southern California</li>
+              <li>University of St. Andrews</li>
+              <li>Tufts University</li>
+              <li>Vanderbilt University</li>
+              <li>Wake Forest University</li>
+              <li>Williams College</li>
+            </ul>
+          </div>
+        </div>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p>Varsity, Junior Varsity, Recreational 레벨에서 다양한 스포츠 팀을 운영합니다. 제공되는 스포츠에는 Baseball, Swimming & Diving, Water Polo, Volleyball, Basketball, Tennis 등이 포함됩니다.</p>`
+      }
+    }
+  },
+  'hun': {
+    name: 'The Hun School of Princeton',
+    nameKo: '헌 스쿨 오브 프린스턴',
+    image: 'image/hunschool.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.hunschool.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '675명 (Upper 550명)',
+      ratio: '12:1',
+      boarding: '30% (Upper School)',
+      grades: '6-12학년 및 PG'
+    },
+    description: '프린스턴에 위치한 6-12학년 기숙/통학 학교로, 교실 밖 경험과 학제간 연구를 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 675명 (6-12학년 및 PG). 이 중 Upper School(고등학교)은 550명입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> Upper School 기준, 통학 학생 70%, 기숙 학생 30%입니다. 이는 16개 학교 중 가장 통학 학생 비중이 높은 'Day-Dominant' 커뮤니티입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 12:1 (자료에 따라 7:1로도 표기됨)</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">헌 스쿨은 교실 밖 경험과 학제간 연구를 강조하는 다양한 프로그램을 제공합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>NextTerm (넥스트텀):</strong> 9-11학년 학생들이 5월에 3주간 참여하는 프로젝트 기반, 여행 기반의 몰입형 학습 프로그램입니다.</li>
+          <li><strong>Scholars Program (스콜라 프로그램):</strong> Upper School 학생들이 자신의 학제간 관심사에 맞춰 과목을 선택하고 포트폴리오 프로젝트를 완료하여 졸업장에 'Honors Distinction'을 받게 되는 우등 과정입니다.</li>
+          <li><strong>STEM Program:</strong> "프린스턴 수학 학교"라는 학교의 유산에 기반한 프로그램입니다.</li>
+          <li><strong>Centennial Speakers Series:</strong> 다양한 분야의 리더, 예술가, 활동가들을 캠퍼스로 초청하는 연사 시리즈입니다.</li>
+          <li><strong>Civics Education (The John Gale Hun Program for Civics Education):</strong> 모든 Upper School 학생들에게 미국 공화국의 가치를 교육하는 시민 교육 프로그램입니다.</li>
+          <li><strong>Raider Houses:</strong> 모든 학생이 입학 시 하우스에 배정되어 연중 경쟁을 펼치는 프로그램입니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2023-2025년 기간을 포괄하는 상세한 다년간 진학(Matriculation) 목록은 제공된 자료에서 확인할 수 없습니다.</p>
+            <p class="mb-4">다만, 2024년 졸업생의 일부 진학 결과와 2021년 진학 목록은 확인 가능합니다.</p>
+            <ul class="space-y-1 text-sm list-disc pl-5">
+              <li><strong>Class of 2024 (일부):</strong> Cornell University (3), Fordham University (3), George Washington University (3) 등.</li>
+              <li><strong>Class of 2021 (일부):</strong> Rutgers University, Saint Joseph's University, School of the Art Institute of Chicago, Skidmore College, Southern Methodist University, University of St Andrews, Swarthmore College, Trinity College, Tulane University, Vanderbilt University, Wake Forest University, Washington University in St Louis, Yale University 등.</li>
+            </ul>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">Middle School, JV, Varsity 레벨에 걸쳐 매우 광범위한 스포츠 팀을 운영합니다.</p>
+            <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Boys' Rowing</li><li>Girls' Rowing</li><li>Soccer (남/여)</li><li>Field Hockey</li><li>Football</li><li>Tennis (여)</li><li>Volleyball (여)</li><li>Cross Country (남/여)</li></ul>
+            <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Basketball (남/여)</li><li>Ice Hockey (남/여)</li><li>Fencing (남/여)</li><li>Swimming (남/여)</li><li>Winter Track & Field (남/여)</li><li>Competitive Cheerleading</li><li>Rock Climbing</li></ul>
+            <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Softball</li><li>Lacrosse (남/여)</li><li>Tennis (남)</li><li>Golf (남/여)</li><li>Rowing (남/여)</li><li>Track & Field (남/여)</li></ul>`
+      }
+    }
+  },
+  'hill': {
+    name: 'The Hill School',
+    nameKo: '힐 스쿨',
+    image: 'image/thehill.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.thehill.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '530명',
+      ratio: '7:1',
+      boarding: '78%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '펜실베이니아에 위치한 기숙 학교로, STEM 및 엔지니어링 분야의 강력한 4년 과정 프로그램을 제공합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 530명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 기숙 학생 78%, 통학 학생 22%입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 7:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">힐 스쿨은 특히 STEM 및 엔지니어링 분야에서 강력한 프로그램을 제공합니다.</p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li><strong>4-year Progressive Engineering Program:</strong> STEM 커리큘럼의 핵심으로, 장기적인 공학 교육을 제공합니다.</li>
+              <li><strong>Entrepreneurship and Social Innovation:</strong> History & Social Science 학과 내에 포함된 프로그램입니다.</li>
+              <li><strong>Case Method Project:</strong> History & Social Science 학과에서 진행됩니다.</li>
+              <li><strong>학술적 깊이:</strong> 39개의 Honor 과정과 21개의 Advanced Placement (AP) 과정을 제공하여 학문적 도전을 지원합니다.</li>
+            </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2021-2025년 5년간 2명 이상의 졸업생이 진학한 대학의 전체 목록이 제공되었습니다.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <h4 class="font-semibold mb-2">Class of 2025 (3명 이상 진학)</h4>
+                <ul class="space-y-1 text-sm list-disc pl-5">
+                  <li>Boston University</li><li>Bucknell University</li><li>Cornell University</li><li>Dickinson College</li><li>Gettysburg College</li><li>Hobart and William Smith Colleges</li><li>Johns Hopkins University</li><li>Lehigh University</li><li>New York University</li><li>Northeastern University</li><li>Penn State University</li><li>University of Pennsylvania</li><li>University of Richmond</li><li>Villanova University</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">주요 진학 대학 (2021-2025, 2명 이상)</h4>
+                <p class="text-sm">American University, Amherst College, Babson College, Barnard College, Bates College, Boston College, Brown University, Carnegie Mellon University, Columbia University, Dartmouth College, Duke University, Emory University, Georgetown University, Harvard University, Johns Hopkins University, Massachusetts Institute of Technology, Middlebury College, New York University, Northeastern University, Northwestern University, Princeton University, Rice University, Stanford University, Tufts University, United States Naval Academy, University of California (Berkeley, Los Angeles), University of Michigan, University of North Carolina at Chapel Hill, University of Notre Dame, University of Pennsylvania, University of Southern California, University of Virginia, Vanderbilt University, Wake Forest University, Washington and Lee University, Washington University in St. Louis, Wesleyan University, Yale University 등.</p>
+              </div>
+            </div>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">총 32개의 인터콜라스틱 스포츠 프로그램을 제공합니다. 계절별 팀은 다음과 같습니다.</p>
+            <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Boys' Cross Country</li><li>Girls' Cross Country</li><li>Field Hockey</li><li>Football</li><li>Boys' Golf</li><li>Boys' Soccer</li><li>Girls' Soccer</li><li>Girls' Tennis</li><li>Boys' Water Polo</li></ul>
+            <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Boys' Basketball</li><li>Girls' Basketball</li><li>Fencing</li><li>Boys' Ice Hockey</li><li>Girls' Ice Hockey</li><li>Indoor Track and Field</li><li>Boys' Squash</li><li>Girls' Squash</li><li>Swimming and Diving</li></ul>
+            <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Crew</li><li>Boys' Golf</li><li>Girls' Golf</li><li>Boys' Lacrosse</li><li>Girls' Lacrosse</li><li>Outdoor Track and Field</li><li>Softball</li><li>Boys' Tennis</li></ul>`
+      }
+    }
+  },
+  'gunn': {
+    name: 'The Frederick Gunn School',
+    nameKo: '프레더릭 건 스쿨',
+    image: 'image/frederickgunn.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.frederickgunn.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '330명',
+      ratio: '[정보 없음]',
+      boarding: '[정보 없음]',
+      grades: '9-12학년 및 PG'
+    },
+    description: '코네티컷에 위치한 기숙 학교로, 엔지니어링, 아웃도어, 시민권 교육 등 독특한 체험 프로그램을 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 9-12학년 및 PG 과정을 포함하여 총 330명의 학생이 재학 중입니다.</p>
+        <p><strong>Day/Boarding 비율:</strong> "기숙 및 통학(boarding and day) 학교"로 확인되나, 정확한 기숙/통학 비율은 제공된 자료에 명시되어 있지 않습니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">프레더릭 건 스쿨은 독특한 체험 및 학술 프로그램을 강조합니다:</p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li>Engineering (엔지니어링)</li>
+              <li>Center for Citizenship & Just Democracy (시민권 및 정의로운 민주주의 센터)</li>
+              <li>Gunn Outdoors (건 아웃도어): 아웃도어 활동 및 리더십 프로그램.</li>
+              <li>Gunn Scholar (건 스콜라): 학술 우등 프로그램.</li>
+              <li>Highlander Term (하이랜더 텀): 특정 주제에 몰입하는 특별 학기 프로그램.</li>
+              <li>Entrepreneurship (기업가 정신)</li>
+            </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">제공된 자료는 2023-2025년 기간의 대학 '합격(Acceptance)' 목록을 상세히 제공합니다. (참고: 이는 최종 진학(Matriculation) 목록이 아닌, 합격 통지를 받은 대학의 전체 목록입니다.)</p>
+            <h4 class="font-semibold mb-2">주요 합격 대학 (2023-2025)</h4>
+            <p class="text-sm">American University, Amherst College, Babson College, Bates College, Boston College, Boston University, Bowdoin College, Bucknell University, Carleton College, Carnegie Mellon University, Colby College, Colgate University, Columbia University, Cornell University, Davidson College, Emory University, George Washington University, Georgetown University, Hamilton College, Johns Hopkins University, Kenyon College, Lafayette College, Lehigh University, Macalester College, McGill University, Middlebury College, New York University, Northeastern University, Oberlin College, Princeton University, Reed College, Rice University, Skidmore College, Swarthmore College, Syracuse University, Trinity College, Tufts University, Tulane University, Union College, University of California (Los Angeles, San Diego, Santa Barbara), University of Michigan, University of North Carolina at Chapel Hill, University of Richmond, University of St Andrews, University of Toronto, University of Virginia, Vanderbilt University, Vassar College, Villanova University, Wake Forest University, Washington and Lee University, Washington University in St. Louis, Wesleyan University 등.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">총 15개 스포츠 분야에서 36개의 팀을 운영합니다.</p>
+            <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+              <li>Basketball (남/여)</li>
+              <li>Ice Hockey (남/여)</li>
+              <li>Baseball (남)</li>
+              <li>Skiing (남/여)</li>
+              <li>Softball (여)</li>
+              <li>Golf (공용)</li>
+              <li>Rowing (남/여)</li>
+              <li>Lacrosse (남/여)</li>
+              <li>Tennis (남/여)</li>
+              <li>Ultimate Frisbee (공용)</li>
+              <li>Cross Country (남/여)</li>
+              <li>Field Hockey (여)</li>
+              <li>Football (남)</li>
+              <li>Soccer (남/여)</li>
+              <li>Volleyball (여)</li>
+            </ul>`
+      }
+    }
+  },
+  'nmh': {
+    name: 'Northfield Mount Hermon',
+    nameKo: '노스필드 마운트 허몬',
+    image: 'image/nmh.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.nmh.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '632명',
+      ratio: '6:1',
+      boarding: '83.9%',
+      grades: '9-12학년 및 PG'
+    },
+    description: '매사추세츠에 위치한 9-12학년 및 PG 기숙 학교로, 6:1의 낮은 학생-교사 비율을 특징으로 합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 632명 (9-12학년 및 PG).</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 총 632명 중 기숙 학생 530명(83.9%), 통학 학생 102명(16.1%)입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 6:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p>제공된 자료에서는 '시그니처 프로그램'으로 명명된 특정 프로그램 목록을 확인할 수 없습니다. [정보 없음]</p>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p>제공된 자료에서는 2023-2025년 기간을 포함하는 대학 진학(Matriculation) 또는 합격(Acceptance) 목록을 확인할 수 없습니다. [정보 없음]</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p>총 20개의 인터콜라스틱 스포츠(학교 대항 스포츠)에서 67개의 팀을 운영하고 있습니다.</p>`
+      }
+    }
+  },
+  'emma': {
+    name: 'Emma Willard School',
+    nameKo: '엠마 윌러드 스쿨',
+    image: 'image/emmawillard.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.emmawillard.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding (All-Girls)',
+    overview: {
+      students: '350명',
+      ratio: '7:1',
+      boarding: '66%',
+      grades: '9-12학년'
+    },
+    description: '뉴욕에 위치한 9-12학년 여학생 기숙 학교로, Signature 캡스톤 프로그램과 체험 학습을 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 9-12학년 총 350명의 학생이 재학 중입니다. 이는 16개 학교 중 비교적 소규모에 속합니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 여학생 전용 기숙 및 통학 학교입니다. 총 350명 중 기숙 학생 231명(66%), 통학 학생 119명(34%)입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 7:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">엠마 윌러드는 전통적인 학업과 더불어 체험 학습(Experiential Learning)을 강조하며, 다음과 같은 세부 프로그램을 제공합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Signature (시그니처):</strong> 11학년과 12학년 학생들이 개인적인 관심사를 주제로 1년 동안 진행하는 캡스톤(capstone) 프로그램입니다. 캠퍼스 내외의 멘토와 협력하며, 최종 결과물은 전교생 앞에서 발표합니다.</li>
+          <li><strong>Practicum (실습):</strong> 학생들이 지역 사회나 기업에서 인턴십, 자원봉사, 연구 등을 통해 실질적인 경험을 쌓는 프로그램입니다.</li>
+          <li><strong>Jestermester:</strong> 전통적인 학기 외에 제공되는 단기 집중 과정입니다.</li>
+          <li><strong>STEAM 9 and 10:</strong> 9, 10학년을 위한 STEAM(Science, Technology, Engineering, Arts, Math) 통합 프로그램입니다.</li>
+          <li><strong>Community Engagement and Social Impact (커뮤니티 참여 및 사회적 영향)</strong></li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2021-2024년 4년간의 대학 진학(Matriculation) 목록이 제공되었습니다. (참고: 2019-2022년 데이터 기준 Cornell (20), NYU (15) 등 더 높은 수치를 보였으나, 최신 경향을 반영합니다.)</p>
+        <h4 class="font-semibold mb-2">주요 진학 대학 (2021-2024)</h4>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+          <li>Boston University (6)</li>
+          <li>American University (5)</li>
+          <li>Bard College (5)</li>
+          <li>Boston College (4)</li>
+          <li>Brandeis University (4)</li>
+          <li>Barnard College (2)</li>
+          <li>Bates College (2)</li>
+          <li>Brown University (2)</li>
+        </ul>
+        <p class="mt-4 text-sm text-royal-navy/60 dark:text-white/60">(2019-2022년 데이터 기준 주요 진학 대학: Cornell University (20), New York University (15), Rensselaer Polytechnic Institute (7), George Washington University (7), Northeastern University (6))</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">계절별로 다양한 교내 스포츠 팀을 운영하며, New York State Public High School Athletic Association (NYSPHSAA) 소속으로 경쟁합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Crew</li><li>Cross Country</li><li>Field Hockey</li><li>Golf</li><li>Soccer</li><li>Swimming and Diving</li><li>Tennis</li><li>Volleyball</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Basketball</li><li>Crew</li><li>Indoor Track and Field</li><li>Ski Racing</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Badminton</li><li>Crew</li><li>Lacrosse</li><li>Outdoor Track and Field</li><li>Softball</li></ul>`
+      }
+    }
+  },
+  'stjames': {
+    name: 'St. James School',
+    nameKo: '세인트 제임스 스쿨',
+    image: 'image/stjames.edu.jpg', // Placeholder 이미지 경로
+    website: 'https://www.stjames.edu/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '250명',
+      ratio: '7:1',
+      boarding: '75%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '메릴랜드에 위치한 소규모 기숙 학교로, 전통적인 리버럴 아츠 커리큘럼과 FAB Lab을 제공합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 250명의 학생이 재학 중입니다. 이는 16개 학교 중 Westover와 함께 가장 소규모 그룹에 속합니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 기숙 학생 75%, 통학 학생 25%입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 7:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">세인트 제임스 스쿨은 특정 브랜드의 '시그니처 프로그램'보다는 전통적이고 광범위한 리버럴 아츠 커리큘럼(broad liberal arts curriculum) 자체를 강조합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>FAB Lab:</strong> 학업 프로그램의 일환으로 FAB Lab이 언급됩니다. 이는 Model UN, 드라마 클럽(Mummers' Society) 등과 함께 학생들의 주요 활동 중 하나로 보입니다.</li>
+          <li><strong>전통적 교과과정:</strong> 5개 핵심 과목(수학, 과학, 영어, 역사/종교, 외국어)에서 4년간의 엄격한 과정을 이수하는 것을 대학 준비의 핵심으로 삼습니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2023-2025년 졸업생을 위한 '샘플' 진학(Matriculation) 목록이 제공되었습니다. 소규모 학교임에도 불구하고 최상위권 대학 진학 성과를 꾸준히 내고 있음을 보여줍니다.</p>
+        <h4 class="font-semibold mb-2">샘플 진학 대학 (Classes of 2023-2025)</h4>
+        <p class="text-sm">Amherst College, Babson College, Bates College, Boston College, Boston University, Carnegie Mellon University, Clemson University, Colby College, Colgate University, Cornell University, Dartmouth College, Davidson College, Denison University, Dickinson College, Emory University, Fordham University, Georgetown University, Gettysburg College, Howard University, Johns Hopkins University, Kenyon College, Lafayette College, Lehigh University, New York University, Northeastern University, Pennsylvania State University, Stanford University, Syracuse University, The George Washington University, Tufts University, United States Air Force Academy, University of California (Los Angeles, San Diego), University of Maryland, University of Miami, University of Notre Dame, University of Pennsylvania, University of Richmond, University of Southern California, University of St Andrews, University of Toronto, University of Virginia, Wake Forest University, Wellesley College, Wofford College 등.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">다양한 스포츠 팀을 운영하고 있습니다.</p>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+          <li>Baseball (남)</li>
+          <li>Basketball (남/여)</li>
+          <li>Field Hockey (여)</li>
+          <li>Football (남)</li>
+          <li>Golf (남/여)</li>
+          <li>Lacrosse (남/여)</li>
+          <li>Soccer (남/여)</li>
+          <li>Softball (여)</li>
+          <li>Tennis (남/여)</li>
+          <li>Volleyball (여)</li>
+          <li>Wrestling (남/여)</li>
+        </ul>`
+      }
+    }
+  },
+  'blair': {
+    name: 'Blair Academy',
+    nameKo: '블레어 아카데미',
+    image: 'image/blair.edu.jpg', // Placeholder 이미지 경로
+    website: 'https://www.blair.edu/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '470명',
+      ratio: '[정보 없음]',
+      boarding: '83%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '뉴저지에 위치한 기숙 학교로, Society of Skeptics, 리더십, 대중 연설 등 차별화된 프로그램을 제공합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 470명의 학생이 재학 중입니다.</p>
+        <p><strong>Day/Boarding 비율:</strong> 기숙 학생 83%, 통학 학생 17%입니다. 기숙 학생 중심의 커뮤니티입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">'Distinctively Blair (블레어만의 차별점)'라는 이름으로 다음과 같은 고유 프로그램을 제공합니다:</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Society of Skeptics (회의론자 협회):</strong> 1976년부터 이어져 온 프로그램으로, 매주 저명한 연사들을 캠퍼스로 초청하여 강연과 토론을 진행합니다.</li>
+          <li><strong>Leadership & Public Service (리더십 및 공공 서비스):</strong> 학생들이 리더십 기술을 배우고 공공 서비스에 참여하도록 독려하는 프로그램입니다.</li>
+          <li><strong>Public Speaking & Communication Skills (대중 연설 및 커뮤니케이션 기술):</strong> 모든 학생이 효과적인 커뮤니케이션 기술을 습득하도록 돕는 데 중점을 둡니다.</li>
+          <li><strong>Intersession (인터세션):</strong> 정규 학기 사이에 진행되는 단기 몰입형 코스입니다.</li>
+          <li><strong>Dual-Advisor System (이중 멘토 시스템):</strong> 학생마다 학업 멘토와 생활 멘토가 배정됩니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2021-2025년 5년간의 매우 상세한 대학 진학(Matriculation) 목록이 제공되었습니다.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <h4 class="font-semibold mb-2">Class of 2025 (주요 진학)</h4>
+            <ul class="space-y-1 text-sm list-disc pl-5">
+              <li>New York University (11)</li>
+              <li>Lehigh University (4)</li>
+              <li>United States Naval Academy (4)</li>
+              <li>University of Pennsylvania (4)</li>
+              <li>Boston College (3)</li>
+              <li>Boston University (3)</li>
+              <li>Cornell University (3)</li>
+              <li>George Washington University (3)</li>
+              <li>Penn State University (3)</li>
+              <li>Swarthmore College (3)</li>
+              <li>University of Miami (3)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">5년간 누적 진학 (2021-2025, 10명 이상)</h4>
+            <ul class="space-y-1 text-sm list-disc pl-5">
+              <li>New York University (25)</li>
+              <li>Lehigh University (19)</li>
+              <li>Northeastern University (16)</li>
+              <li>University of Miami (15)</li>
+              <li>United States Naval Academy (15)</li>
+              <li>University of Pennsylvania (15)</li>
+              <li>Princeton University (14)</li>
+              <li>Boston College (13)</li>
+            </ul>
+          </div>
+        </div>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">계절별로 광범위한 스포츠 팀을 운영합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Boys’ Cross Country</li><li>Girls’ Cross Country</li><li>Field Hockey</li><li>Football</li><li>Boys’ Soccer</li><li>Girls’ Soccer</li><li>Girls’ Tennis</li><li>Sculling</li><li>Volleyball</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Boys’ Basketball</li><li>Girls’ Basketball</li><li>Skiing</li><li>Boys’ Squash</li><li>Girls’ Squash</li><li>Swimming</li><li>Track & Field</li><li>Wrestling</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Boys’ Crew</li><li>Girls’ Crew</li><li>Boys’ Golf</li><li>Girls’ Golf</li><li>Boys’ Lacrosse</li><li>Girls’ Lacrosse</li><li>Softball</li><li>Boys’ Tennis</li><li>Boys’ Track & Field</li><li>Girls’ Track & Field</li></ul>`
+      }
+    }
+  },
+  'stmarks': {
+    name: "St. Mark's School",
+    nameKo: '세인트 마크 스쿨',
+    image: 'image/stmarksschool.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.stmarksschool.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '372명',
+      ratio: '6:1',
+      boarding: '75%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '매사추세츠에 위치한 기숙 학교로, 글로벌 시티즌십 프로그램과 Lion Term 등 체험 학습을 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 372명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 기숙 학생 75%, 통학 학생 25%입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 6:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">세인트 마크 스쿨은 학생들이 교실 밖에서 배우고 성장하는 프로그램을 강조합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Global Citizenship Program (글로벌 시티즌십 프로그램):</strong> 학생들이 지역적, 국가적, 세계적 수준의 몰입형 경험을 통해 문화적 차이를 이해하고 글로벌 시민으로 성장하도록 돕습니다.</li>
+          <li><strong>Lion Term (라이언 텀):</strong> 정규 커리큘럼 외에 제공되는 특별 프로그램으로, 학생들이 특정 주제나 프로젝트에 깊이 몰입할 수 있는 기회를 제공합니다.</li>
+          <li><strong>Experiential Learning (체험 학습):</strong> 학생들이 '행함으로써 배우는(learn by doing)' 프로그램으로, 실제 경험을 통해 협업 및 실무 기술을 구축합니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2023-2025년 3년간의 대학 진학(Matriculation) 목록이 제공되었습니다. 목록에서 3명 이상의 학생이 진학한 학교는 굵게 표시되어 있습니다.</p>
+        <h4 class="font-semibold mb-2">3명 이상 진학한 대학 (2023-2025)</h4>
+        <p class="text-sm"><strong>Babson College</strong>, <strong>Bates College</strong>, <strong>Boston College</strong>, <strong>Boston University</strong>, <strong>Bowdoin College</strong>, <strong>Brown University</strong>, <strong>Bucknell University</strong>, <strong>Colby College</strong>, <strong>Colgate University</strong>, <strong>Columbia University</strong>, <strong>Cornell University</strong>, <strong>Dartmouth College</strong>, <strong>Emory University</strong>, <strong>Fordham University</strong>, <strong>George Washington University</strong>, <strong>Georgetown University</strong>, <strong>Hamilton College</strong>, <strong>Harvard University</strong>, <strong>Hobart and William Smith Colleges</strong>, <strong>Johns Hopkins University</strong>, <strong>Middlebury College</strong>, <strong>New York University</strong>, <strong>Northeastern University</strong>, <strong>Northwestern University</strong>, <strong>Pomona College</strong>, <strong>Providence College</strong>, <strong>Skidmore College</strong>, <strong>Stanford University</strong>, <strong>Syracuse University</strong>, <strong>Trinity College</strong>, <strong>Tufts University</strong>, <strong>Tulane University</strong>, <strong>University of Chicago</strong>, <strong>University of Miami</strong>, <strong>University of Michigan</strong>, <strong>University of Pennsylvania</strong>, <strong>University of Richmond</strong>, <strong>University of Southern California</strong>, <strong>University of St Andrews, Scotland</strong>, <strong>University of Virginia</strong>, <strong>Vanderbilt University</strong>, <strong>Wake Forest University</strong>, <strong>Washington University in St. Louis</strong>, <strong>Williams College</strong>, <strong>Yale University</strong>.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">Independent School League (ISL)의 회원 학교로, 계절별 스포츠 팀을 운영합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Cross Country (남/여)</li><li>Field Hockey</li><li>Football</li><li>Soccer (남/여)</li><li>Volleyball (여)</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Basketball (남/여)</li><li>Ice Hockey (남/여)</li><li>Squash (남/여)</li><li>Wrestling</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Crew (남/여)</li><li>Golf</li><li>Lacrosse (남/여)</li><li>Softball</li><li>Tennis (남/여)</li></ul>`
+      }
+    }
+  },
+  'westover': {
+    name: 'Westover School',
+    nameKo: '웨스트오버 스쿨',
+    image: 'image/westoverschool.org.jpg', // Placeholder 이미지 경로
+    website: 'https://www.westoverschool.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding (All-Girls)',
+    overview: {
+      students: '192명',
+      ratio: '4:1',
+      boarding: '68%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '코네티컷에 위치한 여학생 기숙 학교로, WISE (STEM), 글로벌 정의, 재정 리터러시(FIRE) 등 독특한 프로그램을 제공합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 192명의 학생이 재학 중입니다. 이는 16개 학교 중 가장 소규모입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 여학생 전용 기숙 및 통학 학교입니다. 기숙 학생 비율은 68%입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 4:1</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">웨스트오버 스쿨은 여학생들의 잠재력을 극대화하는 데 초점을 맞춘 독특한 프로그램을 다수 운영합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Women in Science and Engineering (WISE):</strong> 여학생들의 과학 및 엔지니어링 분야 진출을 지원하는 대표적인 STEM 프로그램입니다.</li>
+          <li><strong>Rasin Center for Global Justice (글로벌 정의를 위한 라신 센터):</strong> 글로벌 이슈와 사회 정의에 대해 탐구하는 프로그램입니다.</li>
+          <li><strong>F.I.R.E. (Financial Independence, Readiness & Empowerment):</strong> 학생들이 재정적 독립, 준비, 그리고 역량을 갖추도록 교육하는 재정 리터러시 프로그램입니다.</li>
+          <li><strong>Oxford Tutorial Model (옥스포드 튜토리얼 모델):</strong> 소수의 학생이 교수와 심도 있는 학문적 토론을 벌이는 옥스포드 대학 방식의 튜토리얼을 도입했습니다.</li>
+          <li><strong>Sonja Osborn Museum Studies Internship:</strong> 박물관학 관련 인턴십 프로그램입니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">지난 5년간의 대학 '합격(Acceptance)' 목록이 제공되었습니다. (참고: 이는 최종 진학(Matriculation) 목록이 아닌, 합격 통지를 받은 대학의 전체 목록입니다.)</p>
+        <h4 class="font-semibold mb-2">주요 합격 대학 (Last 5 Years)</h4>
+        <p class="text-sm">American University, Bates College, Boston College, Brandeis University, Carnegie Mellon University, Cornell University, Dickinson College, Duke University, Emory University, George Washington University, Georgetown University, Howard University, Johns Hopkins University, Keio University, Macalester College, McGill University, New York University, Pratt Institute, Princeton University, Purdue University, Reed College, Rhode Island School of Design, Skidmore College, Smith College, Syracuse University, Tufts University, Union College, United States Military Academy, University of California (Los Angeles, San Diego, Santa Barbara), University of Michigan, University of Rochester, University of Southern California, University of St Andrews, University of Toronto, University of Vermont, Vassar College, Wake Forest University, Waseda University, Washington University in St Louis, Williams College, Worcester Polytechnic Institute, Yale University 등.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">총 10개의 경쟁 스포츠 팀을 포함하여 20개의 체육팀을 운영합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Varsity Soccer</li><li>Varsity Volleyball</li><li>Junior Varsity Volleyball</li><li>Field Hockey</li><li>Varsity Cross-Country</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Varsity Squash</li><li>Junior Varsity Squash</li><li>Varsity Basketball</li><li>Junior Varsity Basketball</li><li>Varsity Swimming</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Varsity Softball</li><li>Lacrosse</li><li>Varsity Tennis</li><li>Junior Varsity Tennis</li><li>Varsity Golf</li></ul>`
+      }
+    }
+  },
+  'avon': {
+    name: 'Avon Old Farms School',
+    nameKo: '에이본 올드 팜스 스쿨',
+    image: 'image/avonoldfarms.com.jpg', // Placeholder 이미지 경로
+    website: 'https://www.avonoldfarms.com/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding (All-Boys)',
+    overview: {
+      students: '399명',
+      ratio: '6:1',
+      boarding: '72.2%',
+      grades: '9-12학년' // 일반적인 보딩 스쿨 학년
+    },
+    description: '코네티컷에 위치한 남학생 기숙 학교로, 긴밀한 멘토십과 강력한 스포츠 프로그램을 강조합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 2024-2025학년도 기준 총 399명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 남학생 전용 기숙 및 통학 학교입니다. 총 399명 중 기숙 학생 288명(72.2%), 통학 학생 111명(27.8%)입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 6:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p>제공된 자료에서는 '시그니처 프로그램'으로 명명된 특정 프로그램 목록을 확인할 수 없습니다. 이 학교의 핵심 차별점은 '남학생 교육'이라는 정체성 자체와, 교사들이 기숙사 사감, 코치, 멘토 역할을 겸하며 학생들과 긴밀한 관계를 맺는 '멘토십'에 있는 것으로 분석됩니다. [정보 없음]</p>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2024-2025 학교 프로필은 지난 4년간 졸업생들이 진학하여 현재 재학 중인(enrolled) 대학의 목록을 제공합니다.</p>
+        <h4 class="font-semibold mb-2">주요 진학 대학 (4-Year Matriculation List)</h4>
+        <p class="text-sm">American International College, American University, Amherst College, Arizona State University, Auburn University, Babson College, Bates College, Baylor University, Bentley University, Boston College, Boston University, Bowdoin College, Brandeis University, Brown University, Bryant University, Carnegie Mellon University, Case Western Reserve University, Catholic University of America, Colby College, Colgate University, College of the Holy Cross, Columbia University, Concordia University, Connecticut College, Cooper Union, Cornell University, Dartmouth College 등.</p>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">남학교로서 강력한 스포츠 프로그램을 운영하며, 15개의 인터콜라스틱 스포츠를 제공합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Cross Country</li><li>Football</li><li>Soccer</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Basketball</li><li>Hockey</li><li>Swimming</li><li>Wrestling</li><li>Skiing</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Lacrosse</li><li>Tennis</li><li>Track</li><li>Golf</li></ul>`
+      }
+    }
+  },
+  'groton': {
+    name: 'Groton School',
+    nameKo: '그로튼 스쿨',
+    image: 'image/groton.org.jpg', // Placeholder 이미지 경로
+    website: 'https://groton.org/', // 실제 웹사이트 주소로 가정
+    type: 'Senior Boarding',
+    overview: {
+      students: '385명',
+      ratio: '4:1',
+      boarding: '86%',
+      grades: '9-12학년' // 'Form' 시스템 (Third to Sixth)
+    },
+    description: '매사추세츠에 위치한 기숙 학교로, 1:1 튜토리얼, 글로벌 교육, 강력한 대학 진학 성과를 자랑합니다.',
+    sections: {
+      overview: {
+        title: '기관 개요 (Institutional Overview)',
+        content: `<p class="mb-4"><strong>학생 수:</strong> 총 385명의 학생이 재학 중입니다.</p>
+        <p class="mb-4"><strong>Day/Boarding 비율:</strong> 기숙 학생 86%, 통학 학생 14%입니다.</p>
+        <p><strong>학생-교사 비율:</strong> 4:1 입니다.</p>`
+      },
+      programs: {
+        title: '시그니처 및 학술 프로그램 (Signature & Academic Programs)',
+        content: `<p class="mb-4">그로튼 스쿨은 학문적 깊이와 글로벌 경험을 강조하는 독특한 프로그램을 제공합니다.</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li><strong>Tutorial Program (튜토리얼 프로그램):</strong> 12학년(Sixth Form) 학생들이 정규 커리큘럼에 없는 특정 분야의 고급 연구를 교수와 1:1 또는 소그룹으로 진행하는 심화 학습 프로그램입니다.</li>
+          <li><strong>Global Education (글로벌 교육):</strong> 스코틀랜드, 페루, 인도, 인도네시아, 탄자니아 등 전 세계 여러 국가에서 몰입형 학습을 진행하는 GEO (Global Education Opportunities) 프로그램을 운영합니다.</li>
+          <li><strong>GRACE Summer Program (GRACE 여름 프로그램):</strong> 9학년(Third Form)을 마친 학생들이 6월 말부터 4주간 참여하는 선택적 기숙 프로그램입니다. 심화 과정(예: Latin 1 이수 후 Latin 3로 진급) 또는 보충 과정(예: Chemistry 준비)을 제공합니다.</li>
+        </ul>`
+      },
+      matriculation: {
+        title: '대학 진학 분석 (College Matriculation Analysis)',
+        content: `<p class="mb-4">2021-2025년 5년간의 대학 진학(Matriculation) 목록은 16개 학교 중 가장 강력한 Ivy-Plus 및 최상위권 대학 진학 성과를 보여줍니다.</p>
+        <h4 class="font-semibold mb-2">5년간 누적 진학 (2021-2025, 5명 이상)</h4>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3">
+          <li>University of Chicago (49)</li>
+          <li>Georgetown University (16)</li>
+          <li>Harvard University (16)</li>
+          <li>Stanford University (15)</li>
+          <li>Tufts University (14)</li>
+          <li>Dartmouth College (13)</li>
+          <li>Yale University (12)</li>
+          <li>Boston College (11)</li>
+          <li>Middlebury College (11)</li>
+          <li>Princeton University (11)</li>
+          <li>University of Pennsylvania (11)</li>
+          <li>Brown University (10)</li>
+          <li>Colby College (9)</li>
+          <li>Columbia University (9)</li>
+          <li>Northwestern University (9)</li>
+          <li>Cornell University (8)</li>
+          <li>Bowdoin College (7)</li>
+          <li>Hamilton College (7)</li>
+          <li>University of St Andrews (7)</li>
+          <li>Vanderbilt University (7)</li>
+          <li>Duke University (6)</li>
+          <li>Carnegie Mellon University (5)</li>
+          <li>Massachusetts Institute of Technology (MIT) (5)</li>
+          <li>University of Southern California (5)</li>
+        </ul>`
+      },
+      athletics: {
+        title: '스포츠 프로그램 요약 (Athletic Program Summary)',
+        content: `<p class="mb-4">ISL(Independent School League) 소속으로, 계절별 스포츠 팀을 운영합니다.</p>
+        <h5 class="font-semibold mb-2 text-sm">가을:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Cross Country (남/여)</li><li>Field Hockey</li><li>Football</li><li>Soccer (남/여)</li><li>Volleyball</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">겨울:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3 mb-3"><li>Basketball (남/여)</li><li>Ice Hockey (남/여)</li><li>Squash (남/여)</li><li>Swimming</li></ul>
+        <h5 class="font-semibold mb-2 text-sm">봄:</h5>
+        <ul class="space-y-1 text-sm list-disc pl-5 columns-2 md:columns-3"><li>Baseball</li><li>Crew (남/여)</li><li>Lacrosse (남/여)</li><li>Tennis (남/여)</li><li>Track and Field</li></ul>`
+      }
+    }
+  }
+};
+
+// Get school ID from URL parameter
+function getSchoolId() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('school');
+}
+
+// Render school details
+function renderSchool(schoolId) {
+  const school = schoolData[schoolId];
+
+  if (!school) {
+    document.getElementById('school-content').classList.add('hidden');
+    document.getElementById('no-school').classList.remove('hidden');
+    return;
+  }
+
+  document.getElementById('no-school').classList.add('hidden');
+  document.getElementById('school-content').classList.remove('hidden');
+
+  const content = `
+    <!-- Hero Section -->
+    <section class="relative bg-royal-navy py-16 lg:py-20">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+        <div class="mb-6">
+          <a href="choice.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm mb-4">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>학교 목록으로 돌아가기</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-4">
+              <span class="text-white/50 text-xs font-body font-medium tracking-[0.3em] uppercase">${school.type}</span>
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-4">
+              ${school.name}
+            </h1>
+            <p class="text-xl text-white/80 mb-6">${school.nameKo}</p>
+            <p class="text-lg text-white/60 leading-relaxed mb-8">
+              ${school.description}
+            </p>
+            <a href="${school.website}" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-royal-navy font-bold hover:bg-white/90 transition-all">
+              <span>공식 웹사이트 방문</span>
+              <span class="material-symbols-outlined">open_in_new</span>
+            </a>
+          </div>
+          <div class="relative h-96 lg:h-[500px] overflow-hidden rounded-lg">
+            <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('${school.image}');"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Stats -->
+    <section class="relative bg-white dark:bg-[#0f0f0f] py-16">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">총 학생 수</div>
+            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.students}</div>
+          </div>
+          <div class="text-center">
+            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">학생-교사 비율</div>
+            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.ratio}</div>
+          </div>
+          <div class="text-center">
+            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">기숙 비율</div>
+            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.boarding}</div>
+          </div>
+          <div class="text-center">
+            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">학년</div>
+            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.grades}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Sections -->
+    <section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+        <div class="space-y-16">
+          <!-- Overview -->
+          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
+              ${school.sections.overview.title}
+            </h2>
+            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+              ${school.sections.overview.content}
+            </div>
+          </div>
+
+          <!-- Programs -->
+          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
+              ${school.sections.programs.title}
+            </h2>
+            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+              ${school.sections.programs.content}
+            </div>
+          </div>
+
+          <!-- Matriculation -->
+          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
+              ${school.sections.matriculation.title}
+            </h2>
+            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+              ${school.sections.matriculation.content}
+            </div>
+          </div>
+
+          <!-- Athletics -->
+          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
+              ${school.sections.athletics.title}
+            </h2>
+            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+              ${school.sections.athletics.content}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative bg-royal-navy dark:bg-black py-24 lg:py-32">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] text-white mb-8">
+            ${school.name}에<br/>관심이 있으신가요?
+          </h2>
+          <p class="font-body text-lg md:text-xl text-white/60 leading-relaxed mb-12">
+            전문 컨설턴트와 상담을 통해 자녀에게 가장 적합한 학교를 찾아보세요
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="contact.html" class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
+              <span>상담 신청</span>
+              <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
+            </a>
+            <a href="choice.html" class="inline-flex items-center gap-3 px-10 py-5 border-2 border-white/30 text-white font-bold text-lg hover:border-white/50 transition-all duration-300">
+              <span>다른 학교 보기</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  document.getElementById('school-content').innerHTML = content;
+  document.title = `${school.name} - Alpha Consulting`;
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const schoolId = getSchoolId();
+  renderSchool(schoolId);
+});
+</script>
+</body></html>
