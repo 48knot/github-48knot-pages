@@ -1108,127 +1108,218 @@ function renderSchool(schoolId) {
   document.getElementById('no-school').classList.add('hidden');
   document.getElementById('school-content').classList.remove('hidden');
 
+  const anchorNav = [
+    { id: 'overview', label: '기관 개요' },
+    { id: 'programs', label: '시그니처 프로그램' },
+    { id: 'matriculation', label: '대학 진학' },
+    { id: 'athletics', label: '스포츠' }
+  ];
+
+  const navLinks = anchorNav.map(item => `
+    <a href="#${item.id}" data-section-nav="${item.id}" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+      <span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+      <span>${item.label}</span>
+    </a>
+  `).join('');
+
+  const similarSchools = Object.entries(schoolData)
+    .filter(([id, data]) => data.type === school.type && id !== schoolId)
+    .slice(0, 3);
+
+  const similarCards = similarSchools.length > 0
+    ? similarSchools.map(([id, data]) => `
+        <a href="schoollist.html?school=${id}" class="group flex items-center justify-between gap-4 p-4 bg-white/70 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl transition-all duration-200 hover:-translate-y-1 hover:shadow-lg backdrop-blur">
+          <div class="flex items-center gap-3">
+            <div class="size-12 rounded-full bg-royal-navy/10 dark:bg-white/10 flex items-center justify-center text-royal-navy dark:text-white font-bold text-lg">
+              ${data.name.slice(0, 1)}
+            </div>
+            <div>
+              <p class="text-sm text-royal-navy/60 dark:text-white/60 mb-1">${data.type}</p>
+              <p class="text-base font-semibold text-royal-navy dark:text-white">${data.name}</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-royal-navy/50 dark:text-white/60 transition-transform group-hover:translate-x-1">arrow_forward</span>
+        </a>
+      `).join('')
+    : `<div class="p-6 bg-white/70 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl text-royal-navy/70 dark:text-white/70">비슷한 학교 데이터가 없습니다.</div>`;
+
   const content = `
     <!-- Hero Section -->
-    <section class="relative bg-royal-navy py-16 lg:py-20">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-        <div class="mb-6">
-          <a href="choice.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm mb-4">
+    <section class="relative overflow-hidden isolate">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-royal-navy/70 to-royal-navy"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: linear-gradient(120deg, rgba(10,25,47,0.6), rgba(10,25,47,0.4)), url('${school.image}');"></div>
+        <div class="absolute -top-32 -right-32 size-64 bg-white/5 blur-3xl"></div>
+      </div>
+      <div class="relative max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-24">
+        <div class="flex items-center gap-3 mb-6 text-white/70">
+          <a href="choice.html" class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
             <span class="material-symbols-outlined text-base">arrow_back</span>
             <span>학교 목록으로 돌아가기</span>
           </a>
+          <span class="text-white/30">•</span>
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em]">
+            <span class="size-2 rounded-full bg-amber-400"></span>${school.type}
+          </span>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div class="mb-4">
-              <span class="text-white/50 text-xs font-body font-medium tracking-[0.3em] uppercase">${school.type}</span>
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur">
+              <span class="material-symbols-outlined text-base">grade</span>
+              <span>Alpha's Choice</span>
             </div>
-            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-4">
-              ${school.name}
-            </h1>
-            <p class="text-xl text-white/80 mb-6">${school.nameKo}</p>
-            <p class="text-lg text-white/60 leading-relaxed mb-8">
-              ${school.description}
-            </p>
-            <a href="${school.website}" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-royal-navy font-bold hover:bg-white/90 transition-all">
-              <span>공식 웹사이트 방문</span>
-              <span class="material-symbols-outlined">open_in_new</span>
-            </a>
+            <div>
+              <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-3">${school.name}</h1>
+              <p class="text-xl text-white/80">${school.nameKo}</p>
+            </div>
+            <p class="text-lg text-white/75 leading-relaxed">${school.description}</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="${school.website}" target="_blank" class="group inline-flex items-center gap-2 px-8 py-4 bg-white text-royal-navy font-bold hover:bg-white/90 transition-all rounded-lg">
+                <span>공식 웹사이트 방문</span>
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">open_in_new</span>
+              </a>
+              <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-bold hover:border-white transition-all rounded-lg">
+                <span>상담 신청</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
           </div>
-          <div class="relative h-96 lg:h-[500px] w-full max-w-md overflow-hidden rounded-lg">
-            <div class="w-full h-full bg-center bg-no-repeat bg-contain" style="background-image: url('${school.image}');"></div>
+          <div class="relative h-96 lg:h-[520px] w-full">
+            <div class="absolute inset-0 rounded-3xl bg-white/10 border border-white/10 backdrop-blur overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,0,0,0.7)]">
+              <div class="w-full h-full bg-center bg-contain bg-no-repeat" style="background-image: url('${school.image}');"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Sticky Section Nav -->
+    <div class="sticky top-20 z-20 bg-white/90 dark:bg-royal-navy/80 backdrop-blur-lg border-b border-royal-navy/10 dark:border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-3 flex items-center gap-2 overflow-x-auto">
+        ${navLinks}
+      </div>
+    </div>
+
     <!-- Overview Stats -->
-    <section class="relative bg-white dark:bg-[#0f0f0f] py-16">
+    <section class="relative bg-white dark:bg-[#0f0f0f] py-12 lg:py-16">
       <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">총 학생 수</div>
-            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.students}</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div class="flex items-center gap-3 p-4 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl transition-all duration-200 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">groups</span>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-royal-navy/50 dark:text-white/50">총 학생 수</p>
+              <p class="text-xl md:text-2xl font-bold text-royal-navy dark:text-white">${school.overview.students}</p>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">학생-교사 비율</div>
-            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.ratio}</div>
+          <div class="flex items-center gap-3 p-4 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl transition-all duration-200 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">calculate</span>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-royal-navy/50 dark:text-white/50">학생-교사 비율</p>
+              <p class="text-xl md:text-2xl font-bold text-royal-navy dark:text-white">${school.overview.ratio}</p>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">기숙 비율</div>
-            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.boarding}</div>
+          <div class="flex items-center gap-3 p-4 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl transition-all duration-200 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">hotel_class</span>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-royal-navy/50 dark:text-white/50">기숙 비율</p>
+              <p class="text-xl md:text-2xl font-bold text-royal-navy dark:text-white">${school.overview.boarding}</p>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="text-sm text-royal-navy/40 dark:text-white/40 mb-2 uppercase tracking-wide">학년</div>
-            <div class="text-3xl font-bold text-royal-navy dark:text-white">${school.overview.grades}</div>
+          <div class="flex items-center gap-3 p-4 bg-royal-navy/5 dark:bg-white/5 border border-royal-navy/10 dark:border-white/10 rounded-xl transition-all duration-200 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">school</span>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-royal-navy/50 dark:text-white/50">학년</p>
+              <p class="text-xl md:text-2xl font-bold text-royal-navy dark:text-white">${school.overview.grades}</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Detailed Sections -->
-    <section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
+    <section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-20 lg:py-28 space-y-12 lg:space-y-16">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20 space-y-12 lg:space-y-16">
+        <!-- Overview -->
+        <div id="overview" class="scroll-mt-28 bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">travel_explore</span>
+            ${school.sections.overview.title}
+          </h2>
+          <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed space-y-4">
+            ${school.sections.overview.content}
+          </div>
+        </div>
+
+        <!-- Programs -->
+        <div id="programs" class="scroll-mt-28 bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">workspace_premium</span>
+            ${school.sections.programs.title}
+          </h2>
+          <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed space-y-4">
+            ${school.sections.programs.content}
+          </div>
+        </div>
+
+        <!-- Matriculation -->
+        <div id="matriculation" class="scroll-mt-28 bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">school</span>
+            ${school.sections.matriculation.title}
+          </h2>
+          <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed space-y-4">
+            ${school.sections.matriculation.content}
+          </div>
+        </div>
+
+        <!-- Athletics -->
+        <div id="athletics" class="scroll-mt-28 bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-royal-navy/60 dark:text-white/60">sports_score</span>
+            ${school.sections.athletics.title}
+          </h2>
+          <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed space-y-4">
+            ${school.sections.athletics.content}
+          </div>
+        </div>
+      </div>
+
+      <!-- Similar Schools -->
       <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-        <div class="space-y-16">
-          <!-- Overview -->
-          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
-              ${school.sections.overview.title}
-            </h2>
-            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-              ${school.sections.overview.content}
+        <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10 rounded-2xl shadow-sm">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-royal-navy/50 dark:text-white/50 mb-2">탐색 계속하기</p>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-royal-navy dark:text-white">비슷한 프로필의 학교</h3>
             </div>
+            <a href="choice.html" class="inline-flex items-center gap-2 text-royal-navy dark:text-white font-semibold hover:underline">
+              <span>전체 목록 보기</span>
+              <span class="material-symbols-outlined text-base">arrow_outward</span>
+            </a>
           </div>
-
-          <!-- Programs -->
-          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
-              ${school.sections.programs.title}
-            </h2>
-            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-              ${school.sections.programs.content}
-            </div>
-          </div>
-
-          <!-- Matriculation -->
-          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
-              ${school.sections.matriculation.title}
-            </h2>
-            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-              ${school.sections.matriculation.content}
-            </div>
-          </div>
-
-          <!-- Athletics -->
-          <div class="bg-white dark:bg-royal-navy/30 p-8 lg:p-12 border border-royal-navy/10 dark:border-white/10">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-6">
-              ${school.sections.athletics.title}
-            </h2>
-            <div class="text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-              ${school.sections.athletics.content}
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            ${similarCards}
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="relative bg-royal-navy dark:bg-black py-24 lg:py-32">
+    <section class="relative bg-royal-navy dark:bg-black py-20 lg:py-28">
       <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] text-white mb-8">
-            ${school.name}에<br/>관심이 있으신가요?
+        <div class="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-3xl px-6 py-12 lg:px-12 lg:py-16 backdrop-blur">
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] text-white mb-6">
+            ${school.name}에 관심이 있으신가요?
           </h2>
-          <p class="font-body text-lg md:text-xl text-white/60 leading-relaxed mb-12">
-            전문 컨설턴트와 상담을 통해 자녀에게 가장 적합한 학교를 찾아보세요
+          <p class="font-body text-lg md:text-xl text-white/70 leading-relaxed mb-10">
+            전문 컨설턴트와 상담을 통해 자녀에게 가장 적합한 학교를 찾아보세요.
           </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="contact.html" class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="contact.html" class="group inline-flex items-center gap-3 px-8 py-4 bg-white text-royal-navy font-bold text-base md:text-lg rounded-lg hover:bg-white/90 transition-all duration-300">
               <span>상담 신청</span>
               <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
             </a>
-            <a href="choice.html" class="inline-flex items-center gap-3 px-10 py-5 border-2 border-white/30 text-white font-bold text-lg hover:border-white/50 transition-all duration-300">
+            <a href="choice.html" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/30 text-white font-bold text-base md:text-lg rounded-lg hover:border-white/50 transition-all duration-300">
               <span>다른 학교 보기</span>
             </a>
           </div>
@@ -1239,6 +1330,36 @@ function renderSchool(schoolId) {
 
   document.getElementById('school-content').innerHTML = content;
   document.title = `${school.name} - Alpha Consulting`;
+
+  setupSectionObserver(anchorNav);
+}
+
+function setupSectionObserver(anchorNav) {
+  const links = Array.from(document.querySelectorAll('[data-section-nav]'));
+  const sections = anchorNav
+    .map(item => ({ id: item.id, el: document.getElementById(item.id) }))
+    .filter(item => item.el);
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const isActive = link.dataset.sectionNav === id;
+      link.classList.toggle('bg-royal-navy text-white shadow-sm', isActive);
+      link.classList.toggle('text-royal-navy/70', !isActive);
+      link.classList.toggle('dark:text-white/70', !isActive);
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    if (visible[0]) {
+      setActive(visible[0].target.id);
+    }
+  }, {
+    rootMargin: '-45% 0px -45% 0px',
+    threshold: [0.1, 0.3, 0.6]
+  });
+
+  sections.forEach(section => observer.observe(section.el));
 }
 
 // Initialize on page load

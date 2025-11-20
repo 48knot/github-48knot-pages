@@ -159,8 +159,34 @@
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </div>
+
+<!-- Sticky Section Nav -->
+<div class="sticky top-20 z-40 bg-white/90 dark:bg-royal-navy/80 backdrop-blur-lg border-b border-royal-navy/10 dark:border-white/10">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-3 flex items-center gap-2 overflow-x-auto">
+<a href="#hero" data-section-nav="hero" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+<span>홈</span>
+</a>
+<a href="#philosophy" data-section-nav="philosophy" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+<span>철학</span>
+</a>
+<a href="#why-alpha" data-section-nav="why-alpha" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+<span>Why Alpha</span>
+</a>
+<a href="#services" data-section-nav="services" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+<span>서비스</span>
+</a>
+<a href="#partners" data-section-nav="partners" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+<span>파트너</span>
+</a>
+</div>
+</div>
 <main class="pb-24">
-<section class="relative bg-[#0a192f] min-h-screen flex items-center overflow-hidden">
+<section id="hero" class="relative bg-[#0a192f] min-h-screen flex items-center overflow-hidden scroll-mt-28">
 <!-- 비디오 배경 -->
 <div class="absolute inset-0 w-full h-full">
 <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40">
@@ -192,6 +218,16 @@
 10년 뒤에도 빛나는 선택을 위한<br/>프리미엄 교육 컨설팅
 </p>
 </div>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
+<span>상담 신청</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a href="choice.html" class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
+<span>Alpha's Choice</span>
+<span class="material-symbols-outlined text-base">school</span>
+</a>
+</div>
 </div>
 
 <!-- 오른쪽: 통계 - 세로 배치 -->
@@ -220,7 +256,7 @@
 </div>
 </div>
 </section>
-<section class="relative bg-white dark:bg-royal-navy py-24 lg:py-40">
+<section id="philosophy" class="relative scroll-mt-28 bg-white dark:bg-royal-navy py-24 lg:py-40">
 <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
 <div class="grid lg:grid-cols-5 gap-12 lg:gap-20">
 <!-- 왼쪽: 레이블 + 타이틀 (2/5) -->
@@ -262,7 +298,7 @@
 </div>
 </div>
 </section>
-<section id="why-alpha" class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
+<section id="why-alpha" class="relative scroll-mt-28 bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
 <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
 <!-- 헤더 -->
 <div class="mb-24 lg:mb-32">
@@ -323,7 +359,7 @@
 </div>
 </div>
 </section>
-<section class="relative bg-white dark:bg-royal-navy py-24 lg:py-40">
+<section id="services" class="relative scroll-mt-28 bg-white dark:bg-royal-navy py-24 lg:py-40">
 <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
 <div class="grid lg:grid-cols-5 gap-12 lg:gap-20 mb-20">
 <div class="lg:col-span-2">
@@ -467,7 +503,7 @@ Short-Term Study Abroad
 </div>
 </div>
 </section>
-<section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
+<section id="partners" class="relative scroll-mt-28 bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-40">
 <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
 <div class="mb-20 lg:mb-32">
 <div class="mb-6">
@@ -772,6 +808,33 @@ Short-Term Study Abroad
 </div>
 
 <script src="common-script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = Array.from(document.querySelectorAll('[data-section-nav]'));
+    const sections = ['hero', 'philosophy', 'why-alpha', 'services', 'partners']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      links.forEach(link => {
+        const isActive = link.dataset.sectionNav === id;
+        link.classList.toggle('anchor-pill-active', isActive);
+        link.classList.toggle('text-royal-navy/70', !isActive);
+        link.classList.toggle('dark:text-white/70', !isActive);
+      });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible[0]) {
+        setActive(visible[0].target.id);
+      }
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: [0.1, 0.3, 0.6] });
+
+    sections.forEach(section => observer.observe(section));
+    if (sections[0]) setActive(sections[0].id);
+  });
+</script>
 <script>
 // RSS Feed를 가져와서 표시하는 함수
 async function loadBlogFeed() {

@@ -245,6 +245,54 @@
   }
 }
 
+/* 글로벌 히어로/탭/카드 헬퍼 */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.6));
+  z-index: 0;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-image, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.anchor-pill-active {
+  background: var(--color-royal-navy);
+  color: #fff !important;
+  box-shadow: 0 10px 25px -14px rgba(10, 25, 47, 0.6);
+}
+
+.choice-card {
+  border-radius: 1rem;
+  box-shadow: 0 22px 60px -36px rgba(10, 25, 47, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 70px -34px rgba(10, 25, 47, 0.65);
+}
+
 /* 로딩 애니메이션 */
 @keyframes fadeInUp {
   from {
