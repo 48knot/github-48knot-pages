@@ -1,388 +1,446 @@
 <!DOCTYPE html>
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Alpha Consulting</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            DEFAULT: '#D4AF37',
-            darker: '#B48A25'
+<html class="light" lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="description" content="Alpha Consulting 소개 - 20년 경력의 Lena Jung 대표와 교육 전문가들이 제공하는 맞춤형 입시 컨설팅 철학을 만나보세요." />
+  <title>About Alpha Consulting</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#D4AF37',
+              darker: '#B48A25'
+            },
+            accent: '#D4AF37',
+            'royal-navy': '#0a192f',
+            'background-light': '#FFFFFF',
+            'background-dark': '#0f1419'
           },
-          accent: '#D4AF37',
-          'royal-navy': '#0a192f',
-          'background-light': '#FFFFFF',
-          'background-dark': '#0f1419'
-        },
-        fontFamily: {
-          display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
-          body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          fontFamily: {
+            display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+            body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          }
         }
       }
     }
-  }
-</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
-<div class="relative w-full flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-4 sm:px-10 py-3 transition-all duration-300 h-20">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6">
-<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html">Home</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html#why-alpha">Why Alpha</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="service.html">Services</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="choice.html">Alpha's Choice</a>
-<a class="text-white text-sm font-bold leading-normal" href="about.html">About</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="contact.html">Contact</a>
-</nav>
-<button id="mobile-menu-btn" class="md:hidden text-white p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<div class="mobile-nav md:hidden" id="mobile-nav">
-<a href="index.html">Home</a>
-<a href="index.html#why-alpha">Why Alpha</a>
-<a href="service.html">Services</a>
-<a href="choice.html">Alpha's Choice</a>
-<a href="about.html" class="active">About</a>
-<a href="contact.html">Contact</a>
-</div>
+  <div class="relative w-full flex-col">
+    <header
+      class="glass-header sticky top-0 z-50 flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3 transition-all duration-300 h-20">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-6">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+            </path>
+          </svg>
+        </div>
+        <h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="hidden md:flex items-center gap-9">
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html">Home</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html#why-alpha">Why Alpha</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="service.html">Services</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="choice.html">Alpha's Choice</a>
+          <a class="text-white text-sm font-bold leading-normal" href="about.html">About</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="contact.html">Contact</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-nav md:hidden" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#why-alpha">Why Alpha</a>
+      <a href="service.html">Services</a>
+      <a href="choice.html">Alpha's Choice</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-<main class="pb-24">
-<!-- Hero Section -->
-<section class="page-hero py-16 lg:py-24" style="--hero-image: linear-gradient(120deg, rgba(10,25,47,0.35), rgba(10,25,47,0.25)), url('image/choice.png');">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="max-w-4xl space-y-6">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur">
-<span class="material-symbols-outlined text-base">workspace_premium</span>
-<span>About Us</span>
-</div>
-<h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white">
-Growth over Acceptance
-</h1>
-<p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl">
-학생들에게 완벽한 교육 환경을 찾아드립니다.
-</p>
-<div class="flex flex-col sm:flex-row gap-3">
-<a href="service.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
-<span>서비스 보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
-<span>상담 예약</span>
-<span class="material-symbols-outlined text-base">call</span>
-</a>
-</div>
-</div>
-</div>
-</section>
+    <main class="pb-24">
+      <!-- Hero Section -->
+      <section class="page-hero py-16 lg:py-24"
+        style="--hero-image: linear-gradient(120deg, rgba(10,25,47,0.35), rgba(10,25,47,0.25)), url('image/choice.png');">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="max-w-4xl space-y-6">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur">
+              <span class="material-symbols-outlined text-base">workspace_premium</span>
+              <span>About Us</span>
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white">
+              Growth over Acceptance
+            </h1>
+            <p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl">
+              학생들에게 완벽한 교육 환경을 찾아드립니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="service.html"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
+                <span>서비스 보기</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+              <a href="contact.html"
+                class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
+                <span>상담 예약</span>
+                <span class="material-symbols-outlined text-base">call</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Founder Section -->
-<section class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-<div class="lg:col-span-2">
-<div class="sticky top-32">
-<div class="relative aspect-[3/4] overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover filter grayscale" style='background-image: url("image/lenajung2.png");'></div>
-</div>
-</div>
-</div>
-<div class="lg:col-span-3">
-<div class="mb-12">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Founder & CEO</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-6">
-Lena Jung
-</h2>
-<p class="text-lg text-royal-navy/60 dark:text-white/60 leading-relaxed mb-2">
-MSc in Energy Economics, University of London
-</p>
-<p class="text-base text-royal-navy/50 dark:text-white/50 leading-relaxed">
-20+ Years of Experience in U.S. & U.K. Boarding School Admissions
-</p>
-</div>
+      <!-- Founder Section -->
+      <section class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+            <div class="lg:col-span-2">
+              <div class="sticky top-32">
+                <div class="relative aspect-[3/4] overflow-hidden">
+                  <div class="w-full h-full bg-center bg-no-repeat bg-cover filter grayscale"
+                    style='background-image: url("image/lenajung2.png");'></div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3">
+              <div class="mb-12">
+                <span
+                  class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Founder
+                  & CEO</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-6">
+                  Lena Jung
+                </h2>
+                <p class="text-lg text-royal-navy/60 dark:text-white/60 leading-relaxed mb-2">
+                  MSc in Energy Economics, University of London
+                </p>
+                <p class="text-base text-royal-navy/50 dark:text-white/50 leading-relaxed">
+                  20+ Years of Experience in U.S. & U.K. Boarding School Admissions
+                </p>
+              </div>
 
-<div class="space-y-8">
-<div>
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-Lena Jung is a leading consultant specializing in U.S. and U.K. boarding school admissions with over two decades of expertise. She has successfully guided hundreds of students to gain acceptance at prestigious institutions including Phillips Exeter Academy, Phillips Academy Andover, Groton, Hotchkiss, and other top-tier boarding schools.
-</p>
-</div>
+              <div class="space-y-8">
+                <div>
+                  <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                    Lena Jung is a leading consultant specializing in U.S. and U.K. boarding school admissions with over
+                    two decades of expertise. She has successfully guided hundreds of students to gain acceptance at
+                    prestigious institutions including Phillips Exeter Academy, Phillips Academy Andover, Groton,
+                    Hotchkiss, and other top-tier boarding schools.
+                  </p>
+                </div>
 
-<div>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white mb-4">Expertise</h3>
-<ul class="space-y-3">
-<li class="flex items-start gap-3">
-<span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">Comprehensive boarding school application strategy and guidance</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">SSAT preparation and test strategy (95%+ percentile results)</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">Author of SSAT Verbal Workbook</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">Essay development and interview preparation coaching</span>
-</li>
-</ul>
-</div>
+                <div>
+                  <h3 class="font-display text-xl font-bold text-royal-navy dark:text-white mb-4">Expertise</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                      <span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
+                      <span class="font-body text-base text-royal-navy/70 dark:text-white/70">Comprehensive boarding
+                        school application strategy and guidance</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
+                      <span class="font-body text-base text-royal-navy/70 dark:text-white/70">SSAT preparation and test
+                        strategy (95%+ percentile results)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
+                      <span class="font-body text-base text-royal-navy/70 dark:text-white/70">Author of SSAT Verbal
+                        Workbook</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-royal-navy/40 dark:text-white/40 mt-1">•</span>
+                      <span class="font-body text-base text-royal-navy/70 dark:text-white/70">Essay development and
+                        interview preparation coaching</span>
+                    </li>
+                  </ul>
+                </div>
 
-<div>
-<h3 class="font-display text-xl font-bold text-royal-navy dark:text-white mb-4">Notable School Placements</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-Phillips Exeter Academy, Phillips Academy Andover, Hotchkiss School, Groton School, Choate Rosemary Hall, Middlesex School, Suffield Academy, Cate School, Milton Academy, Peddie School, Loomis Chaffee School, Deerfield Academy, The Thacher School, Stevenson School, Portsmouth Abbey School
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+                <div>
+                  <h3 class="font-display text-xl font-bold text-royal-navy dark:text-white mb-4">Notable School
+                    Placements</h3>
+                  <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+                    Phillips Exeter Academy, Phillips Academy Andover, Hotchkiss School, Groton School, Choate Rosemary
+                    Hall, Middlesex School, Suffield Academy, Cate School, Milton Academy, Peddie School, Loomis Chaffee
+                    School, Deerfield Academy, The Thacher School, Stevenson School, Portsmouth Abbey School
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Company Introduction Section -->
-<section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="max-w-3xl mx-auto">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-6 block">About Alpha Consultancy</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-4">
-Alpha Consultancy
-</h2>
-<p class="font-display text-xl text-royal-navy/50 dark:text-white/50 mb-12 italic">
-Premium Bespoke Consulting
-</p>
-<div class="space-y-6">
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-Alpha Consultancy was founded in 2020 by Lena Jung, a leading consultant with over 20 years of experience in U.S. and U.K. boarding school admissions, together with a team of specialists in various educational fields.
-</p>
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-Each year, we successfully place students into top boarding and junior boarding schools while guiding their personal and academic growth beyond admission.
-</p>
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-Working closely with educational consultants and guardians in the United States, Alpha Consultancy is committed to achieving the best possible outcomes for both students and parents.
-</p>
+      <!-- Company Introduction Section -->
+      <section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="max-w-3xl mx-auto">
+            <span
+              class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-6 block">About
+              Alpha Consultancy</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-4">
+              Alpha Consultancy
+            </h2>
+            <div class="text-6xl font-display font-bold text-gradient-gold">01</div>
+            <div class="space-y-6">
+              <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                Alpha Consultancy was founded in 2020 by Lena Jung, a leading consultant with over 20 years of
+                experience in U.S. and U.K. boarding school admissions, together with a team of specialists in various
+                educational fields.
+              </p>
+              <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                Each year, we successfully place students into top boarding and junior boarding schools while guiding
+                their personal and academic growth beyond admission.
+              </p>
+              <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                Working closely with educational consultants and guardians in the United States, Alpha Consultancy is
+                committed to achieving the best possible outcomes for both students and parents.
+              </p>
 
-<div class="border-t border-royal-navy/10 dark:border-white/10 pt-8 mt-8 space-y-6">
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-알파 컨설팅은 2020년 미국 및 영국 보딩스쿨 입학 전문가로 20년 이상의 경력을 보유한 정우향(Lena Jung) 대표와 다양한 교육 분야의 전문가 팀에 의해 설립되었습니다.
-</p>
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-매년 최상위 보딩스쿨 및 주니어 보딩스쿨에 학생들을 성공적으로 입학시키며, 합격 이후에도 학생들의 개인적 성장과 학업적 발전을 지속적으로 지원합니다.
-</p>
-<p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
-미국 현지의 교육 컨설턴트 및 가디언과 긴밀히 협력하며, 알파 컨설팅은 학생과 학부모 모두에게 최상의 결과를 제공하기 위해 최선을 다하고 있습니다.
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+              <div class="border-t border-royal-navy/10 dark:border-white/10 pt-8 mt-8 space-y-6">
+                <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                  알파 컨설팅은 2020년 미국 및 영국 보딩스쿨 입학 전문가로 20년 이상의 경력을 보유한 정우향(Lena Jung) 대표와 다양한 교육 분야의 전문가 팀에 의해 설립되었습니다.
+                </p>
+                <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                  매년 최상위 보딩스쿨 및 주니어 보딩스쿨에 학생들을 성공적으로 입학시키며, 합격 이후에도 학생들의 개인적 성장과 학업적 발전을 지속적으로 지원합니다.
+                </p>
+                <p class="font-body text-lg text-royal-navy/80 dark:text-white/80 leading-relaxed">
+                  미국 현지의 교육 컨설턴트 및 가디언과 긴밀히 협력하며, 알파 컨설팅은 학생과 학부모 모두에게 최상의 결과를 제공하기 위해 최선을 다하고 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Process Section -->
-<section class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="mb-16">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Process</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
-The Alpha Process
-</h2>
-</div>
+      <!-- Process Section -->
+      <section class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="mb-16">
+            <span
+              class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Process</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
+              The Alpha Process
+            </h2>
+          </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-<div class="group">
-<div class="mb-6">
-<span class="font-display text-6xl font-bold text-royal-navy/10 dark:text-white/10">01</span>
-</div>
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Consultation</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-학생의 학업 프로필, 과외 활동, 개인적 포부를 깊이 탐구하여 기초 전략을 수립합니다.
-</p>
-</div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div class="group">
+              <div class="mb-6">
+                <span class="text-6xl font-display font-bold text-gradient-gold">01</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Consultation</h3>
+              <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+                학생의 학업 프로필, 과외 활동, 개인적 포부를 깊이 탐구하여 기초 전략을 수립합니다.
+              </p>
+            </div>
 
-<div class="group">
-<div class="mb-6">
-<span class="font-display text-6xl font-bold text-royal-navy/10 dark:text-white/10">02</span>
-</div>
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Admission</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-학교 선정, 지원서 작성, 에세이, 인터뷰 준비에 대한 전문적인 지도를 통해 가장 강력한 지원서를 제출할 수 있도록 돕습니다.
-</p>
-</div>
+            <div class="group">
+              <div class="mb-6">
+                <span class="text-6xl font-display font-bold text-gradient-gold">02</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Admission</h3>
+              <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+                학교 선정, 지원서 작성, 에세이, 인터뷰 준비에 대한 전문적인 지도를 통해 가장 강력한 지원서를 제출할 수 있도록 돕습니다.
+              </p>
+            </div>
 
-<div class="group">
-<div class="mb-6">
-<span class="font-display text-6xl font-bold text-royal-navy/10 dark:text-white/10">03</span>
-</div>
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Post-Management</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
-합격 후에도 원활한 전환, 학업 성공, 그리고 지속적인 개인적 성장을 보장하기 위해 지속적인 지원을 제공합니다.
-</p>
-</div>
-</div>
-</div>
-</section>
+            <div class="group">
+              <div class="mb-6">
+                <span class="text-6xl font-display font-bold text-gradient-gold">03</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-4">Post-Management</h3>
+              <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed">
+                합격 후에도 원활한 전환, 학업 성공, 그리고 지속적인 개인적 성장을 보장하기 위해 지속적인 지원을 제공합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Partnerships Section -->
-<section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="mb-16 text-center">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Partnerships</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-6">
-Our Achievements
-</h2>
-<p class="font-body text-lg text-royal-navy/60 dark:text-white/60 max-w-2xl mx-auto">
-우리는 유수의 교육 기관 및 단체와 협력하여 학생들에게 독보적인 기회를 제공하는 것을 자랑스럽게 생각합니다.
-</p>
-</div>
+      <!-- Partnerships Section -->
+      <section class="relative bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="mb-16 text-center">
+            <span
+              class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Partnerships</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white mb-6">
+              Our Achievements
+            </h2>
+            <p class="font-body text-lg text-royal-navy/60 dark:text-white/60 max-w-2xl mx-auto">
+              우리는 유수의 교육 기관 및 단체와 협력하여 학생들에게 독보적인 기회를 제공하는 것을 자랑스럽게 생각합니다.
+            </p>
+          </div>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center">
-<div class="flex justify-center items-center">
-<img class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFw9ihfXLFS4HNTBZFSH-FacXLZxpV32Jv4x0-fH7tcDv9TfKxR6J48DyG9qYcpV17mbMpAPeFppk94Qwsdfx0cyoCUqiM7NpNXCSyGSNcYVWdOsHXtV_RiIB5T3LqYqua6nrge2S-DTvMWQiVJGNMU3giB7BbF0sxqoZ5EAPfO2YYv4BnCmpxKZtqEFzxQvHnN_77e9OGabEgzX-BZOk0sHUbABZwcXz9JSzWZL3ANkHz0fONURuZ541rm_58qnU9duWGVwYQVQ"/>
-</div>
-<div class="flex justify-center items-center">
-<img class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdWo17Z7FmvaOw-wzxDnWIEB9pHrGRG2S9o1LHkrbX3HIAWVn6R2KfWmKa3JiK8mcqZNXbkU9TiJ9Iziumw55oaGgQ631CRo87f7KDIvFiJKzHzzeRLWwaTfo79EYHgEjWhQvki-Sjlq2JVzDgbWovCmWf-RRBWNxmx4vaoodteQHEpqZjQtqjkLo5Brue8cQ-bJVyN57gsKWh-PwOIv95RxoeOpB0a8oDa6HSyOiji4UjV6nycGHr71l0OFdF-ed0Hgn1NpkD2c"/>
-</div>
-<div class="flex justify-center items-center">
-<img class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5TP2DN5wKaTKTSwcVTJQ5mn1mlhXpFI7H8LMI_6lHMg8G2a6NLZX054P0Y1ZcCOsB5w0lB6H5kzQnxq4qZjE31EOgpoi05uRo-fGjnPh5BO6VJbIYlCmdSHMf0bncsDufpmPYzXRzGXGNfR3ZDleVirxvRBOn3nwTr4iX914m0ycPb4zfB6Y29iMif-dFp0zOYlAJFfj-R_ck-Aze6HhnM8Pk6kfhrHiIV0a2JoBCxtRd2l9CenGLTMwW2QwtpN0t8eiefJQfVw"/>
-</div>
-<div class="flex justify-center items-center">
-<img class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8PpstVpCnTUd_yHSVIw2X588w0uK6p_5eTXXYUXx2SJ7UgfWQa3xaSNDDguCaGLBU3NDiruCMceXuHsTgGuAqCdPL7bNA8dsFUYPpGLPpPai3y3NKZrhnQP91iKHdGu1GVW_iVnYq-MrOSF1OKS_ynoYn2U58uorTNO7FNlA8zXgq4dLlHl3QErkmI0KLlcj0Y3c5vnqGa-RJ4SELItYAMDYbrGydd4D29jNPKgxVpn78LTFFXkHQF-VGQpCby42nZSoypZ0XzpU"/>
-</div>
-<div class="flex justify-center items-center">
-<img class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB90fGPyxSDXIkIi7teYPZ0knECrKWWBiyTgFugvR4f4EsLupSilgMCgwCHRZ8thH8HSLZW5xqnMjST6aiHEhg6EKMdEI6QeMq2gcx-V0Ish4fCxFp4ql3sXTFZE4n6deKyAIGueXR-4BvvROlxr7crckwoacTPKDNsAl3qzYBKlevGRA2QsZviQvdoC9AcRng4VyuAG--zkDk3aMFau2GNwsztJ6IJEdUlUzrWUkxs_iX2Lyz0MPKlmKwLagSXcsej6kibv1wGh5Q"/>
-</div>
-</div>
-</div>
-</section>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center">
+            <div class="flex justify-center items-center">
+              <img
+                class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFw9ihfXLFS4HNTBZFSH-FacXLZxpV32Jv4x0-fH7tcDv9TfKxR6J48DyG9qYcpV17mbMpAPeFppk94Qwsdfx0cyoCUqiM7NpNXCSyGSNcYVWdOsHXtV_RiIB5T3LqYqua6nrge2S-DTvMWQiVJGNMU3giB7BbF0sxqoZ5EAPfO2YYv4BnCmpxKZtqEFzxQvHnN_77e9OGabEgzX-BZOk0sHUbABZwcXz9JSzWZL3ANkHz0fONURuZ541rm_58qnU9duWGVwYQVQ" />
+            </div>
+            <div class="flex justify-center items-center">
+              <img
+                class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdWo17Z7FmvaOw-wzxDnWIEB9pHrGRG2S9o1LHkrbX3HIAWVn6R2KfWmKa3JiK8mcqZNXbkU9TiJ9Iziumw55oaGgQ631CRo87f7KDIvFiJKzHzzeRLWwaTfo79EYHgEjWhQvki-Sjlq2JVzDgbWovCmWf-RRBWNxmx4vaoodteQHEpqZjQtqjkLo5Brue8cQ-bJVyN57gsKWh-PwOIv95RxoeOpB0a8oDa6HSyOiji4UjV6nycGHr71l0OFdF-ed0Hgn1NpkD2c" />
+            </div>
+            <div class="flex justify-center items-center">
+              <img
+                class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5TP2DN5wKaTKTSwcVTJQ5mn1mlhXpFI7H8LMI_6lHMg8G2a6NLZX054P0Y1ZcCOsB5w0lB6H5kzQnxq4qZjE31EOgpoi05uRo-fGjnPh5BO6VJbIYlCmdSHMf0bncsDufpmPYzXRzGXGNfR3ZDleVirxvRBOn3nwTr4iX914m0ycPb4zfB6Y29iMif-dFp0zOYlAJFfj-R_ck-Aze6HhnM8Pk6kfhrHiIV0a2JoBCxtRd2l9CenGLTMwW2QwtpN0t8eiefJQfVw" />
+            </div>
+            <div class="flex justify-center items-center">
+              <img
+                class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8PpstVpCnTUd_yHSVIw2X588w0uK6p_5eTXXYUXx2SJ7UgfWQa3xaSNDDguCaGLBU3NDiruCMceXuHsTgGuAqCdPL7bNA8dsFUYPpGLPpPai3y3NKZrhnQP91iKHdGu1GVW_iVnYq-MrOSF1OKS_ynoYn2U58uorTNO7FNlA8zXgq4dLlHl3QErkmI0KLlcj0Y3c5vnqGa-RJ4SELItYAMDYbrGydd4D29jNPKgxVpn78LTFFXkHQF-VGQpCby42nZSoypZ0XzpU" />
+            </div>
+            <div class="flex justify-center items-center">
+              <img
+                class="h-12 filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB90fGPyxSDXIkIi7teYPZ0knECrKWWBiyTgFugvR4f4EsLupSilgMCgwCHRZ8thH8HSLZW5xqnMjST6aiHEhg6EKMdEI6QeMq2gcx-V0Ish4fCxFp4ql3sXTFZE4n6deKyAIGueXR-4BvvROlxr7crckwoacTPKDNsAl3qzYBKlevGRA2QsZviQvdoC9AcRng4VyuAG--zkDk3aMFau2GNwsztJ6IJEdUlUzrWUkxs_iX2Lyz0MPKlmKwLagSXcsej6kibv1wGh5Q" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- CTA Section -->
-<section class="relative bg-royal-navy dark:bg-black py-32 lg:py-48">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-12">
-준비되셨나요?
-</h2>
-<p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-16">
-상담을 통해 시작하세요
-</p>
+      <!-- CTA Section -->
+      <section class="relative bg-royal-navy dark:bg-black py-32 lg:py-48">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-12">
+              준비되셨나요?
+            </h2>
+            <p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-16">
+              상담을 통해 시작하세요
+            </p>
 
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<a href="contact.html" class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
-<span>상담 신청</span>
-<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-</main>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a href="contact.html"
+                class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
+                <span>상담 신청</span>
+                <span
+                  class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<!-- Footer -->
-<footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
-<!-- Company Info -->
-<div class="lg:col-span-2">
-<div class="flex items-center gap-3 mb-6">
-<div class="size-8">
-<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
-</div>
-<p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
-합격보다 성장, 순위보다 적합성.<br/>
-학생들에게 완벽한 교육 환경을 찾아드립니다.
-</p>
-</div>
+    <!-- Footer -->
+    <footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+          <!-- Company Info -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="size-8">
+                <svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
+            </div>
+            <p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
+              합격보다 성장, 순위보다 적합성.<br />
+              학생들에게 완벽한 교육 환경을 찾아드립니다.
+            </p>
+          </div>
 
-<!-- Quick Links -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
-<nav class="flex flex-col gap-3">
-<a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
-<a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
-<a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
-<a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
-<a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
-</nav>
-</div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
+            <nav class="flex flex-col gap-3">
+              <a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
+              <a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
+              <a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
+              <a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
+              <a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
+            </nav>
+          </div>
 
-<!-- Contact Info -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
-<div class="flex flex-col gap-4 text-sm">
-<div>
-<p class="text-white/40 mb-1">대표</p>
-<p class="text-white/80">정우향</p>
-</div>
-<div>
-<p class="text-white/40 mb-1">이메일</p>
-<a href="mailto:king@hestiaschool.com" class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
-</div>
-<div>
-<p class="text-white/40 mb-1">주소</p>
-<p class="text-white/80">서울시 강남구 역삼동</p>
-</div>
-</div>
-</div>
-</div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
+            <div class="flex flex-col gap-4 text-sm">
+              <div>
+                <p class="text-white/40 mb-1">대표</p>
+                <p class="text-white/80">정우향</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">이메일</p>
+                <a href="mailto:king@hestiaschool.com"
+                  class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">주소</p>
+                <p class="text-white/80">서울시 강남구 역삼동</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- Bottom Bar -->
-<div class="pt-8 border-t border-white/10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
+            <div class="flex gap-6">
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<!-- Sticky Bottom Bar -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-<div class="hidden sm:block">
-<p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
-</div>
-<div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
-<a href="contact.html" class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
-<span>상담 예약</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
-</a>
-<a href="service.html" class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
-<span class="material-symbols-outlined text-base">auto_stories</span>
-<span>서비스 보기</span>
-</a>
-</div>
-</div>
-</div>
-</div>
+    <!-- Sticky Bottom Bar -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="hidden sm:block">
+          <p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+          <a href="contact.html"
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
+            <span>상담 예약</span>
+            <span
+              class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href="service.html"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
+            <span class="material-symbols-outlined text-base">auto_stories</span>
+            <span>서비스 보기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="common-script.js"></script>
-</body></html>
+  <script src="common-script.js"></script>
+</body>
+
+</html>

@@ -74,3 +74,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Scroll Spy for Sticky Nav
+const sectionNavLinks = document.querySelectorAll('.anchor-pill');
+const sections = document.querySelectorAll('section[id]');
+
+if (sectionNavLinks.length > 0 && sections.length > 0) {
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px', // Activate when section is near top
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+
+        // Remove active class from all
+        sectionNavLinks.forEach(link => {
+          link.classList.remove('anchor-pill-active');
+          link.classList.remove('bg-royal-navy');
+          link.classList.remove('text-white');
+
+          // Reset to default style
+          const dot = link.querySelector('span:first-child');
+          if (dot) dot.classList.remove('bg-white');
+        });
+
+        // Add active class to current
+        const activeLink = document.querySelector(`.anchor-pill[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('anchor-pill-active');
+          // Ensure high contrast active state
+          activeLink.classList.add('bg-royal-navy');
+          activeLink.classList.add('text-white');
+
+          const dot = activeLink.querySelector('span:first-child');
+          if (dot) dot.classList.add('bg-white');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+}
+
+// Header Scroll Effect
+const header = document.querySelector('header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  });
+}

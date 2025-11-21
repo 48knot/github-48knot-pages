@@ -106,8 +106,8 @@
   color: var(--color-text-muted-light, #6b7280);
 }
 
-.floating-label-group .form-input:focus ~ .floating-label,
-.floating-label-group .form-input:not(:placeholder-shown) ~ .floating-label {
+.floating-label-group .form-input:focus~.floating-label,
+.floating-label-group .form-input:not(:placeholder-shown)~.floating-label {
   top: 0.5rem;
   transform: translateY(0);
   font-size: 0.75rem;
@@ -271,7 +271,7 @@
   z-index: 0;
 }
 
-.page-hero > * {
+.page-hero>* {
   position: relative;
   z-index: 1;
 }
@@ -299,6 +299,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -422,9 +423,11 @@ button:focus {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -456,10 +459,13 @@ button:focus {
 
 /* 펄스 애니메이션 개선 */
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
   }
+
   50% {
     opacity: 0.8;
     box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
@@ -468,4 +474,63 @@ button:focus {
 
 .animate-pulse {
   animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Visual Polish Additions */
+
+/* Enhanced Glassmorphism */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.glass-header {
+  background: rgba(10, 25, 47, 0.85);
+  /* Dark Navy Glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header-scrolled {
+  background: rgba(10, 25, 47, 0.95) !important;
+  /* Royal Navy with high opacity */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark .glass-premium {
+  background: rgba(10, 25, 47, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient Text for "Why Alpha" Numbers */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0E68C 50%, #B48A25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.9;
+}
+
+/* Hero Vignette Overlay */
+.hero-overlay-vignette {
+  background: radial-gradient(circle at center, rgba(10, 25, 47, 0.4) 0%, rgba(10, 25, 47, 0.95) 100%);
+}
+
+/* Card Reveal Hover Effect */
+.card-reveal-hover .card-reveal-content {
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-reveal-hover:hover .card-reveal-content {
+  transform: translateY(0);
 }

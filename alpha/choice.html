@@ -1,1261 +1,1473 @@
 <!DOCTYPE html>
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Alpha's Choice - Alpha Consulting</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            DEFAULT: '#D4AF37',
-            darker: '#B48A25'
+<html class="light" lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="description" content="Alpha's Choice - Alpha Consulting이 엄선한 미국 명문 주니어 및 시니어 보딩 스쿨 리스트를 확인하세요." />
+  <title>Alpha's Choice - Alpha Consulting</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#D4AF37',
+              darker: '#B48A25'
+            },
+            accent: '#D4AF37',
+            'royal-navy': '#0a192f',
+            'background-light': '#FFFFFF',
+            'background-dark': '#0f1419'
           },
-          accent: '#D4AF37',
-          'royal-navy': '#0a192f',
-          'background-light': '#FFFFFF',
-          'background-dark': '#0f1419'
-        },
-        fontFamily: {
-          display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
-          body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          fontFamily: {
+            display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+            body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          }
         }
       }
     }
-  }
-</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
-<div class="relative w-full flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-4 sm:px-10 py-3 transition-all duration-300 h-20">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6">
-<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html">Home</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html#why-alpha">Why Alpha</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="service.html">Services</a>
-<a class="text-white text-sm font-bold leading-normal" href="choice.html">Alpha's Choice</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="about.html">About</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="contact.html">Contact</a>
-</nav>
-<button id="mobile-menu-btn" class="md:hidden text-white p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<div class="mobile-nav md:hidden" id="mobile-nav">
-<a href="index.html">Home</a>
-<a href="index.html#why-alpha">Why Alpha</a>
-<a href="service.html">Services</a>
-<a href="choice.html" class="active">Alpha's Choice</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
+  <div class="relative w-full flex-col">
+    <header
+      class="glass-header sticky top-0 z-50 flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3 transition-all duration-300 h-20">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-6">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+            </path>
+          </svg>
+        </div>
+        <h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="hidden md:flex items-center gap-9">
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html">Home</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html#why-alpha">Why Alpha</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="service.html">Services</a>
+          <a class="text-white text-sm font-bold leading-normal" href="choice.html">Alpha's Choice</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="about.html">About</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="contact.html">Contact</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-nav md:hidden" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#why-alpha">Why Alpha</a>
+      <a href="service.html">Services</a>
+      <a href="choice.html" class="active">Alpha's Choice</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-<main class="pb-24">
-<!-- Hero Section -->
-<section class="relative overflow-hidden isolate">
-<div class="absolute inset-0">
-<div class="absolute inset-0 bg-gradient-to-br from-black/70 via-royal-navy/80 to-royal-navy"></div>
-<div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: linear-gradient(120deg, rgba(10,25,47,0.5), rgba(10,25,47,0.35)), url('image/choice.png');"></div>
-<div class="absolute -top-24 -left-24 size-64 bg-white/5 blur-3xl"></div>
-</div>
-<div class="relative max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-24">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur mb-4">
-<span class="material-symbols-outlined text-base">verified</span>
-<span>Alpha의 검증된 파트너</span>
-</div>
-<h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-4">
-Alpha's Choice
-</h1>
-<p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl mb-8">
-랭킹보다 적합성. 연령·목표·성향에 맞춘 주니어/시니어 보딩 스쿨을 한눈에 탐색하세요.
-</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a href="#junior" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
-<span>주니어 보딩 바로가기</span>
-<span class="material-symbols-outlined text-base">south</span>
-</a>
-<a href="#senior" class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
-<span>시니어 보딩 바로가기</span>
-<span class="material-symbols-outlined text-base">south</span>
-</a>
-</div>
-</div>
-</section>
+    <main class="pb-24">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden isolate">
+        <div class="absolute inset-0">
+          <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-royal-navy/80 to-royal-navy"></div>
+          <div class="absolute inset-0 bg-cover bg-center opacity-60"
+            style="background-image: linear-gradient(120deg, rgba(10,25,47,0.5), rgba(10,25,47,0.35)), url('image/choice.png');">
+          </div>
+          <div class="absolute -top-24 -left-24 size-64 bg-white/5 blur-3xl"></div>
+        </div>
+        <div class="relative max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-24">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur mb-4">
+            <span class="material-symbols-outlined text-base">verified</span>
+            <span>Alpha의 검증된 파트너</span>
+          </div>
+          <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-4">
+            Alpha's Choice
+          </h1>
+          <p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl mb-8">
+            랭킹보다 적합성. 연령·목표·성향에 맞춘 주니어/시니어 보딩 스쿨을 한눈에 탐색하세요.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#junior"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
+              <span>주니어 보딩 바로가기</span>
+              <span class="material-symbols-outlined text-base">south</span>
+            </a>
+            <a href="#senior"
+              class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
+              <span>시니어 보딩 바로가기</span>
+              <span class="material-symbols-outlined text-base">south</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-<!-- Sticky Section Nav -->
-<div class="sticky top-20 z-30 bg-white/90 dark:bg-royal-navy/80 backdrop-blur-lg border-b border-royal-navy/10 dark:border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-3 flex items-center gap-2 overflow-x-auto">
-<a href="#junior" data-section-nav="junior" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
-<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
-<span>주니어 보딩</span>
-</a>
-<a href="#senior" data-section-nav="senior" class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
-<span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
-<span>시니어 보딩</span>
-</a>
-</div>
-</div>
+      <!-- Sticky Section Nav -->
+      <div
+        class="sticky top-20 z-30 bg-white/90 dark:bg-royal-navy/80 backdrop-blur-lg border-b border-royal-navy/10 dark:border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-3 flex items-center gap-2 overflow-x-auto">
+          <a href="#junior" data-section-nav="junior"
+            class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+            <span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+            <span>주니어 보딩</span>
+          </a>
+          <a href="#senior" data-section-nav="senior"
+            class="anchor-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-royal-navy/10 dark:border-white/10 text-sm font-semibold text-royal-navy/70 dark:text-white/70 transition-all duration-200">
+            <span class="size-2 rounded-full bg-royal-navy/20 dark:bg-white/30"></span>
+            <span>시니어 보딩</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Junior Boarding Schools -->
-<section id="junior" class="relative scroll-mt-28 bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="mb-16">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Junior Boarding</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
-주니어 보딩 스쿨
-</h2>
-</div>
+      <!-- Junior Boarding Schools -->
+      <section id="junior" class="relative scroll-mt-28 bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="mb-16">
+            <span
+              class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Junior
+              Boarding</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
+              주니어 보딩 스쿨
+            </h2>
+          </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Eaglebrook School -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCACg8PvsTsS19F8LDyQTo_o16tvXmfFE1baxFOAzN7-736f--u6UEO6oydm1AQ-CuAWQMZz8zBxtffZNm7OTqpX_KcfT7RLJVsXb0t-InOFqonHFZPh75KbiilRV-oy7Mbd0j4d4DcnA8Y3p4lqyDDQT98IVGse0dqVqGZg1KuEslvoup0_L40V829A3dnTKxlr1jnVI1uwn-c3AefpZeonNxpYW1ugL0ORkubeIJx8yyCePPHeCxSfNQwm1L_Ee8iYpda9bYPd2I");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Eaglebrook School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-6-9학년 남학생을 위한 주니어 기숙 학교로, 따뜻하고 체계적인 환경에서 소년들의 자신감을 키웁니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.eaglebrook.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Eaglebrook School -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCACg8PvsTsS19F8LDyQTo_o16tvXmfFE1baxFOAzN7-736f--u6UEO6oydm1AQ-CuAWQMZz8zBxtffZNm7OTqpX_KcfT7RLJVsXb0t-InOFqonHFZPh75KbiilRV-oy7Mbd0j4d4DcnA8Y3p4lqyDDQT98IVGse0dqVqGZg1KuEslvoup0_L40V829A3dnTKxlr1jnVI1uwn-c3AefpZeonNxpYW1ugL0ORkubeIJx8yyCePPHeCxSfNQwm1L_Ee8iYpda9bYPd2I");'>
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Eaglebrook School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  6-9학년 남학생을 위한 주니어 기숙 학교로, 따뜻하고 체계적인 환경에서 소년들의 자신감을 키웁니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.eaglebrook.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Fay School -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDecfyDm9rk7g8nCLGSAzq9nolj-84m1wxOq9dHSgSMlPz9wwvtnJLSEgWX278PhE3-ST2Q6S8HKZ6GqNPugrEAvRrQbL0xtZiZs54VLAAab9HYmfcEF2EVKSoUnH8u3Aq-cMqHH4yPzf5QUwRG0t5_nPlQWgca2G7mEI1XFbMv5DP1PZPaJL6AE9QEjFiOzkalMEE2F9UqGn3cpDvKFFssBmlz8InoVhdds6qMwm0eZPhGcmlSari-Bd1OCj03NU1N8M-8WD5M72g");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Fay School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1866년 설립된 미국 최초의 주니어 기숙 학교(K-9 통학, 7-9 기숙)로, 의미 있는 삶을 위한 기초를 제공합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.fayschool.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Fay School -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDecfyDm9rk7g8nCLGSAzq9nolj-84m1wxOq9dHSgSMlPz9wwvtnJLSEgWX278PhE3-ST2Q6S8HKZ6GqNPugrEAvRrQbL0xtZiZs54VLAAab9HYmfcEF2EVKSoUnH8u3Aq-cMqHH4yPzf5QUwRG0t5_nPlQWgca2G7mEI1XFbMv5DP1PZPaJL6AE9QEjFiOzkalMEE2F9UqGn3cpDvKFFssBmlz8InoVhdds6qMwm0eZPhGcmlSari-Bd1OCj03NU1N8M-8WD5M72g");'>
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Fay School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1866년 설립된 미국 최초의 주니어 기숙 학교(K-9 통학, 7-9 기숙)로, 의미 있는 삶을 위한 기초를 제공합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.fayschool.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Rumsey Hall School -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/rumseyhall.org.jpg");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Rumsey Hall School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-K-9학년(기숙 6-9)을 위한 주니어 기숙 학교로, '노력'을 성공의 기준으로 삼는 전인 교육을 강조합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.rumseyhall.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Rumsey Hall School -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/rumseyhall.org.jpg");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Rumsey Hall School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  K-9학년(기숙 6-9)을 위한 주니어 기숙 학교로, '노력'을 성공의 기준으로 삼는 전인 교육을 강조합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.rumseyhall.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Cardigan Mountain School -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/choice.png");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Cardigan Mountain School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-6-9학년 남학생을 위한 주니어 기숙 학교로, 연민, 정직, 존중, 용기라는 핵심 가치를 바탕으로 교육합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.cardigan.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Cardigan Mountain School -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/choice.png");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Cardigan Mountain
+                  School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  6-9학년 남학생을 위한 주니어 기숙 학교로, 연민, 정직, 존중, 용기라는 핵심 가치를 바탕으로 교육합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.cardigan.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Additional Junior Schools... -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/applewild.org.jpg");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Applewild School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-K-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, '전인 교육(whole child)'에 중점을 둡니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.applewild.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Additional Junior Schools... -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/applewild.org.jpg");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Applewild School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  K-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, '전인 교육(whole child)'에 중점을 둡니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.applewild.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/bement.org.png");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Bement School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-K-9(기숙 3-9) 학생들을 위한 주니어 기숙/통학 학교로, 3학년부터 기숙이 가능한 것이 특징입니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.bement.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/bement.org.png");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Bement School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  K-9(기숙 3-9) 학생들을 위한 주니어 기숙/통학 학교로, 3학년부터 기숙이 가능한 것이 특징입니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.bement.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/thehill.svg");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Hillside School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-4-9학년 남학생들을 위한 주니어 기숙/통학 학교로, 개별화된 학업 지원에 중점을 둡니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">4-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.hillsideschool.net/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/thehill.svg");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Hillside School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  4-9학년 남학생들을 위한 주니어 기숙/통학 학교로, 개별화된 학업 지원에 중점을 둡니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">4-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.hillsideschool.net/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/northcountryschool.org.jpg");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">North Country School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-4-9학년 기숙/통학 학교로, 애디론댁 산맥의 광활한 캠퍼스에서 친환경 및 야외/체험 교육을 강조합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">4-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://northcountryschool.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/northcountryschool.org.jpg");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">North Country School
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  4-9학년 기숙/통학 학교로, 애디론댁 산맥의 광활한 캠퍼스에서 친환경 및 야외/체험 교육을 강조합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">4-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://northcountryschool.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/choice.png");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Indian Mountain School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-PreK-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, 인격, 연민, 공동체를 핵심 가치로 삼습니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">PreK-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.indianmountain.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/choice.png");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Indian Mountain School
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  PreK-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, 인격, 연민, 공동체를 핵심 가치로 삼습니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">PreK-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.indianmountain.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/choice.png");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Fessenden School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-PreK-9(기숙 5-9) 남학생을 위한 주니어 기숙/통학 학교로, 정직하고 자비로운 '훌륭한 남성'을 키우는 것을 목표로 합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">PreK-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.fessenden.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/choice.png");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Fessenden School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  PreK-9(기숙 5-9) 남학생을 위한 주니어 기숙/통학 학교로, 정직하고 자비로운 '훌륭한 남성'을 키우는 것을 목표로 합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">PreK-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.fessenden.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/choice.png");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Rectory School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-K-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, 학생 맞춤형 개별 지도 프로그램으로 유명합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.rectoryschool.org/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/choice.png");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Rectory School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  K-9(기숙 5-9) 학생들을 위한 주니어 기숙/통학 학교로, 학생 맞춤형 개별 지도 프로그램으로 유명합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">K-9학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.rectoryschool.org/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">-%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Senior Boarding Schools -->
-<section id="senior" class="relative scroll-mt-28 bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="mb-16">
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Senior Boarding</span>
-<h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
-시니어 보딩 스쿨
-</h2>
-</div>
+      <!-- Senior Boarding Schools -->
+      <section id="senior" class="relative scroll-mt-28 bg-[#fafaf9] dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="mb-16">
+            <span
+              class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Senior
+              Boarding</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-royal-navy dark:text-white">
+              시니어 보딩 스쿨
+            </h2>
+          </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Phillips Exeter Academy -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=exeter" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/phillips.png");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Phillips Exeter Academy</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1781년 설립된 명문 기숙 학교로, 'Harkness'라는 학생 주도형 토론식 수업 방식으로 유명합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=exeter">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">1,078명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">기숙/통학</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Phillips Exeter Academy -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=exeter" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/phillips.png");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Phillips Exeter Academy
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1781년 설립된 명문 기숙 학교로, 'Harkness'라는 학생 주도형 토론식 수업 방식으로 유명합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=exeter">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">1,078명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">기숙/통학</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Choate Rosemary Hall -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=choate" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/choate.edu.jpg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Choate Rosemary Hall</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-코네티컷에 위치한 9-12학년 기숙 학교로, 혁신적인 교과 과정과 학생의 잠재력 개발을 중시합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=choate">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">861명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">75.7%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Choate Rosemary Hall -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=choate" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/choate.edu.jpg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Choate Rosemary Hall
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  코네티컷에 위치한 9-12학년 기숙 학교로, 혁신적인 교과 과정과 학생의 잠재력 개발을 중시합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=choate">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">861명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">75.7%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Deerfield Academy -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=deerfield" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/deerfield.edu.jpg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Deerfield Academy</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1797년 설립된 매사추세츠의 기숙 학교로, 높은 학업 기준과 공동체 및 인성 발달을 강조합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=deerfield">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">649명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">4.4:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">89.1%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Deerfield Academy -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=deerfield" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/deerfield.edu.jpg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Deerfield Academy</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1797년 설립된 매사추세츠의 기숙 학교로, 높은 학업 기준과 공동체 및 인성 발달을 강조합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=deerfield">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">649명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">4.4:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">89.1%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Hotchkiss School -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=hotchkiss" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image//Users/ted/Downloads/Hotchkiss.png");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Hotchkiss School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-코네티컷에 위치한 9-12학년 기숙 학교로, 200개 이상의 다양한 과정을 제공하며 토론 중심의 수업을 진행합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=hotchkiss">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">604명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">95.2%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Hotchkiss School -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=hotchkiss" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image//Users/ted/Downloads/Hotchkiss.png");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Hotchkiss School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  코네티컷에 위치한 9-12학년 기숙 학교로, 200개 이상의 다양한 과정을 제공하며 토론 중심의 수업을 진행합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=hotchkiss">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">604명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">95.2%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Continue with other senior boarding schools... -->
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=hun" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/hunschool.svg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">The Hun School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-프린스턴에 위치한 6-12학년 기숙/통학 학교로, 학생들이 열정적으로 배우는 역동적인 공동체를 제공합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=hun">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">675명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">12:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">30%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <!-- Continue with other senior boarding schools... -->
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=hun" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/hunschool.svg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">The Hun School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  프린스턴에 위치한 6-12학년 기숙/통학 학교로, 학생들이 열정적으로 배우는 역동적인 공동체를 제공합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">6-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=hun">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">675명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">12:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">30%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=hill" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/thehill.svg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">The Hill School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-'가족 학교(family school)'라는 정체성 아래, 9-12학년 학생들에게 긴밀한 공동체 환경을 제공하는 기숙 학교입니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=hill">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">530명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">78%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=hill" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/thehill.svg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">The Hill School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  '가족 학교(family school)'라는 정체성 아래, 9-12학년 학생들에게 긴밀한 공동체 환경을 제공하는 기숙 학교입니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=hill">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">530명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">78%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=gunn" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/frederickgunn.svg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Frederick Gunn School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1850년 설립된 남녀공학 기숙/통학 학교로, 지적 능력, 도덕적 용기, 인격 개발을 강조합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=gunn">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">330명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=gunn" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/frederickgunn.svg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Frederick Gunn School
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1850년 설립된 남녀공학 기숙/통학 학교로, 지적 능력, 도덕적 용기, 인격 개발을 강조합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=gunn">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">330명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=nmh" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/nmh.png");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Northfield Mount Hermon</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-9-12학년 기숙 학교로, 학생들이 열정을 가지고 배우고 인류애와 목적의식을 가지고 행동하도록 교육합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=nmh">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">632명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">83.9%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=nmh" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/nmh.png");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Northfield Mount Hermon
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  9-12학년 기숙 학교로, 학생들이 열정을 가지고 배우고 인류애와 목적의식을 가지고 행동하도록 교육합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=nmh">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">632명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">83.9%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/williston.com.jpg");'></div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Williston Northampton School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1841년 설립된 7-12학년 기숙/통학 학교로, 학생들이 목적, 열정, 정직함을 가지고 생활하도록 영감을 줍니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">7-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="https://www.williston.com/" target="_blank">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <div class="relative h-64 overflow-hidden">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/williston.com.jpg");'></div>
+              </div>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Williston Northampton
+                  School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1841년 설립된 7-12학년 기숙/통학 학교로, 학생들이 목적, 열정, 정직함을 가지고 생활하도록 영감을 줍니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">7-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="https://www.williston.com/" target="_blank">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=emma" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/emmawillard.org.jpg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Emma Willard School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1814년 미국 최초의 여성 고등 교육 기관으로 설립된 9-12학년 여학생 기숙/통학 학교입니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">여학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=emma">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">350명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">66%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=emma" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/emmawillard.org.jpg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Emma Willard School
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1814년 미국 최초의 여성 고등 교육 기관으로 설립된 9-12학년 여학생 기숙/통학 학교입니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">여학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=emma">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">350명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">66%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=stjames" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/stjames.edu.png");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">St. James School, MD</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1842년 설립된 메릴랜드의 8-12학년 성공회 계열 기숙 학교로, 학생들이 세상에 선한 리더가 되도록 교육합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">8-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=stjames">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">250명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">75%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=stjames" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/stjames.edu.png");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">St. James School, MD
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1842년 설립된 메릴랜드의 8-12학년 성공회 계열 기숙 학교로, 학생들이 세상에 선한 리더가 되도록 교육합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">8-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=stjames">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">250명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">7:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">75%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=blair" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/blair.jpg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Blair Academy</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-뉴저지에 위치한 9-12학년 기숙 학교로, 학생과 교사 간의 긴밀한 관계와 리더십 교육을 중시합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=blair">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">470명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">83%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=blair" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/blair.jpg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Blair Academy</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  뉴저지에 위치한 9-12학년 기숙 학교로, 학생과 교사 간의 긴밀한 관계와 리더십 교육을 중시합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=blair">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">470명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">비공개</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">83%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=stmarks" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/stmarksschool.png");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">St. Mark's School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1865년 설립된 성공회 계열 기숙/통학 학교로, 학생들이 리더십과 봉사의 삶을 살도록 영감을 줍니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=stmarks">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">372명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">75%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=stmarks" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/stmarksschool.png");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">St. Mark's School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1865년 설립된 성공회 계열 기숙/통학 학교로, 학생들이 리더십과 봉사의 삶을 살도록 영감을 줍니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=stmarks">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">372명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">75%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=westover" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/Westover.jpg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Westover School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-9-12학년 여학생을 위한 기숙/통학 학교로, 여학생들이 자신감 있고 자비로운 리더로 성장하도록 교육합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">여학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=westover">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">192명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">68%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=westover" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/Westover.jpg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Westover School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  9-12학년 여학생을 위한 기숙/통학 학교로, 여학생들이 자신감 있고 자비로운 리더로 성장하도록 교육합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">여학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=westover">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">192명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">68%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=avon" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/avonoldfarms.com.webp");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Avon Old Farms School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-9-12학년 남학생 기숙/통학 학교로, 형제애(Brotherhood), 학문, 정직, 스포츠맨십을 핵심 가치로 삼습니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=avon">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">399명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">72.2%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=avon" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/avonoldfarms.com.webp");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Avon Old Farms School
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  9-12학년 남학생 기숙/통학 학교로, 형제애(Brotherhood), 학문, 정직, 스포츠맨십을 핵심 가치로 삼습니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남학교</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">9-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=avon">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">399명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">6:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">72.2%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
-<a href="schoollist.html?school=groton" class="relative h-64 overflow-hidden block">
-<div class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700" style='background-image: url("image/groton.svg");'></div>
-</a>
-<div class="p-8">
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Groton School</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
-1884년 설립된 매사추세츠의 명문 성공회 기숙 학교로, 학문적 우수성과 봉사 정신을 강조합니다.
-</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
-<span class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">8-12학년</span>
-</div>
-<a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all" href="schoollist.html?school=groton">
-<span>더 알아보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-<div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
-<div class="grid grid-cols-3 gap-x-6">
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">385명</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
-</div>
-<div>
-<div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
-<div class="text-base font-semibold text-royal-navy dark:text-white">86%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <div
+              class="group choice-card relative overflow-hidden bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 hover:border-royal-navy/20 dark:hover:border-white/20 transition-all duration-300">
+              <a href="schoollist.html?school=groton" class="relative h-64 overflow-hidden block">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-contain group-hover:scale-105 transition-transform duration-700"
+                  style='background-image: url("image/groton.svg");'></div>
+              </a>
+              <div class="p-8">
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-3">Groton School</h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-6">
+                  1884년 설립된 매사추세츠의 명문 성공회 기숙 학교로, 학문적 우수성과 봉사 정신을 강조합니다.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">남녀공학</span>
+                  <span
+                    class="text-xs px-3 py-1 bg-royal-navy/5 dark:bg-white/5 text-royal-navy dark:text-white/80">8-12학년</span>
+                </div>
+                <a class="inline-flex items-center gap-2 text-royal-navy dark:text-white/60 text-sm group-hover:gap-3 transition-all"
+                  href="schoollist.html?school=groton">
+                  <span>더 알아보기</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+                <div class="mt-6 pt-6 border-t border-royal-navy/10 dark:border-white/10">
+                  <div class="grid grid-cols-3 gap-x-6">
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">총 학생 수</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">385명</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">학생-교사</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">4:1</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-royal-navy/40 dark:text-white/40 mb-1">기숙 비율</div>
+                      <div class="text-base font-semibold text-royal-navy dark:text-white">86%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- CTA Section -->
-<section class="relative bg-royal-navy dark:bg-black py-32 lg:py-48">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-12">
-자녀에게 맞는<br/>학교를 찾아드립니다
-</h2>
-<p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-16">
-상담을 통해 시작하세요
-</p>
+      <!-- CTA Section -->
+      <section class="relative bg-royal-navy dark:bg-black py-32 lg:py-48">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white mb-12">
+              자녀에게 맞는<br />학교를 찾아드립니다
+            </h2>
+            <p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-16">
+              상담을 통해 시작하세요
+            </p>
 
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<a href="contact.html" class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
-<span>상담 신청</span>
-<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-</main>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a href="contact.html"
+                class="group inline-flex items-center gap-3 px-10 py-5 bg-white text-royal-navy font-bold text-lg hover:bg-white/90 transition-all duration-300">
+                <span>상담 신청</span>
+                <span
+                  class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<!-- Footer -->
-<footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
-<!-- Company Info -->
-<div class="lg:col-span-2">
-<div class="flex items-center gap-3 mb-6">
-<div class="size-8">
-<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
-</div>
-<p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
-합격보다 성장, 순위보다 적합성.<br/>
-학생들에게 완벽한 교육 환경을 찾아드립니다.
-</p>
-</div>
+    <!-- Footer -->
+    <footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+          <!-- Company Info -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="size-8">
+                <svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
+            </div>
+            <p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
+              합격보다 성장, 순위보다 적합성.<br />
+              학생들에게 완벽한 교육 환경을 찾아드립니다.
+            </p>
+          </div>
 
-<!-- Quick Links -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
-<nav class="flex flex-col gap-3">
-<a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
-<a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
-<a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
-<a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
-<a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
-</nav>
-</div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
+            <nav class="flex flex-col gap-3">
+              <a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
+              <a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
+              <a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
+              <a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
+              <a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
+            </nav>
+          </div>
 
-<!-- Contact Info -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
-<div class="flex flex-col gap-4 text-sm">
-<div>
-<p class="text-white/40 mb-1">대표</p>
-<p class="text-white/80">정우향</p>
-</div>
-<div>
-<p class="text-white/40 mb-1">이메일</p>
-<a href="mailto:king@hestiaschool.com" class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
-</div>
-<div>
-<p class="text-white/40 mb-1">주소</p>
-<p class="text-white/80">서울시 강남구 역삼동</p>
-</div>
-</div>
-</div>
-</div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
+            <div class="flex flex-col gap-4 text-sm">
+              <div>
+                <p class="text-white/40 mb-1">대표</p>
+                <p class="text-white/80">정우향</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">이메일</p>
+                <a href="mailto:king@hestiaschool.com"
+                  class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">주소</p>
+                <p class="text-white/80">서울시 강남구 역삼동</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- Bottom Bar -->
-<div class="pt-8 border-t border-white/10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
+            <div class="flex gap-6">
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<!-- Sticky Bottom Bar -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-<div class="hidden sm:block">
-<p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
-</div>
-<div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
-<a href="contact.html" class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
-<span>상담 예약</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
-</a>
-<a href="service.html" class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
-<span class="material-symbols-outlined text-base">auto_stories</span>
-<span>서비스 보기</span>
-</a>
-</div>
-</div>
-</div>
-</div>
+    <!-- Sticky Bottom Bar -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="hidden sm:block">
+          <p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+          <a href="contact.html"
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center">
+            <span>상담 예약</span>
+            <span
+              class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href="service.html"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
+            <span class="material-symbols-outlined text-base">auto_stories</span>
+            <span>서비스 보기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="common-script.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const links = Array.from(document.querySelectorAll('[data-section-nav]'));
-    const sections = ['junior', 'senior']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
+  <script src="common-script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = Array.from(document.querySelectorAll('[data-section-nav]'));
+      const sections = ['junior', 'senior']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
 
-    const setActive = (id) => {
-      links.forEach(link => {
-        const isActive = link.dataset.sectionNav === id;
-        link.classList.toggle('anchor-pill-active', isActive);
-        link.classList.toggle('text-royal-navy/70', !isActive);
-        link.classList.toggle('dark:text-white/70', !isActive);
-      });
-    };
+      const setActive = (id) => {
+        links.forEach(link => {
+          const isActive = link.dataset.sectionNav === id;
+          link.classList.toggle('anchor-pill-active', isActive);
+          link.classList.toggle('text-royal-navy/70', !isActive);
+          link.classList.toggle('dark:text-white/70', !isActive);
+        });
+      };
 
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]) {
-        setActive(visible[0].target.id);
-      }
-    }, { rootMargin: '-45% 0px -45% 0px', threshold: [0.1, 0.3, 0.6] });
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) {
+          setActive(visible[0].target.id);
+        }
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: [0.1, 0.3, 0.6] });
 
-    sections.forEach(section => observer.observe(section));
-    if (sections[0]) setActive(sections[0].id);
-  });
-</script>
-</body></html>
+      sections.forEach(section => observer.observe(section));
+      if (sections[0]) setActive(sections[0].id);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,265 +1,338 @@
 <!DOCTYPE html>
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact - Alpha Consulting</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            DEFAULT: '#D4AF37',
-            darker: '#B48A25'
+<html class="light" lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Contact - Alpha Consulting</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#D4AF37',
+              darker: '#B48A25'
+            },
+            accent: '#D4AF37',
+            'royal-navy': '#0a192f',
+            'background-light': '#FFFFFF',
+            'background-dark': '#0f1419'
           },
-          accent: '#D4AF37',
-          'royal-navy': '#0a192f',
-          'background-light': '#FFFFFF',
-          'background-dark': '#0f1419'
-        },
-        fontFamily: {
-          display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
-          body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          fontFamily: {
+            display: ['IBM Plex Sans KR', 'Inter', 'sans-serif'],
+            body: ['IBM Plex Sans KR', 'Inter', 'sans-serif']
+          }
         }
       }
     }
-  }
-</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-body text-royal-navy dark:text-white">
-<div class="relative w-full flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-royal-navy px-4 sm:px-10 py-3 transition-all duration-300 h-20">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6">
-<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html">Home</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="index.html#why-alpha">Why Alpha</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="service.html">Services</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="choice.html">Alpha's Choice</a>
-<a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors" href="about.html">About</a>
-<a class="text-white text-sm font-bold leading-normal" href="contact.html">Contact</a>
-</nav>
-<button id="mobile-menu-btn" class="md:hidden text-white p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<div class="mobile-nav md:hidden" id="mobile-nav">
-<a href="index.html">Home</a>
-<a href="index.html#why-alpha">Why Alpha</a>
-<a href="service.html">Services</a>
-<a href="choice.html">Alpha's Choice</a>
-<a href="about.html">About</a>
-<a href="contact.html" class="active">Contact</a>
-</div>
+  <div class="relative w-full flex-col">
+    <header
+      class="glass-header sticky top-0 z-50 flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3 transition-all duration-300 h-20">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-6">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+            </path>
+          </svg>
+        </div>
+        <h2 class="text-white text-xl font-display font-bold">Alpha Consulting</h2>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="hidden md:flex items-center gap-9">
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html">Home</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="index.html#why-alpha">Why Alpha</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="service.html">Services</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="choice.html">Alpha's Choice</a>
+          <a class="text-white hover:text-white/70 text-sm font-medium leading-normal transition-colors"
+            href="about.html">About</a>
+          <a class="text-white text-sm font-bold leading-normal" href="contact.html">Contact</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-nav md:hidden" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#why-alpha">Why Alpha</a>
+      <a href="service.html">Services</a>
+      <a href="choice.html">Alpha's Choice</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
 
-<main class="pb-24">
-<!-- Hero Section -->
-<section class="page-hero py-16 lg:py-24" style="--hero-image: linear-gradient(120deg, rgba(10,25,47,0.35), rgba(10,25,47,0.25)), url('image/choice.png');">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="max-w-4xl space-y-6">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur">
-<span class="material-symbols-outlined text-base">call</span>
-<span>Get in Touch</span>
-</div>
-<h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white">
-시작하세요
-</h1>
-<p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl">
-전문적인 입시 컨설팅 상담 서비스입니다.
-</p>
-<div class="flex flex-col sm:flex-row gap-3">
-<a href="#contact-form" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
-<span>상담 신청</span>
-<span class="material-symbols-outlined text-base">south</span>
-</a>
-<a href="service.html" class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
-<span>서비스 살펴보기</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
+    <main class="pb-24">
+      <!-- Hero Section -->
+      <section class="page-hero py-16 lg:py-24"
+        style="--hero-image: linear-gradient(120deg, rgba(10,25,47,0.35), rgba(10,25,47,0.25)), url('image/choice.png');">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="max-w-4xl space-y-6">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur">
+              <span class="material-symbols-outlined text-base">call</span>
+              <span>Get in Touch</span>
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white">
+              시작하세요
+            </h1>
+            <p class="text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl">
+              전문적인 입시 컨설팅 상담 서비스입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#contact-form"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-royal-navy font-bold rounded-lg hover:bg-white/90 transition-all">
+                <span>상담 신청</span>
+                <span class="material-symbols-outlined text-base">south</span>
+              </a>
+              <a href="service.html"
+                class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-bold rounded-lg hover:border-white transition-all">
+                <span>서비스 살펴보기</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Contact Content -->
-<section id="contact-form" class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-<!-- Left Column - Info -->
-<div class="space-y-12">
-<div>
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Consultation</span>
-<h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-8">
-상담 안내
-</h2>
-<div class="space-y-6">
-<div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
-<span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">상담 비용</span>
-<span class="font-display text-lg font-bold text-royal-navy dark:text-white">30,000원</span>
-</div>
-<div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
-<span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">예약 방법</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">네이버 예약 시스템을 통해 상담을 신청하실 수 있습니다.</span>
-</div>
-<div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
-<span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">취소 규정</span>
-<span class="font-body text-base text-royal-navy/70 dark:text-white/70">전액 환불을 원하시면 최소 24시간 전에 취소하셔야 합니다.</span>
-</div>
-</div>
-</div>
+      <!-- Contact Content -->
+      <section id="contact-form" class="relative bg-white dark:bg-[#0f0f0f] py-24 lg:py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-20">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <!-- Left Column - Info -->
+            <div class="space-y-12">
+              <div>
+                <span
+                  class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Consultation</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-royal-navy dark:text-white mb-8">
+                  상담 안내
+                </h2>
+                <div class="space-y-6">
+                  <div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
+                    <span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">상담 비용</span>
+                    <span class="font-display text-lg font-bold text-royal-navy dark:text-white">30,000원</span>
+                  </div>
+                  <div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
+                    <span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">예약 방법</span>
+                    <span class="font-body text-base text-royal-navy/70 dark:text-white/70">네이버 예약 시스템을 통해 상담을 신청하실 수
+                      있습니다.</span>
+                  </div>
+                  <div class="flex items-start gap-6 pb-6 border-b border-royal-navy/10 dark:border-white/10">
+                    <span class="text-royal-navy/40 dark:text-white/40 text-sm font-medium min-w-[100px]">취소 규정</span>
+                    <span class="font-body text-base text-royal-navy/70 dark:text-white/70">전액 환불을 원하시면 최소 24시간 전에 취소하셔야
+                      합니다.</span>
+                  </div>
+                </div>
+              </div>
 
-<div>
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Contact</span>
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-6">
-Contact Information
-</h3>
-<div class="space-y-4">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-royal-navy/40 dark:text-white/40">call</span>
-<a class="font-body text-base text-royal-navy dark:text-white hover:text-royal-navy/70 dark:hover:text-white/70 transition-colors" href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-royal-navy/40 dark:text-white/40">mail</span>
-<div class="flex items-center gap-3">
-<span class="font-body text-base text-royal-navy dark:text-white">contact@alphaconsulting.com</span>
-<button class="text-royal-navy/40 dark:text-white/40 hover:text-royal-navy dark:hover:text-white transition-colors" onclick="navigator.clipboard.writeText('contact@alphaconsulting.com')" title="복사">
-<span class="material-symbols-outlined text-lg">content_copy</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+              <div>
+                <span
+                  class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Contact</span>
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-6">
+                  Contact Information
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-royal-navy/40 dark:text-white/40">call</span>
+                    <a class="font-body text-base text-royal-navy dark:text-white hover:text-royal-navy/70 dark:hover:text-white/70 transition-colors"
+                      href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-royal-navy/40 dark:text-white/40">mail</span>
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="font-body text-base text-royal-navy dark:text-white">contact@alphaconsulting.com</span>
+                      <button
+                        class="text-royal-navy/40 dark:text-white/40 hover:text-royal-navy dark:hover:text-white transition-colors"
+                        onclick="navigator.clipboard.writeText('contact@alphaconsulting.com')" title="복사">
+                        <span class="material-symbols-outlined text-lg">content_copy</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<div>
-<span class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Location</span>
-<h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-6">
-Our Location
-</h3>
-<div class="relative aspect-[16/9] overflow-hidden border border-royal-navy/10 dark:border-white/10">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZEOaXfKjl2NfrzdhXUtASLhLU4LIaraUwHZMJC276P7W0ufzE6wA8G6l5dpjdNTCHYfSqcmWByupZlbOKicbGBCHHULwvmxTrc5KByz_AzhoxonrEFdq_Hvs50_MP_VCzOpE23zKTg-6e5QVGhYqTCPh-Hehm5Cux2NOhwFI9Upm3FHpN-1UdykaOOjmPHyha2rTEYFkf-cYB6v2TqoO8IZhULt9FCsLXDELFR9W4BsBcAKg3r-PpfLZO7uIabi_7WUn3TnOJwVI");'></div>
-</div>
-</div>
-</div>
+              <div>
+                <span
+                  class="text-royal-navy/40 dark:text-white/40 text-xs font-body font-medium tracking-[0.3em] uppercase mb-4 block">Connect</span>
+                <h3 class="font-display text-2xl font-bold text-royal-navy dark:text-white mb-6">
+                  Social Media
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Blog Card -->
+                  <a href="https://blog.naver.com/hestiacompany" target="_blank"
+                    class="group flex items-center gap-4 p-4 rounded-xl border border-royal-navy/10 dark:border-white/10 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300">
+                    <div class="size-12 rounded-full bg-[#03C75A] flex items-center justify-center text-white shrink-0">
+                      <span class="font-bold text-lg">N</span>
+                    </div>
+                    <div>
+                      <p
+                        class="font-display font-bold text-royal-navy dark:text-white group-hover:text-primary transition-colors">
+                        네이버 블로그</p>
+                      <p class="text-sm text-royal-navy/60 dark:text-white/60">최신 입시 정보와 합격 사례</p>
+                    </div>
+                  </a>
 
-<!-- Right Column - Booking -->
-<div class="lg:sticky lg:top-32 h-fit">
-<div class="bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 p-12">
-<h3 class="font-display text-3xl font-bold text-royal-navy dark:text-white mb-6">
-상담 예약하기
-</h3>
-<p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-12">
-네이버 예약 시스템을 통해 편리하게 상담을 신청하실 수 있습니다. 상담 비용은 30,000원입니다.
-</p>
-<button class="group w-full inline-flex items-center justify-center gap-3 px-10 py-5 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-lg hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300" onclick="window.open('https://booking.naver.com', '_blank')">
-<span>네이버 예약으로 상담 신청</span>
-<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
+                  <!-- Instagram Card -->
+                  <a href="#" target="_blank"
+                    class="group flex items-center gap-4 p-4 rounded-xl border border-royal-navy/10 dark:border-white/10 hover:bg-royal-navy/5 dark:hover:bg-white/5 transition-all duration-300">
+                    <div
+                      class="size-12 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shrink-0">
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.53c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="font-display font-bold text-royal-navy dark:text-white group-hover:text-primary transition-colors">
+                        Instagram</p>
+                      <p class="text-sm text-royal-navy/60 dark:text-white/60">알파 컨설팅의 일상</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-<!-- Footer -->
-<footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
-<!-- Company Info -->
-<div class="lg:col-span-2">
-<div class="flex items-center gap-3 mb-6">
-<div class="size-8">
-<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z"></path>
-</svg>
-</div>
-<h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
-</div>
-<p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
-합격보다 성장, 순위보다 적합성.<br/>
-학생들에게 완벽한 교육 환경을 찾아드립니다.
-</p>
-</div>
+            <!-- Right Column - Booking -->
+            <div class="lg:sticky lg:top-32 h-fit">
+              <div
+                class="bg-white dark:bg-royal-navy/30 border border-royal-navy/10 dark:border-white/10 p-10 lg:p-12 shadow-2xl shadow-royal-navy/5 dark:shadow-none">
+                <h3 class="font-display text-3xl font-bold text-royal-navy dark:text-white mb-6">
+                  상담 예약하기
+                </h3>
+                <p class="font-body text-base text-royal-navy/70 dark:text-white/70 leading-relaxed mb-10">
+                  네이버 예약 시스템을 통해 편리하게 상담을 신청하실 수 있습니다.
+                  <br /><br />
+                  <span class="text-sm text-royal-navy/50 dark:text-white/50">* 상담 비용은 30,000원입니다.</span>
+                </p>
+                <button
+                  class="group w-full inline-flex items-center justify-center gap-3 px-10 py-5 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-lg hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  onclick="window.open('https://booking.naver.com', '_blank')">
+                  <span>네이버 예약으로 상담 신청</span>
+                  <span
+                    class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-2 duration-300">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<!-- Quick Links -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
-<nav class="flex flex-col gap-3">
-<a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
-<a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
-<a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
-<a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
-<a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
-</nav>
-</div>
+    <!-- Footer -->
+    <footer class="relative bg-royal-navy dark:bg-black border-t border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-20 py-16 lg:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+          <!-- Company Info -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="size-8">
+                <svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 2L1 9l11 7 11-7L12 2zm0 10.84L5.16 9 12 5.16 18.84 9 12 12.84zM1 10.5v3.41L12 21l11-7.09v-3.41L12 14.59 1 10.5z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="text-white text-2xl font-display font-bold">Alpha Consulting</h3>
+            </div>
+            <p class="text-white/60 text-base leading-relaxed mb-6 max-w-md">
+              합격보다 성장, 순위보다 적합성.<br />
+              학생들에게 완벽한 교육 환경을 찾아드립니다.
+            </p>
+          </div>
 
-<!-- Contact Info -->
-<div>
-<h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
-<div class="flex flex-col gap-4 text-sm">
-<div>
-<p class="text-white/40 mb-1">대표</p>
-<p class="text-white/80">정우향</p>
-</div>
-<div>
-<p class="text-white/40 mb-1">이메일</p>
-<a href="mailto:king@hestiaschool.com" class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
-</div>
-<div>
-<p class="text-white/40 mb-1">주소</p>
-<p class="text-white/80">서울시 강남구 역삼동</p>
-</div>
-</div>
-</div>
-</div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">바로가기</h4>
+            <nav class="flex flex-col gap-3">
+              <a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors">Home</a>
+              <a href="service.html" class="text-white/60 hover:text-white text-sm transition-colors">Services</a>
+              <a href="choice.html" class="text-white/60 hover:text-white text-sm transition-colors">Alpha's Choice</a>
+              <a href="about.html" class="text-white/60 hover:text-white text-sm transition-colors">About</a>
+              <a href="contact.html" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
+            </nav>
+          </div>
 
-<!-- Bottom Bar -->
-<div class="pt-8 border-t border-white/10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
-<a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white font-display font-semibold text-sm uppercase tracking-wider mb-6">연락처</h4>
+            <div class="flex flex-col gap-4 text-sm">
+              <div>
+                <p class="text-white/40 mb-1">대표</p>
+                <p class="text-white/80">정우향</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">이메일</p>
+                <a href="mailto:king@hestiaschool.com"
+                  class="text-white/80 hover:text-white transition-colors">king@hestiaschool.com</a>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">주소</p>
+                <p class="text-white/80">서울시 강남구 역삼동</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- Sticky Bottom Bar -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
-<div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-<div class="hidden sm:block">
-<p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
-</div>
-<div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
-<button class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center" onclick="window.open('https://booking.naver.com', '_blank')">
-<span>상담 예약</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
-</button>
-<a href="service.html" class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
-<span class="material-symbols-outlined text-base">auto_stories</span>
-<span>서비스 보기</span>
-</a>
-</div>
-</div>
-</div>
-</div>
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/40 text-sm">© 2024 Alpha Consulting. All rights reserved.</p>
+            <div class="flex gap-6">
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">개인정보처리방침</a>
+              <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">이용약관</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<script src="common-script.js"></script>
-</body></html>
+    <!-- Sticky Bottom Bar -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-royal-navy/95 backdrop-blur-xl border-t border-royal-navy/10 dark:border-white/10">
+      <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="hidden sm:block">
+          <p class="text-sm font-body text-royal-navy/60 dark:text-white/60">프리미엄 교육 컨설팅</p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+          <button
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-royal-navy dark:bg-white text-white dark:text-royal-navy font-bold text-sm hover:bg-royal-navy/90 dark:hover:bg-white/90 transition-all duration-300 w-full sm:w-auto justify-center"
+            onclick="window.open('https://booking.naver.com', '_blank')">
+            <span>상담 예약</span>
+            <span
+              class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </button>
+          <a href="service.html"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-royal-navy/20 dark:border-white/20 text-royal-navy dark:text-white font-bold text-sm hover:border-royal-navy/40 dark:hover:border-white/40 transition-all duration-300 w-full sm:w-auto justify-center">
+            <span class="material-symbols-outlined text-base">auto_stories</span>
+            <span>서비스 보기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="common-script.js"></script>
+</body>
+
+</html>
