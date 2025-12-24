@@ -300,6 +300,50 @@ body {
 }
 
 /* ============================================
+   Editor Sheet Components
+   ============================================ */
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+.sheet-title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.mt-default {
+  margin-top: var(--spacing-md);
+}
+
+.color-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.color-section .label {
+  margin: 0;
+}
+
+.preset-input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.preset-input-group .text-input {
+  min-height: 44px;
+}
+
+.preset-list {
+  max-height: 40vh;
+  overflow: auto;
+}
+
+/* ============================================
    Tabs
    ============================================ */
 

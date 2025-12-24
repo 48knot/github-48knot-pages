@@ -6,10 +6,40 @@
  * - Base64 문자열을 설정 객체로 디코딩
  * - URL 쿼리 파라미터에서 설정 추출
  * - 손상된 데이터를 graceful하게 처리
+ * - Unicode(이모지, 한글 등) 지원
  */
 
 /**
+ * UTF-8 문자열을 Base64로 인코딩합니다.
+ * @private
+ */
+function utf8ToBase64(str) {
+  const encoder = new TextEncoder();
+  const utf8Array = encoder.encode(str);
+  let binaryString = '';
+  for (let i = 0; i < utf8Array.length; i++) {
+    binaryString += String.fromCharCode(utf8Array[i]);
+  }
+  return btoa(binaryString);
+}
+
+/**
+ * Base64 문자열을 UTF-8로 디코딩합니다.
+ * @private
+ */
+function base64ToUtf8(base64Str) {
+  const binaryString = atob(base64Str);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  const decoder = new TextDecoder();
+  return decoder.decode(bytes);
+}
+
+/**
  * 설정 객체를 Base64 인코딩된 문자열로 변환합니다.
+ * Unicode(이모지, 한글 등)를 지원합니다.
  *
  * @param {Object} config - 설정 객체
  * @returns {string} Base64 인코딩된 문자열
@@ -22,7 +52,7 @@ export function encodeConfig(config) {
 
   try {
     const jsonString = JSON.stringify(config);
-    return btoa(jsonString);
+    return utf8ToBase64(jsonString);
   } catch (error) {
     console.error('❌ 설정 인코딩 실패:', error);
     throw new Error('설정을 인코딩할 수 없습니다');
@@ -42,7 +72,7 @@ export function decodeConfig(encoded) {
   }
 
   try {
-    const jsonString = atob(encoded);
+    const jsonString = base64ToUtf8(encoded);
     const config = JSON.parse(jsonString);
 
     if (typeof config !== 'object' || config === null) {

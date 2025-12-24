@@ -34,8 +34,8 @@
 
     <div class="backdrop" id="backdrop"></div>
     <aside class="editor-sheet" id="editorSheet" aria-hidden="true" role="dialog">
-      <div class="sheet-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-        <div style="font-weight:800;font-size:16px;">전광판 설정</div>
+      <div class="sheet-header">
+        <div class="sheet-title">전광판 설정</div>
         <div><button class="icon-btn" id="closeEditorBtn" type="button">닫기</button></div>
       </div>
 
@@ -51,7 +51,7 @@
           <textarea class="text-input" id="textInput">"SKKU94 버선🧦 곽시내 조성민 나는된다" </textarea>
         </div>
 
-        <div class="grid-2" style="margin-top:12px;">
+        <div class="grid-2 mt-default">
           <div class="section">
             <label class="label">글자 크기</label>
             <input type="range" class="slider" id="fontSizeSlider" min="20" max="240" value="80">
@@ -62,18 +62,18 @@
           </div>
         </div>
 
-        <div class="grid-2" style="margin-top:12px;">
-          <div class="section" style="display:flex;align-items:center;gap:12px;">
-            <label class="label" style="margin:0;">글자색</label>
+        <div class="grid-2 mt-default">
+          <div class="section color-section">
+            <label class="label">글자색</label>
             <input type="color" class="color-input" id="textColorInput" value="#00FF00">
           </div>
-          <div class="section" style="display:flex;align-items:center;gap:12px;">
-            <label class="label" style="margin:0;">배경색</label>
+          <div class="section color-section">
+            <label class="label">배경색</label>
             <input type="color" class="color-input" id="bgColorInput" value="#000000">
           </div>
         </div>
 
-        <div class="grid-2" style="margin-top:12px;">
+        <div class="grid-2 mt-default">
           <div class="section">
             <label class="label">폰트 패밀리</label>
             <select class="select" id="fontFamilySelect">
@@ -110,7 +110,7 @@
           </div>
         </div>
 
-        <div class="grid-2" style="margin-top:12px;">
+        <div class="grid-2 mt-default">
           <div class="section">
             <label class="label">세로모드</label>
             <label class="note"><input type="checkbox" id="forcePortrait"> 세로모드에서도 스크롤</label>
@@ -125,14 +125,14 @@
       <section class="tab-panel" id="tab-presets">
         <div class="section">
           <label class="label">프리셋 이름</label>
-          <div style="display:flex; gap:8px;">
-            <input id="presetName" class="text-input" style="min-height:44px;" placeholder="예: 네온_대형_빠른" />
+          <div class="preset-input-group">
+            <input id="presetName" class="text-input" placeholder="예: 네온_대형_빠른" />
             <button class="small-btn" id="savePresetBtn" type="button">저장</button>
           </div>
         </div>
-        <div class="section" style="margin-top:12px;">
+        <div class="section mt-default">
           <label class="label">저장된 프리셋</label>
-          <div id="presetList" class="grid-1" style="max-height:40vh; overflow:auto;"></div>
+          <div id="presetList" class="preset-list"></div>
         </div>
       </section>
     </aside>
