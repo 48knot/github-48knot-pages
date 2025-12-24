@@ -197,9 +197,7 @@ class LedBoardApp {
     // 공유 버튼
     this.elements.shareBtn?.addEventListener('click', () => {
       const config = this.getCurrentConfig();
-      const encoded = encoder.encodeConfig(config);
-      const urlSafeEncoded = encoded.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-      const url = `${window.location.origin}${window.location.pathname}?config=${urlSafeEncoded}`;
+      const url = encoder.buildShareURL(config);
       if (navigator.share) {
         navigator.share({ title: 'LED Board', text: 'Check this out!', url });
       } else {

@@ -9,6 +9,8 @@
  * - 폰트 패밀리 설정
  */
 
+import * as animation from './animation.js';
+
 /**
  * DOM 요소 캐시 및 초기화
  * @private
@@ -248,7 +250,7 @@ export function applyScroll(speed, startOffset, viewportWidth = null) {
   dom.marqueeTrack.style.setProperty('--cycle-distance', textWidth + 'px');
 
   // 속도로부터 애니메이션 지속시간 계산
-  const duration = Math.max(2, Math.min(120, textWidth / speed));
+  const duration = animation.calculateScrollDuration(textWidth, speed);
   dom.marqueeTrack.style.setProperty('--duration-s', duration + 's');
 
   // 시작 오프셋 적용
