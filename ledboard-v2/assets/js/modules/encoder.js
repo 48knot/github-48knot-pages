@@ -88,6 +88,7 @@ export function decodeConfig(encoded) {
 
 /**
  * URL 쿼리 파라미터에서 config 파라미터를 추출하고 디코딩합니다.
+ * URL-safe Base64도 지원합니다 (-_=).
  *
  * @param {string} [urlString=window.location.search] - URL 검색 문자열 (테스트용)
  * @returns {Object|null} 설정 객체 또는 null
@@ -102,11 +103,17 @@ export function getConfigFromURL(urlString = null) {
     }
 
     const urlParams = new URLSearchParams(searchString);
-    const configParam = urlParams.get('config');
+    let configParam = urlParams.get('config');
 
     if (!configParam) {
       return null;
     }
+
+    // URL-safe Base64를 표준 Base64로 변환
+    configParam = configParam
+      .replace(/-/g, '+')
+      .replace(/_/g, '/')
+      .padEnd(configParam.length + (4 - configParam.length % 4) % 4, '=');
 
     return decodeConfig(configParam);
   } catch (error) {
@@ -145,6 +152,7 @@ export function getCleanURL() {
 
 /**
  * 여러 설정을 배열로 인코딩합니다.
+ * Unicode(이모지, 한글 등)를 지원합니다.
  * (대량 공유 시 사용 가능)
  *
  * @param {Array<Object>} configs - 설정 객체 배열
@@ -157,7 +165,7 @@ export function encodeConfigArray(configs) {
 
   try {
     const jsonString = JSON.stringify(configs);
-    return btoa(jsonString);
+    return utf8ToBase64(jsonString);
   } catch (error) {
     console.error('❌ 설정 배열 인코딩 실패:', error);
     throw new Error('설정 배열을 인코딩할 수 없습니다');
@@ -166,6 +174,7 @@ export function encodeConfigArray(configs) {
 
 /**
  * 인코딩된 설정 배열을 디코딩합니다.
+ * Unicode(이모지, 한글 등)를 지원합니다.
  *
  * @param {string} encoded - Base64 인코딩된 배열 문자열
  * @returns {Array<Object>|null} 설정 객체 배열 또는 null
@@ -176,7 +185,7 @@ export function decodeConfigArray(encoded) {
   }
 
   try {
-    const jsonString = atob(encoded);
+    const jsonString = base64ToUtf8(encoded);
     const configs = JSON.parse(jsonString);
 
     if (!Array.isArray(configs)) {

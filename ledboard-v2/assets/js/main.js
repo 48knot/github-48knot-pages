@@ -113,6 +113,7 @@ class LedBoardApp {
     // 텍스트 입력
     this.elements.textInput?.addEventListener('input', (e) => {
       display.setText(e.target.value);
+      this.applyScrollAnimation();
       this.updateDisplay();
     });
 
@@ -120,6 +121,7 @@ class LedBoardApp {
     this.elements.fontSizeSlider?.addEventListener('input', (e) => {
       const size = Number(e.target.value);
       display.setFontSize(size);
+      this.applyScrollAnimation();
       this.updateDisplay();
     });
 
@@ -127,7 +129,11 @@ class LedBoardApp {
     this.elements.letterSpacingSlider?.addEventListener('input', (e) => {
       const spacing = Number(e.target.value);
       display.setLetterSpacing(spacing);
-      if (this.elements.speedOut) this.elements.speedOut.textContent = spacing;
+      if (this.elements.letterSpacingSlider) {
+        const label = this.elements.letterSpacingSlider.parentElement?.querySelector('.note');
+        if (label) label.textContent = spacing;
+      }
+      this.applyScrollAnimation();
       this.updateDisplay();
     });
 
@@ -178,6 +184,11 @@ class LedBoardApp {
       this.applyScrollAnimation();
     });
 
+    // 세로모드 강제 스크롤
+    this.elements.forcePortrait?.addEventListener('change', (e) => {
+      this.updateDisplay();
+    });
+
     // 전체화면 버튼
     this.elements.fullscreenBtn?.addEventListener('click', async () => {
       await display.requestFullscreen();
@@ -187,7 +198,8 @@ class LedBoardApp {
     this.elements.shareBtn?.addEventListener('click', () => {
       const config = this.getCurrentConfig();
       const encoded = encoder.encodeConfig(config);
-      const url = `${window.location.origin}${window.location.pathname}?config=${encoded}`;
+      const urlSafeEncoded = encoded.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+      const url = `${window.location.origin}${window.location.pathname}?config=${urlSafeEncoded}`;
       if (navigator.share) {
         navigator.share({ title: 'LED Board', text: 'Check this out!', url });
       } else {
@@ -260,12 +272,12 @@ class LedBoardApp {
       return;
     }
 
-    // 2. localStorage에서 마지막 설정 로드
+    // 2. localStorage에서 최신 프리셋 로드
     const presets = storage.loadPresets();
     if (presets.length > 0) {
-      // 첫 번째 프리셋 로드 (또는 가장 최근)
-      const lastPreset = presets[presets.length - 1];
-      this.applyConfig(lastPreset.config);
+      // 인덱스 0이 가장 최신 (unshift로 맨 앞에 추가됨)
+      const latestPreset = presets[0];
+      this.applyConfig(latestPreset.cfg);
       return;
     }
 
@@ -354,11 +366,21 @@ class LedBoardApp {
     presets.forEach((preset, index) => {
       const item = document.createElement('div');
       item.className = 'preset-item';
-      item.innerHTML = `
-        <span>${preset.name}</span>
-        <button onclick="window.__ledBoardApp?.loadPreset(${index})">로드</button>
-        <button onclick="window.__ledBoardApp?.deletePreset(${index})">삭제</button>
-      `;
+
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = preset.name;
+
+      const loadBtn = document.createElement('button');
+      loadBtn.textContent = '로드';
+      loadBtn.onclick = () => this.loadPreset(index);
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = '삭제';
+      deleteBtn.onclick = () => this.deletePreset(index);
+
+      item.appendChild(nameSpan);
+      item.appendChild(loadBtn);
+      item.appendChild(deleteBtn);
       this.elements.presetList.appendChild(item);
     });
   }
@@ -369,7 +391,7 @@ class LedBoardApp {
   loadPreset(index) {
     const presets = storage.loadPresets();
     if (presets[index]) {
-      this.applyConfig(presets[index].config);
+      this.applyConfig(presets[index].cfg);
     }
   }
 

@@ -353,12 +353,23 @@ export function showLandscapeHint(show) {
 
 /**
  * 풍경 힌트 업데이트 (텍스트 오버플로우 및 모드 확인).
+ * 세로모드 + 텍스트 길다 + 강제스크롤 OFF → 힌트 표시
  *
  * @param {number} [viewportWidth] - 뷰포트 너비 (테스트용)
+ * @param {boolean} [forcePortrait] - 강제 세로모드 스크롤 (테스트용)
  */
-export function updateLandscapeHint(viewportWidth = null) {
+export function updateLandscapeHint(viewportWidth = null, forcePortrait = null) {
   const needScroll = isTextOverflow(viewportWidth);
-  const show = !isFullscreenActive() && needScroll && !isLandscapeOrientation();
+
+  // forcePortrait를 동적으로 읽거나 파라미터에서 가져오기
+  let forceScrollInPortrait = forcePortrait;
+  if (forceScrollInPortrait === null) {
+    const forcePortraitCheckbox = document.getElementById('forcePortrait');
+    forceScrollInPortrait = forcePortraitCheckbox?.checked ?? false;
+  }
+
+  // 세로모드 + 텍스트 오버플로우 + 강제스크롤 OFF → 힌트 표시
+  const show = !isFullscreenActive() && needScroll && !isLandscapeOrientation() && !forceScrollInPortrait;
 
   showLandscapeHint(show);
 }

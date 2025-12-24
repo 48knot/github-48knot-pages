@@ -650,9 +650,11 @@ const PRESET_KEY = 'led-board-presets';
 ```
 원본:   http://example.com/ledboard/?config=eyJ0ZXh0IjoiSGVsbG8ifQ==
 새 버전: http://example.com/ledboard/?config=eyJ0ZXh0IjoiSGVsbG8ifQ==
+         (URL-safe 변환: +→- /→_ =제거)
 
-✅ 동일한 Base64 인코딩 사용
-✅ 기존 공유 링크 100% 작동
+✅ UTF-8 Base64 인코딩 사용 (이모지/한글 지원)
+✅ 기존 공유 링크 호환성 유지
+⚠️  특수문자/이모지 포함 시 인코딩 형식 변경됨 (보다 안전함)
 ```
 
 ### 테스트 커버리지
@@ -709,8 +711,9 @@ const PRESET_KEY = 'led-board-presets';
 ### Phase 1: 개발 환경 검증 ✅
 - [x] 모든 기존 기능 동작 확인
 - [x] 305개 단위 테스트 전부 통과 (100% 커버리지)
-- [x] 프리셋 호환성 검증 (기존 데이터 포맷 유지)
-- [x] URL 공유 링크 호환성 검증 (Base64 인코딩 동일)
+- [x] 프리셋 호환성 검증 (최신 프리셋 로드, cfg 필드명 일치)
+- [x] URL 공유 링크 호환성 검증 (UTF-8 Base64 + URL-safe 변환)
+- [x] Unicode 지원 (이모지/한글 공유 링크 가능)
 - [x] 번들 크기 < 50KB 달성 (✓ 45KB)
 - [x] localStorage API 호환성 유지
 
@@ -722,10 +725,52 @@ const PRESET_KEY = 'led-board-presets';
 - [x] 코드 품질 검증 (console.log 체크)
 
 ### Phase 3: 배포 전 준비 ✅
-- [x] 모든 테스트 통과 확인
+- [x] 모든 단위 테스트 통과 (305/305)
 - [x] 커밋 메시지 및 문서 작성
 - [x] 마이그레이션 가이드 작성 (이 문서)
 - [x] 호환성 검증 결과 정리
+- [ ] E2E 테스트 (향후 추가 계획)
+
+---
+
+## 🐛 버그 수정 히스토리
+
+### 2025-12-24 Critical Fixes (Option A)
+
+#### High Priority - 심각한 버그
+1. **프리셋 로드 구조 불일치** ✅
+   - 저장할 때: `cfg` 필드 사용
+   - 로드할 때: `cfg` 필드로 올바르게 수정
+   - 최신 프리셋: `unshift` 방식에 맞춰 index 0 사용
+
+2. **스크롤 애니메이션 미재계산** ✅
+   - 텍스트/폰트/자간 변경 시 `applyScrollAnimation()` 호출 추가
+   - 애니메이션 거리와 속도 동적 갱신
+
+3. **forcePortrait 토글 미작동** ✅
+   - 이벤트 리스너 추가
+   - `updateLandscapeHint`에서 강제 세로모드 스크롤 고려
+
+#### Medium Priority - 중요한 버그
+4. **URL-safe Base64 인코딩** ✅
+   - 공유 버튼: `+→-`, `/→_`, `=제거` 변환 추가
+   - `getConfigFromURL`: 역변환 추가
+
+5. **프리셋 이름 XSS 취약점** ✅
+   - `innerHTML` 대신 DOM 노드 생성으로 교체
+   - 이벤트 리스너 직접 바인딩
+
+#### Low Priority - 개선 사항
+6. **자간 슬라이더 출력 버그** ✅
+   - `speedOut` 대신 부모 `.note` 요소에 자간 값 표시
+
+7. **encodeConfigArray Unicode 미지원** ✅
+   - `btoa/atob` 대신 `utf8ToBase64/base64ToUtf8` 사용
+   - 배열 공유도 이모지/한글 지원
+
+8. **문서 불일치** ✅
+   - URL 포맷 호환성 노트 업데이트
+   - E2E 테스트를 향후 계획으로 변경
 
 ---
 
