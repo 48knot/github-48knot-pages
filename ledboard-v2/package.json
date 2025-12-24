@@ -1,0 +1,37 @@
+{
+  "name": "ledboard",
+  "version": "2.0.0",
+  "description": "모바일 LED 전광판 - ES6 모듈화 + 테스트 가능 아키텍처",
+  "type": "module",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:all": "vitest --run && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "happy-dom": "^20.0.11",
+    "jsdom": "^23.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "keywords": [
+    "led",
+    "display",
+    "mobile",
+    "animation"
+  ],
+  "author": "48knot",
+  "license": "MIT"
+}

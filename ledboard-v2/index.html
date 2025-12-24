@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="모바일 LED 전광판 - 텍스트 애니메이션 및 공유" />
+  <title>모바일 전광판</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div class="app-container">
+    <div class="topbar">
+      <button class="icon-btn" id="fullscreenBtn" type="button">전체화면</button>
+      <div>
+        <button class="icon-btn" id="shareBtn" type="button">공유</button>
+        <button class="icon-btn primary" id="openEditorBtn" type="button">편집</button>
+      </div>
+    </div>
+
+    <div class="hint" id="landscapeHint">가로모드로 돌리면 스크롤됩니다</div>
+
+    <section class="preview fullscreen-mode" id="previewSection">
+      <div class="led-display" id="ledDisplay">
+        <div class="marquee-track" id="marqueeTrack" aria-hidden="true">
+          <span class="marquee-seg" id="seg1">여기에 텍스트를 입력하세요</span>
+          <span class="marquee-seg" id="seg2">여기에 텍스트를 입력하세요</span>
+        </div>
+        <div class="static-text" id="staticText">여기에 텍스트를 입력하세요</div>
+      </div>
+    </section>
+
+    <button class="fs-edit-btn" id="fsEditBtn" type="button">편집</button>
+
+    <div class="backdrop" id="backdrop"></div>
+    <aside class="editor-sheet" id="editorSheet" aria-hidden="true" role="dialog">
+      <div class="sheet-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+        <div style="font-weight:800;font-size:16px;">전광판 설정</div>
+        <div><button class="icon-btn" id="closeEditorBtn" type="button">닫기</button></div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="basic" type="button">기본</button>
+        <button class="tab-btn" data-tab="advanced" type="button">고급</button>
+        <button class="tab-btn" data-tab="presets" type="button">프리셋</button>
+      </div>
+
+      <section class="tab-panel active" id="tab-basic">
+        <div class="section">
+          <label class="label" for="textInput">텍스트 입력</label>
+          <textarea class="text-input" id="textInput">"SKKU94 버선🧦 곽시내 조성민 나는된다" </textarea>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">글자 크기</label>
+            <input type="range" class="slider" id="fontSizeSlider" min="20" max="240" value="80">
+          </div>
+          <div class="section">
+            <label class="label">자간</label>
+            <input type="range" class="slider" id="letterSpacingSlider" min="0" max="40" value="0">
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section" style="display:flex;align-items:center;gap:12px;">
+            <label class="label" style="margin:0;">글자색</label>
+            <input type="color" class="color-input" id="textColorInput" value="#00FF00">
+          </div>
+          <div class="section" style="display:flex;align-items:center;gap:12px;">
+            <label class="label" style="margin:0;">배경색</label>
+            <input type="color" class="color-input" id="bgColorInput" value="#000000">
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">폰트 패밀리</label>
+            <select class="select" id="fontFamilySelect">
+              <option value="monospace">고정폭(모노스페이스)</option>
+              <option value="system">시스템 산세리프</option>
+              <option value="rounded">라운드 산세리프</option>
+              <option value="seven">세븐세그 느낌</option>
+            </select>
+            <label class="note"><input type="checkbox" id="neonToggle"> 네온 광택 효과</label>
+          </div>
+          <div class="section">
+            <label class="label">애니메이션</label>
+            <select class="select" id="animationSelect">
+              <option value="scroll">좌로 스크롤(연속)</option>
+              <option value="blink">깜빡임</option>
+              <option value="pulse">펄스</option>
+              <option value="none">없음</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-advanced">
+        <div class="grid-2">
+          <div class="section">
+            <label class="label">스크롤 속도 (px/s)</label>
+            <input type="range" class="slider" id="speedSlider" min="40" max="300" step="1" value="120">
+            <div class="note"><span id="speedOut">120</span> px/s</div>
+          </div>
+          <div class="section">
+            <label class="label">시작 오프셋 (vw)</label>
+            <input type="range" class="slider" id="startOffsetSlider" min="0" max="100" step="1" value="10">
+            <div class="note"><span id="startOut">10</span> vw — 시작 지점</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px;">
+          <div class="section">
+            <label class="label">세로모드</label>
+            <label class="note"><input type="checkbox" id="forcePortrait"> 세로모드에서도 스크롤</label>
+          </div>
+          <div class="section">
+            <label class="label">안내 표시</label>
+            <div class="note">세로모드 + 텍스트가 화면보다 길고 + 강제 스크롤 OFF → 상단 힌트 표시</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-presets">
+        <div class="section">
+          <label class="label">프리셋 이름</label>
+          <div style="display:flex; gap:8px;">
+            <input id="presetName" class="text-input" style="min-height:44px;" placeholder="예: 네온_대형_빠른" />
+            <button class="small-btn" id="savePresetBtn" type="button">저장</button>
+          </div>
+        </div>
+        <div class="section" style="margin-top:12px;">
+          <label class="label">저장된 프리셋</label>
+          <div id="presetList" class="grid-1" style="max-height:40vh; overflow:auto;"></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <!-- 모듈 진입점 -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

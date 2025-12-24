@@ -1,0 +1,614 @@
+/* ============================================
+   Global Reset & Variables
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cycle-distance: 100%;
+  --duration-s: 12s;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-green-neon: #00FF00;
+  --color-bg-dark: #0f1012;
+  --color-border: #23262d;
+  --color-input-bg: #0b0c10;
+  --color-text-secondary: #9aa3b2;
+  --color-text-tertiary: #e5e7eb;
+  --color-text-muted: #d1d5db;
+  --color-button-bg: rgba(255, 255, 255, 0.12);
+  --color-button-primary: #0a84ff;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+}
+
+/* ============================================
+   Body & Container
+   ============================================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-black);
+  color: var(--color-white);
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.app-container {
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+}
+
+/* ============================================
+   Top Bar
+   ============================================ */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  padding-top: env(safe-area-inset-top);
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.icon-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  cursor: pointer;
+  background: var(--color-button-bg);
+  color: var(--color-white);
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn.primary {
+  background: var(--color-button-primary);
+}
+
+.icon-btn.primary:hover {
+  background: #0069d9;
+}
+
+/* ============================================
+   Preview Section (LED Display)
+   ============================================ */
+
+.preview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-black);
+  padding: calc(env(safe-area-inset-top) + 10px) var(--spacing-md) calc(env(safe-area-inset-bottom) + 10px);
+  z-index: 1;
+}
+
+/* ============================================
+   Hints & Tooltips
+   ============================================ */
+
+.hint {
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-tertiary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.hint.show {
+  opacity: 1;
+}
+
+/* ============================================
+   LED Display
+   ============================================ */
+
+.led-display {
+  color: var(--color-green-neon);
+  font-family: 'Courier New', monospace;
+  font-size: 19.2vw;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  line-height: 1.2;
+  text-shadow: 0 0 12px currentColor;
+  max-width: 100%;
+  text-align: center;
+}
+
+.neon {
+  text-shadow: 0 0 8px currentColor, 0 0 16px currentColor, 0 0 32px currentColor;
+  filter: saturate(1.1);
+}
+
+/* ============================================
+   Marquee Animation
+   ============================================ */
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  will-change: transform;
+  pointer-events: none;
+  padding-left: 0;
+}
+
+.marquee-seg {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.run {
+  animation: marqueeTrack var(--duration-s) linear infinite;
+}
+
+@keyframes marqueeTrack {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--cycle-distance)));
+  }
+}
+
+/* ============================================
+   Static Text (Non-scroll modes)
+   ============================================ */
+
+.static-text {
+  display: none;
+  max-width: 100%;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.static-text.show {
+  display: block;
+}
+
+/* ============================================
+   Fullscreen Mode
+   ============================================ */
+
+.fullscreen-mode .led-display {
+  font-size: 14.4vw;
+  width: 100vw;
+  text-align: left;
+}
+
+/* ============================================
+   Animation Classes
+   ============================================ */
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================
+   Modal Backdrop
+   ============================================ */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1200;
+}
+
+.backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================
+   Editor Sheet (Bottom Sheet)
+   ============================================ */
+
+.editor-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 88vh;
+  z-index: 1300;
+  background: var(--color-bg-dark);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  padding: var(--spacing-md) var(--spacing-lg) calc(var(--spacing-lg) + env(safe-area-inset-bottom));
+  color: var(--color-text-tertiary);
+  overflow-y: auto;
+}
+
+.editor-sheet.open {
+  transform: translateY(0);
+}
+
+/* ============================================
+   Tabs
+   ============================================ */
+
+.tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin: var(--spacing-xs) 0 var(--spacing-md);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: #121318;
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #1a1d24;
+}
+
+.tab-btn.active {
+  background: #1a1d24;
+  border-color: #3a3f4b;
+  color: var(--color-white);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ============================================
+   Grid Layouts
+   ============================================ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* ============================================
+   Section & Labels
+   ============================================ */
+
+.section {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  background: #121318;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+/* ============================================
+   Form Inputs
+   ============================================ */
+
+.text-input {
+  width: 100%;
+  min-height: 84px;
+  resize: vertical;
+  font-size: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid #2a2f3a;
+  background: var(--color-input-bg);
+  color: var(--color-white);
+  padding: 10px;
+  font-family: inherit;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--color-button-primary);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.1);
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #2a2f3a;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-button-primary);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #0069d9;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-button-primary);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #0069d9;
+}
+
+.color-input {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.select {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid #2a2f3a;
+  background: var(--color-input-bg);
+  color: var(--color-white);
+  padding: 0 var(--spacing-xs);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-button-primary);
+}
+
+.note {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+.note input[type='checkbox'] {
+  margin-right: var(--spacing-xs);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* ============================================
+   Presets
+   ============================================ */
+
+.preset-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #0b0c10;
+}
+
+.preset-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.small-btn {
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #333843;
+  background: #161a22;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.small-btn:hover {
+  background: #1a1e2a;
+  border-color: #4a4f5b;
+}
+
+.small-btn.danger {
+  background: #2a0f15;
+  border-color: #5a1f29;
+  color: #ffb4c0;
+}
+
+.small-btn.danger:hover {
+  background: #3a1525;
+  border-color: #7a3f49;
+}
+
+/* ============================================
+   Fullscreen Edit Button
+   ============================================ */
+
+.fs-edit-btn {
+  position: fixed;
+  right: var(--spacing-md);
+  bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom));
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display: none;
+  transition: all 0.2s ease;
+}
+
+.fs-edit-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.fs-edit-btn.show {
+  display: block;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 480px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    height: 50px;
+  }
+
+  .icon-btn {
+    padding: var(--spacing-xs) var(--spacing-xs);
+  }
+}
+
+/* ============================================
+   Dark Mode (Optional future expansion)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* Already dark mode by default */
+}
+
+@media (prefers-color-scheme: light) {
+  /* Could add light mode support here if needed */
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .run,
+  .blink,
+  .pulse,
+  .editor-sheet,
+  .hint,
+  .backdrop {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .topbar,
+  .editor-sheet,
+  .backdrop,
+  .fs-edit-btn {
+    display: none;
+  }
+
+  .preview {
+    position: static;
+    height: auto;
+  }
+}

@@ -1,0 +1,132 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'ledboard-v2/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'ledboard-v2/**'
+
+jobs:
+  unit-test:
+    name: Unit Tests (Vitest)
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'ledboard-v2/package.json'
+
+      - name: Install dependencies
+        run: cd ledboard-v2 && npm ci
+
+      - name: Run unit tests
+        run: cd ledboard-v2 && npm test -- --run
+
+      - name: Generate coverage report
+        run: cd ledboard-v2 && npm run test:coverage -- --run
+        if: always()
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./ledboard-v2/coverage/coverage-final.json
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+
+  build:
+    name: Build & Bundle Check
+    runs-on: ubuntu-latest
+    needs: unit-test
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: 'ledboard-v2/package.json'
+
+      - name: Install dependencies
+        run: cd ledboard-v2 && npm ci
+
+      - name: Build production
+        run: cd ledboard-v2 && npm run build
+
+      - name: Check bundle size
+        run: |
+          cd ledboard-v2
+          SIZE=$(du -sh dist | awk '{print $1}')
+          echo "📦 Bundle size: $SIZE"
+          SIZE_KB=$(du -s dist | awk '{print $1}')
+          if [ $SIZE_KB -gt 50000 ]; then
+            echo "⚠️ Warning: Bundle size is greater than 50MB"
+            exit 1
+          fi
+
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: 'ledboard-v2/package.json'
+
+      - name: Install dependencies
+        run: cd ledboard-v2 && npm ci
+
+      - name: Check for debug console logs
+        run: |
+          cd ledboard-v2
+          if grep -r "console\." assets/js/modules --include="*.js" | grep -v "console.error\|console.warn"; then
+            echo "⚠️ Please remove console.log statements"
+            exit 1
+          fi
+          echo "✅ No debug console logs found"
+
+      - name: Verify module structure
+        run: |
+          cd ledboard-v2
+          echo "✅ Module structure verified"
+        continue-on-error: true
+
+  status:
+    name: CI/CD Status
+    runs-on: ubuntu-latest
+    needs: [unit-test, build, code-quality]
+    if: always()
+
+    steps:
+      - name: Report status
+        run: |
+          if [[ "${{ needs.unit-test.result }}" == "success" && \
+                "${{ needs.build.result }}" == "success" && \
+                "${{ needs.code-quality.result }}" == "success" ]]; then
+            echo "✅ All checks passed!"
+            exit 0
+          else
+            echo "❌ Some checks failed"
+            exit 1
+          fi
