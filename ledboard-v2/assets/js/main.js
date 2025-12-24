@@ -312,7 +312,9 @@ class LedBoardApp {
     if (this.elements.animationSelect) this.elements.animationSelect.value = config.animation || 'scroll';
     if (this.elements.neonToggle) this.elements.neonToggle.checked = !!config.neon;
     if (this.elements.speedSlider) this.elements.speedSlider.value = config.speed || 120;
+    if (this.elements.speedOut) this.elements.speedOut.textContent = config.speed || 120;
     if (this.elements.startOffsetSlider) this.elements.startOffsetSlider.value = config.startOffset || 10;
+    if (this.elements.startOut) this.elements.startOut.textContent = config.startOffset || 10;
     if (this.elements.forcePortrait) this.elements.forcePortrait.checked = !!config.forcePortrait;
 
     // Display 업데이트
@@ -341,11 +343,22 @@ class LedBoardApp {
 
   /**
    * 스크롤 애니메이션 적용
+   * 조건: scroll 모드이고 (텍스트가 길거나 forcePortrait가 켜져있을 때만)
    */
   applyScrollAnimation() {
+    const animation = this.elements.animationSelect?.value || 'scroll';
+    if (animation !== 'scroll') return;
+
     const speed = Number(this.elements.speedSlider?.value || 120);
     const startOffset = Number(this.elements.startOffsetSlider?.value || 10);
-    display.applyScroll(speed, startOffset);
+
+    // forcePortrait가 켜져있거나 텍스트가 화면보다 길면 스크롤 적용
+    const forcePortrait = this.elements.forcePortrait?.checked || false;
+    const isOverflow = display.isTextOverflow();
+
+    if (forcePortrait || isOverflow) {
+      display.applyScroll(speed, startOffset);
+    }
   }
 
   /**

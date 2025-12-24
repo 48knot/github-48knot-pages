@@ -132,8 +132,9 @@ export function getConfigFromURL(urlString = null) {
 export function buildShareURL(config, baseUrl = null) {
   try {
     const encoded = encodeConfig(config);
+    const urlSafeEncoded = encoded.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
     const base = baseUrl || `${window.location.origin}${window.location.pathname}`;
-    return `${base}?config=${encoded}`;
+    return `${base}?config=${urlSafeEncoded}`;
   } catch (error) {
     console.error('❌ 공유 URL 생성 실패:', error);
     throw error;
